@@ -16,10 +16,14 @@ and open the template in the editor.
         <link rel="stylesheet" href="css/main.css">
 
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-          
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  
+        
         <link href="css/BWolf/layout.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
+        
       <!-- BEGIN NAVIGATION -->
       <nav class="graynav">
         <div class="container-fluid">
@@ -54,7 +58,7 @@ and open the template in the editor.
                   </tr>
                   <tr>
                       <td>Verantwortlicher:</td>
-                      <td><input type="checkbox">mich</input> <input disabled></input></td>
+                      <td><input></input></td>
                   </tr>
                   <tr>
                       <td>Einschreibungsperiode:</td>
@@ -69,17 +73,17 @@ and open the template in the editor.
                       <td><input type="date"></input></td>
                   </tr>
               </table>
-               Beschreibungstext:<br> 
-              <textarea rows="10" cols="50"></textarea>
+               <br>Beschreibungstext:<br> 
+              <textarea rows="10"></textarea>
               <br>
               <button class="btn btn-danger navbar-btn">neuen Kurs anlegen</button>
           </form>
       </section>
       <!-- END FORM -->
       
-      <!-- BEGIN GRID 
-       <div class="course-grid">
-        <h1>Kursübersicht</h1>
+      <!-- BEGIN GRID -->
+       <div class="course-grid ">
+        <h1>meine Kurse</h1>
         
         <div class="row">
             <div class="col-md-4">
@@ -93,22 +97,8 @@ and open the template in the editor.
                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
                 </p>
                 <p>
-                    <a class="btn btn-secondary" href="#" role="button">> Zur Kursbeschreibung</a>
-                </p>
-                <span class="sep-bar" ></span>
-            </div>
-            <div class="col-md-4">
-                <h2>Kurs Titel</h2>
-                <h3>Leiter:</h3> <h4>Lorem Ipsum</h4>
-                <h3>Einschreibungsperiode:</h3> <h4>01.03.2018 bis 30.04.2018</h4>
-                <h3>Erste Veranstaltung:</h3> <h4>02.04.2018</h4>
-                <h3>Letzte Veranstaltung:</h3> <h4>07.07.2018</h4>
-                <h3>Beschreibung:</h3>
-                <p>
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                </p>
-                <p>
-                    <a class="btn btn-secondary" href="detail.html" role="button">> Zur Kursbeschreibung</a>
+                    <a class="btn btn-primary" data-toggle="modal" data-target="#chooseInternship"
+                       role="button">für Praktikum anbieten</a>
                 </p>
             </div>
             <div class="col-md-4">
@@ -122,82 +112,8 @@ and open the template in the editor.
                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
                 </p>
                 <p>
-                    <a class="btn btn-secondary" href="#" role="button">> Zur Kursbeschreibung</a>
-                </p>
-                <span class="sep-bar" ></span>
-            </div>
-            <div class="col-md-4">
-                <h2>Kurs Titel</h2>
-                <h3>Leiter:</h3> <h4>Lorem Ipsum</h4>
-                <h3>Einschreibungsperiode:</h3> <h4>01.03.2018 bis 30.04.2018</h4>
-                <h3>Erste Veranstaltung:</h3> <h4>02.04.2018</h4>
-                <h3>Letzte Veranstaltung:</h3> <h4>07.07.2018</h4>
-                <h3>Beschreibung:</h3>
-                <p>
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                </p>
-                <p>
-                    <a class="btn btn-secondary" href="#" role="button">> Zur Kursbeschreibung</a>
-                </p>
-                <span class="sep-bar" ></span>
-            </div>
-            <div class="col-md-4">
-                <h2>Kurs Titel</h2>
-                <h3>Leiter:</h3> <h4>Lorem Ipsum</h4>
-                <h3>Einschreibungsperiode:</h3> <h4>01.03.2018 bis 30.04.2018</h4>
-                <h3>Erste Veranstaltung:</h3> <h4>02.04.2018</h4>
-                <h3>Letzte Veranstaltung:</h3> <h4>07.07.2018</h4>
-                <h3>Beschreibung:</h3>
-                <p>
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                </p>
-                <p>
-                    <a class="btn btn-secondary" href="#" role="button">> Zur Kursbeschreibung</a>
-                </p>
-                <span class="sep-bar" ></span>
-            </div>
-            <div class="col-md-4">
-                <h2>Kurs Titel</h2>
-                <h3>Leiter:</h3> <h4>Lorem Ipsum</h4>
-                <h3>Einschreibungsperiode:</h3> <h4>01.03.2018 bis 30.04.2018</h4>
-                <h3>Erste Veranstaltung:</h3> <h4>02.04.2018</h4>
-                <h3>Letzte Veranstaltung:</h3> <h4>07.07.2018</h4>
-                <h3>Beschreibung:</h3>
-                <p>
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                </p>
-                <p>
-                    <a class="btn btn-secondary" href="#" role="button">> Zur Kursbeschreibung</a>
-                </p>
-                <span class="sep-bar" ></span>
-            </div>
-            <div class="col-md-4">
-                <h2>Kurs Titel</h2>
-                <h3>Leiter:</h3> <h4>Lorem Ipsum</h4>
-                <h3>Einschreibungsperiode:</h3> <h4>01.03.2018 bis 30.04.2018</h4>
-                <h3>Erste Veranstaltung:</h3> <h4>02.04.2018</h4>
-                <h3>Letzte Veranstaltung:</h3> <h4>07.07.2018</h4>
-                <h3>Beschreibung:</h3>
-                <p>
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                </p>
-                <p>
-                    <a class="btn btn-secondary" href="#" role="button">> Zur Kursbeschreibung</a>
-                </p>
-                <span class="sep-bar" ></span>
-            </div>
-            <div class="col-md-4">
-                <h2>Kurs Titel</h2>
-                <h3>Leiter:</h3> <h4>Lorem Ipsum</h4>
-                <h3>Einschreibungsperiode:</h3> <h4>01.03.2018 bis 30.04.2018</h4>
-                <h3>Erste Veranstaltung:</h3> <h4>02.04.2018</h4>
-                <h3>Letzte Veranstaltung:</h3> <h4>07.07.2018</h4>
-                <h3>Beschreibung:</h3>
-                <p>
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                </p>
-                <p>
-                    <a class="btn btn-secondary" href="#" role="button">> Zur Kursbeschreibung</a>
+                    <a class="btn btn-primary" data-toggle="modal" data-target="#chooseInternship"
+                       role="button">für Praktikum anbieten</a>
                 </p>
             </div>
             <div class="col-md-4">
@@ -211,149 +127,50 @@ and open the template in the editor.
                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
                 </p>
                 <p>
-                    <a class="btn btn-secondary" href="#" role="button">> Zur Kursbeschreibung</a>
+                    <a class="btn btn-primary" data-toggle="modal" data-target="#chooseInternship"
+                       role="button">für Praktikum anbieten</a>
                 </p>
-                <span class="sep-bar" ></span>
-            </div>
-            <div class="col-md-4">
-                <h2>Kurs Titel</h2>
-                <h3>Leiter:</h3> <h4>Lorem Ipsum</h4>
-                <h3>Einschreibungsperiode:</h3> <h4>01.03.2018 bis 30.04.2018</h4>
-                <h3>Erste Veranstaltung:</h3> <h4>02.04.2018</h4>
-                <h3>Letzte Veranstaltung:</h3> <h4>07.07.2018</h4>
-                <h3>Beschreibung:</h3>
-                <p>
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                </p>
-                <p>
-                    <a class="btn btn-secondary" href="#" role="button">> Zur Kursbeschreibung</a>
-                </p>
-                <span class="sep-bar" ></span>
-            </div>
-            <div class="col-md-4">
-                <h2>Kurs Titel</h2>
-                <h3>Leiter:</h3> <h4>Lorem Ipsum</h4>
-                <h3>Einschreibungsperiode:</h3> <h4>01.03.2018 bis 30.04.2018</h4>
-                <h3>Erste Veranstaltung:</h3> <h4>02.04.2018</h4>
-                <h3>Letzte Veranstaltung:</h3> <h4>07.07.2018</h4>
-                <h3>Beschreibung:</h3>
-                <p>
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                </p>
-                <p>
-                    <a class="btn btn-secondary" href="#" role="button">> Zur Kursbeschreibung</a>
-                </p>
-                <span class="sep-bar" ></span>
-            </div>
-            <div class="col-md-4">
-                <h2>Kurs Titel</h2>
-                <h3>Leiter:</h3> <h4>Lorem Ipsum</h4>
-                <h3>Einschreibungsperiode:</h3> <h4>01.03.2018 bis 30.04.2018</h4>
-                <h3>Erste Veranstaltung:</h3> <h4>02.04.2018</h4>
-                <h3>Letzte Veranstaltung:</h3> <h4>07.07.2018</h4>
-                <h3>Beschreibung:</h3>
-                <p>
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                </p>
-                <p>
-                    <a class="btn btn-secondary" href="#" role="button">> Zur Kursbeschreibung</a>
-                </p>
-                <span class="sep-bar" ></span>
-            </div>
-            <div class="col-md-4">
-                <h2>Kurs Titel</h2>
-                <h3>Leiter:</h3> <h4>Lorem Ipsum</h4>
-                <h3>Einschreibungsperiode:</h3> <h4>01.03.2018 bis 30.04.2018</h4>
-                <h3>Erste Veranstaltung:</h3> <h4>02.04.2018</h4>
-                <h3>Letzte Veranstaltung:</h3> <h4>07.07.2018</h4>
-                <h3>Beschreibung:</h3>
-                <p>
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                </p>
-                <p>
-                    <a class="btn btn-secondary" href="#" role="button">> Zur Kursbeschreibung</a>
-                </p>
-                <span class="sep-bar" ></span>
-            </div>
-            <div class="col-md-4">
-                <h2>Kurs Titel</h2>
-                <h3>Leiter:</h3> <h4>Lorem Ipsum</h4>
-                <h3>Einschreibungsperiode:</h3> <h4>01.03.2018 bis 30.04.2018</h4>
-                <h3>Erste Veranstaltung:</h3> <h4>02.04.2018</h4>
-                <h3>Letzte Veranstaltung:</h3> <h4>07.07.2018</h4>
-                <h3>Beschreibung:</h3>
-                <p>
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                </p>
-                <p>
-                    <a class="btn btn-secondary" href="#" role="button">> Zur Kursbeschreibung</a>
-                </p>
-            </div>
-            <div class="col-md-4">
-                <h2>Kurs Titel</h2>
-                <h3>Leiter:</h3> <h4>Lorem Ipsum</h4>
-                <h3>Einschreibungsperiode:</h3> <h4>01.03.2018 bis 30.04.2018</h4>
-                <h3>Erste Veranstaltung:</h3> <h4>02.04.2018</h4>
-                <h3>Letzte Veranstaltung:</h3> <h4>07.07.2018</h4>
-                <h3>Beschreibung:</h3>
-                <p>
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                </p>
-                <p>
-                    <a class="btn btn-secondary" href="#" role="button">> Zur Kursbeschreibung</a>
-                </p>
-                <span class="sep-bar" ></span>
-            </div>
-            <div class="col-md-4">
-                <h2>Kurs Titel</h2>
-                <h3>Leiter:</h3> <h4>Lorem Ipsum</h4>
-                <h3>Einschreibungsperiode:</h3> <h4>01.03.2018 bis 30.04.2018</h4>
-                <h3>Erste Veranstaltung:</h3> <h4>02.04.2018</h4>
-                <h3>Letzte Veranstaltung:</h3> <h4>07.07.2018</h4>
-                <h3>Beschreibung:</h3>
-                <p>
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                </p>
-                <p>
-                    <a class="btn btn-secondary" href="#" role="button">> Zur Kursbeschreibung</a>
-                </p>
-                <span class="sep-bar" ></span>
-            </div>
-            <div class="col-md-4">
-                <h2>Kurs Titel</h2>
-                <h3>Leiter:</h3> <h4>Lorem Ipsum</h4>
-                <h3>Einschreibungsperiode:</h3> <h4>01.03.2018 bis 30.04.2018</h4>
-                <h3>Erste Veranstaltung:</h3> <h4>02.04.2018</h4>
-                <h3>Letzte Veranstaltung:</h3> <h4>07.07.2018</h4>
-                <h3>Beschreibung:</h3>
-                <p>
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                </p>
-                <p>
-                    <a class="btn btn-secondary" href="#" role="button">> Zur Kursbeschreibung</a>
-                </p>
-                <span class="sep-bar" ></span>
-            </div>
-            <div class="col-md-4">
-                <h2>Kurs Titel</h2>
-                <h3>Leiter:</h3> <h4>Lorem Ipsum</h4>
-                <h3>Einschreibungsperiode:</h3> <h4>01.03.2018 bis 30.04.2018</h4>
-                <h3>Erste Veranstaltung:</h3> <h4>02.04.2018</h4>
-                <h3>Letzte Veranstaltung:</h3> <h4>07.07.2018</h4>
-                <h3>Beschreibung:</h3>
-                <p>
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                </p>
-                <p>
-                    <a class="btn btn-secondary" href="#" role="button">> Zur Kursbeschreibung</a>
-                </p>
-                <span class="sep-bar" ></span>
             </div>
         </div>
       </div>
       <!-- END GRID -->
       
-      <!-- BEGIN FOOTER -->
+      <!-- BEGIN MODAL -->
+        <div id="chooseInternship" class="modal fade" role="dialog">
+          <div class="modal-dialog modal-lg">
+
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Modal Header</h4>
+              </div>
+              <div class="modal-body">
+                <div class="form-group">
+                    <label for="sel1">Praktikum auswählen</label>
+                    <select class="form-control" id="sel1">
+                      <option>Sommersemester 2018</option>
+                      <option>Wintersemester 2018/19</option>
+                      <option>Sommersemester 2019</option>
+                      <option>Wintersemester 2019/20</option>
+                    </select>
+                    
+                    <p>
+                        <a class="btn btn-primary" data-toggle="modal" data-target="#chooseInternship"
+                        role="button">Praktikum auswählen</a>
+                    </p>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      <!-- END MODAL -->
+      
+      
+      <!-- BEGIN FOOTER 
       <div class="footer">
           <span>
             <a href="./impressum.html">Impressum</a> |
