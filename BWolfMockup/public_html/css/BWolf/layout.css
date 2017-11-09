@@ -194,20 +194,28 @@ div.not-preffered{
 section.createSubject {
     width: 90%;
     background: ivory;
-    margin: 0 auto;
+    margin: 2em auto;
+    padding: 5px;
 }
 section.createSubject form {
     margin: 0 auto;
     width: 50%;
 }
-section.createSubject form table td {
+section.createSubject form table tr {
     margin: 1em;
-    border: 1px solid black;
 }
 
 section.createSubject form input {
     height: 20px;
+    width: 100%;
+}
+section.createSubject form textarea {
+    width: 100%;
 }
 section.createSubject form button {
     margin: 0 auto;
+}
+
+.courses {
+    padding: 10px;
 }
