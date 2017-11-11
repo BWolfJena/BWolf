@@ -59,15 +59,68 @@
         \label{Sichten}
                     
             \subsubsection{Sicht der Administratoren}
+            Ein Administrator hat die Möglichkeit, neue Dozenten zu erstellen, diese zu bearbeiten und zu löschen.
+            Zusätzlich ist er dafür verantwortlich, die Ergebnisse des Verteilungsalgorithmus zu verändern und zu bestätigen.
                  
                 
             \subsubsection{Sicht der Dozenten}
+            Ein Dozent hat die Möglichkeit, Kurse für das Praktikum zu erstellen. Für einen Kurs müssen sie folgendes angeben:
+            \begin{itemize}
+            \item Name
+            \item Titel
+            \item Dozenten
+            \item Zeit/Raum
+            % Minimale Teilnehmer fällt raus, da die Psychologen festegelegt haben, es müssen mindestens 3 Leute in jedem Kurs sein
+            \item Maximale Teilnehmer (5 oder 10!)
+            \item Kurzbeschreibung
+            \item Beschreibung
+            \item Literatur
+            \item E-Mail Adresse des Empirie-Praktikums-Leiter %? Ist das nicht nur die vom Dozenten
+            \end{itemize}
+            Folgendes ist nicht für den Studenten einsehbar:
+            \begin{itemize}
+            \item Lehrstuhl
+            \item Lehrauftrag
+            \item Erstes Mal Empiriepraktikum?
+            \end{itemize}
+            
+            Nachdem die Studenten verteilt worden sind, erhalten die Dozenten eine E-Mail mit den Studenten, die in ihrem Kurs sind.
+            Im Verlaufe des Semesters können Dozenten ihren Kurs in zwei Kurse aufteilen.
+            
+            Sollten Dozenten zu einem anderem Semester erneut Kurse anbieten, so haben sie die Möglichkeit, ihre alten Kurse einzusehen und (ohne Änderung des alten Kurses) einen dieser als Vorlage für einen neuen Kurs zu nutzen.
 
                 
             \subsubsection{Sicht der Studenten}
+            %Studenten erhalten unabhängig dieses Systems eine Woche vor Beginn der Einschreibung einen Link (Dies muss nicht abgebildet werden, deswegen nehmen wir das nicht auf, oder?)
+            3 Wochen vor Verteilung der Kurse beginnt die Einschreibungszeit. Hierfür erhalten die Studenten unabhängig von diesem System eine Benachrichtigung.
+            Studenten sehen bei ihrem Besuch zuerst eine kurze Erläuterung zu dem Einschreibungs-System. Neben dem Text gibt es noch ein Feld zur Anmeldung bzw. Registrierung.
+            Nachdem ein Student sich registriert hat und angemeldet ist, wird er zur Liste der derzeitigen Kurse weitergeleitet. Diese Kurse können allerdings auch ohne Anmeldung angesehen werden. % Alles soll öffentlich sein, aber gleichzeitig haben wir das so formuliert, dass der Student dann zu den Kursen kann. Weiß aber nicht, wie sinnvoll die Weiterleitung zu den Kursen ist.
             
+            Durch eine weitere Seite, können Studenten dann jeden Kurs nach ihrer Präferenz sortieren. Dabei müssen Studenten jedem Kurs eine Präferenz zuteilen. Sollten Studenten dann ihre Präferenzenliste bestätigen, so wird ihnen an ihre hinterlegte E-Mail-Adresse ihre gewählte Präferenzenliste geschickt. Diese Liste kann beliebig verändert werden, bis die Verteilung beginnt. %Die Psychologen meinten auch sowas, dass sie das bestätigen müssen und dann ist es fest, aber sie können es noch ändern wie sie wollen. Weiß jemand genaueres?
+            Sobald die Verteilung abgeschlossen und durch einen Administrator bestätigt wurde, erhalten Studenten eine E-Mail-Benachrichtigung, in dem ihr zugeteilter Kurs drin steht.
+            Studenten sehen nun auch für alle Kurse die Namen der Teilnehmer.
+            
+            Nach der Verteilung beginnt die Tauschperiode. Bis zum Beginn der ersten Vorlesungswoche können Studenten Tauschanfragen an andere Studenten schicken. Jede dieser Tauschanfragen wird automatisch an den Empirie-Praktikums-Leiter weitergeleitet.
+            Ist eine Tauschanfrage erfolgreich, so tauschen die Studenten ihre Kurse.
     
-    \section{Der Verteilungsalgorithmus}    
+    \section{Der Verteilungsalgorithmus}
+    Der Verteilungsalgortihmus muss folgenden Anforderungen gerecht werden:
+    \begin{itemize}
+%    \item Nach Ende der Einschreibung, startet der Algortihmus automatisch. -> unsicher ob sie es so wollten durch die verschiedenen Einstell-Möglichkeiten. Sie hatten im Gespräch beides gesagt.
+	\item Er verteilt Studenten auf die Kurse.
+    \item Er versucht die maximale Punktzahl anhand der Präferenzlisten zu erreichen.
+    \item Er überschreitet nicht die maximale Kursteilnehmer-Anzahl mit seiner Verteilung.
+    \item Die Streuung der Präferenzen der Studenten ist gering.
+    \item Kurse können für den Algorithmus deaktiviert werden. Dies bedeutet, dass in diesen Kurs niemand zugeteilt wird.
+    \item Jedem aktivierten Kurs werden mindestens 3 Leute zugeteilt.
+    \item Die Verteilung ist wirksam, wenn sie von einem Administrator bestätigt wird.
+    \item Die Verteilung hat verschiedene Parameter:
+    	\begin{itemize}
+    	\item Gewichte der Präferenzen
+    	\item Auswahl des Optimierungsalgorithmus %ist optional afaik
+    	\end{itemize}
+    \item Sollte eine Zuteilung aller Studenten nicht möglich sein, so wird der Administrator benachrichtigt.
+    \end{itemize}
     
     \section{Technische Details}
     
