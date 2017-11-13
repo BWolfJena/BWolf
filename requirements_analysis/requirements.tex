@@ -18,7 +18,7 @@
     
     \begin{titlepage}
         \centering
-        \includegraphics[width=0.4\textwidth]{Zweiter_Versuch.png}\par\vspace{1cm}
+        \includegraphics[width=0.4\textwidth]{./../LogoSoFar.png}\par\vspace{1cm}
         {\scshape \LARGE BWolf \\ \Large Eine webbasierte Plattform zur
             Einschreibung und Verwaltung des
             Empiriepraktikums an der FSU Jena\par}
@@ -104,23 +104,14 @@
             Ist eine Tauschanfrage erfolgreich, so tauschen die Studenten ihre Kurse.
     
     \section{Der Verteilungsalgorithmus}
-    Der Verteilungsalgortihmus muss folgenden Anforderungen gerecht werden:
-    \begin{itemize}
+    Der Verteilungsalgorithmus verteilt alle Studenten auf die Kurse. Dabei ist es wichtig, dass die aufaddierte maximale Teilnehmeranzahl der Kurse größer ist als die Anzahl der zu verteilenden Studenten. Sollte dem nicht der Fall sein, so wird der Administrator informiert. Dieser hat dann die Möglichkeit die maximale Teilnehmeranzahl von Kursen zu erhöhen.
+    Die Eingabe des Algorithmus sind die Gewichte der Präferenzen und (optional) die Auswahl eines Optimierungsalgorithmus.
+    
+    Startet der Algorithmus, so versucht er, für jeden Studenten die größte, mögliche Präferenz zu den Kursen zu wählen. Dabei ist insbesonders wichtig, dass die Streuung der gewählten Präferenzen möglichst gering ist. Dies erfolgt beispielsweise durch eine Gewichtung der Präferenzen.\\
+    Weiterhin platziert der Algortihmus in jeden Kurs mindestens drei Studenten, damit der Kurs sinnvoll angeboten werden kann. Es werden aber nie mehr Teilnehmer einem Kurs zugeordnet als die maximale Teilnehmeranzahl des Kurses vorgibt.
+    
+    Hat der Algorithmus schließlich eine passende Zuordnung von Studenten zu Kursen gefunden, so wird der Administrator zuerst benachrichtigt. Dieser kann die Ergebnisse bearbeiten, Parameter des Algorithmus neu einstellen, Kurse aktivieren/deaktivieren und ihn erneut starten. Ist der Administrator zufrieden mit der Verteilung, so bestätigt dieser das Ergebnis. Anschließend wird an die Dozenten eine E-Mail mit ihren Teilnehmern geschickt, und Studenten erhalten eine E-Mail mit ihrem Kurs.
 %    \item Nach Ende der Einschreibung, startet der Algortihmus automatisch. -> unsicher ob sie es so wollten durch die verschiedenen Einstell-Möglichkeiten. Sie hatten im Gespräch beides gesagt.
-	\item Er verteilt Studenten auf die Kurse.
-    \item Er versucht die maximale Punktzahl anhand der Präferenzlisten zu erreichen.
-    \item Er überschreitet nicht die maximale Kursteilnehmer-Anzahl mit seiner Verteilung.
-    \item Die Streuung der Präferenzen der Studenten ist gering.
-    \item Kurse können für den Algorithmus deaktiviert werden. Dies bedeutet, dass in diesen Kurs niemand zugeteilt wird.
-    \item Jedem aktivierten Kurs werden mindestens 3 Leute zugeteilt.
-    \item Die Verteilung ist wirksam, wenn sie von einem Administrator bestätigt wird.
-    \item Die Verteilung hat verschiedene Parameter:
-    	\begin{itemize}
-    	\item Gewichte der Präferenzen
-    	\item Auswahl des Optimierungsalgorithmus %ist optional afaik
-    	\end{itemize}
-    \item Sollte eine Zuteilung aller Studenten nicht möglich sein, so wird der Administrator benachrichtigt.
-    \end{itemize}
     
     \section{Technische Details}
     \begin{itemize}
