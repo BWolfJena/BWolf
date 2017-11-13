@@ -12,6 +12,16 @@ body {
 .graynav a:hover {
     background: #000;
 }
+.graynav .btn {
+    margin-top: 5px;
+    margin-left: 60%;
+}
+.graynav p.hint {
+    margin-top: 15px;
+    margin-left: 100px;
+    width: 300px;
+    font-style: italic;
+}
 
 h1.explanation {
     text-align: center;
@@ -30,8 +40,9 @@ p.explanation {
     margin: 0 auto;
     margin-top: 70px;
     background-color: #7c899a;
-    position: absolute;
-    bottom: -100px;;
+    position: fixed;
+    bottom: 0;  //-100px;
+    left: 0;
 }
 .footer a {
     color: #fff;
@@ -82,7 +93,7 @@ h2 {
 .course-grid {
     width: 98%;
     position: relative;
-    margin: 0 auto; margin-top: 2em;
+    margin: 0 auto; //margin-top: 2em;
 }
 .course-grid h1 {
     text-align: center;
@@ -108,7 +119,7 @@ h2 {
     margin: 0 auto;
 }
 .course-grid .col-md-4 {
-    margin-top: 5em;
+    //margin-top: 5em;
 }
 .course-grid .col-md-4:hover {
     border: 1px solid black;
@@ -189,11 +200,19 @@ div.not-preffered{
     margin-bottom: 100px;
 }
 
+section#swap {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 3em;
+}
+section#swap button#sendQuery {
+    margin: 0 auto;
+    margin-top: 1em;
+}
 
 /* responsible */
 section.createSubject {
     width: 90%;
-    background: ivory;
     margin: 2em auto;
     padding: 5px;
 }
@@ -209,6 +228,10 @@ section.createSubject form input {
     height: 20px;
     width: 100%;
 }
+section.createSubject form input.half {
+    height: 20px;
+    width: 42.5%;
+}
 section.createSubject form textarea {
     width: 100%;
 }
@@ -218,4 +241,18 @@ section.createSubject form button {
 
 .courses {
     padding: 10px;
+}
+
+#chooseInternship .btn {
+    margin-top: 1em;
+}
+
+#start {
+    margin-top: 15px;
+    margin-left: 100px;
+}
+
+.dist {
+    width: 90%;
+    margin: 0 auto;
 }
