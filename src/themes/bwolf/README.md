@@ -55,8 +55,8 @@ If you add more than one JavaScript file do not forget to remove the seperator (
 
 		<!-- SCRIPTS -->
         <script src="{{ [
-            'assets/vendor/node_modules/jquery/dist/jquery.js',
-            'assets/vendor/node_modules/semantic/dist/semantic.js',
+            'assets/jquery/dist/jquery.js',
+            'assets/semantic/dist/semantic.js',
             'assets/js/system.js',
             'assets/js/app.js',
 			'assets/js/AddYourJavaScriptFile.js'
@@ -82,7 +82,7 @@ If you add more than one CSS file do not forget to remove the seperator (,) of t
 
         <!-- CSS -->
         <link href="{{ [
-            'assets/vendor/node_modules/semantic/dist/semantic.css',
+            'assets/semantic/dist/semantic.css',
             'assets/css/system.css',
             'assets/css/theme.css',
 			'assets/css/AddYourCSSFile.css

@@ -22,7 +22,7 @@
         <link rel="icon" type="image/x-icon" href="{{ 'assets/images/favicon.ico'|theme }}"/>                
 		<!-- CSS -->
         <link href="{{ [
-            'assets/vendor/node_modules/semantic/dist/semantic.css',
+            'assets/semantic/dist/semantic.css',
             'assets/css/system.css',
             'assets/css/theme.css'
         ]|theme }}" rel="stylesheet">
@@ -51,11 +51,13 @@
             {% partial 'site/footer' %}
         </footer>
 
-
+        <script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
         <!-- SCRIPTS -->
-        <script src="{{ [
-            'assets/vendor/node_modules/jquery/dist/jquery.js',
-            'assets/vendor/node_modules/semantic/dist/semantic.js',
+        <script src="{{ [            
+            'assets/semantic/dist/semantic.js',
             'assets/js/system.js',
             'assets/js/app.js'
         ]|theme }}"></script>
