@@ -92,25 +92,41 @@
                 
             \subsubsection{Sicht der Studenten}
             %Studenten erhalten unabhängig dieses Systems eine Woche vor Beginn der Einschreibung einen Link (Dies muss nicht abgebildet werden, deswegen nehmen wir das nicht auf, oder?)
-            3 Wochen vor Verteilung der Kurse beginnt die Einschreibungszeit. Hierfür erhalten die Studenten unabhängig von diesem System eine Benachrichtigung.
-            Studenten sehen bei ihrem Besuch zuerst eine kurze Erläuterung zu dem Einschreibungs-System. Neben dem Text gibt es noch ein Feld zur Anmeldung bzw. Registrierung.
-            Nachdem ein Student sich registriert hat und angemeldet ist, wird er zur Liste der derzeitigen Kurse weitergeleitet. Diese Kurse können allerdings auch ohne Anmeldung angesehen werden. % Alles soll öffentlich sein, aber gleichzeitig haben wir das so formuliert, dass der Student dann zu den Kursen kann. Weiß aber nicht, wie sinnvoll die Weiterleitung zu den Kursen ist.
+            Drei Wochen vor Verteilung der Kurse beginnt die Einschreibungszeit. Hierfür erhalten die Studenten unabhängig von diesem System eine Benachrichtigung.
+            Studenten sehen bei ihrem Besuch zuerst eine kurze Erläuterung zu dem Einschreibungs-System.
+            Neben dem Text gibt es noch ein Feld zur Anmeldung bzw. Registrierung.
+            Nachdem ein Student sich registriert hat und angemeldet ist, wird er zur Liste der derzeitigen Kurse weitergeleitet.
+            Diese Kurse können allerdings auch ohne Anmeldung angesehen werden. % Alles soll öffentlich sein, aber gleichzeitig haben wir das so formuliert, dass der Student dann zu den Kursen kann. Weiß aber nicht, wie sinnvoll die Weiterleitung zu den Kursen ist.
             
-            Durch eine weitere Seite, können Studenten dann jeden Kurs nach ihrer Präferenz sortieren. Dabei müssen Studenten jedem Kurs eine Präferenz zuteilen. Sollten Studenten dann ihre Präferenzenliste bestätigen, so wird ihnen an ihre hinterlegte E-Mail-Adresse ihre gewählte Präferenzenliste geschickt. Diese Liste kann beliebig verändert werden, bis die Verteilung beginnt. Mit jeder Änderung der Präferenzenliste erhalten Studenten eine neue E-Mail. %Die Psychologen meinten auch sowas, dass sie das bestätigen müssen und dann ist es fest, aber sie können es noch ändern wie sie wollen. Weiß jemand genaueres?
+            Durch eine weitere Seite, können Studenten dann jeden Kurs nach ihrer Präferenz sortieren. Dabei müssen Studenten jedem Kurs eine Präferenz zuteilen.
+            Sollten Studenten dann ihre Präferenzenliste bestätigen, so wird ihnen an ihre hinterlegte E-Mail-Adresse ihre gewählte Präferenzenliste geschickt.
+            Diese Liste kann beliebig verändert werden, bis die Verteilung beginnt.
+            Mit jeder Änderung der Präferenzenliste erhalten Studenten eine neue E-Mail. %Die Psychologen meinten auch sowas, dass sie das bestätigen müssen und dann ist es fest, aber sie können es noch ändern wie sie wollen. Weiß jemand genaueres?
             Sobald die Verteilung abgeschlossen und durch einen Administrator bestätigt wurde, erhalten Studenten eine E-Mail-Benachrichtigung, in dem ihr zugeteilter Kurs drin steht.
             Studenten sehen nun auch für alle Kurse die Namen der Teilnehmer.
             
-            Nach der Verteilung beginnt die Tauschperiode. Bis zum Beginn der ersten Vorlesungswoche können Studenten Tauschanfragen an andere Studenten schicken. Jede dieser Tauschanfragen wird automatisch an den Empirie-Praktikums-Leiter weitergeleitet.
+            Nach der Verteilung beginnt die Tauschperiode.
+            Bis zum Beginn der ersten Vorlesungswoche können Studenten Tauschanfragen an andere Studenten schicken.
+            Jede dieser Tauschanfragen wird automatisch an den Empirie-Praktikums-Leiter weitergeleitet.
             Ist eine Tauschanfrage erfolgreich, so tauschen die Studenten ihre Kurse.
     
     \section{Der Verteilungsalgorithmus}
-    Der Verteilungsalgorithmus verteilt alle Studenten auf die Kurse. Dabei ist es wichtig, dass die aufaddierte maximale Teilnehmeranzahl der Kurse größer ist als die Anzahl der zu verteilenden Studenten. Sollte dem nicht der Fall sein, so wird der Administrator informiert. Dieser hat dann die Möglichkeit die maximale Teilnehmeranzahl von Kursen zu erhöhen.
+    Der Verteilungsalgorithmus verteilt alle Studenten auf die Kurse.
+    Dabei ist es wichtig, dass die aufaddierte maximale Teilnehmeranzahl der Kurse größer ist als die Anzahl der zu verteilenden Studenten.
+    Sollte dem nicht der Fall sein, so wird der Administrator informiert.
+    Dieser hat dann die Möglichkeit die maximale Teilnehmeranzahl von Kursen zu erhöhen.
     Die Eingabe des Algorithmus sind die Gewichte der Präferenzen und (optional) die Auswahl eines Optimierungsalgorithmus.
     
-    Startet der Algorithmus, so versucht er, für jeden Studenten die größte, mögliche Präferenz zu den Kursen zu wählen. Dabei ist insbesonders wichtig, dass die Streuung der gewählten Präferenzen möglichst gering ist. Dies erfolgt beispielsweise durch eine Gewichtung der Präferenzen.\\
-    Weiterhin platziert der Algortihmus in jeden Kurs mindestens drei Studenten, damit der Kurs sinnvoll angeboten werden kann. Es werden aber nie mehr Teilnehmer einem Kurs zugeordnet als die maximale Teilnehmeranzahl des Kurses vorgibt.
+    Startet der Algorithmus, so versucht er, für jeden Studenten die größte, mögliche Präferenz zu den Kursen zu wählen.
+    Dabei ist insbesonders wichtig, dass die Streuung der gewählten Präferenzen möglichst gering ist.
+    Dies erfolgt beispielsweise durch eine Gewichtung der Präferenzen.\\
+    Weiterhin platziert der Algortihmus in jeden Kurs mindestens drei Studenten, damit der Kurs sinnvoll angeboten werden kann.
+    Es werden aber nie mehr Teilnehmer einem Kurs zugeordnet als die maximale Teilnehmeranzahl des Kurses vorgibt.
     
-    Hat der Algorithmus schließlich eine passende Zuordnung von Studenten zu Kursen gefunden, so wird der Administrator zuerst benachrichtigt. Dieser kann die Ergebnisse bearbeiten, Parameter des Algorithmus neu einstellen, Kurse aktivieren/deaktivieren und ihn erneut starten. Ist der Administrator zufrieden mit der Verteilung, so bestätigt dieser das Ergebnis. Anschließend wird an die Dozenten eine E-Mail mit ihren Teilnehmern geschickt, und Studenten erhalten eine E-Mail mit ihrem Kurs.
+    Hat der Algorithmus schließlich eine passende Zuordnung von Studenten zu Kursen gefunden, so wird der Administrator zuerst benachrichtigt.
+    Dieser kann die Ergebnisse bearbeiten, Parameter des Algorithmus neu einstellen, Kurse aktivieren/deaktivieren und ihn erneut starten.
+    Ist der Administrator zufrieden mit der Verteilung, so bestätigt dieser das Ergebnis.
+    Anschließend wird an die Dozenten eine E-Mail mit ihren Teilnehmern geschickt, und Studenten erhalten eine E-Mail mit ihrem Kurs.
 %    \item Nach Ende der Einschreibung, startet der Algortihmus automatisch. -> unsicher ob sie es so wollten durch die verschiedenen Einstell-Möglichkeiten. Sie hatten im Gespräch beides gesagt.
     
     \section{Technische Details}
