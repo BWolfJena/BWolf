@@ -30,8 +30,8 @@ and open the template in the editor.
               <li><a href="splash.html">course overview</a></li>
               <li class="active"><a href="courseSelect.html">select courses</a></li>
               <li><a href="responsible.html">Verantwortlicher</a></li>
+              <li><button class="btn btn-danger navbar-btn">Auswahl speichern</button></li>
             </ul>
-            <button class="btn btn-danger navbar-btn">Auswahl speichern</button>
         </div>
       </nav>
       <!-- END NAVIGATION -->
@@ -93,14 +93,29 @@ and open the template in the editor.
     </script>
     <!-- END DRAG & DROP -->
       
-      <!-- BEGIN FOOTER -->
+    <!-- BEGIN SWAP MEET-->
+      <section id="swap" class="form-group">
+          <h2>unzufrieden?</h2>
+          <p>Hier kannst du suchen, ob jemand mit dir tauschen will.</p>
+          <label for="sel1">Für welches Praktikum möchtest du einen Platz kriegen?</label>
+            <select class="form-control" id="sel1">
+              <option>Kurs A</option>
+              <option>Kurs B</option>
+              <option>Kurs C</option>
+              <option>Kurs D</option>
+            </select>
+          <button id="sendQuery" type="button" class="btn btn-primary">Anfrage versenden</button>
+      </section>
+    <!-- END SWAP MEET -->
+    
+    <!-- BEGIN FOOTER -->
       <div class="footer">
           <span>
             <a href="./impressum.html">Impressum</a> |
             <a href="http://www.psychologie.uni-jena.de/">Fakultät Psychologie</a>
-          </span><br>
-          <span>(c) LOREM IPSUM DOLR SIT AMET</span>
+          </span>
       </div>
-      <!-- END FOOTER -->
+    <!-- END FOOTER -->
+      
     </body>
 </html>
