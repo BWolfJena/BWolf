@@ -1,0 +1,92 @@
+/* 
+    Created on : 16.11.2017, 12:44:53
+    Author     : ingo
+*/
+
+// index.html
+body {
+  background-color: #DADADA;
+}
+body > .grid {
+  height: 100%;
+}
+.column {
+  max-width: 450px;
+}
+.centered_background {
+    z-index: -1;
+    width: 40%;
+    left: 30%;
+    max-height: 1000px;
+    position: absolute;
+}
+
+.info {
+    width: 80%;
+    margin: 0 auto;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: 0.5em 0 ;
+    
+}
+
+
+/* overview */
+h1.info {
+    border: none;
+}
+
+.bordered {
+    border: 1px solid black;
+    width: 15%;
+    margin: auto 2px;
+}
+
+.bla {
+    margin-top: 4em;
+    border-top: 1px solid black;
+    height: 100px;
+    background: #0d71bb;
+    position: absolute;
+    
+}
+
+.centered {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 5em; 
+    margin-bottom: 5em;
+}
+
+.speaker {
+    font-style: italic;
+}
+.title {
+    text-transform: uppercase;
+}
+
+/* enrollment */
+.zielzone {
+    width: 30%;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 2px;
+}
+.zielzone p {
+    float: right;
+    background: #aeaeae;
+}
+.zielzone p input {
+    float: right; 
+    width: 30%; 
+}
+
+#preffered {
+    height: 150px;
+    float: right;
+    border-left: 2px dashed gray;
+}
+#not-preffered {
+    height: 100px;
+    float: right;
+}
