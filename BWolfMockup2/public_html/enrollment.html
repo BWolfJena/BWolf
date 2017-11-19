@@ -1,0 +1,174 @@
+<html>
+    <head>
+  <!-- Standard Meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <!-- Site Properties -->
+  <title>overview</title>
+  <link rel="stylesheet" type="text/css" href="./components/reset.css">
+  <link rel="stylesheet" type="text/css" href="./components/site.css">
+
+  <link rel="stylesheet" type="text/css" href="./components/container.css">
+  <link rel="stylesheet" type="text/css" href="./components/grid.css">
+  <link rel="stylesheet" type="text/css" href="./components/header.css">
+  <link rel="stylesheet" type="text/css" href="./components/image.css">
+  <link rel="stylesheet" type="text/css" href="./components/menu.css">
+
+  <link rel="stylesheet" type="text/css" href="./components/divider.css">
+  <link rel="stylesheet" type="text/css" href="./components/segment.css">
+  <link rel="stylesheet" type="text/css" href="./components/form.css">
+  <link rel="stylesheet" type="text/css" href="./components/input.css">
+  <link rel="stylesheet" type="text/css" href="./components/button.css">
+  <link rel="stylesheet" type="text/css" href="./components/list.css">
+  <link rel="stylesheet" type="text/css" href="./components/message.css">
+  <link rel="stylesheet" type="text/css" href="./components/icon.css">
+
+  <link href="layout.css" rel="stylesheet" type="text/css"/>
+  
+  <script src="jquery.min.js"></script>
+  <script src="./components/form.js"></script>
+  <script src="./components/transition.js"></script>
+
+  <script src="login.js" type="text/javascript"></script>
+</head>
+
+
+    <body>
+        <!-- BEGIN menu -->
+          <div class="ui large secondary inverted pointing menu" style="background: #353535;">
+            <a class="toc item">
+              <i class="sidebar icon"></i>
+            </a>
+            <a class="active item">Kursübersicht</a>
+            <a class="item" href="enrollment.html">Einschreiben</a>
+            <a class="disabled item">Ergebnis sehen</a>
+            <a class="disabled item">tauschen</a>
+            <p class="item" style="color: red;">Einschreibungsende: 1. April 2018</p>
+            <div class="right item">
+              <a class="ui inverted button">Einstellungen</a>
+              <a class="ui inverted button" href="index.html">Log Out</a>
+            </div>
+          </div>
+        <!-- END menu -->
+        
+        <h1 class="info">Favoritenreihenfolge erstellen</h1>
+     
+        <p class="info">
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+        </p>
+        
+        <!-- BEGIN dragndrop -->
+        <div class="centered">
+            <main>
+              <h3>meine Präferenzen</h3>  
+	      <div id="preffered" class="zielzone">
+		
+	      </div>
+              <div id="not-preffered" class="zielzone">
+                  <p draggable="true" id="kursA">
+                      <a href="detail.html">Kurs A</a>
+                      <input type="text focus" placeholder="10"></input>
+                  </p>
+                  <p draggable="true" id="kursA">
+                      <a href="detail.html">Kurs B</a>
+                      <input type="text focus" placeholder="20"></input>
+                  </p>
+                  <p draggable="true" id="kursA">
+                      <a href="detail.html">Kurs C</a>
+                      <input type="text focus" placeholder="30"></input>
+                  </p>
+                  <p draggable="true" id="kursA">
+                      <a href="detail.html">Kurs D</a>
+                      <input type="text focus" placeholder="40"></input>
+                  </p>
+                  <p draggable="true" id="kursA">
+                      <a href="detail.html">Kurs E</a>
+                      <input type="text focus" placeholder="50"></input>
+                  </p>
+              </div>
+            </main>
+            <script>
+            function ziehen(ev) {
+                    ev.dataTransfer.setData('text', ev.target.id);
+            }
+
+            function ablegenErlauben(ev) {
+                    ev.preventDefault();
+            }
+
+            function ablegen(ev) {
+                    ev.preventDefault();
+                    var data = ev.dataTransfer.getData('text');
+                    var target = ev.target;
+                    while (" " + target.className + " ".indexOf(" zielzone ") == -1) target =
+                            target.parentNode;
+                    target.appendChild(document.getElementById(data));
+            }
+            window.addEventListener("load", function () {
+                    var elms = document.querySelectorAll(".zielzone");
+                    for (var i = 0; i < elms.length; i++) {
+                            var zielzone = elms[i];
+                            zielzone.addEventListener("drop", ablegen);
+                            zielzone.addEventListener("dragover", ablegenErlauben);
+                    };
+                    elms = document.querySelectorAll("[draggable=true]")
+                    for (var i = 0; i < elms.length; i++) {
+                            var draggable = elms[i];
+                            draggable.addEventListener("dragstart", ziehen);
+                    };
+            });
+
+    </script>
+        </div>
+        <!-- END dragndrop -->
+        
+        <div style="margin: 0 auto; width: 30%; margin-bottom: 3em;">
+            <button class="ui primary button">
+              meine Prioritätenliste ansehen
+            </button>
+        </div>
+        
+        <!-- BEGIN footer -->
+        <div class="ui inverted vertical footer segment">
+            <div class="ui center aligned container">
+              <div class="ui stackable inverted divided grid">
+                <div class="three wide column">
+                  <h4 class="ui inverted header">Group 1</h4>
+                  <div class="ui inverted link list">
+                    <a href="#" class="item">Link One</a>
+                    <a href="#" class="item">Link Two</a>
+                    <a href="#" class="item">Link Three</a>
+                    <a href="#" class="item">Link Four</a>
+                  </div>
+                </div>
+                <div class="three wide column">
+                  <h4 class="ui inverted header">Group 2</h4>
+                  <div class="ui inverted link list">
+                    <a href="#" class="item">Link One</a>
+                    <a href="#" class="item">Link Two</a>
+                    <a href="#" class="item">Link Three</a>
+                    <a href="#" class="item">Link Four</a>
+                  </div>
+                </div>
+                <div class="three wide column">
+                  <h4 class="ui inverted header">Group 3</h4>
+                  <div class="ui inverted link list">
+                    <a href="#" class="item">Link One</a>
+                    <a href="#" class="item">Link Two</a>
+                    <a href="#" class="item">Link Three</a>
+                    <a href="#" class="item">Link Four</a>
+                  </div>
+                </div>
+                <div class="seven wide column">
+                  <h4 class="ui inverted header">Footer Header</h4>
+                  <p>Extra space for a call to action inside the footer that could help re-engage users.</p>
+                </div>
+              </div>
+          </div>
+        </div>
+        <!-- END footer -->
+    
+        </body>
+</html>
