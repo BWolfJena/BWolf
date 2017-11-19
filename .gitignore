@@ -26,3 +26,4 @@ Homestead.json
 *.synctex.gz
 *.toc
 *.pdf
+/BWolfMockup2/nbproject/private/
