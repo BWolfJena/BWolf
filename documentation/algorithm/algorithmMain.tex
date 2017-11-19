@@ -1,0 +1,41 @@
+
+\documentclass[12pt,a4paper]{article}
+
+%\RequirePackage[margin=3.0cm,a4paper]{geometry}
+
+\usepackage{amsmath,amssymb,amstext}
+\usepackage{times}
+\usepackage[T1]{fontenc} 
+\usepackage[utf8]{inputenc} 
+\usepackage[ngerman]{babel}
+\usepackage{graphicx, xcolor, hyperref} 
+\usepackage{setspace} %mit /onehalfspacing wird im Textein 1,5 facher Zeilenabstand verwendet
+\usepackage{accents}
+\parindent 0pt
+
+
+\begin{document}
+    \onehalfspacing
+    
+    \begin{titlepage}
+        \centering
+        \includegraphics[width=0.4\textwidth]{../../LogoSoFar.png}\par\vspace{1cm}
+        {\scshape \LARGE BWolf \\ \Large Eine webbasierte Plattform zur
+            Einschreibung und Verwaltung des
+            Empiriepraktikums an der FSU Jena\par}
+        \vspace{1.5cm}
+        {\huge\bfseries Überlegungen zum Algorithmus\par}
+        \vspace{1.5cm}
+        {\large\itshape Christoph Keiner, Matthias Reuse, Ingo Schäfer, Christoph Staudt\par}
+        \vspace{1.0cm}
+        {\large \today\par}
+    \end{titlepage}
+
+    \pagenumbering{Roman}
+    \tableofcontents 
+    \clearpage
+    \pagenumbering{arabic}
+    
+    \include{./algorithm}
+    
+\end{document}
