@@ -1,0 +1,48 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:    
+    name:
+        label: Name
+    title: 
+        label: Titel  
+    description:
+        label: Beschreibung
+        type: richeditor
+    literature:
+        label: Literatur
+        type: richeditor
+    lecturer:
+        label: Dozent
+        type: relation
+        nameFrom: full_name
+    time:
+        label: Zeit
+        span: left
+    room:
+        label: Ort
+        span: right
+    module:
+        label: Modul
+        type: relation
+        nameFrom: name
+        span: left
+    chair:
+        label: Lehrstuhl
+        type: relation
+        nameFrom: name
+        span: right        
+    max_participants:
+        label: max. Teiln.
+        type: radio
+        options:
+            5: "5"
+            10: "10"
+        span: left 
+    min_participants:
+        label: Min. Teiln.
+        type: dropdown
+        span: right
+        dependsOn: max_participants
+       

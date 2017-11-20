@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Module
+
+# Model Form Field configuration
+form: $/bwolfjena/core/models/module/fields.yaml
+
+# Model Class name
+modelClass: BWolfJena\Core\Models\Module
+
+# Default redirect location
+defaultRedirect: bwolfjena/core/modules
+
+# Create page
+create:
+    title: Create Module
+    redirect: bwolfjena/core/modules/update/:id
+    redirectClose: bwolfjena/core/modules
+
+# Update page
+update:
+    title: Edit Module
+    redirect: bwolfjena/core/modules
+    redirectClose: bwolfjena/core/modules
+
+# Preview page
+preview:
+    title: Preview Module
