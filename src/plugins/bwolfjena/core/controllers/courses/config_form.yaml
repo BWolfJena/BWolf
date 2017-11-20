@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Course
+
+# Model Form Field configuration
+form: $/bwolfjena/core/models/course/fields.yaml
+
+# Model Class name
+modelClass: BWolfJena\Core\Models\Course
+
+# Default redirect location
+defaultRedirect: bwolfjena/core/courses
+
+# Create page
+create:
+    title: Create Course
+    redirect: bwolfjena/core/courses/update/:id
+    redirectClose: bwolfjena/core/courses
+
+# Update page
+update:
+    title: Edit Course
+    redirect: bwolfjena/core/courses
+    redirectClose: bwolfjena/core/courses
+
+# Preview page
+preview:
+    title: Preview Course

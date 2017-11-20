@@ -1,0 +1,27 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name: 
+        label: Name
+    
+    description:
+        label: Beschreibung
+        type: richeditor
+        
+    start_date:
+        label: Startet am 
+        type: datepicker
+        
+    end_date:
+        label: Endet am
+        type: datepicker
+        
+    enrollment_start:
+        label: Einschreibungsstart
+        type: datepicker
+        
+    enrollment_end:
+        label: Einschreibungsende
+        type: datepicker
