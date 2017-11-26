@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="ui two stackable cards">
+        {% for course in __SELF__.courses() %}
+        <div class="card">
+            <div class="extra content">
+                <div class="header">
+                    {{ course.name }}
+                </div>
+                <div class="meta">
+                    {{ course.title }}
+                </div>
+                <div class="description">
+                    <p>
+                    Zeit: {{ course.time  }}<br>
+                    Ort: {{ course.room  }}<br>
+                    Dozent: {{ course.lecturer.full_name }}
+                    </p>
+                    <p>{{ str_words(course.description|striptags,30, ' ...') }}</p>
+                </div>
+            </div>
+            <div class="extra content">
+                <div class="right floated">
+                <a class="ui basic button" href="/kurs/1">Details </a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
