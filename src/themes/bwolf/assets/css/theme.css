@@ -6,6 +6,10 @@
   display: none;
 }
 
+.ui.inverted.segment, .ui.primary.inverted.segment {
+  background-color: #052e5d;
+}
+
 .top-menu.segment {
 }
 .top-menu .logo.item img {
