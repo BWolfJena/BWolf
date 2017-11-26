@@ -134,28 +134,29 @@
     Dafür werden nur E-Mail Adressen der FSU Jena nutzbar sein. Dies bedeutet, dass E-Mails auf ''@uni-jena.de''enden müssen.
     Man kann sich zu jeder Zeit ein- und ausloggen.\newline
     
-    Bei der Wahl der Präferenzen darf keine Präferenz doppelt belegt werden, d.h. jede Präferenz hat einen eindeutigen Kurs. \newline %egal option?
-    
-    Der Verteilungsalgorithmus kann mit verschiedenen Optionen angesteuert werden. Optionen können u.a. die Gewichtung der Varianz, oder welche Kurse belegt werden können, sein. Weiterhin ist der Verteilungsalgorithmus innerhalb von 24 Stunden fertig. \newline
-    
-    
-    \begin{itemize}
-    \item Man kann sich zu einem beliebigen Zeitpunkt einloggen und ausloggen.
-    \item Der Verteilungsalgorithmus braucht maximal 24 Stunden.
-    \item Die Website muss auch auf mobilen Endgeräten funktionieren.
-    \item Sollte ein Browser älter als IE11 sein, so wird den Nutzer angezeigt, dass sie ihren Browser updaten sollen.
-    \item Die Website wird auf einer docker-compose Umgebung aufgesetzt.
-    \item Die Website wird mit OctoberCMS mit Laravel 5.5 umgesetzt.
-    \item Der Webserver wird mit Nginx umgesetzt.
-    \item Die Datenbank wird mit MySQL umgesetzt.
-    \item Der Cache-Server wird mit Redis umgesetzt.
-    \item Tests erfolgen für die wesentlichsten Bestandteile, insbesondere für den Algorithmus.
-    \item Kursinformationen sind öffentlich einsehbar.
-    \item Kurse können von nicht-Studenten insbesondere nach folgenden Kriterien gefiltert werden: 
+    Kurse können öffentlich eingesehen werden.
+    Kurse können im Backend eingesehen werden, d.h. Dozenten und Administratoren können dies tun. Zum Filtern können insbesonders folgende Kriterien genutzt werden:
         \begin{itemize}
         \item Lehrstuhl
         \item Finanzierung/Lehrauftrag
         \item Erstes Mal Empiriepraktikum?
         \end{itemize}
-    \end{itemize}
+    
+    Bei der Wahl der Präferenzen darf keine Präferenz doppelt belegt werden, d.h. jede Präferenz hat einen eindeutigen Kurs. \newline %egal option?
+    
+    Der Verteilungsalgorithmus kann mit verschiedenen Optionen angesteuert werden. Optionen können u.a. die Gewichtung der Varianz, oder welche Kurse belegt werden können, sein.
+    Weiterhin berechnet der Verteilungsalgorithmus innerhalb von 24 Stunden die Verteilung aller Studenten. \newline
+    
+    Die Website wird auf einer docker-compose Umgebung aufgesetzt.
+    Im Backend wird OctoberCMS mit Laravel 5.5 genutzt.
+    Dafür darf kein Browser, der älter als IE11 ist, genutzt werden.
+    Sollte ein Nutzer mit einem älteren Browser die Seite besuchen, so wird ihm angezeigt, dass er seinen Browser aktualiseren sollte.
+    Weiterhin muss die Website auf mobilen Endgeräten funktionieren.\newline
+    
+    Der Webserver nutzt Nginx.
+    Die Datenbank nutzt MySQL.
+    Der Cache-Server wird mit Redis umgesetzt. \newline
+    
+    Tests werden für die wesentlichtsen Bestandteile, insbesonders für den Algorithmus genutzt werden.
+
 \end{document}
