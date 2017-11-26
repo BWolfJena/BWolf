@@ -5,5 +5,10 @@
 \BOOKMARK [2][-]{subsection.1.2.2}{Verschiedene Sichten im \334berblick}{section.1.2}% 5
 \BOOKMARK [1][-]{section.1.3}{Der Verteilungsalgorithmus}{chapter.1}% 6
 \BOOKMARK [1][-]{section.1.4}{Technische Details}{chapter.1}% 7
-\BOOKMARK [0][-]{chapter.2}{\334berlegungen zum Algorithmus}{}% 8
-\BOOKMARK [1][-]{section.2.1}{\334berlegungen zum Algorithmus}{chapter.2}% 9
+\BOOKMARK [0][-]{chapter.2}{Design}{}% 8
+\BOOKMARK [1][-]{section.2.1}{Frontend}{chapter.2}% 9
+\BOOKMARK [1][-]{section.2.2}{Backend}{chapter.2}% 10
+\BOOKMARK [2][-]{subsection.2.2.1}{Administratoren}{section.2.2}% 11
+\BOOKMARK [2][-]{subsection.2.2.2}{Dozenten}{section.2.2}% 12
+\BOOKMARK [0][-]{chapter.3}{\334berlegungen zum Algorithmus}{}% 13
+\BOOKMARK [1][-]{section.3.1}{\334berlegungen zum Algorithmus}{chapter.3}% 14
