@@ -1,0 +1,13 @@
+\select@language {ngerman}
+\contentsline {chapter}{\numberline {1}Anforderungsanalyse}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Allgemeine Problemstellung}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}Genaue Anforderungen an das System}{1}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1}Ablauf eines Praktikumsmoduls}{2}{subsection.1.2.1}
+\contentsline {subsection}{\numberline {1.2.2}Verschiedene Sichten im \IeC {\"U}berblick}{2}{subsection.1.2.2}
+\contentsline {subsubsection}{Sicht der Administratoren}{2}{section*.2}
+\contentsline {subsubsection}{Sicht der Dozenten}{2}{section*.3}
+\contentsline {subsubsection}{Sicht der Studenten}{3}{section*.4}
+\contentsline {section}{\numberline {1.3}Der Verteilungsalgorithmus}{4}{section.1.3}
+\contentsline {section}{\numberline {1.4}Technische Details}{5}{section.1.4}
+\contentsline {chapter}{\numberline {2}\IeC {\"U}berlegungen zum Algorithmus}{7}{chapter.2}
+\contentsline {section}{\numberline {2.1}\IeC {\"U}berlegungen zum Algorithmus}{7}{section.2.1}

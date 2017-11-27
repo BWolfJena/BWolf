@@ -1,0 +1,31 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: ID
+        searchable: true
+    name:
+        label: Name
+        searchable: true
+    backend_users_id:
+        label: Dozent
+        relation: lecturer
+    time:
+        label: Zeit
+    room:
+        label: Ort
+    min_participants:
+        label: Min. Teiln.
+    max_participants:
+        label: max. Teiln.        
+    module_id:
+        label: Modul
+        relation: module
+        valueFrom: name
+    chair_id:
+        label: Lehrstuhl
+        relation: chair
+        valueFrom: name
+        searchable: true

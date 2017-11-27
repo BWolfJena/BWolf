@@ -1,0 +1,12 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name: 
+        label: Name
+        
+    owner:
+        label: Inhaber
+        type: relation
+        nameFrom: full_name

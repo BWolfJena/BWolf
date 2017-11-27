@@ -1,0 +1,25 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: Id
+        searchable: true
+    
+    name: 
+        label: Name
+        searchable: true
+        
+    start_date:
+        label: Startet am 
+        
+    end_date:
+        label: Endet am
+        
+    enrollment_start:
+        label: Einschreibungsstart
+        
+    enrollment_end:
+        label: Einschreibungsende
+        

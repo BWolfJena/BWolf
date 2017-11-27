@@ -1,0 +1,25 @@
+\section{Überlegungen zum Algorithmus}
+        Die Grundlegende Idee der Zielfunktion hat die Form:
+            $$ \max ~\text{Summe der Prioritäten} - \text{Gewicht} \cdot \text{Varianz} ~~~.$$
+        Genauer ausformuliert ergibt sich:
+            $$ \max 
+                \sum_{i=1}^{n} \sum_{j=1}^{m} c(i,j)x_{ij} 
+                - \frac{\beta}{n} \sum_{i=1}^{n}
+                    \left[\left(\sum_{i=1}^{m} c(i,j)x_{ij}\right) - \frac{1}{n} \sum_{i=1}^{n} \sum_{j=1}^{m} c(i,j)x_{ij}\right] ~~~,$$
+        wobei gilt:\\
+            \begin{tabular}{l c l}
+                $n$ & - & Anzahl der Studenten \\
+                $m$ & - & Anzahl der Kurse\\
+                $ c(i,j) $ & - & Priorität von Student $ i $ für Kurs $ j $\\
+                $ \beta $ & - & Gewichtung der Varianz\\
+                $t_{\min}(j)$ & - & Minimale Anzahl der Teilnehmer für Kurs $ j $\\
+                $t_{\max}(j)$ & - & Maximale Anzahl der Teilnehmer für Kurs $ j $ ~~~.\\
+            \end{tabular}\\
+        
+        Zusätzlich sind drei Nebenbedingungen notwendig, um das Problem angemessen darzustellen.
+        Zum einen sollen die $ x_{ij} $ nur die Werte 0 oder 1 annehmen können:
+            $$ x_{ij} \in \{0,1\} ~~~.$$
+        Des Weiteren soll jeder Student nur einem Kurs zugeteilt werden:
+            $$ \forall {i \in \{1,..,n\}}: \sum_{j=1}^{m} x_{ij} = 1 ~~~.$$
+        Zuletzt ist die Teilnehmerzahl für die Kurse begrenzt:
+            $$ \forall {j \in \{1,..,m\}}: t_{\min}(j) \leq \sum_{i=1}^{n} x_{ij} \leq t_{\max}(j) ~~~.$$
