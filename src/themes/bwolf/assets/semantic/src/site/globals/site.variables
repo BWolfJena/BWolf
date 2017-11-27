@@ -1,3 +1,6 @@
 /*******************************
      User Global Variables
 *******************************/
+
+@primaryColor   : #052e5d;
+@secondaryColor : #a29263;

@@ -50,10 +50,8 @@ class Plugin extends PluginBase
      */
     public function registerComponents()
     {
-        return []; // Remove this line to activate
-
         return [
-            'BWolfJena\Core\Components\MyComponent' => 'myComponent',
+            '\BWolfJena\Core\Components\CourseDetails' => 'courseDetails',
         ];
     }
 
@@ -71,6 +69,13 @@ class Plugin extends PluginBase
                 'tab' => 'Core',
                 'label' => 'Some permission'
             ],
+        ];
+    }
+
+    public function registerPageSnippets()
+    {
+        return [
+            '\BWolfJena\Core\Components\CourseList' => 'courseList',
         ];
     }
 

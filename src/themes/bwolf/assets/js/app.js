@@ -6,7 +6,7 @@ $(document)
 .ready(function() {
 
   // fix menu when passed
-  $('.masthead')
+  $('.top-menu')
 	.visibility({
 	  once: false,
 	  onBottomPassed: function() {
