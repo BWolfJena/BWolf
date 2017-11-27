@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Chair
+
+# Model Form Field configuration
+form: $/bwolfjena/core/models/chair/fields.yaml
+
+# Model Class name
+modelClass: BWolfJena\Core\Models\Chair
+
+# Default redirect location
+defaultRedirect: bwolfjena/core/chairs
+
+# Create page
+create:
+    title: Create Chair
+    redirect: bwolfjena/core/chairs/update/:id
+    redirectClose: bwolfjena/core/chairs
+
+# Update page
+update:
+    title: Edit Chair
+    redirect: bwolfjena/core/chairs
+    redirectClose: bwolfjena/core/chairs
+
+# Preview page
+preview:
+    title: Preview Chair

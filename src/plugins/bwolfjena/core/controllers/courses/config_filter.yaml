@@ -1,0 +1,7 @@
+scopes:
+    chair_id:
+        label: Lehrstuhl
+        type: group
+        conditions: chair_id in (:filtered)
+        modelClass: BWolfJena\Core\Models\Chair
+        nameFrom: name

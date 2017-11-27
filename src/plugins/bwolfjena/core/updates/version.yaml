@@ -1,0 +1,6 @@
+1.0.1: Create Plugin
+1.0.2:
+    - "Implement basic Models: Modules, Courses and Chairs"
+    - create_modules_table.php
+    - create_chairs_table.php
+    - create_courses_table.php

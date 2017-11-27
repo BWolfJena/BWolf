@@ -1,0 +1,2 @@
+\select@language {ngerman}
+\contentsline {section}{\numberline {1}\IeC {\"U}berlegungen zum Algorithmus}{1}{section.1}
