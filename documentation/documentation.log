@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.11.26)  26 NOV 2017 12:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.11.26)  27 NOV 2017 11:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -852,26 +852,63 @@ Package babel Info: Redefining ngerman shorthand "|
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 3.
 
+<./design/MockUpsFrontend/login.png, id=120, 796.47563pt x 597.73312pt>
+File: ./design/MockUpsFrontend/login.png Graphic file (type png)
 
-LaTeX Warning: Reference `mockupLoginFrontend' on page 7 undefined on input lin
-e 6.
+<use ./design/MockUpsFrontend/login.png>
+Package pdftex.def Info: ./design/MockUpsFrontend/login.png used on input line 
+8.
+(pdftex.def)             Requested size: 272.99881pt x 204.87741pt.
+
+<./design/MockUpsFrontend/kursuebersicht.png, id=122, 796.47563pt x 597.73312pt
+>
+File: ./design/MockUpsFrontend/kursuebersicht.png Graphic file (type png)
+ <use ./design/MockUpsFrontend/kursuebersicht.png>
+Package pdftex.def Info: ./design/MockUpsFrontend/kursuebersicht.png used on in
+put line 16.
+(pdftex.def)             Requested size: 272.99881pt x 204.87741pt.
 
 
-LaTeX Warning: Reference `mockupCoursesFrontend' on page 7 undefined on input l
-ine 8.
+LaTeX Warning: Reference `mockupDetailsFrontEnd' on page 7 undefined on input l
+ine 30.
 
+<./design/MockUpsFrontend/kursdetails.png, id=125, 796.47563pt x 597.73312pt>
+File: ./design/MockUpsFrontend/kursdetails.png Graphic file (type png)
+
+<use ./design/MockUpsFrontend/kursdetails.png>
+Package pdftex.def Info: ./design/MockUpsFrontend/kursdetails.png used on input
+ line 33.
+(pdftex.def)             Requested size: 272.99881pt x 204.87741pt.
+
+<./design/MockUpsFrontend/einschreibung.png, id=126, 796.47563pt x 597.73312pt>
+File: ./design/MockUpsFrontend/einschreibung.png Graphic file (type png)
+<use ./design/MockUpsFrontend/einschreibung.png>
+Package pdftex.def Info: ./design/MockUpsFrontend/einschreibung.png used on inp
+ut line 40.
+(pdftex.def)             Requested size: 272.99881pt x 204.87741pt.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 11.
+(babel)             in language  on input line 44.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 11.
+(babel)             in language  on input line 44.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 12.
+(babel)             in language  on input line 44.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 12.
+(babel)             in language  on input line 44.
+ [7
+
+]
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 13.
+(babel)             in language  on input line 53.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 13.
+(babel)             in language  on input line 53.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 54.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 54.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 55.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 55.
 )
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 43.
@@ -881,9 +918,26 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 43.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 43.
- [7
-
-]
+ [8 <./design/MockUpsFrontend/login.png>]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 43.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 43.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 43.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 43.
+ [9 <./design/MockUpsFrontend/kursuebersicht.png>]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 43.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 43.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 43.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 43.
+ [10 <./design/MockUpsFrontend/kursdetails.png> <./design/MockUpsFrontend/einsc
+hreibung.png>]
 Kapitel 3.
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 43.
@@ -907,7 +961,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 23.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 23.
-[8
+[11
 
 ])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 48.
@@ -919,7 +973,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 48.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 48.
- [9]
+ [12]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 48.
  (./documentation.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 48.
@@ -933,11 +987,11 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 48.
  ) 
 Here is how much of TeX's memory you used:
- 7525 strings out of 493029
- 103099 string characters out of 6136233
- 198163 words of memory out of 5000000
- 10893 multiletter control sequences out of 15000+600000
- 51855 words of font info for 58 fonts, out of 8000000 for 9000
+ 7559 strings out of 493029
+ 104062 string characters out of 6136233
+ 199405 words of memory out of 5000000
+ 10914 multiletter control sequences out of 15000+600000
+ 54703 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  29i,9n,35p,332b,400s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
@@ -949,10 +1003,10 @@ ublic/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
 sfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8
 a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on documentation.pdf (11 pages, 177549 bytes).
+Output written on documentation.pdf (14 pages, 259661 bytes).
 PDF statistics:
- 177 PDF objects out of 1000 (max. 8388607)
- 151 compressed objects within 2 object streams
- 29 named destinations out of 1000 (max. 500000)
- 118 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 207 PDF objects out of 1000 (max. 8388607)
+ 170 compressed objects within 2 object streams
+ 36 named destinations out of 1000 (max. 500000)
+ 138 words of extra memory for PDF output out of 10000 (max. 10000000)
 
