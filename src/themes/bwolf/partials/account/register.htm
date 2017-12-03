@@ -1,0 +1,27 @@
+{% if canRegister %}
+    <form data-request="onRegister" class="ui form">
+        <div class="field">
+            <label for="registerEmail">E-Mail</label>
+            <input
+                    name="email"
+                    type="email"
+                    class="form-control"
+                    id="registerEmail"
+                    placeholder="max.mustermann@uni-jena.de" />
+        </div>
+
+        <div class="field">
+            <label for="registerPassword">Passwort</label>
+            <input
+                    name="password"
+                    type="password"
+                    class="form-control"
+                    id="registerPassword"
+                    placeholder="" />
+        </div>
+
+        <button type="submit" class="ui button">Register</button>
+    </form>
+{% else %}
+    <!-- Registration is disabled. -->
+{% endif %}

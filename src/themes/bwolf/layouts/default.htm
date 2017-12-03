@@ -39,7 +39,6 @@ code = "top-menu"
 
     </head>
 	<body>
-
 	    <!-- HEADER -->
         {% partial 'site/header' %}
 
@@ -58,9 +57,9 @@ code = "top-menu"
                                 <a href="{{ item.url }}" class="item {% if item.isActive  %}active{% endif %}">{{ item.title }}</a>
                             {% endfor %}
                         {% endif %}                        
-                        <div class="right item">
-                            <a class="ui inverted button">Anmelden</a>
-                            <a class="ui inverted button">Registrieren</a>
+                        <div class="right item large screen only">
+                            <a href="/anmelden" class="ui inverted button {% if this.page.id == 'anmelden'  %}active{% endif %}">Anmelden</a>
+                            <a href="/registrieren" class="ui inverted button {% if this.page.id == 'registrieren'  %}active{% endif %}">Registrieren</a>
                         </div>
                     </div>
                 </div>
