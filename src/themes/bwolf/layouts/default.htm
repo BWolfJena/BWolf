@@ -6,6 +6,9 @@ default = 0
 
 [staticMenu]
 code = "top-menu"
+
+[session]
+security = "all"
 ==
 <!DOCTYPE html>
 <html>
@@ -58,8 +61,12 @@ code = "top-menu"
                             {% endfor %}
                         {% endif %}                        
                         <div class="right item large screen only">
-                            <a href="/anmelden" class="ui inverted button {% if this.page.id == 'anmelden'  %}active{% endif %}">Anmelden</a>
-                            <a href="/registrieren" class="ui inverted button {% if this.page.id == 'registrieren'  %}active{% endif %}">Registrieren</a>
+                            {% if user %}
+                                <a class="ui inverted button" data-request="onLogout">Abmelden</a>
+                            {% else %}
+                                <a href="/anmelden" class="ui inverted button {% if this.page.id == 'anmelden'  %}active{% endif %}">Anmelden</a>
+                                <a href="/registrieren" class="ui inverted button {% if this.page.id == 'registrieren'  %}active{% endif %}">Registrieren</a>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
