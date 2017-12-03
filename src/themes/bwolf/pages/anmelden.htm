@@ -11,6 +11,7 @@ redirect="kursuebersicht"
 function onSignin()
 {
     try {
+        $_POST['login'] = str_finish($_POST['login'], '@uni-jena.de');
         return $this->account->onSignin();
     }
     catch (Exception $ex) {
