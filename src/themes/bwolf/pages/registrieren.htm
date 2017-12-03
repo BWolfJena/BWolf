@@ -1,0 +1,37 @@
+title = "Registrieren"
+url = "/registrieren/:code?"
+layout = "default"
+is_hidden = 0
+
+[account]
+paramCode = "code"
+forceSecure = 0
+==
+function onRegister()
+{
+    try {
+        $_POST['email'] = str_finish($_POST['email'], '@uni-jena.de');
+        return $this->account->onRegister();
+    }
+    catch (Exception $ex) {
+        Log::error($ex);
+        Session::flush();
+        Flash::error($ex->getMessage());
+        return [
+            '#flash-messages-container' => $this->renderPartial('flash-messages'),
+        ];
+    }
+}
+==
+<div class="ui two column centered grid stackable">
+    <div class="column">
+        <div id="flash-messages-container">
+            {% partial 'flash-messages' %}
+        </div>
+        {% if not user %}
+            <h3>Registrieren</h3>
+            {% partial account ~ '::register' %}
+        {% else %}
+        {% endif %}
+    </div>
+</div>

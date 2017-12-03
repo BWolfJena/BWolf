@@ -2,7 +2,10 @@ static-pages:
     index: {  }
     kursuebersicht: {  }
     archiv: {  }
+<<<<<<< HEAD
     einschreiben: {  }
     auswertung: {  }
     tauschen: {  }
+=======
     impressum: {  }
+>>>>>>> e72381314a74466366220bcc79beda8f2d511a0e

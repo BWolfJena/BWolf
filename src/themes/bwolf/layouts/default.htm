@@ -6,6 +6,9 @@ default = 0
 
 [staticMenu]
 code = "top-menu"
+
+[session]
+security = "all"
 ==
 <!DOCTYPE html>
 <html>
@@ -44,7 +47,6 @@ code = "top-menu"
 
     </head>
 	<body>
-
 	    <!-- HEADER -->
         {% partial 'site/header' %}
 
@@ -64,9 +66,13 @@ code = "top-menu"
                             {% endfor %}
                             <p class="item" style="color: red;">Einschreibungsende: {{ "now"|date("d.m.Y") }}</p>
                         {% endif %}                        
-                        <div class="right item">
-                            <a class="ui inverted button">Anmelden</a>
-                            <a class="ui inverted button">Registrieren</a>
+                        <div class="right item large screen only">
+                            {% if user %}
+                                <a class="ui inverted button" data-request="onLogout">Abmelden</a>
+                            {% else %}
+                                <a href="/anmelden" class="ui inverted button {% if this.page.id == 'anmelden'  %}active{% endif %}">Anmelden</a>
+                                <a href="/registrieren" class="ui inverted button {% if this.page.id == 'registrieren'  %}active{% endif %}">Registrieren</a>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
@@ -95,7 +101,8 @@ code = "top-menu"
         <script src="{{ [            
             'assets/semantic/dist/semantic.js',
             'assets/js/system.js',
-            'assets/js/app.js'
+            'assets/js/app.js',
+            'assets/js/sortable.js'
         ]|theme }}"></script>
         {% put scripts %}
 	{% endput %}
