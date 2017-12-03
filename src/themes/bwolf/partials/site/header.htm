@@ -10,10 +10,10 @@
         {% endif %}
         <div class="right menu">
             <div class="item">
-                <a class="ui button">Log in</a>
+                <a href="/anmelden" class="ui button {% if this.page.id == 'anmelden'  %}active{% endif %}">Anmelden</a>
             </div>
             <div class="item">
-                <a class="ui primary button">Sign Up</a>
+                <a href="/registrieren {% if this.page.id == 'registrieren'  %}active{% endif %}" class="ui primary button">Registrieren</a>
             </div>
         </div>
     </div>
@@ -26,6 +26,6 @@
             <a href="{{ item.url }}" class="item {% if item.isActive  %}active{% endif %}">{{ item.title }}</a>
         {% endfor %}
     {% endif %}
-    <a class="item">Login</a>
-    <a class="item">Signup</a>
+    <a href="/anmelden" class="item {% if this.page.id == 'anmelden'  %}active{% endif %}">Anmelden</a>
+    <a href="/registrieren" class="item {% if this.page.id == 'registrieren'  %}active{% endif %}">Registrieren</a>
 </div>
