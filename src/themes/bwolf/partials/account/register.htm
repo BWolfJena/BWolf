@@ -2,12 +2,17 @@
     <form data-request="onRegister" class="ui form">
         <div class="field">
             <label for="registerEmail">E-Mail</label>
-            <input
-                    name="email"
-                    type="email"
-                    class="form-control"
-                    id="registerEmail"
-                    placeholder="max.mustermann@uni-jena.de" />
+            <div class="ui right labeled input">
+                <input
+                        name="email"
+                        type="text"
+                        class="form-control"
+                        id="registerEmail"
+                        placeholder="max.mustermann" />
+                <div class="ui label">
+                    @uni-jena.de
+                </div>
+            </div>
         </div>
 
         <div class="field">
