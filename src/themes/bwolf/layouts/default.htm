@@ -62,6 +62,7 @@ code = "top-menu"
                             {% for item in staticMenu.menuItems %}
                                 <a href="{{ item.url }}" class="item {% if item.isActive  %}active{% endif %}">{{ item.title }}</a>
                             {% endfor %}
+                            <p class="item" style="color: red;">Einschreibungsende: {{ "now"|date("d.m.Y") }}</p>
                         {% endif %}                        
                         <div class="right item">
                             <a class="ui inverted button">Anmelden</a>
