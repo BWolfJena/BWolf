@@ -1,12 +1,6 @@
-[viewBag]
-==
-==
-function onStart() {
-    $this['deadline'] = BWolfJena\Core\Models\Module::find($id);
-}
-==
-
 <!-- Following Menu -->
+{% set deadline = '10.12.2017' %}
+
 <div class="ui large top fixed hidden menu">
     <div class="ui container">
         {% if staticMenu.menuItems %}

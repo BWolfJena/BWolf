@@ -1,0 +1,14 @@
+<div class="dragndrop">
+    <h3>{% trans %} meine Präferenzen {% trans %}</h3>
+      <div id="preffered" class="zielzone"></div>
+      <div id="not-preffered" class="zielzone">
+        {% if courses is defined %}
+          {% for course in courses %}
+            <p draggable="true" id="{{ course.id }}">
+              <a href="{{ course.link }}">{{ course.name }}</a>
+              <input type="text focus" placeholder="10">
+            </p>
+          {% endfor %}
+        {% endif %}
+      </div>
+</div>

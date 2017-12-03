@@ -1,0 +1,38 @@
+title = "Anmelden"
+url = "/anmelden/:code?"
+layout = "default"
+is_hidden = 0
+
+[account]
+paramCode = "code"
+forceSecure = 0
+redirect="kursuebersicht"
+==
+function onSignin()
+{
+    try {
+        $_POST['login'] = str_finish($_POST['login'], '@uni-jena.de');
+        return $this->account->onSignin();
+    }
+    catch (Exception $ex) {
+        Log::error($ex);
+        Session::flush();
+        Flash::error($ex->getMessage());
+        return [
+            '#flash-messages-container' => $this->renderPartial('flash-messages'),
+        ];
+    }
+}
+==
+<div class="ui two column centered grid stackable">
+    <div class="column">
+        <div id="flash-messages-container">
+            {% partial 'flash-messages' %}
+        </div>
+        {% if not user %}
+            <h3>Anmelden</h3>
+            {% partial account ~ '::signin' %}
+        {% else %}
+        {% endif %}
+    </div>
+</div>
