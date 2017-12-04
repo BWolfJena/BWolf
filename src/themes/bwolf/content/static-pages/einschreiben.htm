@@ -7,11 +7,12 @@ navigation_hidden = 0
 url = "/einschreiben"
 layout = "default"
 
-[demoTodo]
-desc = "Hallo"
-items =  \BWolfJena\Core\Models\Course::find;
-
+[pageInfo]
+info = this.page.description
 ==
 
 <h1>Favoritenreihenfolge erstellen</h1>
-<figure data-component="\BWolfJena\Core\Components\Dragndrop" data-snippet="drag-drop">&nbsp;</figure>
+
+{% component 'info' %}
+
+<figure data-component="\BWolfJena\Core\Components\CourseList" data-snippet="drag-drop">&nbsp;</figure>
