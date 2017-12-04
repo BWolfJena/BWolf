@@ -9,6 +9,12 @@ code = "top-menu"
 
 [session]
 security = "all"
+
+==
+function onStart()
+{
+    $this['deadline'] = BWolfJena\Core\Models\Module::find(1)['enrollment_end'];
+}
 ==
 <!DOCTYPE html>
 <html>
@@ -31,18 +37,18 @@ security = "all"
         <meta name="robots" content="INDEX,FOLLOW">
         <meta name="revisit" content="7 Days">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <link rel="icon" type="image/x-icon" href="{{ 'assets/images/favicon.ico'|theme }}"/>                
+        <link rel="icon" type="image/x-icon" href="{{ 'assets/images/favicon.ico'|theme }}"/>
 		<!-- CSS -->
         <link href="{{ [
             'assets/semantic/dist/semantic.css',
             'assets/css/system.css',
             'assets/css/theme.css'
         ]|theme }}" rel="stylesheet">
-        
+
         <link href="//rubaxa.github.io/Ply/ply.css" rel="stylesheet" type="text/css"/>
-	    <link href="//fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet" type="text/css"/>
-	    <link href="st/app.css" rel="stylesheet" type="text/css"/>
-	    
+	      <link href="//fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet" type="text/css"/>
+	      <link href="st/app.css" rel="stylesheet" type="text/css"/>
+
         {% styles %}
 
     </head>
@@ -64,8 +70,8 @@ security = "all"
                             {% for item in staticMenu.menuItems %}
                                 <a href="{{ item.url }}" class="item {% if item.isActive  %}active{% endif %}">{{ item.title }}</a>
                             {% endfor %}
-                            <p class="item" style="color: red;">Einschreibungsende: {{ "now"|date("d.m.Y") }}</p>
-                        {% endif %}                        
+                            <p class="item" style="color: red;">Einschreibungsende: {{ deadline|date("d.m.Y") }}</p>
+                        {% endif %}
                         <div class="right item large screen only">
                             {% if user %}
                                 <a class="ui inverted button" data-request="onLogout">Abmelden</a>
@@ -80,6 +86,7 @@ security = "all"
 
             <!-- Page Contents -->
             <div class="ui very padded container">
+              <p>{{ modul }}
                     {% page %}
             </div>
 
@@ -98,7 +105,7 @@ security = "all"
   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
   crossorigin="anonymous"></script>
         <!-- SCRIPTS -->
-        <script src="{{ [            
+        <script src="{{ [
             'assets/semantic/dist/semantic.js',
             'assets/js/system.js',
             'assets/js/app.js',

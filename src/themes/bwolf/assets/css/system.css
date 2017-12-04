@@ -7,3 +7,34 @@
   min-height: 100vh;
   flex-direction: column;
 }
+
+/* einschreiben.htm */
+.dragndrop {
+  height: 320px;
+
+  margin: 1em 0;
+  border: 2px solid black;
+}
+
+.zielzone {
+    width: 35%;
+    margin-top: 10px;
+
+    background: gray;
+}
+
+.zielzone p {
+    background: #aeaeae;
+}
+.zielzone p input {
+    width: 30%;
+    border: 1px solid gray;
+}
+
+#not-preffered {
+    height: 100px;
+}
+#preffered {
+    height: 100px;
+    float: right;
+}

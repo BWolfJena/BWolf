@@ -1,14 +1,55 @@
-<div class="dragndrop">
-    <h3>{% trans %} meine Präferenzen {% trans %}</h3>
-      <div id="preffered" class="zielzone"></div>
-      <div id="not-preffered" class="zielzone">
-        {% if courses is defined %}
-          {% for course in courses %}
-            <p draggable="true" id="{{ course.id }}">
-              <a href="{{ course.link }}">{{ course.name }}</a>
-              <input type="text focus" placeholder="10">
-            </p>
-          {% endfor %}
-        {% endif %}
-      </div>
+<div class="pageInfo">
+	<p>{{ desc }}</p>
 </div>
+
+<div class="dragndrop container">
+		<div class="layer title">angebotene Kurse</div>
+			<div class="zielzone" id="not-preffered">
+
+		</div>
+		<div class="zielzone" id="not-preffered">
+			{% for item in items %}
+				<a href="{{ item.link }}"
+					<p draggable="true"
+					 id="{{ item.id }}">
+						{{ item.name }}
+					</p>
+			{% endfor %}
+		</div>
+</div>
+<script>
+            function ziehen(ev) {
+                    ev.dataTransfer.setData('text', ev.target.id);
+            }
+
+            function ablegenErlauben(ev) {
+                    ev.preventDefault();
+            }
+
+            function ablegen(ev) {
+                    ev.preventDefault();
+                    var data = ev.dataTransfer.getData('text');
+                    var target = ev.target;
+                    while (" " + target.className + " ".indexOf(" zielzone ") == -1) target =
+                            target.parentNode;
+                    target.appendChild(document.getElementById(data));
+            }
+            window.addEventListener("load", function () {
+                    var elms = document.querySelectorAll(".zielzone");
+                    for (var i = 0; i < elms.length; i++) {
+                            var zielzone = elms[i];
+                            zielzone.addEventListener("drop", ablegen);
+                            zielzone.addEventListener("dragover", ablegenErlauben);
+                    };
+                    elms = document.querySelectorAll("[draggable=true]")
+                    for (var i = 0; i < elms.length; i++) {
+                            var draggable = elms[i];
+                            draggable.addEventListener("dragstart", ziehen);
+                    };
+            });
+
+    </script>
+
+<button class="ui primary button">
+	meine Prioritätenliste ansehen
+</button>

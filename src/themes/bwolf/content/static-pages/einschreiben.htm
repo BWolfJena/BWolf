@@ -4,27 +4,14 @@ url = "/einschreiben"
 layout = "default"
 is_hidden = 0
 navigation_hidden = 0
-==
-pageInfo = page.description
 url = "/einschreiben"
 layout = "default"
-items =  \BWolfJena\Core\Models\Course::all():
+
+[demoTodo]
+desc = "Hallo"
+items =  \BWolfJena\Core\Models\Course::find;
 
 ==
 
 <h1>Favoritenreihenfolge erstellen</h1>
-<div class="pageInfo">
-	<p></p>
-</div>
-<div class="dragndrop">
-	<div class="container" style="height: 520px; background: wheat;">
-		<div data-force="30" class="layer block" style="left: 14.5%; top: 0; width: 37%">
-			<div class="layer title">angebotene Kurse</div>
-			<ul id="foo" class="block__list block__list_words">
-				{% for item in items %}
-					<li>{{ item.name }}</li>
-				{% endfor %}
-			</ul>
-		</div>
-	</div>
-</div>
+<figure data-component="\BWolfJena\Core\Components\Dragndrop" data-snippet="drag-drop">&nbsp;</figure>
