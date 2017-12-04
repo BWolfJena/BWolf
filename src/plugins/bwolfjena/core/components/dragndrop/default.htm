@@ -1,18 +1,14 @@
-<div class="pageInfo">
-	<p>{{ desc }}</p>
-</div>
-
 <div class="dragndrop container">
 		<div class="layer title">angebotene Kurse</div>
 			<div class="zielzone" id="not-preffered">
 
 		</div>
 		<div class="zielzone" id="not-preffered">
-			{% for item in items %}
-				<a href="{{ item.link }}"
+			{% for course in __SELF__.courses() %}
+				<a href="kurs/{{ course.id }}"
 					<p draggable="true"
-					 id="{{ item.id }}">
-						{{ item.name }}
+					 id="{{ course.id }}">
+						{{ course.title }}
 					</p>
 			{% endfor %}
 		</div>
