@@ -1,3 +1,5 @@
+[viewBag]
+==
 <!-- Following Menu -->
 {% set deadline = '10.12.2017' %}
 
@@ -9,7 +11,7 @@
             {% endfor %}
         {% endif %}
 
-        {% if (deadline is defined) %}
+        {% if (deadline is defined)  or (finalCourse is defined)%}
           {% if deadline == "now"|date("m/d/Y") %}
             <p class="info">Einschreibungsende: {{ deadline }}</p>
           {% else %}
