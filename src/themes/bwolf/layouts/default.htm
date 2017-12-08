@@ -37,17 +37,23 @@ function onStart()
         <meta name="robots" content="INDEX,FOLLOW">
         <meta name="revisit" content="7 Days">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <link rel="icon" type="image/x-icon" href="{{ 'assets/images/favicon.ico'|theme }}"/>
+        <link rel="apple-touch-icon" sizes="180x180" href="/themes/bwolf/assets/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/themes/bwolf/assets/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/themes/bwolf/assets/favicon/favicon-16x16.png">
+        <link rel="manifest" href="/themes/bwolf/assets/favicon/manifest.json">
+        <link rel="mask-icon" href="/themes/bwolf/assets/favicon/safari-pinned-tab.svg" color="#052e5d">
+        <link rel="shortcut icon" href="/themes/bwolf/assets/favicon/favicon.ico">
+        <meta name="apple-mobile-web-app-title" content="BWolf">
+        <meta name="application-name" content="BWolf">
+        <meta name="msapplication-config" content="/themes/bwolf/assets/favicon/browserconfig.xml">
+        <meta name="theme-color" content="#052e5d">
+
 		<!-- CSS -->
         <link href="{{ [
             'assets/semantic/dist/semantic.css',
             'assets/css/system.css',
             'assets/css/theme.css'
         ]|theme }}" rel="stylesheet">
-
-        <link href="//rubaxa.github.io/Ply/ply.css" rel="stylesheet" type="text/css"/>
-	      <link href="//fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet" type="text/css"/>
-	      <link href="st/app.css" rel="stylesheet" type="text/css"/>
 
         {% styles %}
 
@@ -111,9 +117,6 @@ function onStart()
             'assets/js/app.js',
             'assets/js/sortable.js'
         ]|theme }}"></script>
-        {% put scripts %}
-	{% endput %}
-
         {% framework extras %}
         {% scripts %}
 
