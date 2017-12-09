@@ -1,0 +1,28 @@
+<style>
+    #sortableCourseList{
+        font-size: 20px;
+    }
+</style>
+
+<div class="dragndrop container">
+    <form class="ui form">
+    <div class="layer title">Angebotene Kurse</div>
+    <div id="sortableCourseList" class="ui list relaxed divided">
+        {% for course in __SELF__.courses() %}
+
+            <div id="course-{{ course.id }}" data-id="{{ course.id }}" class="item">
+                <i class="large sidebar middle aligned icon drag-handle"></i>
+                <div class="content content middle aligned">
+                    <span class="rank">{{ loop.revindex }}.</span>
+                    <a href="kurs/{{ course.id }}">{{ course.title }}</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+
+    <button class="ui primary button" id="saveOrderButton">
+        Speichern
+    </button>
+    </form>
+</div>
