@@ -4,3 +4,6 @@
     - create_modules_table.php
     - create_chairs_table.php
     - create_courses_table.php
+1.0.3:
+    - "Add table to store course priorities"
+    - create_user_course_priorities_table.php
