@@ -10,6 +10,10 @@
   background-color: #052e5d;
 }
 
+.ui.secondary.inverted.pointing.menu {
+    border-width: 0;
+}
+
 .top-menu.segment {
 }
 .top-menu .logo.item img {

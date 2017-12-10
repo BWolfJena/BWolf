@@ -21,7 +21,7 @@
     * Nachbearbeitung der Verteilung aufwändig (per Hand)
     * ...
     * Mündlich: Aufgabenstellung: Optimierung
-  * Team: Name, Aufgabe
+* Team: Name, Aufgabe
    * BWolf
    * Name und Aufgabe des Mitglieds
 
