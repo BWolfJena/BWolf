@@ -6,15 +6,14 @@
 
 <div class="dragndrop container">
     <form class="ui form">
-    <div class="layer title">Angebotene Kurse</div>
     <div id="sortableCourseList" class="ui list relaxed divided">
         {% for course in __SELF__.courses() %}
 
             <div id="course-{{ course.id }}" data-id="{{ course.id }}" class="item">
                 <i class="large sidebar middle aligned icon drag-handle"></i>
                 <div class="content content middle aligned">
-                    <span class="rank">{{ loop.revindex }}.</span>
-                    <a href="kurs/{{ course.id }}">{{ course.title }}</a>
+                    <span class="rank">{{ loop.revindex }}</span>
+                    <a href="kurs/{{ course.id }}">{{ course.name }}</a>
                 </div>
             </div>
         {% endfor %}

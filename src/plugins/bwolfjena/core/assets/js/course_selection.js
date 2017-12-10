@@ -5,9 +5,8 @@ var sortable =   Sortable.create(sortableList, {
   handle: '.drag-handle',
   onEnd: function(event) {
     var items = $('#sortableCourseList').find('.rank').each(function(index) {
-      $(this).text((itemCount-index) + '.');
+      $(this).text(itemCount-index);
     });
-    console.log(sortable.toArray());
   }
 });
 
@@ -18,7 +17,6 @@ $(document).ready(function(){
       data: {
         order: sortable.toArray(),
       },
-
     });
   });
 })

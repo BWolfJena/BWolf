@@ -3,9 +3,11 @@
     <h3>{{ course.title }}</h3>
     <div class="description">
         <p>
-            Zeit: {{ course.time  }}<br>
-            Ort: {{ course.room  }}<br>
-            Dozent: {{ course.lecturer.full_name }}
+            <strong>Zeit</strong>: {{ course.time  }}<br>
+            <strong>Ort</strong>: {{ course.room  }}<br>
+            <strong>Dozent</strong>: {{ course.lecturer.full_name }}
         </p>
         <p>{{ course.description | raw }}</p>
+        <h4>Literatur</h4>
+        <p>{{ course.literature | raw }}</p>
     </div>
