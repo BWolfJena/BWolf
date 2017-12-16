@@ -1,7 +1,7 @@
 \section{Allgemeine Problemstellung}
 \label{Problemstellung}
     Im Zuge des Projektes gilt es eine webbasierte Plattform zu schaffen, die die Verwaltung des Empiriepraktikums der FSU Jena ermöglicht.
-    Hautaufgabe dieser Plattform ist, den verantwortliche Mitarbeitern der FSU Jena zu ermöglichen, für ein kommendes Semester ein neues Praktiumsmodul mit allen zugehörigen Kursen anlegen zu können.
+    Hauptaufgabe dieser Plattform ist, den verantwortliche Mitarbeitern der FSU Jena zu ermöglichen, für ein kommendes Semester ein neues Praktiumsmodul mit allen zugehörigen Kursen anlegen zu können.
     Des Weiteren sollen die Studenten die Möglichkeit erhalten eine Präferenzliste zu erstellen, welche der angebotenen Kurse sie am liebsten besuchen möchten.
     Nach Ablauf einer vorher festzulegenden Frist sollen die Studenten gemäß ihrer Präferenzliste dann automatisch bestmöglich auf die Kurse verteilt werden.     
 
@@ -10,68 +10,90 @@
     Zum einen die Sicht der Verantwortlichen für Praktikum und Kurse, zum anderen die der Studenten.
     Erstere teilt sich wiederum auf in den Blickwinkel der Dozenten der einzelnen Kurse und der übergeordneten Verantwortlichen für das Empiriepraktikum, im Weiteren Administratoren genannt.
     Im Folgenden werden zunächst die Anforderungen für Studenten, Dozenten und Administratoren anhand des chronologischen Ablaufs eines Praktikumsmoduls dargestellt.
-    Anschließend wird in Abschnitt \ref{Sichten} nochmal eine kurze Übersicht über die Anforderungen der jeweiligen Sichtweisen gegeben.
+    Anschließend wird nochmal eine kurze Übersicht über die Anforderungen der jeweiligen Sichtweisen gegeben.
     
     \subsection{Ablauf eines Praktikumsmoduls}
         Der Ablauf beginnt, indem die Administratoren, nachdem sie sich in einer Login-Oberfläche angemeldet haben, ein neues Praktikumsmodul erstellen.
         Zu diesem Praktikumsmodul gehören neben generellen Informationen wie Name und Semester auch die besonderen Angaben, ab wann Studenten ihre Präferenzliste erstellen können und zu welchem Zeitpunkt die automatische Verteilung vorgenommen werden soll.
         Im Anschluss können die Dozenten, nachdem auch sie sich in einer entsprechenden Oberfläche angemeldet haben, ihre Kurse zu dem aktuellen Praktikumsmodul hinzufügen.
-        Dabei sollen Kurse Angaben über Titel, Dozent, Teilnehmerzahl, Ort, Zeit, Beschreibung des Kurses und Literaturliste besitzen.
+        Dabei sollen Kurse Angaben über Titel, Dozent, Teilnehmerzahl, Ort, Zeit, Beschreibung des Kurses und eine Literaturliste besitzen.
+        Nachdem alle Dozenten ihre Kurse eingetragen haben, sollen die Administratoren die aktuelle Kursübersicht online stellen können, sodass jeder die Kurse einsehen kann.
+        Besteht Interesse, dass Empiriepraktikum in diesem Semester zu absolvieren, so sollen sich die Studierenden registrieren können.
+        Nach der Registrierung können die Studenten ihre Präferenzliste erstellen und speichern.
+        Dabei soll die soll Präferenzliste auch jederzeit vom Studierenden noch verändert werden können.
+        Nach jeder gespeicherten Änderung soll der Student eine Email-Benachrichtigung mit seiner aktuellen Präferenzliste erhalten.
+        Nach Ablauf der zuvor von den Administratoren festgelegten Frist sollen die Studenten automatisch anhand ihrer aktuellen Version der Präferenzliste auf die Kurse verteilt werden.
+        Diese Verteilung sollte möglichst gut sein, d.h. in Fall dieses Projekts eine möglichst gleichmäßige Verteilung der Studenten mit wenigen Ausreißern nach Unten.
+        Nach dieser automatischen Verteilung soll eine Nachbearbeitungsphase folgen, in der die Administratoren den Algorithmus bei Bedarf mit vielleicht anderen Parametern neu starten können.
+        Es soll jedoch auch die Möglichkeit geben, das Ergebnis der Verteilung manuell zu ändern.
+        Nachdem das Ergebnis der Verteilung feststeht, sollen alle Beteiligten Studenten und Dozenten über das Ergebnis der Verteilung mittels einer Email-Benachrichtigung informiert werden.
+        Ab diesem Moment sollen die Teilnehmer jedes Kurses für jeden sichtbar sein.
+        \textcolor{red}{Erwähnung der Tauschperiode? Nur für den Fall, dass wir sie wirklich am Ende implementieren}
+        
+        
                 
     \subsection{Verschiedene Sichten im Überblick}
     \label{Sichten}
                 
         \subsubsection{Sicht der Administratoren}
-        Ein Administrator hat die Möglichkeit, neue Dozenten zu erstellen, diese zu bearbeiten und zu löschen.
-        Zusätzlich ist er dafür verantwortlich, die Ergebnisse des Verteilungsalgorithmus zu verändern und zu bestätigen.
-             
-            
+            Die Administratoren haben die Möglichkeit, neue Dozenten zu erstellen, diese zu bearbeiten und zu löschen.
+            Zusätzlich ist er dafür verantwortlich, die Ergebnisse des Verteilungsalgorithmus zu verändern und zu bestätigen.
+%       	 Teilnehmerzahl fließend einstellen, mindestens aber 3
+%            Kurs als freibleiben markieren, falls er doch nicht angeboten wird
+%			 Registrierte Dozenten rausschmeißen können
+%			 Einsehbar welche Lehrstühle wie viel anbieten
+%			 Filterfunktionen wie finanzierung & Teilnehmeranzahl ...
+                
+  
+         
         \subsubsection{Sicht der Dozenten}
-        Ein Dozent hat die Möglichkeit, Kurse für das Praktikum zu erstellen. Für einen Kurs müssen sie folgendes angeben:
-        \begin{itemize}
-        \item Name
-        \item Titel
-        \item Dozenten
-        \item Zeit/Raum
-        % Minimale Teilnehmer fällt raus, da die Psychologen festegelegt haben, es müssen mindestens 3 Leute in jedem Kurs sein
-        \item Maximale Teilnehmer (5 oder 10!)
-        \item Kurzbeschreibung
-        \item Beschreibung
-        \item Literatur
-        \item E-Mail Adresse des Empirie-Praktikums-Leiter %? Ist das nicht nur die vom Dozenten
-        \end{itemize}
-        Folgendes ist nicht für den Studenten einsehbar:
-        \begin{itemize}
-        \item Lehrstuhl
-        \item Lehrauftrag
-        \item Erstes Mal Empiriepraktikum?
-        \end{itemize}
-        
+            Ein Dozent hat die Möglichkeit, Kurse für das Praktikum zu erstellen. Für einen Kurs müssen sie folgendes angeben:
+            \begin{itemize}
+                \item Name
+                \item Titel
+                \item Dozenten
+                \item Zeit/Raum
+                % Minimale Teilnehmer fällt raus, da die Psychologen festegelegt haben, es müssen mindestens 3 Leute in jedem Kurs sein
+                \item Maximale Teilnehmer (5 oder 10!)
+                \item Kurzbeschreibung
+                \item Beschreibung
+                \item Literatur
+                \item E-Mail Adresse des Empirie-Praktikums-Leiter %? Ist das nicht nur die vom Dozenten
+            \end{itemize}
+            Folgendes ist nicht für den Studenten einsehbar:
+            \begin{itemize}
+                \item Lehrstuhl
+                \item Lehrauftrag
+                \item Erstes Mal Empiriepraktikum?
+            \end{itemize}
+            
+            
         Nachdem die Studenten verteilt worden sind, erhalten die Dozenten eine E-Mail mit den Studenten, die in ihrem Kurs sind.
         Im Verlaufe des Semesters können Dozenten ihren Kurs in zwei Kurse aufteilen.
+%        Dozent Textformatieren & Bilder einfügen
+%        5 oder 10 Teilnehmer
+%        Lehrstuhl angeben, aber nicht für Studenten sichtbar\\
+%    	 Jeder kann nur seine eigene veranstaltung editieren
+%		 Jeder Dozent sieht was er in vorherigen Jahren gemacht hat, um evtl. den gleichen Kurs nochmal anzubieten
+
+        
         
         Sollten Dozenten zu einem anderem Semester erneut Kurse anbieten, so haben sie die Möglichkeit, ihre alten Kurse einzusehen und (ohne Änderung des alten Kurses) einen dieser als Vorlage für einen neuen Kurs zu nutzen.
 
             
         \subsubsection{Sicht der Studenten}
-        %Studenten erhalten unabhängig dieses Systems eine Woche vor Beginn der Einschreibung einen Link (Dies muss nicht abgebildet werden, deswegen nehmen wir das nicht auf, oder?)
-        Drei Wochen vor Verteilung der Kurse beginnt die Einschreibungszeit. Hierfür erhalten die Studenten unabhängig von diesem System eine Benachrichtigung.
-        Studenten sehen bei ihrem Besuch zuerst eine kurze Erläuterung zu dem Einschreibungs-System.
-        Neben dem Text gibt es noch ein Feld zur Anmeldung bzw. Registrierung.
-        Nachdem ein Student sich registriert hat und angemeldet ist, wird er zur Liste der derzeitigen Kurse weitergeleitet.
-        Diese Kurse können allerdings auch ohne Anmeldung angesehen werden. % Alles soll öffentlich sein, aber gleichzeitig haben wir das so formuliert, dass der Student dann zu den Kursen kann. Weiß aber nicht, wie sinnvoll die Weiterleitung zu den Kursen ist.
+%        3 Wochen für Angabe der Präferenzliste\\
+%		 Tauschphase vor eigentlichem Beginn der Veranstaltung mit Email an die Dozenten & Administratoren
+%		 Lehrstuhl für die Studenten nicht einsehbar
+
+
+%	Das ganze offen und Modular halten für andere Module als das Empiriepraktikum
+%	Dabei auf Hierarchie von Präferenzen achten
+%	evtl. die Möglichkeit falls mehr Studenten als Kurse, neue Kurse hinzufügen können
+%	evtl. ein Archiv
+
+
         
-        Durch eine weitere Seite, können Studenten dann jeden Kurs nach ihrer Präferenz sortieren. Dabei müssen Studenten jedem Kurs eine Präferenz zuteilen.
-        Sollten Studenten dann ihre Präferenzenliste bestätigen, so wird ihnen an ihre hinterlegte E-Mail-Adresse ihre gewählte Präferenzenliste geschickt.
-        Diese Liste kann beliebig verändert werden, bis die Verteilung beginnt.
-        Mit jeder Änderung der Präferenzenliste erhalten Studenten eine neue E-Mail. %Die Psychologen meinten auch sowas, dass sie das bestätigen müssen und dann ist es fest, aber sie können es noch ändern wie sie wollen. Weiß jemand genaueres?
-        Sobald die Verteilung abgeschlossen und durch einen Administrator bestätigt wurde, erhalten Studenten eine E-Mail-Benachrichtigung, in dem ihr zugeteilter Kurs drin steht.
-        Studenten sehen nun auch für alle Kurse die Namen der Teilnehmer.
-        
-        Nach der Verteilung beginnt die Tauschperiode.
-        Bis zum Beginn der ersten Vorlesungswoche können Studenten Tauschanfragen an andere Studenten schicken.
-        Jede dieser Tauschanfragen wird automatisch an den Empirie-Praktikums-Leiter weitergeleitet.
-        Ist eine Tauschanfrage erfolgreich, so tauschen die Studenten ihre Kurse.
 
 \section{Der Verteilungsalgorithmus}
 Der Verteilungsalgorithmus verteilt alle Studenten auf die Kurse.
