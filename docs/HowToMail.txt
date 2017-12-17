@@ -1,0 +1,19 @@
+Step 1:
+	Gehe ins backend mit 127.0.0.1/backend
+
+Step 2:
+	Logge dich ein, z.B. mit admin/admin
+
+Step 3:
+	Gehe auf Einstellungen
+
+Step 4:
+	Gehe auf Mail-Einstellungen
+
+Step 5:
+	Setze Mail-Methode auf "SMTP"
+	Den Port auf 25
+	SMTP-Verschlüsselungs-Protokoll auf "Keine Verschlüsselungs"
+
+Step 6:
+	Rufe http://localhost:1080/ auf um alle Mails zu erhalten
