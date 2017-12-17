@@ -1,0 +1,41 @@
+Step 1:
+	In .env:
+
+		WORKSPACE_INSTALL_LARAVEL_INSTALLER=true
+		WORKSPACE_INSTALL_DUSK_DEPS=true
+Step 2:
+	In docker-compose.yml:
+		selenium:
+          build: ./selenium
+          ports:
+            - "${SELENIUM_PORT}:4444"
+          volumes:
+           - /dev/shm:/dev/shm
+          depends_on:
+            - nginx
+          links:
+            - nginx:bwolf.test
+Step 3:
+	/var/hosts:
+		127.0.0.1 bwolf.test
+
+Step 4:
+	In Konsole:
+		sudo docker-compose run workspace bash
+	Damit kommt man in:
+		/var/www>
+
+Step 5:
+	vim ~/bash_aliases
+		alias laravel='~/.composer/vendor/bin/laravel'
+
+Step 6:
+	/var/www> laravel new dusk-test
+	/var/www> cd dusk-test
+	/var/www/dusk-test> composer require --dev laravel/dusk
+	/var/www/dusk-test> php artisan dusk:install
+
+==============
+Tests are located at
+/var/www/dusk-test/tests
+Execution must happen at /var/www/dusk-test/
