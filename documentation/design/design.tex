@@ -1,55 +1,56 @@
-Nachdem im vorangegangenem Kapitel die Anforderungen für das System spezifiziert wurden, sollen in diesem Kapitel die Überlegungen zum Design der verschiedenen Sichten dargestellt werden.
-
-\section{Datenmodell}
-
-\section{Design}
-    \subsection{Frontend}
-        Wie zuvor bereits ausgeführt, sollen die Studenten zunächst eine Registrierungs- bzw. Login-Oberfläche sehen.
-        Jedoch sollen die verschiedenen Kurse auch ohne eine Anmeldung einsehbar sein.
-        \begin{figure}[t]
-        	\centering
-        	\includegraphics[width=0.7\textwidth]{./design/MockUpsFrontend/login.png}
-        	\caption{Entwurf für die Login-Oberfläche}
-        	\label{mockupLoginFrontend}
-        \end{figure}
-        In Abbildung \ref{mockupLoginFrontend} werden beide Anforderungen umgesetzt.
-        Zum einen die Login-Oberfläche, in der in zwei Textfelder Benutzername und Passwort für einen erfolgreichen Login eingetragen werden müssen, zum anderen die direkte Weiterleitung zur Kursübersicht als einfacher Knopf darunter.
-        \begin{figure}[t]
-        	\centering
-        	\includegraphics[width=0.7\textwidth]{./design/MockUpsFrontend/kursuebersicht.png}
-        	\caption{Entwurf für die Kursübersicht}
-        	\label{mockupCoursesFrontend}
-        \end{figure}
-        
-        Die Kursüberischt, die sowohl auf die Weiterleitung als auch auf die Anmeldung folgt, ist in Abbildung \ref{mockupCoursesFrontend} zu sehen.
-        Die Kopfzeile umfasst einige Reiter.
-        So kann mithilfe der Kopfzeile auf die verschiedenen Funktionen des Frontends gewechselt werden. 
-        Dazu zählen die Kursübersicht, die Erstellung der Präferenzliste, das Einsehen der Verteilungsergebnisse, sowie das Tauschen von Kursen.
-        Außerdem soll in der Kopfzeile ein Schalter zum Abmelden aus dem System bereitgestellt werden und eine Anzeige, ab wann das Ende der Einschreibungs- und Tauschphase erreicht ist.
-        Auf allen weiteren Seiten soll die Kopfzeile die gleiche Funktion und das gleiche Aussehen haben.
-        Unter der Kopfzeile folgt eine textuelle Erklärung des Ablaufs des Empiriepraktikums und der für die Studenten relevanten Schritte, um sich erfolgreich für die Kurse einzuschreiben.
-        Wie in Abbildung \ref{mockupCoursesFrontend} dargestellt, werden darunter die verschiedenen Kurse angezeigt, jeweils mit einer kurzen Beschreibung.
-        Durch einen Klick auf ein Kursfeld, sollen sich die detaillierten Informationen zu dem Kurs einsehen lassen.
-        Das Desing hierfür ist in Abbildung \ref{mockupDetailsFrontEnd} zu sehen und bedarf keiner weiteren Erläuterung.
-        \begin{figure}[t]
-        	\centering
-        	\includegraphics[width=0.7\textwidth]{./design/MockUpsFrontend/kursdetails.png}
-        	\caption{Entwurf für die Kursdetails}
-        	\label{mockupDetailsFrontend}
-        \end{figure}
-        Die Fußzeile soll weitere allgemeine Informationen bereitstellen, sofern diese von Nöten sein sollten, aber vor allem als optischer Abschluss der Seite dienen.
-        \begin{figure}[t]
-        	\centering
-        	\includegraphics[width=0.7\textwidth]{./design/MockUpsFrontend/einschreibung.png}
-        	\caption{Entwurf für die Einschreibungs-Oberfläche}
-        	\label{mockupCourseChoiceFrontend}
-        \end{figure}
-        
-        Die Seite für die Einschreibung in die Kurse soll wie in Abbildung \ref{mockupCourseChoiceFrontend} gestaltet sein.
-        Wieder bilden Kopfzeile und Fußzeile den Rahmen der Seite.
-        Unter der Kopfzeile befindet sich auch hier eine kurze Erklärung, wie man die Präferenzliste genau erstellt.
-        Das Erstellen soll im Feld \textit{Präferenzliste} über ein ''Drag\&Drop''-System vorgenommen werden und über den Knopf \textit{Absenden} fixiert werden können.
-
-    \subsection{Backend}
-    	\subsubsection{Administratoren}
-    	\subsubsection{Dozenten}
+\chapter{Entwurf}
+    Nachdem im vorangegangenem Kapitel die Anforderungen für das System spezifiziert wurden, sollen in diesem Kapitel die Überlegungen zum Design der verschiedenen Sichten dargestellt werden.
+    
+    \section{Datenmodell}
+    
+    \section{Design}
+        \subsection{Frontend}
+            Wie zuvor bereits ausgeführt, sollen die Studenten zunächst eine Registrierungs- bzw. Login-Oberfläche sehen.
+            Jedoch sollen die verschiedenen Kurse auch ohne eine Anmeldung einsehbar sein.
+            \begin{figure}[t]
+            	\centering
+            	\includegraphics[width=0.7\textwidth]{./design/MockUpsFrontend/login.png}
+            	\caption{Entwurf für die Login-Oberfläche}
+            	\label{mockupLoginFrontend}
+            \end{figure}
+            In Abbildung \ref{mockupLoginFrontend} werden beide Anforderungen umgesetzt.
+            Zum einen die Login-Oberfläche, in der in zwei Textfelder Benutzername und Passwort für einen erfolgreichen Login eingetragen werden müssen, zum anderen die direkte Weiterleitung zur Kursübersicht als einfacher Knopf darunter.
+            \begin{figure}[t]
+            	\centering
+            	\includegraphics[width=0.7\textwidth]{./design/MockUpsFrontend/kursuebersicht.png}
+            	\caption{Entwurf für die Kursübersicht}
+            	\label{mockupCoursesFrontend}
+            \end{figure}
+            
+            Die Kursüberischt, die sowohl auf die Weiterleitung als auch auf die Anmeldung folgt, ist in Abbildung \ref{mockupCoursesFrontend} zu sehen.
+            Die Kopfzeile umfasst einige Reiter.
+            So kann mithilfe der Kopfzeile auf die verschiedenen Funktionen des Frontends gewechselt werden. 
+            Dazu zählen die Kursübersicht, die Erstellung der Präferenzliste, das Einsehen der Verteilungsergebnisse, sowie das Tauschen von Kursen.
+            Außerdem soll in der Kopfzeile ein Schalter zum Abmelden aus dem System bereitgestellt werden und eine Anzeige, ab wann das Ende der Einschreibungs- und Tauschphase erreicht ist.
+            Auf allen weiteren Seiten soll die Kopfzeile die gleiche Funktion und das gleiche Aussehen haben.
+            Unter der Kopfzeile folgt eine textuelle Erklärung des Ablaufs des Empiriepraktikums und der für die Studenten relevanten Schritte, um sich erfolgreich für die Kurse einzuschreiben.
+            Wie in Abbildung \ref{mockupCoursesFrontend} dargestellt, werden darunter die verschiedenen Kurse angezeigt, jeweils mit einer kurzen Beschreibung.
+            Durch einen Klick auf ein Kursfeld, sollen sich die detaillierten Informationen zu dem Kurs einsehen lassen.
+            Das Desing hierfür ist in Abbildung \ref{mockupDetailsFrontEnd} zu sehen und bedarf keiner weiteren Erläuterung.
+            \begin{figure}[t]
+            	\centering
+            	\includegraphics[width=0.7\textwidth]{./design/MockUpsFrontend/kursdetails.png}
+            	\caption{Entwurf für die Kursdetails}
+            	\label{mockupDetailsFrontend}
+            \end{figure}
+            Die Fußzeile soll weitere allgemeine Informationen bereitstellen, sofern diese von Nöten sein sollten, aber vor allem als optischer Abschluss der Seite dienen.
+            \begin{figure}[t]
+            	\centering
+            	\includegraphics[width=0.7\textwidth]{./design/MockUpsFrontend/einschreibung.png}
+            	\caption{Entwurf für die Einschreibungs-Oberfläche}
+            	\label{mockupCourseChoiceFrontend}
+            \end{figure}
+            
+            Die Seite für die Einschreibung in die Kurse soll wie in Abbildung \ref{mockupCourseChoiceFrontend} gestaltet sein.
+            Wieder bilden Kopfzeile und Fußzeile den Rahmen der Seite.
+            Unter der Kopfzeile befindet sich auch hier eine kurze Erklärung, wie man die Präferenzliste genau erstellt.
+            Das Erstellen soll im Feld \textit{Präferenzliste} über ein ''Drag\&Drop''-System vorgenommen werden und über den Knopf \textit{Absenden} fixiert werden können.
+    
+        \subsection{Backend}
+        	\subsubsection{Administratoren}
+        	\subsubsection{Dozenten}
