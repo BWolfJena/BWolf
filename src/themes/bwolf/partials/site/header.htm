@@ -1,7 +1,14 @@
 [viewBag]
 ==
+function onStart()
+{
+    $this['deadline'] = BWolfJena\Core\Models\Module::find(1)['enrollment_end'];
+    $this['assignedCourse'] = BWolfJena\Core\Models\Course::find(1)['course_user'];
+}
+==
+
 <!-- Following Menu -->
-{% set deadline = '10.12.2017' %}
+{% set assignedCourse = 'Testkurs' %}
 
 <div class="ui large top fixed hidden menu">
     <div class="ui container">
@@ -11,11 +18,11 @@
             {% endfor %}
         {% endif %}
 
-        {% if (deadline is defined)  or (finalCourse is defined)%}
-          {% if deadline == "now"|date("m/d/Y") %}
-            <p class="info">Einschreibungsende: {{ deadline }}</p>
-          {% else %}
-            <p class="info">Ihr Kurs: {{ finalCourse }}</p>
+        {% if date() < deadline %}
+          <p class="info">Einschreibungsende: {{ deadline }}</p>
+        {% else %}
+          {% if assignedCourse %}
+            <p class="info">Ihr Kurs: {{ assignedCourse }}</p>
           {% endif %}
         {% endif %}
 

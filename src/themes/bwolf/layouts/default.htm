@@ -14,6 +14,7 @@ security = "all"
 function onStart()
 {
     $this['deadline'] = BWolfJena\Core\Models\Module::find(1)['enrollment_end'];
+    $this['assignedCourse'] = BWolfJena\Core\Models\Course::find(1)['course_user'];
 }
 ==
 <!DOCTYPE html>
@@ -76,7 +77,16 @@ function onStart()
                             {% for item in staticMenu.menuItems %}
                                 <a href="{{ item.url }}" class="item {% if item.isActive  %}active{% endif %}">{{ item.title }}</a>
                             {% endfor %}
-                            <p class="item" style="color: red;">Einschreibungsende: {{ deadline|date("d.m.Y") }}</p>
+                            {% if deadline %}
+                              {% if date() < deadline %}
+                                <p class="item" style="color: #ffd700;">Einschreibungsende: {{ deadline|date("d.m.Y") }}</p>
+                              {% else %}
+                               {% if assignedCourse %}
+                                <p class="item" style="color: #ffd700;">Ihr Kurs: {{ assignedCourse }}</p>
+                               {% endif %}
+                              {% endif %}
+                            {% endif %}
+
                         {% endif %}
                         <div class="right item large screen only">
                             {% if user %}
