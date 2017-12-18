@@ -11,20 +11,13 @@
             {% endfor %}
         {% endif %}
 
-        {% if (deadline is defined)  or (finalCourse is defined)%}
-          {% if deadline == "now"|date("m/d/Y") %}
-            <p class="info">Einschreibungsende: {{ deadline }}</p>
-          {% else %}
-            <p class="info">Ihr Kurs: {{ finalCourse }}</p>
-          {% endif %}
-        {% endif %}
 
         <div class="right menu">
             <div class="item">
-                <a class="ui button">Log in</a>
+                <a class="ui button">Anmelden</a>
             </div>
             <div class="item">
-                <a class="ui primary button">Sign Up</a>
+                <a class="ui primary button">Registrieren</a>
             </div>
         </div>
     </div>
