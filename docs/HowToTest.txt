@@ -26,14 +26,11 @@ Step 4:
 		/var/www>
 
 Step 5:
-	vim ~/bash_aliases
-		alias laravel='~/.composer/vendor/bin/laravel'
+	/var/www> composer require --dev laravel/dusk
+	/var/www> php artisan dusk:install
 
 Step 6:
-	/var/www> laravel new dusk-test
-	/var/www> cd dusk-test
-	/var/www/dusk-test> composer require --dev laravel/dusk
-	/var/www/dusk-test> php artisan dusk:install
+	/var/www> chmod 755 vendor/laravel/dusk/bin/chromedriver-linux
 
 ==============
 Tests are located at
