@@ -17,9 +17,7 @@ class HomepageTest extends DuskTestCase
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/kursuebersicht')
-                    ->dump();
-            $browser->visit('/kursuebersicht')
-                    ->assertTitle('blub');
+                    ->assertTitle('Website - Kursübersicht');
         });
     }
 }
