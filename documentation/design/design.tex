@@ -6,9 +6,16 @@
 
 \chapter{Entwurf}
 \label{chapter:design}
-    Nachdem im vorangegangenem Kapitel die Anforderungen für das System spezifiziert wurden, sollen in diesem Kapitel die Überlegungen zum Design der verschiedenen Sichten dargestellt werden.
-    
+    Nachdem im vorangegangenem Kapitel die Anforderungen für das System spezifiziert wurden, soll in diesem Kapitel der Entwurf zur Umsetzung der Anforderungen der verschiedenen Sichten dargestellt werden.
+    Zunächst wird das dem System zugrundeliegende Datenmodell dargestellt.
+    Darauffolgend wird das Design für die webbasierte Plattform erläutert.     
     \section{Datenmodell}
+        \begin{figure}
+            \centering
+            \includegraphics[width=1.0\textwidth]{./design/images/data-model.png}\par\vspace{1cm}
+            \caption{Entwurf des Datenmodells}
+            \label{fig:datamodel}
+        \end{figure}
     
     \section{Design}
         Für den Desing-Entwurf der Seite wurden Mock-Ups erstellt, die den groben Aufbau der Website mit den entsprechenden Funktionen zeigt. 
@@ -17,10 +24,10 @@
         \begin{table}
             \centering
             \begin{tabular}{l c| l}
-                \cellcolor{red} & & Eingabefeld\\\\
-                \cellcolor{orange} & & Button\\\\
-                \cellcolor{olive} & & Drag\&Drop-Element\\\\
-                \cellcolor{green} & & Textfeld\\\\
+                \cellcolor{red} & & Eingabefeld\\
+                \cellcolor{orange} & & Button\\
+                \cellcolor{olive} & & Drag\&Drop-Element\\
+                \cellcolor{green} & & Textfeld\\
                 \cellcolor{blue} & & Optisches Element
             \end{tabular}
             \caption{Farbcode der Mock-Ups}
@@ -32,7 +39,7 @@
             Jedoch sollen die verschiedenen Kurse auch ohne eine Anmeldung einsehbar sein.
             \begin{figure}[t]
             	\centering
-            	\includegraphics[width=0.7\textwidth]{./design/MockUpsFrontend/frontendLogin.png}
+            	\includegraphics[width=0.7\textwidth]{./design/images/MockUpsFrontend/frontendLogin.png}
             	\caption{Entwurf für die Login-Oberfläche}
             	\label{mockupLoginFrontend}
             \end{figure}   
@@ -51,14 +58,14 @@
             Das Desing hierfür ist in Abbildung \ref{mockupDetailsFrontend} zu sehen und bedarf keiner weiteren Erläuterung.
             \begin{figure}[t]
             	\centering
-            	\includegraphics[width=0.7\textwidth]{./design/MockUpsFrontend/frontendCoursedetails.png}
+            	\includegraphics[width=0.7\textwidth]{./design/images/MockUpsFrontend/frontendCoursedetails.png}
             	\caption{Entwurf für die Kursdetails}
             	\label{mockupDetailsFrontend}
             \end{figure}
             Die Fußzeile soll weitere allgemeine Informationen bereitstellen, sofern diese von Nöten sein sollten, aber vor allem als optischer Abschluss der Seite dienen.
             \begin{figure}[t]
             	\centering
-            	\includegraphics[width=0.7\textwidth]{./design/MockUpsFrontend/frontendPreferences.png}
+            	\includegraphics[width=0.7\textwidth]{./design/images/MockUpsFrontend/frontendPreferences.png}
             	\caption{Entwurf für die Einschreibungs-Oberfläche}
             	\label{mockupPreferencesFrontend}
             \end{figure}
@@ -70,14 +77,14 @@
             
             \begin{figure}[t]
                 \centering
-                \includegraphics[width=0.7\textwidth]{./design/MockUpsFrontend/frontendSwap1.png}
+                \includegraphics[width=0.7\textwidth]{./design/images/MockUpsFrontend/frontendSwap1.png}
                 \caption{Entwurf für die Tauschauswahl}
                 \label{mockupResultsFrontend}
             \end{figure}
         
             \begin{figure}[t]
                 \centering
-                \includegraphics[width=0.7\textwidth]{./design/MockUpsFrontend/frontendSwap2.png}
+                \includegraphics[width=0.7\textwidth]{./design/images/MockUpsFrontend/frontendSwap2.png}
                 \caption{Entwurf für die Tauschanfrage}
                 \label{mockupResultsFrontend}
             \end{figure}
