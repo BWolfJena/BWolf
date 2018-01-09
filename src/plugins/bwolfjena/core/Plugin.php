@@ -62,12 +62,22 @@ class Plugin extends PluginBase
      */
     public function registerPermissions()
     {
-        return []; // Remove this line to activate
-
         return [
-            'bwolfjena.core.some_permission' => [
-                'tab' => 'Core',
-                'label' => 'Some permission'
+            'bwolfjena.core.own_course_manage' => [
+                'tab' => 'Verwalten',
+                'label' => 'Berechtigung zum Verwalten von selbst erstellten Kursen'
+            ],
+            'bwolfjena.core.full_course_manage' => [
+                'tab' => 'Verwalten',
+                'label' => 'Volle Berechtigung zum Verwalten von Kursen'
+            ],
+            'bwolfjena.core.full_module_manage' => [
+                'tab' => 'Verwalten',
+                'label' => 'Volle Berechtigung zum Verwalten von Modulen'
+            ],
+            'bwolfjena.core.full_chair_manage' => [
+                'tab' => 'Verwalten',
+                'label' => 'Volle Berechtigung zum Verwalten von Lehrstühlen'
             ],
         ];
     }
@@ -86,7 +96,7 @@ class Plugin extends PluginBase
      * @return array
      */
     public function registerNavigation()
-    {    
+    {
         return [
             'core' => [
                 'label'       => 'Verwalten',
@@ -99,24 +109,24 @@ class Plugin extends PluginBase
                         'label'       => 'Kurse',
                         'url'         => Backend::url('bwolfjena/core/courses'),
                         'icon'        => 'icon-book',
-                        'permissions' => ['bwolfjena.core.courses'],
+                        'permissions' => ['bwolfjena.core.full_course_manage', 'bwolfjena.core.own_course_manage'],
                     ],
                     'modules' => [
                         'label' => 'Module',
                         'url' => Backend::url('bwolfjena/core/modules'),
                         'icon' => 'icon-cubes',
-                        'permissions' => ['bwolfjena.core.modules'],
+                        'permissions' => ['bwolfjena.core.full_module_manage'],
                     ],
                     'chairs' => [
                         'label' => 'Lehrstühle',
                         'url' => Backend::url('bwolfjena/core/chairs'),
                         'icon' => 'icon-sitemap',
-                        'permissions' => ['bwolfjena.core.modules'],
+                        'permissions' => ['bwolfjena.core.full_chair_manage'],
                     ],
-                    
+
                 ]
             ],
-            
+
         ];
     }
 }

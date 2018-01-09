@@ -72,7 +72,8 @@ function onStart()
                     <div class="ui large secondary inverted pointing menu">
                         <a class="toc item">
                             <i class="sidebar icon"></i>
-                        </a>
+                        </a>                        
+                        <img  src="{{ 'assets/images/logo.png' | theme }}" alt="Bwolf"/>                        
                         {% if staticMenu.menuItems %}
                             {% for item in staticMenu.menuItems %}
                                 <a href="{{ item.url }}" class="item {% if item.isActive  %}active{% endif %}">{{ item.title }}</a>
@@ -88,7 +89,7 @@ function onStart()
                             {% endif %}
 
                         {% endif %}
-                        <div class="right item large screen only">
+                        <div class="right item large screen only right-nav">
                             {% if user %}
                                 <a class="ui inverted button" data-request="onLogout">Abmelden</a>
                             {% else %}

@@ -1,7 +1,5 @@
 static-pages:
-    index: {  }
     kursuebersicht: {  }
-    archiv: {  }
     einschreiben: {  }
     auswertung: {  }
     tauschen: {  }

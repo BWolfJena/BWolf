@@ -16,8 +16,15 @@
 
 .top-menu.segment {
 }
-.top-menu .logo.item img {
+.top-menu img  {
+    margin-top: 5px;
   margin-right: 1em;
+  height: 45px;
+}
+
+.top-menu span {
+    padding-top: 20px;
+    padding-right: 1em;
 }
 .top-menu .ui.menu .ui.button {
   margin-left: 0.5em;
@@ -73,7 +80,10 @@
   padding: 3em;
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 1000px) {
+  .right-nav {
+      padding-left: 0;
+  }
   .ui.fixed.menu {
     display: none !important;
   }

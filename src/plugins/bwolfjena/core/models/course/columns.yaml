@@ -12,6 +12,7 @@ columns:
     backend_users_id:
         label: Dozent
         relation: lecturer
+        valueFrom: full_name
     time:
         label: Zeit
     room:
@@ -19,7 +20,7 @@ columns:
     min_participants:
         label: Min. Teiln.
     max_participants:
-        label: max. Teiln.        
+        label: max. Teiln.
     module_id:
         label: Modul
         relation: module
