@@ -13,9 +13,20 @@
         \begin{figure}
             \centering
             \includegraphics[width=1.0\textwidth]{./design/images/data-model.png}\par\vspace{1cm}
-            \caption{Entwurf des Datenmodells}
+            \caption{Entwurf des Datenmodells. Farbcode: Gelb Primärschlüssel, Rot Fremdschlüssel }
             \label{fig:datamodel}
         \end{figure}
+        Der Entwurf für das Datenmodell ist in Abbildung \ref{fig:datamodel} zu sehen.
+        Es besteht aus sieben Tabellen.
+        Die Tabelle \textit{bwolfjena\_core\_modules} beinhaltet die verschiedenen Empiriepraktika.
+        Der Name Module für die Tabelle wurde gewählt, da das System bei Bedarf auch auf andere ausgewählte Module als das Empiriepraktikum erweitert werden kann.
+        Ein Modul beziehungsweise Empiriepraktikum beinhaltet die verschiedenen Kurse.
+        Diese sind in der Tabelle \textit{bwolfjena\_core\_courses} gespeichert.
+        Ein Kurse gehört zu einem Lehrstuhl, die in der Tabelle \textit{bwolfjena\_core\_chairs} abgelegt sind.
+        
+        Alle angemeldeten Studenten werden in der Tabelle \textit{users} gespeichert.
+        Jeder der Studenten hat eine Präferenzliste (Tabelle \textit{bwolfjena\_core\_priorities}).
+        
     
     \section{Design}
         Für den Desing-Entwurf der Seite wurden Mock-Ups erstellt, die den groben Aufbau der Website mit den entsprechenden Funktionen zeigt. 
