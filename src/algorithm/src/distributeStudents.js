@@ -88,6 +88,7 @@ module.exports = function distributeStudents(courses, elections, params) {
     }
     result.min = _.min(resultPrefs);
     result.mean = _.mean(resultPrefs);
+    result.histPreferences= histData;
 
     return result;
 }
