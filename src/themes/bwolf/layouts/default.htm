@@ -83,7 +83,7 @@ function onStart()
                             {% if user %}
                                 <a class="ui inverted button" data-request="onLogout">Abmelden</a>
                             {% else %}
-                                <a href="/anmelden" class="ui inverted button {% if this.page.id == 'anmelden'  %}active{% endif %}">Anmelden</a>
+                                <a href="/anmelden" class="ui inverted button {% if this.page.id == 'anmelden'  %}active{% endif %}" dusk="login-button">Anmelden</a>
                                 <a href="/registrieren" class="ui inverted button {% if this.page.id == 'registrieren'  %}active{% endif %}">Registrieren</a>
                             {% endif %}
                         </div>
