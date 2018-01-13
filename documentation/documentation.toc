@@ -1,29 +1,33 @@
 \select@language {ngerman}
 \contentsline {chapter}{\numberline {1}Einleitung}{1}{chapter.1}
-\contentsline {chapter}{\numberline {2}Anforderungsanalyse}{2}{chapter.2}
-\contentsline {section}{\numberline {2.1}Allgemeine Problemstellung}{2}{section.2.1}
-\contentsline {section}{\numberline {2.2}Genaue Anforderungen an das System}{2}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Ablauf eines Praktikumsmoduls}{3}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Verschiedene Sichten im \IeC {\"U}berblick}{4}{subsection.2.2.2}
-\contentsline {subsubsection}{Sicht der Administratoren}{4}{section*.2}
-\contentsline {subsubsection}{Sicht der Dozenten}{4}{section*.3}
-\contentsline {subsubsection}{Sicht der Studenten}{5}{section*.4}
-\contentsline {section}{\numberline {2.3}Der Verteilungsalgorithmus}{6}{section.2.3}
-\contentsline {section}{\numberline {2.4}Technische Details}{6}{section.2.4}
-\contentsline {chapter}{\numberline {3}Entwurf}{8}{chapter.3}
-\contentsline {section}{\numberline {3.1}Datenmodell}{8}{section.3.1}
-\contentsline {section}{\numberline {3.2}Design}{8}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Frontend}{8}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Backend}{10}{subsection.3.2.2}
-\contentsline {subsubsection}{Administratoren}{10}{section*.5}
-\contentsline {subsubsection}{Dozenten}{10}{section*.6}
-\contentsline {chapter}{\numberline {4}Umsetzung}{12}{chapter.4}
-\contentsline {section}{\numberline {4.1}Verwendete Software}{12}{section.4.1}
-\contentsline {section}{\numberline {4.2}Frontend}{12}{section.4.2}
-\contentsline {section}{\numberline {4.3}Backend}{12}{section.4.3}
-\contentsline {chapter}{\numberline {5}Verteilungsalgorithmus}{13}{chapter.5}
-\contentsline {section}{\numberline {5.1}\IeC {\"U}berlegungen zum Algorithmus}{13}{section.5.1}
-\contentsline {chapter}{\numberline {6}Zusammenfassung}{15}{chapter.6}
-\contentsline {section}{\numberline {6.1}Stand des Projekts}{15}{section.6.1}
-\contentsline {section}{\numberline {6.2}Offene Probleme}{15}{section.6.2}
-\contentsline {section}{\numberline {6.3}M\IeC {\"o}gliche weitere Arbeiten}{15}{section.6.3}
+\contentsline {section}{\numberline {1.1}Motivation}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}Aufgabenstellung}{2}{section.1.2}
+\contentsline {section}{\numberline {1.3}Aufbau der Arbeit}{2}{section.1.3}
+\contentsline {chapter}{\numberline {2}Anforderungsanalyse}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Anforderungen an das System}{3}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Ablauf eines Praktikumsmoduls}{4}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Verschiedene Sichten im \IeC {\"U}berblick}{5}{subsection.2.1.2}
+\contentsline {subsubsection}{Sicht der Administratoren}{5}{section*.2}
+\contentsline {subsubsection}{Sicht der Dozenten}{5}{section*.3}
+\contentsline {subsubsection}{Sicht der Studenten}{6}{section*.4}
+\contentsline {section}{\numberline {2.2}Der Verteilungsalgorithmus}{6}{section.2.2}
+\contentsline {section}{\numberline {2.3}Technische Details}{7}{section.2.3}
+\contentsline {chapter}{\numberline {3}Entwurf}{9}{chapter.3}
+\contentsline {section}{\numberline {3.1}Datenmodell}{9}{section.3.1}
+\contentsline {section}{\numberline {3.2}Design}{11}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Frontend}{12}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Backend}{13}{subsection.3.2.2}
+\contentsline {subsubsection}{Administratoren}{13}{section*.5}
+\contentsline {subsubsection}{Dozenten}{13}{section*.6}
+\contentsline {chapter}{\numberline {4}Umsetzung}{16}{chapter.4}
+\contentsline {section}{\numberline {4.1}Verwendete Software}{16}{section.4.1}
+\contentsline {section}{\numberline {4.2}Frontend}{16}{section.4.2}
+\contentsline {section}{\numberline {4.3}Backend}{16}{section.4.3}
+\contentsline {chapter}{\numberline {5}Verteilungsalgorithmus}{17}{chapter.5}
+\contentsline {section}{\numberline {5.1}\IeC {\"U}berlegungen zum Algorithmus}{17}{section.5.1}
+\contentsline {chapter}{\numberline {6}Zusammenfassung}{19}{chapter.6}
+\contentsline {section}{\numberline {6.1}Stand des Projekts}{19}{section.6.1}
+\contentsline {section}{\numberline {6.2}Offene Probleme}{19}{section.6.2}
+\contentsline {section}{\numberline {6.3}M\IeC {\"o}gliche weitere Arbeiten}{19}{section.6.3}
+\contentsline {chapter}{\numberline {7}Anhang}{20}{chapter.7}
+\contentsline {section}{\numberline {7.1}Anhang - Entwurf}{20}{section.7.1}

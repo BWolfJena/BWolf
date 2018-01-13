@@ -8,9 +8,17 @@
 \usepackage[T1]{fontenc} 
 \usepackage[utf8]{inputenc} 
 \usepackage[ngerman]{babel}
-\usepackage{graphicx, xcolor, hyperref} 
+\usepackage{graphicx, xcolor} 
+\usepackage[
+        plainpages=false,
+        pdfpagelayout=TwoPageRight,
+        pdfborder={0 0 0},
+        hyperfootnotes=false
+    ]{hyperref}
 \usepackage{setspace} %mit /onehalfspacing wird im Textein 1,5 facher Zeilenabstand verwendet
 \usepackage{accents}
+\usepackage{color, colortbl}
+
 \parindent 0pt
 
 
@@ -43,6 +51,7 @@
     \include{./implementation/implementation}
     \include{./algorithm/algorithm}
     \include{./summary/summary}
+    \include{./appendix/appendix}
     
     
     

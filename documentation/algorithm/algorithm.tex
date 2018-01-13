@@ -1,4 +1,5 @@
 \chapter{Verteilungsalgorithmus}
+\label{chapter:algorithm}
     \section{Überlegungen zum Algorithmus}
             Die Grundlegende Idee der Zielfunktion hat die Form:
                 $$ \max ~\text{Summe der Prioritäten} - \text{Gewicht} \cdot \text{Varianz} ~~~.$$
@@ -6,7 +7,7 @@
                 $$ \max 
                     \sum_{i=1}^{n} \sum_{j=1}^{m} c(i,j)x_{ij} 
                     - \frac{\beta}{n} \sum_{i=1}^{n}
-                        \left[\left(\sum_{i=1}^{m} c(i,j)x_{ij}\right) - \frac{1}{n} \sum_{i=1}^{n} \sum_{j=1}^{m} c(i,j)x_{ij}\right] ~~~,$$
+                        \left[\left(\sum_{j=1}^{m} c(i,j)x_{ij}\right) - \frac{1}{n} \sum_{i=1}^{n} \sum_{j=1}^{m} c(i,j)x_{ij}\right]^2 ~~~,$$
             wobei gilt:\\
                 \begin{tabular}{l c l}
                     $n$ & - & Anzahl der Studenten \\
