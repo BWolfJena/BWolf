@@ -15,19 +15,19 @@
 \contentsline {chapter}{\numberline {3}Entwurf}{9}{chapter.3}
 \contentsline {section}{\numberline {3.1}Datenmodell}{9}{section.3.1}
 \contentsline {section}{\numberline {3.2}Design}{11}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Frontend}{11}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Backend}{12}{subsection.3.2.2}
-\contentsline {subsubsection}{Administratoren}{12}{section*.5}
-\contentsline {subsubsection}{Dozenten}{12}{section*.6}
-\contentsline {chapter}{\numberline {4}Umsetzung}{15}{chapter.4}
-\contentsline {section}{\numberline {4.1}Verwendete Software}{15}{section.4.1}
-\contentsline {section}{\numberline {4.2}Frontend}{15}{section.4.2}
-\contentsline {section}{\numberline {4.3}Backend}{15}{section.4.3}
-\contentsline {chapter}{\numberline {5}Verteilungsalgorithmus}{16}{chapter.5}
-\contentsline {section}{\numberline {5.1}\IeC {\"U}berlegungen zum Algorithmus}{16}{section.5.1}
-\contentsline {chapter}{\numberline {6}Zusammenfassung}{18}{chapter.6}
-\contentsline {section}{\numberline {6.1}Stand des Projekts}{18}{section.6.1}
-\contentsline {section}{\numberline {6.2}Offene Probleme}{18}{section.6.2}
-\contentsline {section}{\numberline {6.3}M\IeC {\"o}gliche weitere Arbeiten}{18}{section.6.3}
-\contentsline {chapter}{\numberline {7}Anhang}{19}{chapter.7}
-\contentsline {section}{\numberline {7.1}Anhang - Entwurf}{19}{section.7.1}
+\contentsline {subsection}{\numberline {3.2.1}Frontend}{12}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Backend}{13}{subsection.3.2.2}
+\contentsline {subsubsection}{Administratoren}{13}{section*.5}
+\contentsline {subsubsection}{Dozenten}{13}{section*.6}
+\contentsline {chapter}{\numberline {4}Umsetzung}{16}{chapter.4}
+\contentsline {section}{\numberline {4.1}Verwendete Software}{16}{section.4.1}
+\contentsline {section}{\numberline {4.2}Frontend}{16}{section.4.2}
+\contentsline {section}{\numberline {4.3}Backend}{16}{section.4.3}
+\contentsline {chapter}{\numberline {5}Verteilungsalgorithmus}{17}{chapter.5}
+\contentsline {section}{\numberline {5.1}\IeC {\"U}berlegungen zum Algorithmus}{17}{section.5.1}
+\contentsline {chapter}{\numberline {6}Zusammenfassung}{19}{chapter.6}
+\contentsline {section}{\numberline {6.1}Stand des Projekts}{19}{section.6.1}
+\contentsline {section}{\numberline {6.2}Offene Probleme}{19}{section.6.2}
+\contentsline {section}{\numberline {6.3}M\IeC {\"o}gliche weitere Arbeiten}{19}{section.6.3}
+\contentsline {chapter}{\numberline {7}Anhang}{20}{chapter.7}
+\contentsline {section}{\numberline {7.1}Anhang - Entwurf}{20}{section.7.1}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.6.1)  10 JAN 2018 13:48
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.6.1)  13 JAN 2018 16:04
 entering extended mode
 **documentation.tex
 (C:\Users\Kasimir\BWolf\documentation\documentation.tex
@@ -684,75 +684,80 @@ Kapitel 3.
 File: ./design/images/data-model.png Graphic file (type png)
 
 <use ./design/images/data-model.png>
-Package pdftex.def Info: ./design/images/data-model.png used on input line 15.
+Package pdftex.def Info: ./design/images/data-model.png used on input line 16.
 (pdftex.def)             Requested size: 390.0pt x 261.03415pt.
  [9
 
 
 
 ] [10 <C:/Users/Kasimir/BWolf/documentation/design/images/data-model.png>]
-<./design/images/MockUpsFrontend/frontendLogin.png, id=211, 796.47563pt x 597.7
+Overfull \hbox (4.63214pt too wide) in paragraph at lines 38--40
+\T1/ptm/m/n/12 zu ge-teilt wur-de. Aus die-sem Grund bein-hal-tet \T1/ptm/m/it/
+12 bwolf-je-na_core_users \T1/ptm/m/n/12 Fremd-schlüs-
+ []
+
+
+<./design/images/MockUpsFrontend/frontendLogin.png, id=212, 796.47563pt x 597.7
 3312pt>
 File: ./design/images/MockUpsFrontend/frontendLogin.png Graphic file (type png)
 
  <use ./design/images/MockUpsFrontend/frontendLogin.png>
 Package pdftex.def Info: ./design/images/MockUpsFrontend/frontendLogin.png used
- on input line 53.
+ on input line 73.
 (pdftex.def)             Requested size: 272.99881pt x 204.87741pt.
 
-Overfull \hbox (18.02045pt too wide) in paragraph at lines 49--57
+Overfull \hbox (18.02045pt too wide) in paragraph at lines 69--77
 \T1/ptm/m/n/12 Wie in Ka-pi-tel []2[] be-reits aus-ge-führt, sol-len die Stu-de
 n-ten zu-nächst ei-ne Registrierungs-
  []
 
-
-<./design/images/MockUpsFrontend/frontendCoursedetails.png, id=215, 796.47563pt
+[11]
+<./design/images/MockUpsFrontend/frontendCoursedetails.png, id=221, 796.47563pt
  x 597.73312pt>
 File: ./design/images/MockUpsFrontend/frontendCoursedetails.png Graphic file (t
 ype png)
 
 <use ./design/images/MockUpsFrontend/frontendCoursedetails.png>
 Package pdftex.def Info: ./design/images/MockUpsFrontend/frontendCoursedetails.
-png used on input line 72.
+png used on input line 92.
 (pdftex.def)             Requested size: 272.99881pt x 204.87741pt.
 
-<./design/images/MockUpsFrontend/frontendPreferences.png, id=216, 796.47563pt x
+<./design/images/MockUpsFrontend/frontendPreferences.png, id=222, 796.47563pt x
  597.73312pt>
 File: ./design/images/MockUpsFrontend/frontendPreferences.png Graphic file (typ
 e png)
  <use ./design/images/MockUpsFrontend/frontendPreferences.png>
 Package pdftex.def Info: ./design/images/MockUpsFrontend/frontendPreferences.pn
-g used on input line 79.
+g used on input line 99.
 (pdftex.def)             Requested size: 272.99881pt x 204.87741pt.
 
-[11]
-<./design/images/MockUpsFrontend/frontendSwap1.png, id=224, 796.47563pt x 597.7
+[12 <C:/Users/Kasimir/BWolf/documentation/design/images/MockUpsFrontend/fronten
+dLogin.png>]
+<./design/images/MockUpsFrontend/frontendSwap1.png, id=230, 796.47563pt x 597.7
 3312pt>
 File: ./design/images/MockUpsFrontend/frontendSwap1.png Graphic file (type png)
 
  <use ./design/images/MockUpsFrontend/frontendSwap1.png>
 Package pdftex.def Info: ./design/images/MockUpsFrontend/frontendSwap1.png used
- on input line 91.
+ on input line 111.
 (pdftex.def)             Requested size: 272.99881pt x 204.87741pt.
 
-<./design/images/MockUpsFrontend/frontendSwap2.png, id=225, 796.47563pt x 597.7
+<./design/images/MockUpsFrontend/frontendSwap2.png, id=231, 796.47563pt x 597.7
 3312pt>
 File: ./design/images/MockUpsFrontend/frontendSwap2.png Graphic file (type png)
 
  <use ./design/images/MockUpsFrontend/frontendSwap2.png>
 Package pdftex.def Info: ./design/images/MockUpsFrontend/frontendSwap2.png used
- on input line 98.
+ on input line 118.
 (pdftex.def)             Requested size: 272.99881pt x 204.87741pt.
-) [12 <C:/Users/Kasimir/BWolf/documentation/design/images/MockUpsFrontend/front
-endLogin.png>]
-[13 <C:/Users/Kasimir/BWolf/documentation/design/images/MockUpsFrontend/fronten
-dCoursedetails.png> <C:/Users/Kasimir/BWolf/documentation/design/images/MockUps
-Frontend/frontendPreferences.png>] [14 <C:/Users/Kasimir/BWolf/documentation/de
-sign/images/MockUpsFrontend/frontendSwap1.png> <C:/Users/Kasimir/BWolf/document
-ation/design/images/MockUpsFrontend/frontendSwap2.png>]
+) [13 <C:/Users/Kasimir/BWolf/documentation/design/images/MockUpsFrontend/front
+endCoursedetails.png>] [14 <C:/Users/Kasimir/BWolf/documentation/design/images/
+MockUpsFrontend/frontendPreferences.png> <C:/Users/Kasimir/BWolf/documentation/
+design/images/MockUpsFrontend/frontendSwap1.png>] [15 <C:/Users/Kasimir/BWolf/d
+ocumentation/design/images/MockUpsFrontend/frontendSwap2.png>]
 (C:\Users\Kasimir\BWolf\documentation\implementation\implementation.tex
 Kapitel 4.
-) [15
+) [16
 
 
 
@@ -763,20 +768,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 10--20
 
  []
 
-[16
+[17
 
 
 
-]) [17] (C:\Users\Kasimir\BWolf\documentation\summary\summary.tex
+]) [18] (C:\Users\Kasimir\BWolf\documentation\summary\summary.tex
 Kapitel 6.
-) [18
+) [19
 
 
 
 ] (C:\Users\Kasimir\BWolf\documentation\appendix\appendix.tex
 Kapitel 7.
 
-<./design/images/MockUpsFrontend/frontendRegistration.png, id=267, 796.47563pt 
+<./design/images/MockUpsFrontend/frontendRegistration.png, id=272, 796.47563pt 
 x 597.73312pt>
 File: ./design/images/MockUpsFrontend/frontendRegistration.png Graphic file (ty
 pe png)
@@ -785,7 +790,7 @@ Package pdftex.def Info: ./design/images/MockUpsFrontend/frontendRegistration.p
 ng used on input line 7.
 (pdftex.def)             Requested size: 272.99881pt x 204.87741pt.
 
-<./design/images/MockUpsFrontend/frontendResults.png, id=268, 796.47563pt x 597
+<./design/images/MockUpsFrontend/frontendResults.png, id=273, 796.47563pt x 597
 .73312pt>
 File: ./design/images/MockUpsFrontend/frontendResults.png Graphic file (type pn
 g)
@@ -794,7 +799,7 @@ Package pdftex.def Info: ./design/images/MockUpsFrontend/frontendResults.png us
 ed on input line 14.
 (pdftex.def)             Requested size: 272.99881pt x 204.87741pt.
 
-<./design/images/MockUpsFrontend/frontendCourses.png, id=269, 796.47563pt x 597
+<./design/images/MockUpsFrontend/frontendCourses.png, id=274, 796.47563pt x 597
 .73312pt>
 File: ./design/images/MockUpsFrontend/frontendCourses.png Graphic file (type pn
 g)
@@ -802,15 +807,15 @@ g)
 Package pdftex.def Info: ./design/images/MockUpsFrontend/frontendCourses.png us
 ed on input line 21.
 (pdftex.def)             Requested size: 272.99881pt x 204.87741pt.
-) [19
+) [20
 
 
 
 
 ]
-[20 <C:/Users/Kasimir/BWolf/documentation/design/images/MockUpsFrontend/fronten
+[21 <C:/Users/Kasimir/BWolf/documentation/design/images/MockUpsFrontend/fronten
 dRegistration.png> <C:/Users/Kasimir/BWolf/documentation/design/images/MockUpsF
-rontend/frontendResults.png>] [21 <C:/Users/Kasimir/BWolf/documentation/design/
+rontend/frontendResults.png>] [22 <C:/Users/Kasimir/BWolf/documentation/design/
 images/MockUpsFrontend/frontendCourses.png>]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 58.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 58.
@@ -834,13 +839,13 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 58.
  ) 
 Here is how much of TeX's memory you used:
- 7454 strings out of 493921
- 106796 string characters out of 3144871
- 191955 words of memory out of 3000000
+ 7455 strings out of 493921
+ 106803 string characters out of 3144871
+ 192008 words of memory out of 3000000
  10485 multiletter control sequences out of 15000+200000
  54703 words of font info for 60 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 34i,10n,35p,333b,474s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 34i,10n,35p,335b,474s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Progra
 m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program 
 Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Fi
@@ -851,9 +856,9 @@ MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/Mi
 KTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
 nts/type1/urw/times/utmr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/u
 rw/times/utmri8a.pfb>
-Output written on documentation.pdf (24 pages, 506796 bytes).
+Output written on documentation.pdf (25 pages, 508861 bytes).
 PDF statistics:
- 331 PDF objects out of 1000 (max. 8388607)
- 67 named destinations out of 1000 (max. 500000)
+ 337 PDF objects out of 1000 (max. 8388607)
+ 68 named destinations out of 1000 (max. 500000)
  267 words of extra memory for PDF output out of 10000 (max. 10000000)
 

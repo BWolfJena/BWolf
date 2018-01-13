@@ -9,23 +9,43 @@
     Nachdem im vorangegangenem Kapitel die Anforderungen für das System spezifiziert wurden, soll in diesem Kapitel der Entwurf zur Umsetzung der Anforderungen der verschiedenen Sichten dargestellt werden.
     Zunächst wird das dem System zugrundeliegende Datenmodell dargestellt.
     Darauffolgend wird das Design für die webbasierte Plattform erläutert.     
+    
     \section{Datenmodell}
         \begin{figure}
             \centering
             \includegraphics[width=1.0\textwidth]{./design/images/data-model.png}\par\vspace{1cm}
-            \caption{Entwurf des Datenmodells. Farbcode: Gelb Primärschlüssel, Rot Fremdschlüssel }
+            \caption{Entwurf des Datenmodells. Farbcode: Gelb Primärschlüssel, Rot Fremdschlüssel, Blau gewöhnliche Variable, Weiß nullable Variable}
             \label{fig:datamodel}
         \end{figure}
+    
         Der Entwurf für das Datenmodell ist in Abbildung \ref{fig:datamodel} zu sehen.
         Es besteht aus sieben Tabellen.
         Die Tabelle \textit{bwolfjena\_core\_modules} beinhaltet die verschiedenen Empiriepraktika.
         Der Name Module für die Tabelle wurde gewählt, da das System bei Bedarf auch auf andere ausgewählte Module als das Empiriepraktikum erweitert werden kann.
-        Ein Modul beziehungsweise Empiriepraktikum beinhaltet die verschiedenen Kurse.
-        Diese sind in der Tabelle \textit{bwolfjena\_core\_courses} gespeichert.
-        Ein Kurse gehört zu einem Lehrstuhl, die in der Tabelle \textit{bwolfjena\_core\_chairs} abgelegt sind.
+        
+        In der Tabelle \textit{bwolfjena\_core\_courses} sind die verschiedenen Kurse gespeichert.
+        Ein Kurs gehört immer zu einem bestimmten Modul beziehungsweise einem Empiriepraktikum.
+        Um das abzubilden, ist für jeden Kurs mittels eines Fremdschlüssels das Empiriepraktikum, zu dem er gehört, gespeichert.
+        
+        Ein Kurs wird immer von einem Lehrstuhl angeboten, die in der Tabelle \textit{bwolfjena\_core\_chairs} abgelegt sind.
+        Auch auf diese Tabelle existiert wieder ein entsprechender Fremdschlüssel in \textit{bwolfjena\_core\_courses}. 
         
         Alle angemeldeten Studenten werden in der Tabelle \textit{users} gespeichert.
-        Jeder der Studenten hat eine Präferenzliste (Tabelle \textit{bwolfjena\_core\_priorities}).
+        Jeder der Studenten hat eine Präferenzliste.
+        Die Einträge der Präferenzliste für jeden Studenten und jeden Kurs werden in Tabelle \textit{bwolfjena\_core\_priorities} gespeichert.
+        Dementsprechend beinhaltet \textit{bwolfjena\_core\_priorities} Fremdschlüssel auf \textit{users} und \textit{bwolfjena\_core\_courses}.
+        
+        In der Tabelle \textit{bwolfjena\_core\_users} ist abgelegt, welcher Student welchem Kurs zu geteilt wurde.
+        Aus diesem Grund beinhaltet \textit{bwolfjena\_core\_users} Fremdschlüssel auf \textit{bwolfjena\_core\_courses} und \textit{users}. 
+        
+        Die letzte Tabelle \textit{backend\_users} beinhaltet die Backendbenutzer, also Dozenten und Administratoren.
+        Da die Dozenten jeweils zu einem Lehrstuhl gehören, gibt es in der Tabelle \textit{bwolfjena\_core\_chairs} einen entsprechenden Fremdschlüssel.
+        Auch in \textit{bwolfjena\_core\_courses} ist ein Fremdschlüssel für die Backendbenutzer gespeichert, um den Dozenten anzugeben, der den Kurs leitet.
+        
+        Neben diesen Fremdschlüsseln wird für die Einträge in jeder Tabelle als Primärschlüssel eine ID angelegt.
+        Die weiteren Spalten der Tabellen sind entsprechend den Anforderung aus Kapitel \ref{chapter:requirements} gewählt.
+        
+        
         
     
     \section{Design}
