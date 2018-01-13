@@ -11,7 +11,7 @@ COPY package.json ./
 COPY yarn.lock ./
 RUN yarn install --frozen-lockfile --non-interactive
 
-EXPOSE 1337
+EXPOSE 80
 
 ENTRYPOINT ["/sbin/tini", "--"]
 CMD ["yarn", "start"]

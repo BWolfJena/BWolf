@@ -4,6 +4,8 @@ const distributeStudents = require('./distributeStudents');
 
 const app = express();
 
+const PORT = process.env.PORT || 80
+
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
@@ -20,6 +22,6 @@ app.post('/', function (req, res) {
     res.json(result);
 });
 
-app.listen(80, function () {
-    console.log('Course distribution algorithm listening on port 80!');
+app.listen(PORT, function () {
+    console.log(`Course distribution algorithm listening on port ${ PORT }!`);
 });
