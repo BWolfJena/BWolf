@@ -16,7 +16,7 @@ class HomepageTest extends DuskTestCase
     public function testBasicExample()
     {
         $this->browse(function (Browser $browser) {
-            $browser->visit('/kursuebersicht')
+            $browser->visit('kursuebersicht')
                     ->dump()
                     ->assertSee('Kursübersicht');
         });
