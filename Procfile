@@ -1,1 +1,0 @@
-web: node src/algorithm/src/index.js
