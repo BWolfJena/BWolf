@@ -79,6 +79,10 @@ class Plugin extends PluginBase
                 'tab' => 'Verwalten',
                 'label' => 'Volle Berechtigung zum Verwalten von Lehrstühlen'
             ],
+            'bwolfjena.core.full_distribution' => [
+                'tab' => 'Verteilung',
+                'label' => 'Volle zum Verteilen von Studierenden'
+            ],
         ];
     }
 
@@ -103,7 +107,7 @@ class Plugin extends PluginBase
                 'url'         => Backend::url('bwolfjena/core/courses'),
                 'icon'        => 'icon-database',
                 'permissions' => ['bwolfjena.core.*'],
-                'order'       => 500,
+                'order'       => 400,
                 'sideMenu' => [
                     'courses' => [
                         'label'       => 'Kurse',
@@ -125,6 +129,13 @@ class Plugin extends PluginBase
                     ],
 
                 ]
+            ],
+            'verteilung' => [
+                'label' => 'Verteilung',
+                'url' => Backend::url('bwolfjena/core/distribution'),
+                'icon' => 'icon-bar-chart',
+                'permissions' => ['bwolfjena.core.full_distribution'],
+                'order' => 410  ,
             ],
 
         ];
