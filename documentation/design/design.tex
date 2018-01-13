@@ -71,58 +71,119 @@
             Jedoch sollen die verschiedenen Kurse auch ohne eine Anmeldung einsehbar sein.
             \begin{figure}[t]
             	\centering
-            	\includegraphics[width=0.7\textwidth]{./design/images/MockUpsFrontend/frontendLogin.png}
+            	\includegraphics[width=0.6\textwidth]{./design/images/MockUpsFrontend/frontendLogin.png}
             	\caption{Entwurf für die Login-Oberfläche}
-            	\label{mockupLoginFrontend}
+            	\label{fig:mockupLoginFrontend}
             \end{figure}   
         
-            In Abbildung \ref{mockupLoginFrontend} werden beide Anforderungen umgesetzt.
+            In Abbildung \ref{fig:mockupLoginFrontend} werden beide Anforderungen umgesetzt.
             Zum einen die Login-Oberfläche, in der in zwei Textfeldern Benutzername und Passwort für einen erfolgreichen Login eingetragen werden müssen, zum anderen die direkte Weiterleitung zur Kursübersicht als einfacher Knopf darunter.
 
             Die Kopfzeile umfasst einige Reiter.
             So kann mithilfe der Kopfzeile auf die verschiedenen Funktionen des Frontends gewechselt werden. 
             Dazu zählen die Kursübersicht, die Erstellung der Präferenzliste, das Einsehen der Verteilungsergebnisse, sowie das Tauschen von Kursen.
-            Außerdem soll in der Kopfzeile ein Schalter zum Abmelden aus dem System bereitgestellt werden, sobald ein Benutzer die sich erfolgreich eingeloggt hat. 
+            Außer der Navigation auf die Kursübersicht sind diese jedoch erst nach einer erfolgreiche Anmeldung funktional.
+            Ohne eine Anmeldung wird der Benutzer wieder auf die Loginoberfläche verwiesen.
+            In der Kopfzeile soll auch eine Schaltfläche zum erstmaligen Registrieren im System sein.
+            Die Registrierungsseite soll wie die der strukturell wie der Login aussehen (\ref{fig:mockupRegistrationFrontend}).
+            Sobald ein Benutzer sich erfolgreich angemeldet hat, soll der Schalter zum Anmelden in der Kopfzeile gegen einen Abmelden-Knopf ausgetauscht werden.
 %            Auch eine Anzeige, ab wann das Ende der Einschreibungs- und Tauschphase erreicht ist.
-            Auf allen weiteren Seiten soll die Kopfzeile die gleiche Funktion und das gleiche Aussehen haben.
-            Unter der Kopfzeile folgt eine textuelle Erklärung des Ablaufs des Empiriepraktikums und der für die Studenten relevanten Schritte, um sich erfolgreich für die Kurse einzuschreiben.
-            Wie in Abbildung \ref{mockupCoursesFrontend} dargestellt, werden darunter die verschiedenen Kurse angezeigt, jeweils mit einer kurzen Beschreibung.
-            Durch einen Klick auf ein Kursfeld, sollen sich die detaillierten Informationen zu dem Kurs einsehen lassen.
-            Das Desing hierfür ist in Abbildung \ref{mockupDetailsFrontend} zu sehen und bedarf keiner weiteren Erläuterung.
-            \begin{figure}[t]
-            	\centering
-            	\includegraphics[width=0.7\textwidth]{./design/images/MockUpsFrontend/frontendCoursedetails.png}
-            	\caption{Entwurf für die Kursdetails}
-            	\label{mockupDetailsFrontend}
-            \end{figure}
+			Auf allen weiteren Seiten des Frontends soll die Kopfzeile die gleichen Funktionen und das gleiche Aussehen haben, der Registieren-Knopf entfällt jedoch, sobald die Anmeldung erfolgt ist.
             Die Fußzeile soll weitere allgemeine Informationen bereitstellen, sofern diese von Nöten sein sollten, aber vor allem als optischer Abschluss der Seite dienen.
+            Auch sie soll auf alle folgenden Seiten übernommen werden.
+			
+			\begin{figure}[t]
+				\centering
+				\includegraphics[width=0.6\textwidth]{./design/images/MockUpsFrontend/frontendCourses.png}
+				\caption{Entwurf für die Kursübersicht}
+				\label{fig:mockupCoursesFrontend}
+			\end{figure}
+			
+			In Abbildung \ref{fig:mockupCoursesFrontend} ist die Seite für die Kursübersicht zu sehen.
+            Unter der Kopfzeile folgt eine textuelle Erklärung des Ablaufs des Empiriepraktikums und der für die Studenten relevanten Schritte, um sich erfolgreich für die Kurse einzuschreiben.
+            Die verschiedenen Kurse werden darunter jeweils mit einer kurzen Beschreibung angezeigt.
+            Durch einen Klick auf ein Kursfeld, sollen sich die detaillierten Informationen zu dem Kurs einsehen lassen.
+            Das Design hierfür ist in Abbildung \ref{fig:mockupDetailsFrontend} zu sehen und bedarf keiner weiteren Erläuterung.
+            
             \begin{figure}[t]
             	\centering
-            	\includegraphics[width=0.7\textwidth]{./design/images/MockUpsFrontend/frontendPreferences.png}
+            	\includegraphics[width=0.6\textwidth]{./design/images/MockUpsFrontend/frontendPreferences.png}
             	\caption{Entwurf für die Einschreibungs-Oberfläche}
-            	\label{mockupPreferencesFrontend}
+            	\label{fig:mockupPreferencesFrontend}
             \end{figure}
             
-            Die Seite für die Einschreibung in die Kurse soll wie in Abbildung \ref{mockupPreferencesFrontend} gestaltet sein.
+            Die Seite für die Einschreibung in die Kurse soll wie in Abbildung \ref{fig:mockupPreferencesFrontend} gestaltet sein.
             Wieder bilden Kopfzeile und Fußzeile den Rahmen der Seite.
             Unter der Kopfzeile befindet sich auch hier eine kurze Erklärung, wie man die Präferenzliste genau erstellt.
             Das Erstellen soll im Feld \textit{Präferenzliste} über ein ''Drag\&Drop''-System vorgenommen werden und über den Knopf \textit{Absenden} fixiert werden können.
             
+            Nachdem die Verteilung auf die Kurse vorgenommen wurde, sollen die Benutzer unter dem Reiter Ergebnisübersicht die Resultate einsehen können.
+            Der einfache Entwurf ist im Anhang \ref{chapter:appendix} in Abbildung \ref{fig:mockupResultsFrontend} zu sehen.
+            
+            Unter dem Reiter \textit{Tauschbörse} soll die in Kapitel \ref{chapter:requirements} genannte Tauschmöglichkeit für Studenten realisiert sein.
+            Die Struktur der Seite gleicht dem der Kursübersicht.
+            Unter einer Information in welchem Kurs man sich befindet und wie die Tauschfunktionen zu benutzten sind, finden sich die verschiedenen Kurse, genauso wie in der Kursübersicht.
+            Der Kurs, dem man zugeteilt ist, erscheint ausgegraut oder auf eine andere Art und Weise markiert.
+            
             \begin{figure}[t]
-                \centering
-                \includegraphics[width=0.7\textwidth]{./design/images/MockUpsFrontend/frontendSwap1.png}
-                \caption{Entwurf für die Tauschauswahl}
-                \label{mockupResultsFrontend}
+            	\centering
+            	\includegraphics[width=0.6\textwidth]{./design/images/MockUpsFrontend/frontendSwap2.png}
+            	\caption{Entwurf für die Tauschanfrage}
+            	\label{fig:mockupResultsSwap2}
             \end{figure}
+            
+            Durch einen Klick auf den Kurs mit dem man Tauschen möchte, öffnet sich die in Abbildung \ref{fig:mockupResultsSwap2} gezeigt Seite.
+            Hier kann in dem Textfeld \textit{Begründung} eine Begründung für den Tausch angegeben werden.
+            Mit der Schaltfläche \textit{Absenden} kann die Tauschanfrage abgeschickt werden, mit \textit{Abbrechen} gelangt der Benutzer wieder auf die vorherige Ansicht der Tauschbörse.
+            
+            
+            
         
-            \begin{figure}[t]
-                \centering
-                \includegraphics[width=0.7\textwidth]{./design/images/MockUpsFrontend/frontendSwap2.png}
-                \caption{Entwurf für die Tauschanfrage}
-                \label{mockupResultsFrontend}
-            \end{figure}
+            
             
     
         \subsection{Backend}
-        	\subsubsection{Administratoren}
-        	\subsubsection{Dozenten}
+	        Im Folgenden werden die wichtigsten Mockups für Administratoren und Dozenten vorgestellt.
+	        Für beide Sichten gibt es wieder eine Kopf- und eine Fußzeile.
+	        Die Kopfzeile für die Administratoren umfasst zunächst einen Reiter \textit{Verwalten}, in dem Kurse, Module und Lehrstühle angelegt werden können.
+	        Des Weiteren gibt es den Reiter \textit{Benutzer}, unter dem alle Benutzer des Systems verwaltet werden können.
+	        Unter dem Reiter \textit{Verteilungsalgorithmus} können die Administratoren den Verteilungsalgorithmus starten und sich die Ergebnisse anzeigen lassen.
+	        Zusätzlich gibt es noch eine Seitenleiste, in der unter dem jeweiligen Reiter weitere Optionen zur Verfügung stehen.
+        	
+        	\begin{figure}[t]
+        		\centering
+        		\includegraphics[width=0.6\textwidth]{./design/images/MockUpsBackend/backendManageCourses.png}
+        		\caption{Entwurf für das Verwalten der Kurse}
+        		\label{fig:mockupManageCourses}
+        	\end{figure}
+        	
+        	In Abbildung \ref{fig:mockupManageCourses} ist beispielhaft für den Reiter Verwaltung, die der Kursverwaltung zu sehen.
+        	Mithilfe der Seitenleiste am linken Rand, kann zwischen dem Verwalten von Kursen, Modulen (Praktika) und Lehrstühlen gewechselt werden.
+        	Alle Vorhandenen Kurse (bzw. Module oder Lehrstühle) werden in einer Tabelle angezeigt.
+        	Mit den beiden Schaltflächen am oberen Rand der Tabelle kann ein neuer Eintrag in der jeweiligen Tabelle erstellt, bzw. ein vorhandener Eintrag gelöscht werden.
+        	Die Einträge der entsprechenden Tabelle können nachträglich durch einen Klick auf den Eintrag in der Tabelle geändert werden.
+        	
+        	Abbildung \ref{fig:Verwalten} ist der Entwurf für das Erstellen oder Ändern eines Kurses, Moduls oder Lehrstuhls zu sehen.
+        	Alle notwendigen Informationen sollen in Textfeldern eingegeben und mit geeigneten Textformatierungsoptionen bearbeitet werden können.
+        	Mit einen Klick auf die Schaltfläche \textit{Speichern} wird die Änderung übernommen, bzw. die Erstellung bestätigt.
+        	
+        	Die Verwaltung der Benutzer erfolgt auf die selbe Weise und gleicht sich im Design.
+        	Wieder kann mithilfe der linken Seitenleiste umgeschaltet werden, ob Studenten oder Dozenten verwaltet werden sollen.
+        	Die entsprechende Benutzergruppe werden in einer Tabelle angezeigt und können mittels einer Schaltfläche gelöscht werden.
+        	Durch einen Klick auf die Tabellenzeile sollen die Informationen der Benutzer, wie in Abbildung \ref{fig:user} gezeigt, geändert werden können, analog zum bearbeiten der Kurse oder Module.
+        	
+        	Die Seite für den Reiter \textit{Verteilungsalgorithmus} ist in Abbildung \ref{vertalgo} dargestellt.
+        	Hier 
+        	
+        	Die Ansicht der Dozenten unterscheidet sich lediglich im Funktionsumfang.
+        	So sehen die Dozenten nur den Reiter \textit{Verwalten} in der Kopfzeile und in der linken Seitenleiste nur die Option zum verwalten der Kurse.
+        	Die Tabelle zeigt jetzt nur die Kurse, die der entsprechende Dozent selbst angelegt hat.  
+        	
+        	
+        	
+        	
+        	
+        	
+        	
+        	
+        	
