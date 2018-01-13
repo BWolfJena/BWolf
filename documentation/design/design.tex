@@ -6,7 +6,7 @@
 
 \chapter{Entwurf}
 \label{chapter:design}
-    Nachdem im vorangegangenem Kapitel die Anforderungen für das System spezifiziert wurden, soll in diesem Kapitel der Entwurf zur Umsetzung der Anforderungen der verschiedenen Sichten dargestellt werden.
+    Nachdem im vorangegangenem Kapitel die Anforderungen für das System spezifiziert wurden, soll in diesem Kapitel der Umsetzungsentwurf der verschiedenen Sichten dargestellt werden.
     Zunächst wird das dem System zugrundeliegende Datenmodell dargestellt.
     Darauffolgend wird das Design für die webbasierte Plattform erläutert.     
     
@@ -14,7 +14,7 @@
         \begin{figure}
             \centering
             \includegraphics[width=1.0\textwidth]{./design/images/data-model.png}\par\vspace{1cm}
-            \caption{Entwurf des Datenmodells. Farbcode: Gelb Primärschlüssel, Rot Fremdschlüssel, Blau gewöhnliche Variable, Weiß nullable Variable}
+            \caption{Entwurf des Datenmodells. Farbcode für Spalten der Tabellen: Gelb Primärschlüssel, Rot Fremdschlüssel, Blau gewöhnliche Variable, Weiß nullable Variable}
             \label{fig:datamodel}
         \end{figure}
     
@@ -33,23 +33,24 @@
         Alle angemeldeten Studenten werden in der Tabelle \textit{users} gespeichert.
         Jeder der Studenten hat eine Präferenzliste.
         Die Einträge der Präferenzliste für jeden Studenten und jeden Kurs werden in Tabelle \textit{bwolfjena\_core\_priorities} gespeichert.
-        Dementsprechend beinhaltet \textit{bwolfjena\_core\_priorities} Fremdschlüssel auf \textit{users} und \textit{bwolfjena\_core\_courses}.
+        Dementsprechend beinhaltet \textit{bwolfjena\_core\_priorities} Fremdschlüssel von \textit{users} und \textit{bwolfjena\_core\_courses}.
         
         In der Tabelle \textit{bwolfjena\_core\_users} ist abgelegt, welcher Student welchem Kurs zu geteilt wurde.
         Aus diesem Grund beinhaltet \textit{bwolfjena\_core\_users} Fremdschlüssel auf \textit{bwolfjena\_core\_courses} und \textit{users}. 
         
-        Die letzte Tabelle \textit{backend\_users} beinhaltet die Backendbenutzer, also Dozenten und Administratoren.
-        Da die Dozenten jeweils zu einem Lehrstuhl gehören, gibt es in der Tabelle \textit{bwolfjena\_core\_chairs} einen entsprechenden Fremdschlüssel.
-        Auch in \textit{bwolfjena\_core\_courses} ist ein Fremdschlüssel für die Backendbenutzer gespeichert, um den Dozenten anzugeben, der den Kurs leitet.
+        Die letzte Tabelle \textit{backend\_users} beinhaltet die Backendbenutzer.
+        Damit sind die Dozenten und Administratoren gemeint.
+        In \textit{bwolfjena\_core\_courses} ist ein Fremdschlüssel für die Backendbenutzer gespeichert, um den Dozenten anzugeben, der den Kurs leitet.
+        Auch die Tabelle \textit{bwolfjena\_core\_chairs} hat einen Fremdschlüssel zu der Tabelle \textit{backend\_users}, um den Lehrstuhlinhaber anzugeben.
         
-        Neben diesen Fremdschlüsseln wird für die Einträge in jeder Tabelle als Primärschlüssel eine ID angelegt.
+        Neben den beschriebenen Fremdschlüsseln existieren für die Einträge in jeder Tabelle IDs als Primärschlüssel.
         Die weiteren Spalten der Tabellen sind entsprechend den Anforderung aus Kapitel \ref{chapter:requirements} gewählt.
         
         
         
     
     \section{Design}
-        Für den Desing-Entwurf der Seite wurden Mock-Ups erstellt, die den groben Aufbau der Website mit den entsprechenden Funktionen zeigt. 
+        Für den Desing-Entwurf der Seite wurden Mock-Ups erstellt, die den groben Aufbau der Website mit den entsprechenden Funktionen zeigen. 
         Im folgenden werden diese Mock-Ups für das sogenannte Frontend, also aus Sicht der Studenten, und für das Backend, die Sicht der Dozenten beziehungsweise der Administratoren, vorgestellt.
         Dabei gilt der in Tabelle \ref{tab:Farbcode} angegebene Farbcode für die verschiedenen Elemente der Mock-Ups.
         \begin{table}
@@ -76,12 +77,13 @@
             \end{figure}   
         
             In Abbildung \ref{mockupLoginFrontend} werden beide Anforderungen umgesetzt.
-            Zum einen die Login-Oberfläche, in der in zwei Textfelder Benutzername und Passwort für einen erfolgreichen Login eingetragen werden müssen, zum anderen die direkte Weiterleitung zur Kursübersicht als einfacher Knopf darunter.
+            Zum einen die Login-Oberfläche, in der in zwei Textfeldern Benutzername und Passwort für einen erfolgreichen Login eingetragen werden müssen, zum anderen die direkte Weiterleitung zur Kursübersicht als einfacher Knopf darunter.
 
             Die Kopfzeile umfasst einige Reiter.
             So kann mithilfe der Kopfzeile auf die verschiedenen Funktionen des Frontends gewechselt werden. 
             Dazu zählen die Kursübersicht, die Erstellung der Präferenzliste, das Einsehen der Verteilungsergebnisse, sowie das Tauschen von Kursen.
-            Außerdem soll in der Kopfzeile ein Schalter zum Abmelden aus dem System bereitgestellt werden und eine Anzeige, ab wann das Ende der Einschreibungs- und Tauschphase erreicht ist.
+            Außerdem soll in der Kopfzeile ein Schalter zum Abmelden aus dem System bereitgestellt werden, sobald ein Benutzer die sich erfolgreich eingeloggt hat. 
+%            Auch eine Anzeige, ab wann das Ende der Einschreibungs- und Tauschphase erreicht ist.
             Auf allen weiteren Seiten soll die Kopfzeile die gleiche Funktion und das gleiche Aussehen haben.
             Unter der Kopfzeile folgt eine textuelle Erklärung des Ablaufs des Empiriepraktikums und der für die Studenten relevanten Schritte, um sich erfolgreich für die Kurse einzuschreiben.
             Wie in Abbildung \ref{mockupCoursesFrontend} dargestellt, werden darunter die verschiedenen Kurse angezeigt, jeweils mit einer kurzen Beschreibung.
