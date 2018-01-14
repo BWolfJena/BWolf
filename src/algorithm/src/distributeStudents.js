@@ -45,7 +45,7 @@ module.exports = function distributeStudents(courses, elections, params) {
 
     // Force to chose exactly one course for a student
     let row = new Row();
-    reversedElections.slice(lowest).foreach(function (courseId) {
+    reversedElections.slice(lowest).forEach(function (courseId) {
       row.Add(X[studentId][courseId], 1);
     });
     lp.addConstraint(row, 'EQ', 1, `Stundent ${studentId} exactly one course`);
