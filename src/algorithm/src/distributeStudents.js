@@ -21,7 +21,7 @@ module.exports = function distributeStudents(courses, elections, params) {
     X[studentId] = {};
     courseIds.forEach(function (courseId) {
       X[studentId][courseId] = lp.addColumn(`x_${studentId},${courseId}`, false, true);
-      let preference = elections[studentId].indexOf(courseId);
+      let preference = elections[studentId].indexOf(parseInt(courseId));
       console.log(preference, studentId, elections[studentId]);
       objective.Add(X[studentId][courseId], weights[preference]);
     });
@@ -81,7 +81,7 @@ module.exports = function distributeStudents(courses, elections, params) {
   studentIds.forEach(function (studentId) {
     courseIds.forEach(function (courseId) {
       if (lp.get(X[studentId][courseId]) == '1') {
-        let preference = elections[studentId].indexOf(courseId) + 1;
+        let preference = elections[studentId].indexOf(parseInt(courseId)) + 1;
         result.students[studentId] = courseId;
         if (histData[preference]) {
           histData[preference]++;
