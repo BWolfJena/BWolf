@@ -22,7 +22,6 @@ module.exports = function distributeStudents(courses, elections, params) {
     courseIds.forEach(function (courseId) {
       X[studentId][courseId] = lp.addColumn(`x_${studentId},${courseId}`, false, true);
       let preference = elections[studentId].indexOf(parseInt(courseId));
-      console.log(preference, weights[preference]);
       objective.Add(X[studentId][courseId], weights[preference]);
     });
   });
@@ -44,7 +43,7 @@ module.exports = function distributeStudents(courses, elections, params) {
 
     // Force to chose exactly one course for a student
     let row = new Row();
-    reversedElections.slice(lowest).forEach(function (courseId) {
+    reversedElections.slice(lowest -1 ).forEach(function (courseId) {
       row.Add(X[studentId][courseId], 1);
     });
     lp.addConstraint(row, 'EQ', 1, `Stundent ${studentId} exactly one course`);
