@@ -31,16 +31,16 @@ module.exports = function distributeStudents(courses, elections, params) {
   // Set objective for lp
   lp.setObjective(objective, false);
 
-  const lower = 6;
+  const lowest = params.lowest;
 
   for (i = 0; i <= n - 1; i++) {
     var row = new Row();
-    for (j = 0; j < lower; j++) {
+    for (j = 0; j < lowest; j++) {
       row.Add(X[i][elections[i][j] - 1], 1);
     }
     lp.addConstraint(row, 'EQ', 0, `Stundent ${i + 1} exactly one course`);
     var row = new Row();
-    for (j = lower; j <= m - 1; j++) {
+    for (j = lowest; j <= m - 1; j++) {
       row.Add(X[i][elections[i][j] - 1], 1);
     }
     lp.addConstraint(row, 'EQ', 1, `Stundent ${i + 1} no lower course`);

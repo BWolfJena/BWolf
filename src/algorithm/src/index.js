@@ -13,7 +13,7 @@ app.get('/', function(req, res) {
     res.send('Only accepting post requests: {' +
         'courses: { "courseid1": {min: int - minimum participants, "max": int -maximum participants},' +
         'elections: { "studentid": [array of course ids ordered in the students favor], "studentid2" : [], ...},' +
-        'params: {min: int - the minimal allowed course rank, weights: [array of numbers representing the weights for course choices]}');
+        'params: {lowest: int - the minimal allowed course rank, weights: [array of numbers representing the weights for course choices]}');
 });
 
 app.post('/', function (req, res) {
