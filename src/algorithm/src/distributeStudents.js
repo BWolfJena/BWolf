@@ -22,7 +22,7 @@ module.exports = function distributeStudents(courses, elections, params) {
     courseIds.forEach(function (courseId) {
       X[studentId][courseId] = lp.addColumn(`x_${studentId},${courseId}`, false, true);
       let preference = elections[studentId].indexOf(parseInt(courseId));
-      console.log(preference, studentId, elections[studentId]);
+      console.log(preference, weights[preference]);
       objective.Add(X[studentId][courseId], weights[preference]);
     });
   });
