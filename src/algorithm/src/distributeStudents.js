@@ -30,7 +30,7 @@ module.exports = function distributeStudents(courses, elections, params) {
 
 
   studentIds.forEach(function (studentId) {
-    const reversedElections = elections[studentId].reverse();
+    let reversedElections = elections[studentId].reverse();
 
     // Forbid courses with lower priority / preference than lowest
     if (lowest > 0) {
@@ -43,7 +43,10 @@ module.exports = function distributeStudents(courses, elections, params) {
 
     // Force to chose exactly one course for a student
     let row = new Row();
-    reversedElections.slice(lowest - 1).forEach(function (courseId) {
+    if(lowest > 0) {
+      reversedElections = reversedElections.slice(lowest - 1)
+    }
+    reversedElections.forEach(function (courseId) {
       row.Add(X[studentId][courseId], 1);
     });
     lp.addConstraint(row, 'EQ', 1, `Stundent ${studentId} exactly one course`);
