@@ -20,6 +20,7 @@ module.exports = function distributeStudents(courses, elections, params) {
   let X = {}; // 2-dimensional array of letiables
   let objective = new Row();
   studentIds.forEach(function (studentId) {
+    X[studentId] = {};
     courseIds.forEach(function (courseId) {
       X[studentId][courseId] = lp.addColumn(`x_${studentId},${courseId}`, false, true);
       let preference = elections[studentId].indexOf(courseId);
