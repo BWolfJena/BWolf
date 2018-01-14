@@ -82,7 +82,7 @@ module.exports = function distributeStudents(courses, elections, params) {
     for (j = 0; j <= m - 1; j++) {
       if (lp.get(X[i][j]) == '1') {
         var course = elections[i].indexOf(j + 1) + 1;
-        result.students[studentIds[i]] = course;
+        result.students[studentIds[i]] = j+1;
         if (histData[course]) {
           histData[course]++;
         } else {
