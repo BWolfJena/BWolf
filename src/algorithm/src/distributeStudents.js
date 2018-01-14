@@ -3,67 +3,63 @@ const lpsolve = require('lp_solve');
 
 module.exports = function distributeStudents(courses, elections, params) {
 
-  var Row = lpsolve.Row;
-  const studentIds = _.keys(elections)
-  elections = _.values(elections)
-  const n = elections.length; // Number of students
-  const m = _.keys(courses).length; // Nuber of courses
-
-  var lp = new lpsolve.LinearProgram(); // create linear program
-  var X = []; // 2-dimensional array of variables
-  for (i = 0; i <= n - 1; i++) {
-    X.push([]);
-    for (j = 0; j <= m - 1; j++) {
-      X[i].push(lp.addColumn(`x_${i + 1},${j + 1}`, false, true)); // false, true for binary
-    }
-  }
-
+  let Row = lpsolve.Row;
+  const studentIds = _.keys(elections);
+  const courseIds = _.keys(courses);
+  const n = studentIds.length; // Number of students
+  const m = courseIds.length; // Number of courses
   const weights = params.weights;
-  var objective = new Row();
-  for (i = 0; i <= n - 1; i++) {
-    for (j = 0; j <= m - 1; j++) {
-      var preference = elections[i].indexOf(j + 1);
-      //x_ij (c_ij - beta/n * (c_ij - ))
-      objective.Add(X[i][j], weights[preference]);
-    }
-  }
-
-  // Set objective for lp
-  lp.setObjective(objective, false);
-
   const lowest = params.lowest;
-
   if (lowest >= m) {
     return {
       error: 'The lowest given priority is higher than the highest priority'
     }
   }
 
-  for (i = 0; i <= n - 1; i++) {
-    var row = new Row();
-    for (j = 0; j < lowest; j++) {
-      row.Add(X[i][elections[i][j] - 1], 1);
-    }
-    lp.addConstraint(row, 'EQ', 0, `Stundent ${i + 1} exactly one course`);
-    var row = new Row();
-    for (j = lowest; j <= m - 1; j++) {
-      row.Add(X[i][elections[i][j] - 1], 1);
-    }
-    lp.addConstraint(row, 'EQ', 1, `Stundent ${i + 1} no lower course`);
-  }
+  let lp = new lpsolve.LinearProgram(); // create linear program
+  let X = {}; // 2-dimensional array of letiables
+  let objective = new Row();
+  studentIds.forEach(function (studentId) {
+    courseIds.forEach(function (courseId) {
+      X[studentId][courseId] = lp.addColumn(`x_${studentId},${courseId}`, false, true);
+      let preference = elections[studentId].indexOf(courseId);
+      objective.Add(X[studentId][courseId], weights[preference]);
+    });
+  });
 
-  for (j = 0; j <= m - 1; j++) {
-    var row = new Row();
-    for (i = 0; i <= n - 1; i++) {
-      row.Add(X[i][j], 1);
+  lp.setObjective(objective, false); // Set objective for lp (false for max)
+
+
+  studentIds.forEach(function (studentId) {
+    const reversedElections = elections[studentId].reverse();
+
+    // Forbid courses with lower priority / preference than lowest
+    if (lowest > 0) {
+      let row = new Row();
+      reversedElections.slice(0, lowest - 1).forEach(function (courseId) {
+        row.Add(X[studentId][courseId], 1);
+      });
+      lp.addConstraint(row, 'EQ', 0, `Stundent ${studentId} no lower preference`);
     }
-    lp.addConstraint(row, 'LE', 12, `Course ${j + 1} max students`);
-    lp.addConstraint(row, 'GE', 0, `Course ${j + 1} min students`);
-  }
+
+    // Force to chose exactly one course for a student
+    let row = new Row();
+    reversedElections.slice(lowest).foreach(function (courseId) {
+      row.Add(X[studentId][courseId], 1);
+    });
+    lp.addConstraint(row, 'EQ', 1, `Stundent ${studentId} exactly one course`);
+  });
+
+  courseIds.forEach(function (courseId) {
+    let row = new Row();
+    studentIds.forEach(function (studentId) {
+      row.Add(X[studentId][courseId], 1);
+    });
+    lp.addConstraint(row, 'LE', courses[courseId].max, `Course ${courseId} max students`);
+    lp.addConstraint(row, 'GE', courses[courseId].min, `Course ${courseId} min students`);
+  });
 
   lp.setVerbose(0);
-
-
   const solverResult = lp.solve();
   if (solverResult.code != 0) {
     return {
@@ -72,17 +68,36 @@ module.exports = function distributeStudents(courses, elections, params) {
       program: lp.dumpProgram(),
     }
   }
-  result = {};
-  result.objective = lp.getObjectiveValue();
-  result.students = {}
+
+  result = {
+    objective: lp.getObjectiveValue(),
+    program: lp.dumpProgram(),
+    students: {}
+  };
+
   resultPrefs = [];
   histData = {};
 
+
+  studentIds.forEach(function (studentId) {
+    courseIds.forEach(function (courseId) {
+      if (lp.get(X[studentId][courseId]) == '1') {
+        let preference = elections[studentId].indexOf(courseId) + 1;
+        result.students[studentId] = courseId;
+        if (histData[preference]) {
+          histData[preference]++;
+        } else {
+          histData[preference] = 1;
+        }
+        resultPrefs.push(preference);
+      }
+    });
+  });
   for (i = 0; i <= n - 1; i++) {
     for (j = 0; j <= m - 1; j++) {
       if (lp.get(X[i][j]) == '1') {
-        var course = elections[i].indexOf(j + 1) + 1;
-        result.students[studentIds[i]] = j+1;
+        let course = elections[i].indexOf(j + 1) + 1;
+        result.students[studentIds[i]] = j + 1;
         if (histData[course]) {
           histData[course]++;
         } else {
