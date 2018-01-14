@@ -76,7 +76,11 @@ module.exports = function distributeStudents(courses, elections, params) {
 
   resultPrefs = [];
   histPreferences = {};
-  histCourses = courses.map((course) => 0);
+
+  histCourses = {};
+  courseIds.forEach(function(courseId) {
+    histCourses[courseId] = 0;
+  });
 
   studentIds.forEach(function (studentId) {
     courseIds.forEach(function (courseId) {
