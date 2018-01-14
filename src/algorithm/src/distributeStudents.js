@@ -33,6 +33,12 @@ module.exports = function distributeStudents(courses, elections, params) {
 
   const lowest = params.lowest;
 
+  if (lowest >= m) {
+    return {
+      error: 'The lowest given priority is higher than the highest priority'
+    }
+  }
+
   for (i = 0; i <= n - 1; i++) {
     var row = new Row();
     for (j = 0; j < lowest; j++) {
