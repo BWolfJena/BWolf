@@ -79,7 +79,6 @@ module.exports = function distributeStudents(courses, elections, params) {
   resultPrefs = [];
   histData = {};
 
-
   studentIds.forEach(function (studentId) {
     courseIds.forEach(function (courseId) {
       if (lp.get(X[studentId][courseId]) == '1') {
@@ -94,20 +93,7 @@ module.exports = function distributeStudents(courses, elections, params) {
       }
     });
   });
-  for (i = 0; i <= n - 1; i++) {
-    for (j = 0; j <= m - 1; j++) {
-      if (lp.get(X[i][j]) == '1') {
-        let course = elections[i].indexOf(j + 1) + 1;
-        result.students[studentIds[i]] = j + 1;
-        if (histData[course]) {
-          histData[course]++;
-        } else {
-          histData[course] = 1;
-        }
-        resultPrefs.push(course);
-      }
-    }
-  }
+
   result.min = _.min(resultPrefs);
   result.mean = _.mean(resultPrefs);
   result.histPreferences = histData;
