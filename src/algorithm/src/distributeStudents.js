@@ -43,7 +43,7 @@ module.exports = function distributeStudents(courses, elections, params) {
 
     // Force to chose exactly one course for a student
     let row = new Row();
-    reversedElections.slice(lowest -1 ).forEach(function (courseId) {
+    reversedElections.slice(lowest - 1).forEach(function (courseId) {
       row.Add(X[studentId][courseId], 1);
     });
     lp.addConstraint(row, 'EQ', 1, `Stundent ${studentId} exactly one course`);
@@ -70,23 +70,26 @@ module.exports = function distributeStudents(courses, elections, params) {
 
   result = {
     objective: lp.getObjectiveValue(),
-    program: lp.dumpProgram(),
-    students: {}
+    // program: lp.dumpProgram(),
+    students: {},
   };
 
   resultPrefs = [];
-  histData = {};
+  histPreferences = {};
+  histCourses = courses.map((course) => 0);
 
   studentIds.forEach(function (studentId) {
     courseIds.forEach(function (courseId) {
       if (lp.get(X[studentId][courseId]) == '1') {
         let preference = elections[studentId].indexOf(parseInt(courseId)) + 1;
         result.students[studentId] = courseId;
-        if (histData[preference]) {
-          histData[preference]++;
+        if (histPreferences[preference]) {
+          histPreferences[preference]++;
         } else {
-          histData[preference] = 1;
+          histPreferences[preference] = 1;
         }
+        histCourses[courseId]++;
+
         resultPrefs.push(preference);
       }
     });
@@ -94,7 +97,8 @@ module.exports = function distributeStudents(courses, elections, params) {
 
   result.min = _.min(resultPrefs);
   result.mean = _.mean(resultPrefs);
-  result.histPreferences = histData;
+  result.histPreferences = histPreferences;
+  result.histCourses = histCourses;
 
   return result;
 }
