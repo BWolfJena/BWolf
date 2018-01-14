@@ -6,11 +6,9 @@ module.exports = function distributeStudents(courses, elections, params) {
   let Row = lpsolve.Row;
   const studentIds = _.keys(elections);
   const courseIds = _.keys(courses);
-  const n = studentIds.length; // Number of students
-  const m = courseIds.length; // Number of courses
   const weights = params.weights;
   const lowest = params.lowest;
-  if (lowest >= m) {
+  if (lowest >= courseIds.length) {
     return {
       error: 'The lowest given priority is higher than the highest priority'
     }
@@ -24,7 +22,7 @@ module.exports = function distributeStudents(courses, elections, params) {
     courseIds.forEach(function (courseId) {
       X[studentId][courseId] = lp.addColumn(`x_${studentId},${courseId}`, false, true);
       let preference = elections[studentId].indexOf(courseId);
-      console.log(preference, weights, weights[preference]);
+      console.log(preference, studentId, elections[studentId]);
       objective.Add(X[studentId][courseId], weights[preference]);
     });
   });
