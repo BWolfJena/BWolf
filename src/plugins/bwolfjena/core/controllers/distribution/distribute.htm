@@ -1,0 +1,35 @@
+<?php if(empty($results)) {
+    echo '<h3>Es konnte leider keine Lösung gefunden werden, vermutlich sind zu wenig Plätze vorhanden.</h3>';
+} ?>
+<?php foreach($results as $result) { ?>
+    <h3><?= $result['heading']?></h3>
+    <div class="layout layout-row" style="height:300px;">
+        <div class="layout-cell layout-container">
+            Präferenzhistogramm
+            <div
+                    class="control-chart centered wrap-legend"
+                    data-control="chart-bar"
+                    data-height="100">
+                <ul>
+                    <?php foreach($result['histPreferences'] as $pref => $count) { ?>
+                        <li><?= $pref ?><span><?= $count ?></span></li>
+                    <?php } ?>
+                </ul>
+            </div>
+            Mittelwert: <?= $result['mean'] ?>
+        </div>
+        <div class="layout-cell layout-container">
+            Kurshistogramm
+            <div
+                    class="control-chart centered wrap-legend"
+                    data-control="chart-bar"
+                    data-height="100">
+                <ul>
+                    <?php foreach($result['histCourses'] as $course => $count) { ?>
+                        <li><?= $course ?><span><?= $count ?></span></li>
+                    <?php } ?>
+                </ul>
+            </div>
+        </div>
+    </div>
+<?php } ?>

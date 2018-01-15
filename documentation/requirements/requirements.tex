@@ -1,18 +1,24 @@
 \chapter{Anforderungsanalyse}
-\label{chapter:requirements}
-    \section{Allgemeine Problemstellung}
-    \label{Problemstellung}
-        Im Zuge des Projektes gilt es eine webbasierte Plattform zu schaffen, die die Verwaltung des Empiriepraktikums der FSU Jena ermöglicht.
-        Hauptaufgabe dieser Plattform ist, den verantwortliche Mitarbeitern der FSU Jena zu ermöglichen, für ein kommendes Semester ein neues Praktiumsmodul mit allen zugehörigen Kursen anlegen zu können.
-        Des Weiteren sollen die Studenten die Möglichkeit erhalten eine Präferenzliste zu erstellen, welche der angebotenen Kurse sie am liebsten besuchen möchten.
-        Nach Ablauf einer vorher festzulegenden Frist sollen die Studenten gemäß ihrer Präferenzliste dann automatisch bestmöglich auf die Kurse verteilt werden.     
+\label{chapter:requirements}    
+
+    In diesem Kapitel werden die Anforderungen an die zu schaffende Plattform dargestellt.
+    Zunächst wird im Abschnitt \ref{sec:systemrequirements} behandelt, wie ein Praktikumsmodul abläuft und welche Erfordernisse sich daraus für die einzelnen Teilnehmergruppen ergeben.
+    Darauf folgt eine Beschreibung der Aufgaben des Verteilungsalgorithmus.
+    Zuletzt werden die technischen Anforderungen an das Projekt beschrieben.
     
-    \section{Genaue Anforderungen an das System}
-        Gemäß der allgemeinen Problemstellung aus Abschnitt \ref{Problemstellung} existieren verschiedene Sichtweisen auf die Anforderungen des Systems.
+    \section{Anforderungen an das System}
+    \label{sec:systemrequirements}
+        Gemäß der allgemeinen Aufgabenstellung aus Abschnitt \ref{sec:task} existieren verschiedene Sichtweisen auf die Anforderungen des Systems.
         Zum einen die Sicht der Verantwortlichen für Praktikum und Kurse, zum anderen die der Studenten.
         Erstere teilt sich wiederum auf in den Blickwinkel der Dozenten der einzelnen Kurse und der übergeordneten Verantwortlichen für das Empiriepraktikum, im Weiteren Administratoren genannt.
         Im Folgenden werden zunächst die Anforderungen für Studenten, Dozenten und Administratoren anhand des chronologischen Ablaufs eines Praktikumsmoduls dargestellt.
-        Anschließend wird nochmal für die jeweiligen Sichten eine kurze Übersicht gegeben, sowie weitere detailliertere Anforderungen genannt.
+        Anschließend wird nochmal für die jeweiligen Sichten eine kurze Übersicht gegeben, sowie weitere detailliertere Anforderungen genannt.\\
+        
+        Die Anforderungen sind durch ein Gespräch mit den Verantwortlichen für das Empiriepraktikum entstanden. 
+        Nicht alle Anforderungen sind zwingend für die Funktion des Systems.
+        Einige sind lediglich optionale Funktionalitäten.
+        Es ist zu beachten, dass aus zeitlichen Gründen nicht alle Anforderungen im Rahmen des Projektes umgesetzt werden können.
+        Sie werden der Vollständigkeit halber dennoch aufgeführt.
         
         \subsection{Ablauf eines Praktikumsmoduls}
             Der Ablauf beginnt, indem die Administratoren, nachdem sie sich in einer Login-Oberfläche angemeldet haben, ein neues Praktikumsmodul erstellen.
@@ -43,11 +49,11 @@
                 Sie sollen aktiv die Kursübersicht für das aktuelle Praktikum veröffentlichen können.
                 Des Weiteren können Administratoren den Verteilungsalgorithmus in der Nachbearbeitungsphase erneut mit anderen Parametern starten und die Verteilungsergebnisse auch manuell verändern.
                 Zusätzlich sollen Administratoren die angemeldeten Dozenten verwalten können, um z.B. Dozenten, die keine Kurse mehr anbieten zu entfernen.
-                Auch sollen die Administratoren Kurse als \glqq freibleiben\grqq markieren können, sowie die maximale und minimale Teilnehmerzahl für alle Kurse fließend einstellen können, falls nötig.
-                Die Administratoren sollen für Praktikum auch die Möglichkeit erhalten Filterfunktionen anzuwenden und sich so z.B. die Kurse nach Lehrstühlen sortiert anzeigen zu lassen.
+                Auch sollen die Administratoren Kurse als \glqq freibleiben\grqq~ markieren können, sowie die maximale und minimale Teilnehmerzahl für alle Kurse fließend einstellen können, falls nötig.
+                Die Administratoren sollen für Praktika auch die Möglichkeit erhalten Filterfunktionen anzuwenden und sich so z.B. die Kurse nach Lehrstühlen sortiert anzeigen zu lassen.
     
             \subsubsection{Sicht der Dozenten}
-                Ein Dozent hat die Möglichkeit, Kurse für das aktuelle Praktikum zu erstellen und sich seine Kurse für ältere Praktika nochmals anzusehen, um sie evtl. als Vorlage für neue Kurse zu nutzen. 
+                Ein Dozent hat soll die Möglichkeit haben, Kurse für das aktuelle Praktikum zu erstellen und sich eventuell seine Kurse für ältere Praktika nochmals anzusehen, um sie als Vorlage für neue Kurse zu nutzen. 
                 Für einen Kurs müssen sie folgendes angeben:
                 \begin{itemize}
                     \item Name
@@ -77,7 +83,7 @@
             \subsubsection{Sicht der Studenten}
                 Die Studenten sollen ohne eine Registrierung die Kursübersicht aufrufen können, sobald die Administratoren die Kursübersicht veröffentlicht haben.
                 Nach der Registrierung sollen die Studenten bis zu einer Frist eine Präferenzliste erstellen und späterhin auch bearbeiten können.
-                Bei jeder angenommenen Änderung der Präferenzliste soll ein Studierenden über seine aktuelle Wahl per Email informiert werden.
+                Bei jeder angenommenen Änderung der Präferenzliste soll der Student über seine aktuelle Wahl per Email informiert werden.
                 Nachdem die Verteilung vom Algorithmus vorgenommen wurde, sollen die Studenten über ihr Ergebnis informiert werden, sowie die Ergebnisse der gesamten Verteilung einsehen können.
     %		 Tauschphase vor eigentlichem Beginn der Veranstaltung mit Email an die Dozenten & Administratoren
     
