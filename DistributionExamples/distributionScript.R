@@ -1,7 +1,7 @@
 ######
 # Set working directory + Libraries
 ######
-setwd("C:\\Users\\Greifvogel\\Programming\\Git\\BWolf\\DistributionExamples")
+#setwd("C:\\Users\\Greifvogel\\Programming\\Git\\BWolf\\DistributionExamples")
 library(RJSONIO)
 
 ######
