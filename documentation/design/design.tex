@@ -62,7 +62,7 @@
                 \cellcolor{green} & & Textfeld\\
                 \cellcolor{blue} & & Optisches Element
             \end{tabular}
-            \caption{Farbcode der Mock-Ups}
+            \caption{Farbcode der Mockups}
             \label{tab:Farbcode}
         \end{table}
     
@@ -118,7 +118,8 @@
             Das Erstellen soll im Feld \textit{Präferenzliste} über ein ''Drag\&Drop''-System vorgenommen werden und über den Knopf \textit{Absenden} fixiert werden können.
             
             Nachdem die Verteilung auf die Kurse vorgenommen wurde, sollen die Benutzer unter dem Reiter Ergebnisübersicht die Resultate einsehen können.
-            Der einfache Entwurf ist im Anhang \ref{chapter:appendix} in Abbildung \ref{fig:mockupResultsFrontend} zu sehen.
+            Der Entwurf hierfür gleicht dem für die Kursübersicht.
+            Statt einer Beschreibung des Kurses, werden allerdings die Teilnehmer der Kurse angezeigt.
             
             Unter dem Reiter \textit{Tauschbörse} soll die in Kapitel \ref{chapter:requirements} genannte Tauschmöglichkeit für Studenten realisiert sein.
             Die Struktur der Seite gleicht dem der Kursübersicht.
@@ -147,7 +148,7 @@
 	        Für beide Sichten gibt es wieder eine Kopf- und eine Fußzeile.
 	        Die Kopfzeile für die Administratoren umfasst zunächst einen Reiter \textit{Verwalten}, in dem Kurse, Module und Lehrstühle angelegt werden können.
 	        Des Weiteren gibt es den Reiter \textit{Benutzer}, unter dem alle Benutzer des Systems verwaltet werden können.
-	        Unter dem Reiter \textit{Verteilungsalgorithmus} können die Administratoren den Verteilungsalgorithmus starten und sich die Ergebnisse anzeigen lassen.
+	        Unter dem Reiter \textit{Verteilung} können die Administratoren den Verteilungsalgorithmus starten und sich die Ergebnisse anzeigen lassen.
 	        Zusätzlich gibt es noch eine Seitenleiste, in der unter dem jeweiligen Reiter weitere Optionen zur Verfügung stehen.
         	
         	\begin{figure}[t]
@@ -163,17 +164,33 @@
         	Mit den beiden Schaltflächen am oberen Rand der Tabelle kann ein neuer Eintrag in der jeweiligen Tabelle erstellt, bzw. ein vorhandener Eintrag gelöscht werden.
         	Die Einträge der entsprechenden Tabelle können nachträglich durch einen Klick auf den Eintrag in der Tabelle geändert werden.
         	
-        	Abbildung \ref{fig:Verwalten} ist der Entwurf für das Erstellen oder Ändern eines Kurses, Moduls oder Lehrstuhls zu sehen.
+            \begin{figure}[t]
+                \centering
+                \includegraphics[width=0.6\textwidth]{./design/images/MockUpsBackend/backendEdit.png}
+                \caption{Entwurf für das editieren eines Kurses}
+                \label{fig:mockupEdit}
+            \end{figure}
+              
+        	Abbildung \ref{fig:mockupEdit} zeigt den Entwurf für das Erstellen oder Ändern eines Kurses, Moduls oder Lehrstuhls.
         	Alle notwendigen Informationen sollen in Textfeldern eingegeben und mit geeigneten Textformatierungsoptionen bearbeitet werden können.
-        	Mit einen Klick auf die Schaltfläche \textit{Speichern} wird die Änderung übernommen, bzw. die Erstellung bestätigt.
+        	Mit einen Klick auf die Schaltfläche \textit{Speichern} wird die Änderung übernommen, bzw. die Erstellung bestätigt.\\
         	
         	Die Verwaltung der Benutzer erfolgt auf die selbe Weise und gleicht sich im Design.
         	Wieder kann mithilfe der linken Seitenleiste umgeschaltet werden, ob Studenten oder Dozenten verwaltet werden sollen.
         	Die entsprechende Benutzergruppe werden in einer Tabelle angezeigt und können mittels einer Schaltfläche gelöscht werden.
-        	Durch einen Klick auf die Tabellenzeile sollen die Informationen der Benutzer, wie in Abbildung \ref{fig:user} gezeigt, geändert werden können, analog zum bearbeiten der Kurse oder Module.
+        	Durch einen Klick auf die Tabellenzeile sollen die Informationen der Benutzer analog zum Bearbeiten der Kurse oder Module  geändert werden können.\\
+            
+            \begin{figure}[t]
+                \centering
+                \includegraphics[width=0.6\textwidth]{./design/images/MockUpsBackend/backendDistribution.png}
+                \caption{Entwurf für das Anzeigen der Verteilungsvorschläge}
+                \label{fig:mockupDistribution}
+            \end{figure}
         	
-        	Die Seite für den Reiter \textit{Verteilungsalgorithmus} ist in Abbildung \ref{vertalgo} dargestellt.
-        	Hier 
+        	Für die Steuerung des Verteilungsalgorithmus unter dem Reiter \textit{Verteilung}, muss zunächst aus einer Liste dass entsprechende Praktikum ausgewählt werden.
+            Danach wird die Verteilung für dieses Modul mit verschiedenen Parametern ermittelt und anschließend werden die Ergebnisse mithilfe von geeigneten Grafiken angezeigt.
+            Der Entwurf für diese Seite ist in Abbildung \ref{fig:mockupDistribution} zu sehen.
+            Durch einen Klick auf den entsprechende Verteilungsvorschlag, soll dieser als Ergebnis übernommen werden.\\
         	
         	Die Ansicht der Dozenten unterscheidet sich lediglich im Funktionsumfang.
         	So sehen die Dozenten nur den Reiter \textit{Verwalten} in der Kopfzeile und in der linken Seitenleiste nur die Option zum verwalten der Kurse.
