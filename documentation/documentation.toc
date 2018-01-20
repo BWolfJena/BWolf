@@ -22,10 +22,13 @@
 \contentsline {section}{\numberline {4.2}Frontend}{18}{section.4.2}
 \contentsline {section}{\numberline {4.3}Backend}{18}{section.4.3}
 \contentsline {chapter}{\numberline {5}Verteilungsalgorithmus}{19}{chapter.5}
-\contentsline {section}{\numberline {5.1}Zielfunktion}{19}{section.5.1}
-\contentsline {section}{\numberline {5.2}Parameter}{20}{section.5.2}
-\contentsline {chapter}{\numberline {6}Zusammenfassung}{21}{chapter.6}
-\contentsline {section}{\numberline {6.1}Stand des Projekts}{21}{section.6.1}
-\contentsline {section}{\numberline {6.2}Offene Probleme}{21}{section.6.2}
-\contentsline {section}{\numberline {6.3}M\IeC {\"o}gliche weitere Arbeiten}{21}{section.6.3}
-\contentsline {chapter}{\numberline {7}Anhang}{22}{chapter.7}
+\contentsline {section}{\numberline {5.1}Aufstellen Zielfunktion}{19}{section.5.1}
+\contentsline {section}{\numberline {5.2}Wahl der Parameter}{20}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Naheliegende L\IeC {\"o}sung}{20}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Naheliegende L\IeC {\"o}sung mit festem Minimum}{21}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}Exponentielle Gewichte}{21}{subsection.5.2.3}
+\contentsline {chapter}{\numberline {6}Zusammenfassung}{22}{chapter.6}
+\contentsline {section}{\numberline {6.1}Stand des Projekts}{22}{section.6.1}
+\contentsline {section}{\numberline {6.2}Offene Probleme}{22}{section.6.2}
+\contentsline {section}{\numberline {6.3}M\IeC {\"o}gliche weitere Arbeiten}{22}{section.6.3}
+\contentsline {chapter}{\numberline {7}Anhang}{23}{chapter.7}
