@@ -1,0 +1,19 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+      label: Id
+
+    user:
+      label: Benutzer
+      relation: user
+      valueFrom: email
+      searchable: true
+
+    course:
+      label: Kurs
+      relation: course
+      valueFrom: name
+      searchable: true

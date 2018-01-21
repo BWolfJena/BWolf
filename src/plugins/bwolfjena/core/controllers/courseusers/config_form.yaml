@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Benutzer Kurszuordnung
+
+# Model Form Field configuration
+form: $/bwolfjena/core/models/courseuser/fields.yaml
+
+# Model Class name
+modelClass: BwolfJena\Core\Models\CourseUser
+
+# Default redirect location
+defaultRedirect: bwolfjena/core/courseusers
+
+# Create page
+create:
+    title: Erstelle Benutzer Kurszuordnung
+    redirect: bwolfjena/core/courseusers/update/:id
+    redirectClose: bwolfjena/core/courseusers
+
+# Update page
+update:
+    title: Bearbeite Benutzer Kurszuordnung
+    redirect: bwolfjena/core/courseusers
+    redirectClose: bwolfjena/core/courseusers
+
+# Preview page
+preview:
+    title: Preview Course User

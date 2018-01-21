@@ -39,7 +39,6 @@ class Course extends Model
      * @var array Relations
      */
     public $hasOne = [];
-    public $hasMany = [];
     public $belongsTo = [
         'module' => [
             'BWolfJena\Core\Models\Module',
@@ -52,7 +51,12 @@ class Course extends Model
             'key' => 'backend_users_id',
         ],
     ];
-    public $belongsToMany = [];
+    public $belongsToMany = [
+        'users' => [
+            'Rainlab\User\Models\User',
+            'table' => 'bwolfjena_core_courses_users',
+        ]
+    ];
     public $morphTo = [];
     public $morphOne = [];
     public $morphMany = [];

@@ -2,7 +2,20 @@
     echo '<h3>Es konnte leider keine Lösung gefunden werden, vermutlich sind zu wenig Plätze vorhanden.</h3>';
 } ?>
 <?php foreach($results as $result) { ?>
-    <h3><?= $result['heading']?></h3>
+    <h3>
+        <?= $result['heading']?>
+        <button
+                style="margin-left: 20px"
+                class="btn btn-default"
+                data-request-confirm="Wollen Sie wirklich diese Verteilung verwenden? Gegbenenfalls vorhandene Verteilungen werden überschrieben"
+                data-request="onStoreDistribution"
+                data-request-data="<?= $result['params'] ?>"
+                data-request-redirect="<?= Backend::url('bwolfjena/core/courseusers') ?>"
+                data-stripe-load-indicator
+        >
+            Verwenden
+        </button>
+    </h3>
     <div class="layout layout-row" style="height:300px;">
         <div class="layout-cell layout-container">
             Präferenzhistogramm

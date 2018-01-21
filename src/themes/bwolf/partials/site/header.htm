@@ -3,7 +3,6 @@
 function onStart()
 {
     $this['deadline'] = BWolfJena\Core\Models\Module::find(1)['enrollment_end'];
-    $this['assignedCourse'] = BWolfJena\Core\Models\Course::find(1)['course_user'];
 }
 ==
 
@@ -18,23 +17,17 @@ function onStart()
             {% endfor %}
         {% endif %}
 
-<<<<<<< HEAD
+
         {% if date() < deadline %}
           <p class="info">Einschreibungsende: {{ deadline }}</p>
-        {% else %}
-          {% if assignedCourse %}
-            <p class="info">Ihr Kurs: {{ assignedCourse }}</p>
-          {% endif %}
         {% endif %}
-=======
->>>>>>> 4a1e30c5848a44b4017ed65642d8c084050109c6
 
         <div class="right menu">
             <div class="item">
-                <a class="ui button">Anmelden</a>
+                <a href="/anmelden" class="ui button {% if this.page.id == 'anmelden'  %}active{% endif %}">Anmelden</a>
             </div>
             <div class="item">
-                <a class="ui primary button">Registrieren</a>
+                <a href="/registrieren" class="ui primary button {% if this.page.id == 'registrieren'  %}active{% endif %}">Registrieren</a>
             </div>
         </div>
     </div>
@@ -47,6 +40,6 @@ function onStart()
             <a href="{{ item.url }}" class="item {% if item.isActive  %}active{% endif %}">{{ item.title }}</a>
         {% endfor %}
     {% endif %}
-    <a class="item">Login</a>
-    <a class="item">Signup</a>
+    <a href="/anmelden" class="item {% if this.page.id == 'anmelden'  %}active{% endif %}">Anmelden</a>
+    <a href="/registrieren" class="item {% if this.page.id == 'registrieren'  %}active{% endif %}">Registrieren</a>
 </div>

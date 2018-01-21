@@ -31,6 +31,7 @@ function onSignin()
         </div>
         {% if not user %}
             <h3>Anmelden</h3>
+        <p><strong>Noch keinen Account? - Dann registriere dich <a href="/registrieren">hier</a>!</strong></p>
             {% partial account ~ '::signin' %}
         {% else %}
         {% endif %}        

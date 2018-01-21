@@ -1,0 +1,30 @@
+<div data-control="toolbar">
+    <a
+        href="<?= Backend::url('bwolfjena/core/courseusers/create') ?>"
+        class="btn btn-default oc-icon-plus">
+        Neue Benutzer Kurszuordnung
+    </a>
+
+    <button
+        class="btn btn-danger oc-icon-trash-o"
+        disabled="disabled"
+        onclick="$(this).data('request-data', { checked: $('.control-list').listWidget('getChecked') })"
+        data-request="onDelete"
+        data-request-confirm="Are you sure you want to delete the selected Course Users?"
+        data-trigger-action="enable"
+        data-trigger=".control-list input[type=checkbox]"
+        data-trigger-condition="checked"
+        data-request-success="$(this).prop('disabled', 'disabled')"
+        data-stripe-load-indicator>
+        Ausgewählte Löschen
+    </button>
+
+    <button
+            class="btn btn-primary"
+            data-request="onNotify"
+            data-request-confirm="Möchten Sie wirklich alle Studenten über ihren Kurs benachrichtigen?"
+            data-stripe-load-indicator>
+        Studenten benachrichtigen
+    </button>
+
+</div>

@@ -1,6 +1,7 @@
 static-pages:
+    index: {  }
     kursuebersicht: {  }
     einschreiben: {  }
-    auswertung: {  }
+    ergebnis-sehen: {  }
     tauschen: {  }
     impressum: {  }

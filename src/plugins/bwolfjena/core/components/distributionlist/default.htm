@@ -1,0 +1,27 @@
+<div class="row">
+    {% if __SELF__.yourCourse() %}
+        <h2>Dein Kurs: {{ __SELF__.yourCourse().name }}</h2>
+    {% endif %}
+    <div class="ui two stackable cards">
+        {% for course in __SELF__.courses() %}
+        <div class="card">
+            <div class="content" style="padding:   1,5em;">
+                <div class="header">
+                    {{ course.name }}
+                </div>
+                <div class="meta">
+                    {{ course.title }}
+                </div>
+                <div class="description">
+                    Teilnehmer:
+                    <ul>
+                        {% for user in course.users %}
+                            <li>{{ user.email }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>

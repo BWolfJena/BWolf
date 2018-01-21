@@ -3,24 +3,16 @@
 # ===================================
 
 # Model List Column configuration
-list:
-  columns:
-      id:
-          label: Id
-          searchable: true
-
-      name:
-          label: Name
-          searchable: true
+list: $/bwolfjena/core/models/courseuser/columns.yaml
 
 # Model Class name
-modelClass: BwolfJena\Core\Models\Module
+modelClass: BwolfJena\Core\Models\CourseUser
 
 # List Title
-title: Verteilungen
+title: Benutzer Kurszuordnungen
 
 # Link URL for each record
-recordUrl: bwolfjena/core/distribution/distribute/:id
+recordUrl: bwolfjena/core/courseusers/update/:id
 
 # Message to display if the list is empty
 noRecordsMessage: backend::lang.list.no_records
@@ -38,16 +30,17 @@ showSetup: true
 showSorting: true
 
 # Default sorting column
-# defaultSort:
-#     column: created_at
-#     direction: desc
+defaultSort:
+    column: created_at
+    direction: desc
 
 # Display checkboxes next to each record
-showCheckboxes: false
+showCheckboxes: true
 
 # Toolbar widget configuration
 toolbar:
     # Partial for toolbar buttons
+    buttons: list_toolbar
 
     # Search widget configuration
     search:
