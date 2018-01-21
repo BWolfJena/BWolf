@@ -4,16 +4,17 @@ namespace Tests\Browser;
 
 use Tests\DuskTestCase;
 use Laravel\Dusk\Browser;
+use \Rainlab\User\Models\User;
 // use Illuminate\Foundation\Testing\DatabaseMigrations;
 // use Illuminate\Foundation\Testing\WithoutMiddleware;
 // use Illuminate\Foundation\Testing\DatabaseMigrations;
-// use Illuminate\Foundation\Testing\DatabaseTransactions;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
 use DB;
 
 class LoginTest extends DuskTestCase
 {
     // use DatabaseMigrations;
-    // use DatabaseTransactions;
+    #use DatabaseTransactions;
     /**
      * A Dusk test example.
      *
@@ -28,18 +29,16 @@ class LoginTest extends DuskTestCase
         $passwordConfirmation = $password;
 
         DB::beginTransaction();
-        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         # \Rainlab\User\Models\User::where('email', $email)->delete();
-        # \Rainlab\User\Models\User::truncate(); 
-        \Rainlab\User\Models\User::attemptActivation('john.doe');
-        \Rainlab\User\Models\User::create(
+        # \Rainlab\User\Models\User::truncate();
+        $user = User::create(
             [
                 'email' => $email,
                 'password' => $password,
-                'password_confirmation' => $passwordConfirmation
+                'password_confirmation' => $passwordConfirmation,
+                'is_activated' => 1,
             ]
         );
-        
 
         $this->browse(function (Browser $browser) {
 
@@ -84,10 +83,6 @@ class LoginTest extends DuskTestCase
                      -> assertDontSeeIn('.top-menu .menu .right a.button','Anmelden');
         });
 
-
-
-        // \Rainlab\User\Models\User::where('email', $email)->delete();
-        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
         DB::rollBack();
     }
 }
