@@ -2,6 +2,7 @@
 
 use Auth;
 use Flash;
+use Redirect;
 use Cms\Classes\ComponentBase;
 use BWolfJena\Core\Models\Course;
 use Bwolfjena\Core\Models\UserCoursePriority;
@@ -12,8 +13,8 @@ class CourseSelection extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name'        => 'Course selection Component',
-            'description' => 'Lists all available courses in non-preffered<li>',
+            'name'        => 'Präferenzliste',
+            'description' => 'Listet alle Kurse, die dann per Drag & Drop sortiert werden können',
         ];
     }
 
@@ -26,7 +27,7 @@ class CourseSelection extends ComponentBase
     {
         $courses = Course::all()->shuffle();
         if(!Auth::check()) {
-            return  $courses;
+            return [];
         }
         $user = Auth::getUser();
         $order = UserCoursePriority::where('user_id', $user->id)->orderBy('priority', 'DESC')->get();
@@ -43,6 +44,9 @@ class CourseSelection extends ComponentBase
 
     public function  onRun()
     {
+        if(!Auth::check()) {
+            return Redirect::to('anmelden');
+        }
         $this->addJs('//cdn.jsdelivr.net/npm/sortablejs@1.6.1/Sortable.min.js');
         $this->addJs('assets/js/course_selection.js');
     }

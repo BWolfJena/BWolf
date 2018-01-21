@@ -8,8 +8,8 @@ class CourseList extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name'        => 'CourseList Component',
-            'description' => 'Lists all available courses',
+            'name'        => 'Kursliste',
+            'description' => 'Listet alle verfügbaren Kurse auf',
         ];
     }
 
