@@ -1,4 +1,4 @@
-const distribution = require('./normalPreferences.json');
+const distribution = require('./fixed');
 
 const keys = Object.keys(distribution);
 keys.forEach((key, userId) => {
