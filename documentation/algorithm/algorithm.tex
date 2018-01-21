@@ -1,27 +1,72 @@
 \chapter{Verteilungsalgorithmus}
 \label{chapter:algorithm}
-    \section{Überlegungen zum Algorithmus}
-            Die Grundlegende Idee der Zielfunktion hat die Form:
-                $$ \max ~\text{Summe der Prioritäten} - \text{Gewicht} \cdot \text{Varianz} ~~~.$$
-            Genauer ausformuliert ergibt sich:
-                $$ \max 
-                    \sum_{i=1}^{n} \sum_{j=1}^{m} c(i,j)x_{ij} 
-                    - \frac{\beta}{n} \sum_{i=1}^{n}
-                        \left[\left(\sum_{j=1}^{m} c(i,j)x_{ij}\right) - \frac{1}{n} \sum_{i=1}^{n} \sum_{j=1}^{m} c(i,j)x_{ij}\right]^2 ~~~,$$
-            wobei gilt:\\
-                \begin{tabular}{l c l}
-                    $n$ & - & Anzahl der Studenten \\
-                    $m$ & - & Anzahl der Kurse\\
-                    $ c(i,j) $ & - & Priorität von Student $ i $ für Kurs $ j $\\
-                    $ \beta $ & - & Gewichtung der Varianz\\
-                    $t_{\min}(j)$ & - & Minimale Anzahl der Teilnehmer für Kurs $ j $\\
-                    $t_{\max}(j)$ & - & Maximale Anzahl der Teilnehmer für Kurs $ j $ ~~~.\\
-                \end{tabular}\\
+    Im folgenden Kapitel wird der Algorithmus zum Verteilen der Studenten anhand der Präferenzlisten auf die Kurse vorgestellt.
+    Zunächst wird im ersten Abschnitt eine geeignete Zielfunktion aufgestellt und kurz erklärt.
+    Anschließend werden verschiedene Varianten für die Parameter diskutiert.
+    \section{Aufstellen Zielfunktion}
+%            Die Grundlegende Idee der Zielfunktion hat die Form:
+%                $$ \max ~\text{Summe der Prioritäten} - \text{Gewicht} \cdot \text{Varianz} ~~~.$$
+%            Genauer ausformuliert ergibt sich:
+%                $$ \max 
+%                    \sum_{i=1}^{n} \sum_{j=1}^{m} c(i,j)x_{ij} 
+%                    - \frac{\beta}{n} \sum_{i=1}^{n}
+%                        \left[\left(\sum_{j=1}^{m} c(i,j)x_{ij}\right) - \frac{1}{n} \sum_{i=1}^{n} \sum_{j=1}^{m} c(i,j)x_{ij}\right]^2 ~~~,$$
+%            wobei gilt:\\
+%                \begin{tabular}{l c l}
+%                    $n$ & - & Anzahl der Studenten \\
+%                    $m$ & - & Anzahl der Kurse\\
+%                    $ c(i,j) $ & - & Priorität von Student $ i $ für Kurs $ j $\\
+%                    $ \beta $ & - & Gewichtung der Varianz\\
+%                    $t_{\min}(j)$ & - & Minimale Anzahl der Teilnehmer für Kurs $ j $\\
+%                    $t_{\max}(j)$ & - & Maximale Anzahl der Teilnehmer für Kurs $ j $ ~~~.\\
+%                \end{tabular}\\
+%            
+%            Zusätzlich sind drei Nebenbedingungen notwendig, um das Problem angemessen darzustellen.
+%            Zum einen sollen die $ x_{ij} $ nur die Werte 0 oder 1 annehmen können:
+%                $$ x_{ij} \in \{0,1\} ~~~.$$
+%            Des Weiteren soll jeder Student nur einem Kurs zugeteilt werden:
+%                $$ \forall {i \in \{1,..,n\}}: \sum_{j=1}^{m} x_{ij} = 1 ~~~.$$
+%            Zuletzt ist die Teilnehmerzahl für die Kurse begrenzt:
+%                $$ \forall {j \in \{1,..,m\}}: t_{\min}(j) \leq \sum_{i=1}^{n} x_{ij} \leq t_{\max}(j) ~~~.$$
+
+        Ausgangspunkt für die Zielfunktion des Verteilungsalgorithmus ist eine Matrix $ X = (x_{ij})_{i=1,...,n;j=1,...,m} \in \{0,1\}^{n \times m}$, wobei $ n $ die Anzahl der Studenten und $ m $ die Anzahl der Kurse ist.
+        Ein Eintrag in dieser Matrix kodiert, ob ein Student einem Kurs zugeordnet wurde, auf folgende Weise:
+        wurde ein Student $ i $ dem Kurs $ j $ zugeteilt, dann ist $ x_{ij} = 1 $, wenn nicht, dann gilt $ x_{ij} = 0 $. 
+        Diese $ x_{ij} $ sind die Variablen der Zielfunktion.
+        Das bedeutet, es wird nach einer Belegung der Einträge $ x_{ij} $ der Matrix gesucht, so dass in jeder Zeile der Matrix immer genau ein Eintrag auf $ 1 $ gesetzt ist.
+        Das ist gleich Bedeutend mit der Aussage, dass jeder Student genau einem Kurs zugeteilt wurde.
+        Daraus ergibt sich die Zielfunktion zu
+            $$ \max \sum_{i=1}^{n} \sum_{j=1}^{m} c(i,j)x_{ij}  ~~~,$$
+        dabei bezeichnet $ c(i,j) $ eine Gewichtsfunktion.
+        Die Gewichte bilden die Parameter der Zielfunktion.
+        
+        Zusätzlich zu dieser linearen Zielfunktion ist es notwendig zwei Nebenbedingungen zu formulieren, um die oben beschriebene Idee der Matrix $ X $ zu formalisieren.
+        Zum einen müssen die $ x_{ij} $ nur die Werte $ 0 $ oder $ 1 $ annehmen können:
+            $$\forall {i \in \{1,..,n\}} \forall {j \in \{1,..,m\}}:  x_{ij} \in \{0,1\} ~~~.$$
+        Zum anderen soll jeder Student nur einem Kurs zugeteilt werden:
+            $$ \forall {i \in \{1,..,n\}}: \sum_{j=1}^{m} x_{ij} = 1 ~~~.$$
+        
+        Zuletzt ist mit einer dritten Nebenbedingung die Teilnehmerzahl für die Kurse zu begrenzen:
+             $$ \forall {j \in \{1,..,m\}}: t_{\min}(j) \leq \sum_{i=1}^{n} x_{ij} \leq t_{\max}(j) ~~~,$$
+        dabei bezeichnet $ t_{\min}(j) $ die minimale und $ t_{\max}(j) $ die maximale Teilnehmerzahl eines Kurses $ j $.
+        
+    \section{Wahl der Parameter}
+        Die Parameter der Zielfunktion können frei gewählt werden.
+        In diesem Abschnitt sollen drei verschiedene Möglichkeiten vorgestellt werden.
+        
+        \subsection{Naheliegende Lösung}
+            Die nahe liegende Wahl der Gewichte sind die Präferenzen der einzelnen Studenten für die Kurse.
+            Da versucht wird die $ x_{ij} $ so zu wählen, dass die Summe maximal wird, wird so eine Zuordnung eines Studenten zu einem Kurs, für den er eine höhere Präferenz angegeben hat, gegenüber einem mit einer niedrigen Präferenz bevorzugt.
+            Der sogenannte \textit{Score} der Funktion, also das Ergebnis der Summe, wird somit höher, je mehr Studenten in von ihnen gewünschte Kurse verteilt werden.
             
-            Zusätzlich sind drei Nebenbedingungen notwendig, um das Problem angemessen darzustellen.
-            Zum einen sollen die $ x_{ij} $ nur die Werte 0 oder 1 annehmen können:
-                $$ x_{ij} \in \{0,1\} ~~~.$$
-            Des Weiteren soll jeder Student nur einem Kurs zugeteilt werden:
-                $$ \forall {i \in \{1,..,n\}}: \sum_{j=1}^{m} x_{ij} = 1 ~~~.$$
-            Zuletzt ist die Teilnehmerzahl für die Kurse begrenzt:
-                $$ \forall {j \in \{1,..,m\}}: t_{\min}(j) \leq \sum_{i=1}^{n} x_{ij} \leq t_{\max}(j) ~~~.$$
+        \subsection{Naheliegende Lösung mit festem Minimum}
+            Die Gewichte werden bei diesem Ansatz genauso wie im vorherigen Abschnitt gewählt.
+            Allerdings wird hier zusätzlich ein festes Minimum für die kleinste noch zulässige Präferenz angegeben.
+            Das bedeutet, dass kein Student in einen Kurs eingeteilt wird, dem er eine geringere Präferenz als das Minimum gegeben hat.
+            Dies wird umgesetzt, indem diejenigen Einträge $ x_{ij} $ der Matrix $ X $ fest auf $ 0 $ gesetzt werden, bei denen ein Student $ i $ einem Kurs $ j $ eine schlechtere Präferenz als das Minimum gegeben hat.
+            Das Anwenden dieser Methode hat den Vorteil, dass das Minimum fest gewählt werden kann und somit garantiert ist, dass kein Student schlechter als das Minimum eingeteilt wird.
+            Dadurch kann es jedoch dazu kommen, dass das einige Studenten in ihrer Präferenz, zugunsten des festen Minimums, fallen oder auch, dass keine Lösung für das Problem gefunden werden kann.
+        
+        \subsection{Exponentielle Gewichte}
+            
+        

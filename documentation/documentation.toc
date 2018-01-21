@@ -17,15 +17,18 @@
 \contentsline {section}{\numberline {3.2}Design}{11}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}Frontend}{12}{subsection.3.2.1}
 \contentsline {subsection}{\numberline {3.2.2}Backend}{14}{subsection.3.2.2}
-\contentsline {chapter}{\numberline {4}Umsetzung}{17}{chapter.4}
-\contentsline {section}{\numberline {4.1}Verwendete Software}{17}{section.4.1}
-\contentsline {section}{\numberline {4.2}Frontend}{17}{section.4.2}
-\contentsline {section}{\numberline {4.3}Backend}{17}{section.4.3}
-\contentsline {chapter}{\numberline {5}Verteilungsalgorithmus}{18}{chapter.5}
-\contentsline {section}{\numberline {5.1}\IeC {\"U}berlegungen zum Algorithmus}{18}{section.5.1}
-\contentsline {chapter}{\numberline {6}Zusammenfassung}{20}{chapter.6}
-\contentsline {section}{\numberline {6.1}Stand des Projekts}{20}{section.6.1}
-\contentsline {section}{\numberline {6.2}Offene Probleme}{20}{section.6.2}
-\contentsline {section}{\numberline {6.3}M\IeC {\"o}gliche weitere Arbeiten}{20}{section.6.3}
-\contentsline {chapter}{\numberline {7}Anhang}{21}{chapter.7}
-\contentsline {section}{\numberline {7.1}Anhang - Entwurf}{21}{section.7.1}
+\contentsline {chapter}{\numberline {4}Umsetzung}{18}{chapter.4}
+\contentsline {section}{\numberline {4.1}Verwendete Software}{18}{section.4.1}
+\contentsline {section}{\numberline {4.2}Frontend}{18}{section.4.2}
+\contentsline {section}{\numberline {4.3}Backend}{18}{section.4.3}
+\contentsline {chapter}{\numberline {5}Verteilungsalgorithmus}{19}{chapter.5}
+\contentsline {section}{\numberline {5.1}Aufstellen Zielfunktion}{19}{section.5.1}
+\contentsline {section}{\numberline {5.2}Wahl der Parameter}{20}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Naheliegende L\IeC {\"o}sung}{20}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Naheliegende L\IeC {\"o}sung mit festem Minimum}{21}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}Exponentielle Gewichte}{21}{subsection.5.2.3}
+\contentsline {chapter}{\numberline {6}Zusammenfassung}{22}{chapter.6}
+\contentsline {section}{\numberline {6.1}Stand des Projekts}{22}{section.6.1}
+\contentsline {section}{\numberline {6.2}Offene Probleme}{22}{section.6.2}
+\contentsline {section}{\numberline {6.3}M\IeC {\"o}gliche weitere Arbeiten}{22}{section.6.3}
+\contentsline {chapter}{\numberline {7}Anhang}{23}{chapter.7}
