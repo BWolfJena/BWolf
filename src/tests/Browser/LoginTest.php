@@ -28,17 +28,16 @@ class LoginTest extends DuskTestCase
         $password = 'topsecret';
         $passwordConfirmation = $password;
 
-        DB::beginTransaction();
-        # \Rainlab\User\Models\User::where('email', $email)->delete();
-        # \Rainlab\User\Models\User::truncate();
-        $user = User::create(
+        DB::table('users')->where('email',$email)->delete();
+        $user = \Rainlab\User\Models\User::create(
             [
                 'email' => $email,
                 'password' => $password,
                 'password_confirmation' => $passwordConfirmation,
-                'is_activated' => 1,
             ]
         );
+        $user->is_activated = 1;
+        $user->save();
 
         $this->browse(function (Browser $browser) {
 
@@ -82,7 +81,5 @@ class LoginTest extends DuskTestCase
                      -> waitForLocation('/kursuebersicht')
                      -> assertDontSeeIn('.top-menu .menu .right a.button','Anmelden');
         });
-
-        DB::rollBack();
     }
 }
