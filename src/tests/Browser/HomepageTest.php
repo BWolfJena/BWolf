@@ -20,10 +20,12 @@ class HomepageTest extends DuskTestCase
             $browser->resize(1920, 1080);
 
             
-            $browser->visit('kursuebersicht')
+            $browser->visit('')
                     # Verify left header
-                    ->assertSeeIn('.top-menu .menu a:nth-child(3)','Kursübersicht')
-                    ->assertSeeIn('.top-menu .menu a:nth-child(4)','Einschreiben')
+                    ->assertSeeIn('.top-menu .menu a:nth-child(3)','Start')
+                    ->assertSeeIn('.top-menu .menu a:nth-child(4)','Kursübersicht')
+                    ->assertSeeIn('.top-menu .menu a:nth-child(5)','Meine Präferenzliste')
+                    ->assertSeeIn('.top-menu .menu a:nth-child(6)','Ergebnis sehen')
                     # Verify right header
                     ->assertSeeIn('.top-menu .right-nav a.button:nth-child(1)','Anmelden')
                     ->assertSeeIn('.top-menu .right-nav a.button:nth-child(2)','Registrieren')

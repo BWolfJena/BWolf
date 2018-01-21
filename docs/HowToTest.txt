@@ -1,5 +1,11 @@
 Step 1:
 	Copy .env.dusk.local to .env in /src/
+Step 2:
+	sudo docker-compose exec --user=laradock workspace bash
+Step 3:
+	composer require --dev laravel/dusk
+Step 4:
+	Use runTests.sh or php artisan dusk
 
 ==============
 Tests are located at

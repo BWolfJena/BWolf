@@ -4,17 +4,22 @@ namespace Tests\Browser;
 
 use Tests\DuskTestCase;
 use Laravel\Dusk\Browser;
-#use Illuminate\Foundation\Testing\RefreshDatabase;
+// use Illuminate\Foundation\Testing\DatabaseMigrations;
+// use Illuminate\Foundation\Testing\WithoutMiddleware;
+// use Illuminate\Foundation\Testing\DatabaseMigrations;
+// use Illuminate\Foundation\Testing\DatabaseTransactions;
+use DB;
 
 class LoginTest extends DuskTestCase
 {
-    #use RefreshDatabase;
+    // use DatabaseMigrations;
+    // use DatabaseTransactions;
     /**
      * A Dusk test example.
      *
      * @return void
      */
-    public function testExample()
+    public function testLoginUser()
     {
         $emailName = 'john.doe';
         $emailDomain = 'uni-jena.de';
@@ -22,8 +27,11 @@ class LoginTest extends DuskTestCase
         $password = 'topsecret';
         $passwordConfirmation = $password;
 
-
-        \Rainlab\User\Models\User::where('email', $email)->delete();
+        DB::beginTransaction();
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+        # \Rainlab\User\Models\User::where('email', $email)->delete();
+        # \Rainlab\User\Models\User::truncate(); 
+        \Rainlab\User\Models\User::attemptActivation('john.doe');
         \Rainlab\User\Models\User::create(
             [
                 'email' => $email,
@@ -31,30 +39,55 @@ class LoginTest extends DuskTestCase
                 'password_confirmation' => $passwordConfirmation
             ]
         );
+        
 
         $this->browse(function (Browser $browser) {
+
+            $browser->resize(1920, 1080);
+
             $browser->visit('kursuebersicht')
                     # Verify the login button is visible
                     ->assertSeeIn('.top-menu .menu .right a.button[href="/anmelden"]','Anmelden')
-                    # Click login
-                    ->click('.top-menu .menu .right a.button[href="/anmelden"]')
-                    # Verify login form
+                    # Verify the register button is visible
+                    ->assertSeeIn('.top-menu .menu .right a.button[href="/registrieren"]','Registrieren')
+
+                    # Click register
+                    # ->click('.top-menu .menu .right a.button[href="/registrieren"]')
+                    #Verify register form
                     # Email
-                    ->assertVisible('#userSigninLogin')
+                    # ->assertVisible('#registerEmail')
                     # Password
-                    ->assertVisible('#userSigninPassword')
+                    # ->assertVisible('#registerPassword')
                     #Input
                     # Email
-                    -> type('#userSigninLogin', 'john.doe')
+                    # -> type('#registerEmail', 'john.doe')
                     # Password;
-                    -> type('#userSigninLogin', 'topsecret')
+                    # -> type('#registerPassword', 'topsecret')
                     # Submit form
-                    -> click('button[type="submit"]');
-                    #->assertSeeIn('','Ergebnisübersicht')
+                    # -> click('button[type="submit"]')
+
+                    # Click register
+                     ->click('.top-menu .menu .right a.button[href="/anmelden"]')
+                    # Verify login form
+                    # Email
+                     ->assertVisible('#userSigninLogin')
+                    # Password
+                     ->assertVisible('#userSigninPassword')
+                    #Input
+                    # Email
+                     -> type('#userSigninLogin', 'john.doe')
+                    # Password;
+                     -> type('#userSigninPassword', 'topsecret')
+                    # Submit form
+                     -> click('button[type="submit"]')
+                     -> waitForLocation('/kursuebersicht')
+                     -> assertDontSeeIn('.top-menu .menu .right a.button','Anmelden');
         });
 
 
 
-        \Rainlab\User\Models\User::where('email', $email)->delete();
+        // \Rainlab\User\Models\User::where('email', $email)->delete();
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+        DB::rollBack();
     }
 }
