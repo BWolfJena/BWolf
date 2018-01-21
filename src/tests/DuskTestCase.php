@@ -29,14 +29,15 @@ abstract class DuskTestCase extends BaseTestCase
      */
     protected function driver()
     {
-        if (env('USE_SELENIUM', 'false') == 'true') {
-            return RemoteWebDriver::create(
-                'http://selenium:4444/wd/hub', DesiredCapabilities::chrome()
-            );
-        } else {
-            return RemoteWebDriver::create(
-                'http://localhost:9515', DesiredCapabilities::chrome()
-            );
-        }
+        $options = (new ChromeOptions)->addArguments([
+            '--headless',
+            '--no-sandbox'
+        ]);
+
+        return RemoteWebDriver::create(
+            'http://localhost:9515', DesiredCapabilities::chrome()->setCapability(
+                ChromeOptions::CAPABILITY, $options
+            )
+        );
     }
 }

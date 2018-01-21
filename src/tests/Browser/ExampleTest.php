@@ -1,4 +1,5 @@
-<?php
+<?php{
+
 
 namespace Tests\Browser;
 
@@ -16,8 +17,8 @@ class ExampleTest extends DuskTestCase
     public function testBasicExample()
     {
         $this->browse(function (Browser $browser) {
-            $browser->visit('/')
-                    ->assertSee('Laavel');
+            $browser->visit('kursuebersicht')
+                    ->assertSee('Kursübersicht');
         });
     }
 }

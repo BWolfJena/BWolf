@@ -38,7 +38,9 @@
     "require-dev": {
         "fzaninotto/faker": "~1.7",
         "phpunit/phpunit": "~5.7",
-        "phpunit/phpunit-selenium": "~1.2"
+        "phpunit/phpunit-selenium": "~1.2",
+        "laravel/dusk": "^2.0",
+        "pikanji/dusktests-plugin": "dev-master"
     },
     "autoload-dev": {
         "classmap": [
