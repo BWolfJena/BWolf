@@ -19,12 +19,14 @@
 \BOOKMARK [1][-]{section.4.3}{Backend}{chapter.4}% 19
 \BOOKMARK [0][-]{chapter.5}{Verteilungsalgorithmus}{}% 20
 \BOOKMARK [1][-]{section.5.1}{Aufstellen Zielfunktion}{chapter.5}% 21
-\BOOKMARK [1][-]{section.5.2}{Wahl der Parameter}{chapter.5}% 22
-\BOOKMARK [2][-]{subsection.5.2.1}{Naheliegende L\366sung}{section.5.2}% 23
-\BOOKMARK [2][-]{subsection.5.2.2}{Naheliegende L\366sung mit festem Minimum}{section.5.2}% 24
-\BOOKMARK [2][-]{subsection.5.2.3}{Exponentielle Gewichte}{section.5.2}% 25
-\BOOKMARK [0][-]{chapter.6}{Zusammenfassung}{}% 26
-\BOOKMARK [1][-]{section.6.1}{Stand des Projekts}{chapter.6}% 27
-\BOOKMARK [1][-]{section.6.2}{Offene Probleme}{chapter.6}% 28
-\BOOKMARK [1][-]{section.6.3}{M\366gliche weitere Arbeiten}{chapter.6}% 29
-\BOOKMARK [0][-]{chapter.7}{Anhang}{}% 30
+\BOOKMARK [1][-]{section.5.2}{Erweiterung der Zielfunktion und Wahl der Parameter}{chapter.5}% 22
+\BOOKMARK [2][-]{subsection.5.2.1}{Naheliegende Wahl der Parameter}{section.5.2}% 23
+\BOOKMARK [2][-]{subsection.5.2.2}{Exponentielle Gewichte}{section.5.2}% 24
+\BOOKMARK [2][-]{subsection.5.2.3}{Festes Minimum}{section.5.2}% 25
+\BOOKMARK [2][-]{subsection.5.2.4}{Betrachtung der Varianz}{section.5.2}% 26
+\BOOKMARK [0][-]{chapter.6}{Test des Systems}{}% 27
+\BOOKMARK [0][-]{chapter.7}{Zusammenfassung}{}% 28
+\BOOKMARK [1][-]{section.7.1}{Stand des Projekts}{chapter.7}% 29
+\BOOKMARK [1][-]{section.7.2}{Offene Probleme}{chapter.7}% 30
+\BOOKMARK [1][-]{section.7.3}{M\366gliche weitere Arbeiten}{chapter.7}% 31
+\BOOKMARK [0][-]{chapter.8}{Anhang}{}% 32

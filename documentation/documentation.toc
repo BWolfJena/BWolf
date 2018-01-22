@@ -23,12 +23,14 @@
 \contentsline {section}{\numberline {4.3}Backend}{18}{section.4.3}
 \contentsline {chapter}{\numberline {5}Verteilungsalgorithmus}{19}{chapter.5}
 \contentsline {section}{\numberline {5.1}Aufstellen Zielfunktion}{19}{section.5.1}
-\contentsline {section}{\numberline {5.2}Wahl der Parameter}{20}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Naheliegende L\IeC {\"o}sung}{20}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Naheliegende L\IeC {\"o}sung mit festem Minimum}{21}{subsection.5.2.2}
-\contentsline {subsection}{\numberline {5.2.3}Exponentielle Gewichte}{21}{subsection.5.2.3}
-\contentsline {chapter}{\numberline {6}Zusammenfassung}{22}{chapter.6}
-\contentsline {section}{\numberline {6.1}Stand des Projekts}{22}{section.6.1}
-\contentsline {section}{\numberline {6.2}Offene Probleme}{22}{section.6.2}
-\contentsline {section}{\numberline {6.3}M\IeC {\"o}gliche weitere Arbeiten}{22}{section.6.3}
-\contentsline {chapter}{\numberline {7}Anhang}{23}{chapter.7}
+\contentsline {section}{\numberline {5.2}Erweiterung der Zielfunktion und Wahl der Parameter}{20}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Naheliegende Wahl der Parameter}{20}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Exponentielle Gewichte}{21}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}Festes Minimum}{21}{subsection.5.2.3}
+\contentsline {subsection}{\numberline {5.2.4}Betrachtung der Varianz}{21}{subsection.5.2.4}
+\contentsline {chapter}{\numberline {6}Test des Systems}{23}{chapter.6}
+\contentsline {chapter}{\numberline {7}Zusammenfassung}{24}{chapter.7}
+\contentsline {section}{\numberline {7.1}Stand des Projekts}{24}{section.7.1}
+\contentsline {section}{\numberline {7.2}Offene Probleme}{24}{section.7.2}
+\contentsline {section}{\numberline {7.3}M\IeC {\"o}gliche weitere Arbeiten}{24}{section.7.3}
+\contentsline {chapter}{\numberline {8}Anhang}{25}{chapter.8}
