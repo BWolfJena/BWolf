@@ -51,7 +51,7 @@ class Plugin extends PluginBase
     public function registerComponents()
     {
         return [
-            '\BWolfJena\Core\Components\CourseDetails' => 'courseDetails',
+            '\BWolfJena\Core\Components\CourseDetails' => 'courseDetails'
         ];
     }
 
@@ -145,10 +145,10 @@ class Plugin extends PluginBase
             ],
             'archiv' => [
               'label' => 'Archiv',
-              'url' => Backend::url('bwolfjena/core/archive'),
+              'url' => Backend::url('bwolfjena/core/archiv'),
               'icon' => 'oc-icon-folder-o',
               'permissions' => ['bwolfjena.core.full_archive'],
-              'order' => 390  ,
+              'order' => 420  ,
             ]
 
         ];
