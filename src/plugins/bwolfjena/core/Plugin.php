@@ -91,7 +91,8 @@ class Plugin extends PluginBase
         return [
             '\BWolfJena\Core\Components\CourseList' => 'courseList',
             '\BWolfJena\Core\Components\CourseSelection' => 'courseSelection',
-            '\BWolfJena\Core\Components\DistributionList' => 'distributionList'
+            '\BWolfJena\Core\Components\DistributionList' => 'distributionList',
+            '\BWolfJena\Core\Components\Archive' => 'archive'
         ];
     }
 
