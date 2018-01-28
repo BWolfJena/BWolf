@@ -82,10 +82,6 @@ class Plugin extends PluginBase
             'bwolfjena.core.full_distribution' => [
                 'tab' => 'Verteilung',
                 'label' => 'Volle Berechtingung zum Verteilen von Studierenden'
-            ],
-            'bwolfjena.core.full_archive' => [
-                'tab' => 'Archiv',
-                'label' => 'Volle Berechtigung zur Einsicht in alle Module'
             ]
         ];
     }
@@ -95,8 +91,7 @@ class Plugin extends PluginBase
         return [
             '\BWolfJena\Core\Components\CourseList' => 'courseList',
             '\BWolfJena\Core\Components\CourseSelection' => 'courseSelection',
-            '\BWolfJena\Core\Components\DistributionList' => 'distributionList',
-            '\BWolfJena\Core\Components\Archive' => 'archive'
+            '\BWolfJena\Core\Components\DistributionList' => 'distributionList'
         ];
     }
 
@@ -142,15 +137,7 @@ class Plugin extends PluginBase
                 'icon' => 'icon-bar-chart',
                 'permissions' => ['bwolfjena.core.full_distribution'],
                 'order' => 410  ,
-            ],
-            'archiv' => [
-              'label' => 'Archiv',
-              'url' => Backend::url('bwolfjena/core/archiv'),
-              'icon' => 'oc-icon-folder-o',
-              'permissions' => ['bwolfjena.core.full_archive'],
-              'order' => 420  ,
             ]
-
         ];
     }
 }
