@@ -9,7 +9,7 @@ class CourseDetails extends ComponentBase
     {
         return [
             'name'        => 'CourseDetails Component',
-            'description' => 'No description provided yet...'
+            'description' => 'provides detailed information about a specific course'
         ];
     }
 
