@@ -1,5 +1,7 @@
 <?php namespace BWolfJena\Core\Components;
 
+use Auth;
+use Redirect;
 use Cms\Classes\ComponentBase;
 use BWolfJena\Core\Models\Module;
 use BWolfJena\Core\Models\Course;
@@ -17,6 +19,15 @@ class Archive extends ComponentBase
     public function defineProperties()
     {
         return [];
+    }
+
+    public function  onRun()
+    {
+        if(!Auth::check()) {
+            return Redirect::to('anmelden');
+        }
+        $this->addJs('//cdn.jsdelivr.net/npm/sortablejs@1.6.1/Sortable.min.js');
+        $this->addJs('assets/js/course_selection.js');
     }
 
     public function modules()
