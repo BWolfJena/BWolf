@@ -20,7 +20,7 @@ columns:
     min_participants:
         label: Min. Teiln.
     max_participants:
-        label: max. Teiln.
+        label: Max. Teiln.
     module_id:
         label: Modul
         relation: module
