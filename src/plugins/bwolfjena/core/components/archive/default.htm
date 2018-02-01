@@ -8,11 +8,18 @@
 
     {% for course in __SELF__.coursesByModulId(module.id) %}
       <div class="ui vertical segment">
-        <h4>{{ course.lecturer.full_name }}: {{course.name}}</h4>
-        Teilnehmer:<br>
-        {% for user in course.users %}
-            <li>{{ user.email }}</li>
-        {% endfor %}
+        <h1>{{ course.name }}</h1>
+        <h3>{{ course.title }}</h3>
+        <div class="description">
+            <p>
+                <strong>Zeit</strong>: {{ course.time  }}<br>
+                <strong>Ort</strong>: {{ course.room  }}<br>
+                <strong>Dozent</strong>: {{ course.lecturer.full_name }}
+            </p>
+            <p>{{ course.description | raw }}</p>
+            <h4>Literatur</h4>
+            <p>{{ course.literature | raw }}</p>
+        </div>
       </div>
     {% endfor %}
 </div>
