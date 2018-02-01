@@ -50,23 +50,44 @@
              $$ \forall {j \in \{1,..,m\}}: t_{\min}(j) \leq \sum_{i=1}^{n} x_{ij} \leq t_{\max}(j) ~~~,$$
         dabei bezeichnet $ t_{\min}(j) $ die minimale und $ t_{\max}(j) $ die maximale Teilnehmerzahl eines Kurses $ j $.
         
-    \section{Wahl der Parameter}
+    \section{Erweiterung der Zielfunktion und Wahl der Parameter}
         Die Parameter der Zielfunktion können frei gewählt werden.
-        In diesem Abschnitt sollen drei verschiedene Möglichkeiten vorgestellt werden.
+        In diesem Abschnitt sollen verschiedene Varianten dargestellt werden, wie die Gewichte gewählt bzw. wie die Zielfunktion weiter angepasst und erweitert werden kann.
         
-        \subsection{Naheliegende Lösung}
-            Die nahe liegende Wahl der Gewichte sind die Präferenzen der einzelnen Studenten für die Kurse.
-            Da versucht wird die $ x_{ij} $ so zu wählen, dass die Summe maximal wird, wird so eine Zuordnung eines Studenten zu einem Kurs, für den er eine höhere Präferenz angegeben hat, gegenüber einem mit einer niedrigen Präferenz bevorzugt.
+        \subsection{Naheliegende Wahl der Parameter}
+            Die nahe liegende Wahl der Gewichte ist, die Präferenzliste der einzelnen Studenten für die Kurse zu verwenden.
+            Da versucht wird, die $ x_{ij} $ so zu wählen, dass die Summe maximal wird, wird so eine Zuordnung eines Studenten zu einem Kurs, für den er eine höhere Präferenz angegeben hat, gegenüber einem mit einer niedrigen Präferenz bevorzugt.
             Der sogenannte \textit{Score} der Funktion, also das Ergebnis der Summe, wird somit höher, je mehr Studenten in von ihnen gewünschte Kurse verteilt werden.
             
-        \subsection{Naheliegende Lösung mit festem Minimum}
-            Die Gewichte werden bei diesem Ansatz genauso wie im vorherigen Abschnitt gewählt.
+        \subsection{Exponentielle Gewichte}
+            Eine zweite Variante ist die Gewichte nicht nach der Präferenzliste, also linear und in gleichen Abständen, zu wählen, sondern exponentiell.
+            Dadurch wirkt sich das Zuteilen eines Studenten auf einen Kurs, dem er eine hohe Präferenz gegeben hat, deutlich stärker auf den Score aus, als in der vorherigen Variante.
+            Oder andersherum: das Zuteilen zu einem Kurs mit niedriger Präferenz wird stärker mit einem niedrigen Score bestraft.
+            
+        
+        \subsection{Festes Minimum}
+            Die Gewichte können bei dieser Erweiterung der Zielfunktion weiterhin frei gewählt werden. 
+            So zum Beispiel sind die beiden Ansätze aus dem vorherigen Abschnitt denkbar.
             Allerdings wird hier zusätzlich ein festes Minimum für die kleinste noch zulässige Präferenz angegeben.
             Das bedeutet, dass kein Student in einen Kurs eingeteilt wird, dem er eine geringere Präferenz als das Minimum gegeben hat.
             Dies wird umgesetzt, indem diejenigen Einträge $ x_{ij} $ der Matrix $ X $ fest auf $ 0 $ gesetzt werden, bei denen ein Student $ i $ einem Kurs $ j $ eine schlechtere Präferenz als das Minimum gegeben hat.
             Das Anwenden dieser Methode hat den Vorteil, dass das Minimum fest gewählt werden kann und somit garantiert ist, dass kein Student schlechter als das Minimum eingeteilt wird.
-            Dadurch kann es jedoch dazu kommen, dass das einige Studenten in ihrer Präferenz, zugunsten des festen Minimums, fallen oder auch, dass keine Lösung für das Problem gefunden werden kann.
+            Dadurch kann es jedoch dazu kommen, dass einige Studenten in ihrer Präferenz zugunsten des festen Minimums fallen oder auch, dass keine Lösung für das Problem gefunden werden kann.
         
-        \subsection{Exponentielle Gewichte}
+        \subsection{Betrachtung der Varianz}
+            Eine weitere Anpassung der Zielfunktion könnte die Erweiterung um einen zusätzlichen Term sein.
+            Es ist so denkbar, die Varianz als Maß für die Streuung mit in die Zielfunktion einzubeziehen.
+            Formal würde das zu folgender Zielfunktion führen:
+                $$ \max \sum_{i=1}^{n} \sum_{j=1}^{m} c(i,j)x_{ij} 
+                                ~-~ \frac{\beta}{n} \sum_{i=1}^{n}
+                                    \left[\left(\sum_{j=1}^{m} c(i,j)x_{ij}\right) - \frac{1}{n} \sum_{i=1}^{n} \sum_{j=1}^{m} c(i,j)x_{ij}\right]^2 ~~~,$$
+            dabei bezeichnet der hintere Term die empirische Varianz, $ \beta $ ist ein weiteres Gewicht, um den Einfluss der Varianz zu steuern.
+            Mithilfe dieser Zielfunktion wird nun nicht nur versucht jeden Studenten in einen für ihn möglichst guten Kurs zuzuteilen, sondern auch die Varianz minimiert.
+            Damit werden nach Möglichkeit alle Studenten in einen ähnlich von ihnen präferierten Kurs verteilt, oder mit anderen Worten, es werden Ausreißer verhindert.\\
+            
+            Nachteil bei dieser Variante ist jedoch, dass die Zielfunktion nun nicht mehr linear, sondern quadratisch ist.
+            Zum einen erhöht das den Aufwand, um eine Lösung zu finden, enorm.
+            Zum anderen kann mit bekannten Algorithmen zum Lösen solch quadratischer Probleme das Finden einer optimalen Lösung nicht garantiert werden.
+            Aus diesem Grund wurde bei der Umsetzung des Verteilungsalgorithmus die zuvor gezeigte lineare Zielfunktion verwendet.
             
         

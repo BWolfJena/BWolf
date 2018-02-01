@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.6.1)  20 JAN 2018 13:48
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.6.1)  22 JAN 2018 16:02
 entering extended mode
 **documentation.tex
 (C:\Users\Kasimir\BWolf\documentation\documentation.tex
@@ -545,6 +545,7 @@ Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 (C:\Users\Kasimir\BWolf\documentation\design\design.aux)
 (C:\Users\Kasimir\BWolf\documentation\implementation\implementation.aux)
 (C:\Users\Kasimir\BWolf\documentation\algorithm\algorithm.aux)
+(C:\Users\Kasimir\BWolf\documentation\testing\testing.aux)
 (C:\Users\Kasimir\BWolf\documentation\summary\summary.aux)
 (C:\Users\Kasimir\BWolf\documentation\appendix\appendix.aux))
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
@@ -598,7 +599,7 @@ LaTeX Info: Redefining \nameref on input line 25.
 (C:\Users\Kasimir\BWolf\documentation\documentation.out)
 \@outlinefile=\write3
 
-<./LogoSoFar.png, id=123, 706.89093pt x 942.52126pt>
+<./LogoSoFar.png, id=131, 706.89093pt x 942.52126pt>
 File: ./LogoSoFar.png Graphic file (type png)
  <use ./LogoSoFar.png>
 Package pdftex.def Info: ./LogoSoFar.png used on input line 30.
@@ -680,7 +681,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 125--126
 
 ) [8] (C:\Users\Kasimir\BWolf\documentation\design\design.tex
 Kapitel 3.
-<./design/images/data-model.png, id=212, 1007.765pt x 674.52pt>
+<./design/images/data-model.png, id=222, 1007.765pt x 674.52pt>
 File: ./design/images/data-model.png Graphic file (type png)
 
 <use ./design/images/data-model.png>
@@ -703,7 +704,7 @@ Overfull \hbox (0.63634pt too wide) in paragraph at lines 41--45
  []
 
 
-<./design/images/MockUpsFrontend/frontendLogin.png, id=227, 796.47563pt x 597.7
+<./design/images/MockUpsFrontend/frontendLogin.png, id=237, 796.47563pt x 597.7
 3312pt>
 File: ./design/images/MockUpsFrontend/frontendLogin.png Graphic file (type png)
 
@@ -719,7 +720,7 @@ n-ten zu-nächst ei-ne Registrierungs-
 
 [11] [12 <C:/Users/Kasimir/BWolf/documentation/design/images/MockUpsFrontend/fr
 ontendLogin.png>]
-<./design/images/MockUpsFrontend/frontendCourses.png, id=239, 796.47563pt x 597
+<./design/images/MockUpsFrontend/frontendCourses.png, id=249, 796.47563pt x 597
 .73312pt>
 File: ./design/images/MockUpsFrontend/frontendCourses.png Graphic file (type pn
 g)
@@ -733,7 +734,7 @@ LaTeX Warning: Reference `fig:mockupDetailsFrontend' on page 13 undefined on in
 put line 106.
 
 
-<./design/images/MockUpsFrontend/frontendPreferences.png, id=241, 796.47563pt x
+<./design/images/MockUpsFrontend/frontendPreferences.png, id=251, 796.47563pt x
  597.73312pt>
 File: ./design/images/MockUpsFrontend/frontendPreferences.png Graphic file (typ
 e png)
@@ -744,7 +745,7 @@ g used on input line 110.
 
 [13 <C:/Users/Kasimir/BWolf/documentation/design/images/MockUpsFrontend/fronten
 dCourses.png>]
-<./design/images/MockUpsFrontend/frontendSwap2.png, id=250, 796.47563pt x 597.7
+<./design/images/MockUpsFrontend/frontendSwap2.png, id=260, 796.47563pt x 597.7
 3312pt>
 File: ./design/images/MockUpsFrontend/frontendSwap2.png Graphic file (type png)
 
@@ -754,7 +755,7 @@ Package pdftex.def Info: ./design/images/MockUpsFrontend/frontendSwap2.png used
 (pdftex.def)             Requested size: 234.00238pt x 175.6092pt.
  [14 <C:/Users/Kasimir/BWolf/documentation/design/images/MockUpsFrontend/fronte
 ndPreferences.png>]
-<./design/images/MockUpsBackend/backendManageCourses.png, id=257, 796.47563pt x
+<./design/images/MockUpsBackend/backendManageCourses.png, id=267, 796.47563pt x
  597.73312pt>
 File: ./design/images/MockUpsBackend/backendManageCourses.png Graphic file (typ
 e png)
@@ -763,7 +764,7 @@ Package pdftex.def Info: ./design/images/MockUpsBackend/backendManageCourses.pn
 g used on input line 156.
 (pdftex.def)             Requested size: 234.00238pt x 175.6092pt.
 
-<./design/images/MockUpsBackend/backendEdit.png, id=259, 796.47563pt x 597.7331
+<./design/images/MockUpsBackend/backendEdit.png, id=269, 796.47563pt x 597.7331
 2pt>
 File: ./design/images/MockUpsBackend/backendEdit.png Graphic file (type png)
  <use ./design/images/MockUpsBackend/backendEdit.png>
@@ -782,7 +783,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 178--182
 
 [15 <C:/Users/Kasimir/BWolf/documentation/design/images/MockUpsFrontend/fronten
 dSwap2.png>]
-<./design/images/MockUpsBackend/backendDistribution.png, id=267, 796.47563pt x 
+<./design/images/MockUpsBackend/backendDistribution.png, id=277, 796.47563pt x 
 597.73312pt>
 File: ./design/images/MockUpsBackend/backendDistribution.png Graphic file (type
  png)
@@ -811,45 +812,57 @@ Kapitel 5.
 
 
 
-] [20]) [21] (C:\Users\Kasimir\BWolf\documentation\summary\summary.tex
+] [20] [21]
+Underfull \hbox (badness 10000) in paragraph at lines 83--87
+
+ []
+
+) [22] (C:\Users\Kasimir\BWolf\documentation\testing\testing.tex
 Kapitel 6.
-) [22
+) [23
+
+
+
+] (C:\Users\Kasimir\BWolf\documentation\summary\summary.tex
+Kapitel 7.
+) [24
 
 
 
 ] (C:\Users\Kasimir\BWolf\documentation\appendix\appendix.tex
-Kapitel 7.
-) [23
+Kapitel 8.
+) [25
 
 
 
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 58.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 58.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 59.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 59.
  (C:\Users\Kasimir\BWolf\documentation\documentation.aux
 (C:\Users\Kasimir\BWolf\documentation\introduction\introduction.aux)
 (C:\Users\Kasimir\BWolf\documentation\requirements\requirements.aux)
 (C:\Users\Kasimir\BWolf\documentation\design\design.aux)
 (C:\Users\Kasimir\BWolf\documentation\implementation\implementation.aux)
 (C:\Users\Kasimir\BWolf\documentation\algorithm\algorithm.aux)
+(C:\Users\Kasimir\BWolf\documentation\testing\testing.aux)
 (C:\Users\Kasimir\BWolf\documentation\summary\summary.aux)
 (C:\Users\Kasimir\BWolf\documentation\appendix\appendix.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 58.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 58.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 59.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 59.
 Package rerunfilecheck Info: File `documentation.out' has not changed.
-(rerunfilecheck)             Checksum: BAF40909CC1F873D0C1DD3806463F9E6;1923.
+(rerunfilecheck)             Checksum: ACFE7A063E063B35FF6CB8835B84205B;2069.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 58.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 59.
  ) 
 Here is how much of TeX's memory you used:
- 7455 strings out of 493921
- 106669 string characters out of 3144871
- 191076 words of memory out of 3000000
- 10484 multiletter control sequences out of 15000+200000
+ 7472 strings out of 493921
+ 107172 string characters out of 3144871
+ 191445 words of memory out of 3000000
+ 10488 multiletter control sequences out of 15000+200000
  51415 words of font info for 58 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  34i,10n,35p,369b,473s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -864,9 +877,9 @@ KTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTe
 X 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts
 /type1/urw/times/utmr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/
 times/utmri8a.pfb>
-Output written on documentation.pdf (26 pages, 508746 bytes).
+Output written on documentation.pdf (28 pages, 515207 bytes).
 PDF statistics:
- 360 PDF objects out of 1000 (max. 8388607)
- 69 named destinations out of 1000 (max. 500000)
- 286 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 380 PDF objects out of 1000 (max. 8388607)
+ 73 named destinations out of 1000 (max. 500000)
+ 302 words of extra memory for PDF output out of 10000 (max. 10000000)
 
