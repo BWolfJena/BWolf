@@ -35,6 +35,11 @@ class Archive extends ComponentBase
       return Module::all();
     }
 
+    public function activeModule()
+    {
+      return Module::orderBy('start_date')->where('start_date', '>=', \Carbon\Carbon::now())->first()->courses;
+    }
+
     public function coursesByModulId($courseId)
     {
       $_allCourses = Course::all();
