@@ -1,10 +1,11 @@
-{% set module = __SELF__.modules()|reverse|first %}
+{% for module in __SELF__.modules() %}
 <div class="ui segment">
     <h3>{{ module.name }}</h3>
     <p>
       von {{ module.start_date|date("d.m.Y") }}
       bis {{ module.end_date|date("d.m.Y") }}
     </p>
+
 
     {% for course in __SELF__.coursesByModulId(module.id) %}
       <div class="ui vertical segment">
@@ -23,3 +24,4 @@
       </div>
     {% endfor %}
 </div>
+{% endfor %}

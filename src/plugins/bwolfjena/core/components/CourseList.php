@@ -1,5 +1,6 @@
 <?php namespace BwolfJena\Core\Components;
 
+use BWolfJena\Core\Models\Module;
 use Cms\Classes\ComponentBase;
 use BWolfJena\Core\Models\Course;
 
@@ -20,7 +21,11 @@ class CourseList extends ComponentBase
 
     public function courses()
     {
-        return Course::all();
+        $currentModule = Module::orderBy('start_date')->where('start_date', '<=', \Carbon\Carbon::now())->first();
+        if(is_null($currentModule)) {
+            return [];
+        }
+        return $currentModule->courses;
     }
 
 }
