@@ -1,27 +1,24 @@
-{% for module in __SELF__.modules() %}
-<div class="ui segment">
-    <h3>{{ module.name }}</h3>
-    <p>
-      von {{ module.start_date|date("d.m.Y") }}
-      bis {{ module.end_date|date("d.m.Y") }}
-    </p>
-
-
-    {% for course in __SELF__.coursesByModulId(module.id) %}
-      <div class="ui vertical segment">
-        <h1>{{ course.name }}</h1>
-        <h3>{{ course.title }}</h3>
-        <div class="description">
-            <p>
-                <strong>Zeit</strong>: {{ course.time  }}<br>
-                <strong>Ort</strong>: {{ course.room  }}<br>
-                <strong>Dozent</strong>: {{ course.lecturer.full_name }}
-            </p>
-            <p>{{ course.description | raw }}</p>
-            <h4>Literatur</h4>
-            <p>{{ course.literature | raw }}</p>
+<div class="row">
+  <div class="ui two stackable cards">
+    {% for module in __SELF__.modules() %}
+    <div class="card">
+        <div class="content" style="padding:   1,5em;">
+            <div class="header">
+                {{ module.name }}
+            </div>
+            <div class="description">
+              <p>Modulbeginn: {{ module.start_date|date("d.m.Y") }}</p>
+              <p>Modulende: {{ module.end_date|date("d.m.Y") }}</p>
+              <p>Einschreibungsstart: {{module.enrollment_start|date("d.m.Y")}}</p>
+              <p>Einschreibungsende: {{module.enrollment_end|date("d.m.Y")}}</p>
+            </div>
         </div>
-      </div>
+        <div class="extra content">
+          <div class="right floated">
+            <a class="ui basic button" href="/modul/{{module.id}}">Details </a>
+          </div>
+        </div>
+    </div>
     {% endfor %}
+  </div>
 </div>
-{% endfor %}
