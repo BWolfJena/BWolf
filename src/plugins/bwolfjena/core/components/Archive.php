@@ -25,12 +25,4 @@ class Archive extends ComponentBase
     {
       return Module::all();
     }
-
-    public function coursesByModulId($moduleId)
-    {
-      return Course::whereHas('module', function($query)  use ($moduleId) {
-          $query->where('id', '=',$moduleId);
-      })->get()->toArray();
-    }
-
 }

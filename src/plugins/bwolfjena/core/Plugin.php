@@ -51,7 +51,8 @@ class Plugin extends PluginBase
     public function registerComponents()
     {
         return [
-            '\BWolfJena\Core\Components\CourseDetails' => 'courseDetails'
+            '\BWolfJena\Core\Components\CourseDetails' => 'courseDetails',
+            '\BWolfJena\Core\Components\ModuleDetails' => 'moduleDetails'
         ];
     }
 
