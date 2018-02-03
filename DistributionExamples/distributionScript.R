@@ -3,15 +3,19 @@
 ######
 #setwd("C:\\Users\\Greifvogel\\Programming\\Git\\BWolf\\DistributionExamples")
 library(RJSONIO)
-
+library(httr)
 ######
 # Constants
 ######
 
 # Number of courses
-courses <- 30
+courses <- 15
 # Number of Students
-numberStudents <- 1500
+numberStudents <- 130 
+
+maxPerCourse <- 10
+
+url = 'localhost:1338';
 
 ######
 # Helper
@@ -36,6 +40,38 @@ aggregationMatrix <- function(listOfLists) {
   # Return the matrix
   return(aggregation)
 }
+
+distribute <- function(elections, lowest, weights) {
+  requestBody <- '{ 
+    "courses" : {';
+  
+  for( i in 1:courses) {
+    id = i;
+    min = 0;
+    max = maxPerCourse;
+    requestBody <- paste0(requestBody,'"',id,'" : { "id": ', id, ', "min":', min, ',"max": ', max,'}')
+    if(i < courses) {
+      requestBody <- paste0(requestBody, ',');
+    } else {
+      requestBody <- paste0(requestBody, '},');
+    }
+  }
+  requestBody <- paste0(requestBody,
+                        '"elections" :', toJSON(elections),',
+                        "params" : {
+                        "lowest": ',lowest,',
+                        "weights" :', toJSON(weights), '
+                        }
+  }');
+  requestBody
+
+  res <- httr::POST(url = url,
+                    httr::add_headers('Content-Type' = 'application/json'),
+                    httr::add_headers('Accept' = 'application/json'),
+                    body = requestBody,
+                    encode = "json")
+  return(content(res))
+} 
 
 ######
 # Density functions
@@ -80,6 +116,7 @@ uni <- matrix(0, nrow = numberStudents, ncol = courses)
 normal <- matrix(0, nrow = numberStudents, ncol = courses)
 multi <- matrix(0, nrow = numberStudents, ncol = courses)
 
+rownames
 # Sample for each student
 for (i in 1:numberStudents) {
   uni[i, ] <- sample(1:courses, courses, prob = uniformProbability)
@@ -89,6 +126,46 @@ for (i in 1:numberStudents) {
 uniformPreferences <- as.list(data.frame(t(uni)))
 normalPreferences <- as.list(data.frame(t(normal)))
 multivariatPreferences <- as.list(data.frame(t(multi)))
+
+
+preferencesList = c(list(uniformPreferences), list(normalPreferences))
+preferencesListNames = list('Gleichverteilte Präferenzen', 'Normalverteilte Präferenzen')
+for(i in 1:2 ) {
+    elections = preferencesList[[i]]
+    pdf(paste0(preferencesListNames[[i]],'.pdf'));
+    barplot(t(aggregationMatrix(elections)), xlab="Kurs",axes=FALSE, ylab="Präferenz - je dunkler desto höher")
+    title(preferencesListNames[[i]])
+    contentRes <- distribute(elections, 0, courses:1)
+    barplot(t(as.matrix(contentRes$histCourses)), xlab='Kurs ID', ylab='Anzahl Teilnehmer',col='#052e5d')
+    title('Kurshistogramm - Lineare Gewichte ohne Minimum')
+    barplot(t(as.matrix(contentRes$histPreferences)), xlab='Präferenz', ylab='Anzahl Studenten', col='#052e5d')
+    title('Präferenzhistogramm - Lineare Gewichte ohne Minimum')
+    min <- contentRes$min +1
+    contentRes <- distribute(elections, min, courses:1)
+    if(length(contentRes) > 1) {
+      barplot(t(as.matrix(contentRes$histCourses)), xlab='Kurs ID', ylab='Anzahl Teilnehmer', col='#052e5d')
+      title('Kurshistogramm - Lineare Gewichte mit Minimum')
+      barplot(t(as.matrix(contentRes$histPreferences)), xlab='Präferenz', ylab='Anzahl Studenten', col='#052e5d')
+      title('Präferenzhistogramm - Lineare Gewichte mit Minimum')
+      min <- min + 1
+      contentRes <- distribute(elections, min, courses:1)
+      if(length(contentRes) > 1) {
+        barplot(t(as.matrix(contentRes$histCourses)), xlab='Kurs ID', ylab='Anzahl Teilnehmer', col='#052e5d')
+        title('Kurshistogramm - Lineare Gewichte mit Minimum')
+        barplot(t(as.matrix(contentRes$histPreferences)), xlab='Präferenz', ylab='Anzahl Studenten', col='#052e5d')
+        title('Präferenzhistogramm - Lineare Gewichte mit Minimum')
+        min <- min + 1
+      }
+    }
+    contentRes <- distribute(elections, 0, rev(2^courses-2^(courses:1)))
+    barplot(t(as.matrix(contentRes$histCourses)), xlab='Kurs ID', ylab='Anzahl Teilnehmer', col='#052e5d')
+    title('Kurshistogramm - Exponentielle Gewichte ohne Minimum')
+    barplot(t(as.matrix(contentRes$histPreferences)), xlab='Präferenz', ylab='Anzahl Studenten', col='#052e5d')
+    title('Präferenzhistogramm - Exponentielle Gewichte ohne Minimum')
+    dev.off();
+}
+
+
 
 ######
 # JSON/CSV Export
@@ -114,6 +191,11 @@ write.csv(multi, file = "multiPreferences.csv")
 # Plotting
 ######
 
+
+plot(1:6, type='l', col='#052e5d')
+plot(exp(6)-exp(6:1), type='l', col='#052e5d')
+
+normalPreffAgg=aggregationMatrix(normalPreferences)
 barplot(t(aggregationMatrix(uniformPreferences)))
 barplot(t(aggregationMatrix(normalPreferences)))
 barplot(t(aggregationMatrix(multivariatPreferences)))
