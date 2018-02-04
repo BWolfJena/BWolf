@@ -133,7 +133,7 @@ preferencesListNames = list('Gleichverteilte Präferenzen', 'Normalverteilte Pr�
 for(i in 1:2 ) {
     elections = preferencesList[[i]]
     pdf(paste0(preferencesListNames[[i]],'.pdf'));
-    barplot(t(aggregationMatrix(elections)), xlab="Kurs",axes=FALSE, ylab="Präferenz - je dunkler desto höher")
+    barplot(t(aggregationMatrix(elections)), xlab="Kurs",axes=FALSE, ylab="Präferenz - je dunkler desto höher", col=colorRampPalette(c("red","orange","blue")))
     title(preferencesListNames[[i]])
     contentRes <- distribute(elections, 0, courses:1)
     barplot(t(as.matrix(contentRes$histCourses)), xlab='Kurs ID', ylab='Anzahl Teilnehmer',col='#052e5d')
@@ -142,19 +142,18 @@ for(i in 1:2 ) {
     title('Präferenzhistogramm - Lineare Gewichte ohne Minimum')
     min <- contentRes$min +1
     contentRes <- distribute(elections, min, courses:1)
-    if(length(contentRes) > 1) {
+    if(length(contentRes) > 3) {
       barplot(t(as.matrix(contentRes$histCourses)), xlab='Kurs ID', ylab='Anzahl Teilnehmer', col='#052e5d')
       title('Kurshistogramm - Lineare Gewichte mit Minimum')
       barplot(t(as.matrix(contentRes$histPreferences)), xlab='Präferenz', ylab='Anzahl Studenten', col='#052e5d')
       title('Präferenzhistogramm - Lineare Gewichte mit Minimum')
       min <- min + 1
       contentRes <- distribute(elections, min, courses:1)
-      if(length(contentRes) > 1) {
+      if(length(contentRes) > 3) {
         barplot(t(as.matrix(contentRes$histCourses)), xlab='Kurs ID', ylab='Anzahl Teilnehmer', col='#052e5d')
         title('Kurshistogramm - Lineare Gewichte mit Minimum')
         barplot(t(as.matrix(contentRes$histPreferences)), xlab='Präferenz', ylab='Anzahl Studenten', col='#052e5d')
         title('Präferenzhistogramm - Lineare Gewichte mit Minimum')
-        min <- min + 1
       }
     }
     contentRes <- distribute(elections, 0, rev(2^courses-2^(courses:1)))
