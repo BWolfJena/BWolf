@@ -1,0 +1,37 @@
+<h1>{{ module.name }}</h1>
+<div class="description" style="margin-bottom: 1em;">
+  <p>von Modulbeginn: {{ module.start_date|date("d.m.Y") }}</p>
+  <p>Modulende: {{ module.end_date|date("d.m.Y") }}</p>
+  <p>Einschreibungsstart: {{module.enrollment_start|date("d.m.Y")}}</p>
+  <p>Einschreibungsende: {{module.enrollment_end|date("d.m.Y")}}</p>
+</div>
+
+<div class="row">
+    <div class="ui two stackable cards">
+    {% for course in __SELF__.coursesByModulId(module.id) %}
+    <div class="card">
+        <div class="content" style="padding:   1,5em;">
+            <div class="header">
+                {{ course.name }}
+            </div>
+            <div class="meta">
+                {{ course.title }}
+            </div>
+            <div class="description">
+                <p>
+                Zeit: {{ course.time  }}<br>
+                Ort: {{ course.room  }}<br>
+                Dozent: {{ course.lecturer.full_name }}
+                </p>
+                <p>{{ str_words(course.description|striptags,30, ' ...') }}</p>
+            </div>
+        </div>
+        <div class="extra content">
+            <div class="right floated">
+            <a class="ui basic button" href="/kurs/{{ course.id }}">Details </a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
