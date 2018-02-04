@@ -1,6 +1,6 @@
 const _ = require('lodash');
 const lpsolve = require('lp_solve');
-
+const stats = require("stats-lite");
 module.exports = function distributeStudents(courses, elections, params) {
 
   let Row = lpsolve.Row;
@@ -104,6 +104,8 @@ module.exports = function distributeStudents(courses, elections, params) {
 
   result.min = _.min(resultPrefs);
   result.mean = _.mean(resultPrefs);
+  result.variance = stats.variance(resultPrefs);
+  result.stdev = stats.stdev(resultPrefs);
   result.histPreferences = histPreferences;
   result.histCourses = histCourses;
 
