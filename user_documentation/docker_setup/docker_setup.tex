@@ -1,0 +1,94 @@
+\chapter{Installation der Docker-Umgebung auf Ubuntu}
+\label{chapter:docker_setup}
+    Im folgenden Kapitel wird die Installation der Docker-Umgebung auf Ubuntu mit einer amd64 Architektur erläutert.
+    Für weitere Systeme werden in den Kapitel die nötigen Ressourcen verlinkt, aber nicht näher beschrieben.
+    Zunächst wird die Installation der Docker Community Edition (Docker-CE) erläutert.
+    Schließlich muss docker-compose installiert werden.
+    Zuletzt wird erklärt, wie der Server gestartet werden kann.
+        
+    \section{Installieren der Docker Community Edition}
+    	\subsection{Vorbereitung}
+	        Zur Installation der Docker-CE gibt es bereits ein von Docker bereitgestellte Dokumentation\footnote{\href{https://docs.docker.com/install/linux/docker-ce/ubuntu/}{https://docs.docker.com/install/linux/docker-ce/ubuntu/}}.
+    	    Aufgrunddessen wird hier nur die Konsolenbefehle aufgelistet, die verwendet werden müssen.
+        	Entferne alte Docker Versionen mithilfe von:
+	        \begin{lstlisting}
+$ sudo apt-get remove docker docker-engine docker.io
+			\end{lstlisting}
+			Updaten Sie nun apt-get via:
+			\begin{lstlisting}
+$ sudo apt-get update
+			\end{lstlisting}
+			Laden Sie nun die Pakete herunter, die den Download eines Repositories via HTTPS ermöglichen:
+			\begin{lstlisting}
+$ sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    software-properties-common
+			\end{lstlisting}
+			Fügen Sie nun Dockers GPG Schlüssel hinzu
+			\begin{lstlisting}
+$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg \
+| sudo apt-key add -
+			\end{lstlisting}
+			Sie können nun den Schlüssel verifizieren, indem sie die Ausgaben vergleichen
+			\begin{lstlisting}
+$ sudo apt-key fingerprint 0EBFCD88
+pub   4096R/0EBFCD88 2017-02-22
+      Key fingerprint = 9DC8 5822 9FC7 DD38 854A \
+                        E2D8 8D81 803C 0EBF CD88
+uid                  Docker Release (CE deb) <docker@docker.com>
+sub   4096R/F273FCD8 2017-02-22
+			\end{lstlisting}
+			Letztendlich fügen Sie hiermit das Docker Repository zu apt-get hinzu
+			\begin{lstlisting}
+$ sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+			\end{lstlisting}
+			
+			\subsection{Installation}
+			Updaten Sie nun erneut apt-get:
+			\begin{lstlisting}
+$ sudo apt-get update
+			\end{lstlisting}
+			Installieren Sie nun die neuste Version der Docker-CE:
+			\begin{lstlisting}
+$ sudo apt-get install docker-ce
+			\end{lstlisting}
+			Verifizieren Sie nun, dass Docker-CE installiert ist, indem sie den hello-world Container starten:
+			\begin{lstlisting}
+$ sudo docker run hello-world
+			\end{lstlisting}
+			Sollte keine Fehlermeldung kommen, sondern ein Bild heruntergeladen werden und Text angezeigt werden, so hat die Installation funktioniert.
+        
+    \section{Installieren von docker-compose}
+        Zur Installation von docker-compose gibt es ebenfalls eine von Docker bereitgestellte Anleitung\footnote{\href{https://docs.docker.com/compose/install/}{https://docs.docker.com/compose/install/}}.
+        Laden Sie zunächst docker-compose runter:
+   	    \begin{lstlisting}
+$ sudo curl -L https://github.com/docker/compose/\
+releases/download/1.18.0/docker-compose-`uname -s`-`uname -m` \
+-o /usr/local/bin/docker-compose
+	    \end{lstlisting}
+        Geben Sie nun docker-compose die benötigten Rechte, um es ausführen zu können:
+   	    \begin{lstlisting}
+$ sudo chmod +x /usr/local/bin/docker-compose
+	    \end{lstlisting}
+	    Verifizieren Sie nun, dass docker-compose installiert wurde, indem sie folgenden Befehl ausführen:
+	    \begin{lstlisting}
+$ docker-compose --version
+	    \end{lstlisting}
+        
+    \section{Starten des Server}
+        Der Server kann nun mit dem beigefügten Start-Skript gestartet werden.
+        Dieses befindet sich im Root-Verzeichnis des Projekts.
+        Sei der Pfas zum Root-Verzeichnis <BWolf>.
+        Führen sie dafür folgenden Befehl aus:
+   	    \begin{lstlisting}
+$ ./<BWolf>/start.sh
+	    \end{lstlisting}
+	    Bei der ersten Ausführung des Befehls werden alle benötigten Dateien heruntergeladen.
+	    Dies nimmt längere Zeit in Anspruch.
+        Sofern keine Änderungen an der Docker-Umgebung gemacht werden, sollte jede weitere Ausführung des Befehls nur noch den Server starten.
+        Der Server ist schließlich erreichbar über \href{http://localhost}{localhost}.
