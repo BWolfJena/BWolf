@@ -18,6 +18,8 @@
 \usepackage{setspace} %mit /onehalfspacing wird im Textein 1,5 facher Zeilenabstand verwendet
 \usepackage{accents}
 \usepackage{color, colortbl}
+\usepackage{listings}
+\usepackage{hyperref}
 
 \parindent 0pt
 
@@ -43,5 +45,9 @@
     \tableofcontents 
     \clearpage
     \pagenumbering{arabic}
+    
+    \include{./docker_setup/docker_setup}
+    \include{./frontend/frontend}
+    \include{./backend/backend}
 
 \end{document}
