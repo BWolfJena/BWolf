@@ -7,10 +7,10 @@
                 {{ module.name }}
             </div>
             <div class="description">
-              <p>Modulbeginn: {{ module.start_date|date("d.m.Y") }}</p>
-              <p>Modulende: {{ module.end_date|date("d.m.Y") }}</p>
-              <p>Einschreibungsstart: {{module.enrollment_start|date("d.m.Y")}}</p>
-              <p>Einschreibungsende: {{module.enrollment_end|date("d.m.Y")}}</p>
+                <p><strong>Modulbeginn</strong>: {{ module.start_date|date("d.m.Y") }}</p>
+                <p><strong>Modulende</strong>: {{ module.end_date|date("d.m.Y") }}</p>
+              <p><strong>Einschreibungsstart</strong>: {{module.enrollment_start|date("d.m.Y")}}</p>
+                <p><strong>Einschreibungsende:</strong> {{module.enrollment_end|date("d.m.Y")}}</p>
             </div>
         </div>
         <div class="extra content">
