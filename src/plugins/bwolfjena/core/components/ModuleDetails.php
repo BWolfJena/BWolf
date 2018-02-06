@@ -1,5 +1,6 @@
 <?php namespace BWolfJena\Core\Components;
 
+use BWolfJena\Core\Models\Module;
 use Cms\Classes\ComponentBase;
 use BwolfJena\Core\Models\Course;
 
@@ -16,6 +17,10 @@ class ModuleDetails extends ComponentBase
     public function defineProperties()
     {
         return [];
+    }
+
+    public function onRun(){
+        $this->page['module'] = Module::find($this->param('id'));
     }
 
     public function coursesByModulId($moduleId)

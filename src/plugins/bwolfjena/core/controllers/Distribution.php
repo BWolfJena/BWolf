@@ -79,7 +79,9 @@ class Distribution extends Controller
             'heading' => $title,
             'histPreferences' => $response->histPreferences,
             'histCourses' => $response->histCourses,
-            'mean' => $response->mean,
+            'mean' => round($response->mean,4),
+            'variance' => round($response->variance, 4),
+            'stdev' => round($response->stdev, 4),
             'params' => collect($params)->map(function ($value, $key) {
                 if (is_array($value)) {
                     return collect($value)->map(function ($value, $innerKey) use ($key) {

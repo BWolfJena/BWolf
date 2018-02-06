@@ -3,6 +3,7 @@
 use Mail;
 use BackendMenu;
 use Backend\Classes\Controller;
+use Backend\Models\User;
 use BwolfJena\Core\Models\CourseUser;
 use BwolfJena\Core\Models\Module;
 
@@ -55,6 +56,38 @@ class CourseUsers extends Controller
 
                 );
             }
+            $adminList = '';
+            foreach($relations->groupBy('course_id') as $group){
+               $course = $group->first()->course;
+               $adminList .= '<strong>'.$course->name .'('.$course->title.")</strong>\n\nTeilnehmer:\n";
+               $teilnehmer = "<ul>\n";
+               foreach($group as $relation){
+                   $teilnehmer.= '<li>'.$relation->user->email."</li>\n";
+               }
+               $teilnehmer .= "</ul>\n";
+                Mail::send(
+                    'kurse.verteilt.dozenten',
+                    [
+                        'kursname' => $relation->course->name,
+                        'kurstitel' => $relation->course->title,
+                        'teilnehmer' => $teilnehmer,
+                    ],
+                    function($message) use ($course) {
+                        $message->to($course->lecturer->email);
+                    }
+
+                );
+               $adminList .= "${teilnehmer}\n\n";
+            }
+            $admins = User::whereHas('role', function($query){
+                $query->where('name', 'Administrator');
+            })->get();
+            foreach($admins as $admin){
+                Mail::send('kurse.verteilt.admins', ['verteilung' => $adminList], function($message) use ($admin, $adminList) {
+                    $message->to($admin->email);
+                });
+            }
+
         } else {
             Flash::error('Beim Versenden ist leider ein Fehler aufgetreten');
         }

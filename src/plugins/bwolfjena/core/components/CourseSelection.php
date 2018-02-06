@@ -1,6 +1,7 @@
 <?php namespace BwolfJena\Core\Components;
 
 use Auth;
+use BWolfJena\Core\Models\Module;
 use Flash;
 use Redirect;
 use Cms\Classes\ComponentBase;
@@ -25,12 +26,16 @@ class CourseSelection extends ComponentBase
 
     public function courses()
     {
-        $courses = Course::all()->shuffle();
+        $currentModule = Module::orderBy('start_date')->where('start_date', '<=', \Carbon\Carbon::now())->first();
+        if(is_null($currentModule)) {
+            return [];
+        }
+        $courses = $currentModule->courses->shuffle();
         if(!Auth::check()) {
             return [];
         }
         $user = Auth::getUser();
-        $order = UserCoursePriority::where('user_id', $user->id)->orderBy('priority', 'DESC')->get();
+        $order = UserCoursePriority::where('user_id', $user->id)->whereIn('course_id',$courses->pluck('id'))->orderBy('priority', 'DESC')->get();
         if ($order->isEmpty()) {
             return $courses;
         } else {
