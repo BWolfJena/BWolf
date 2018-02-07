@@ -9,8 +9,23 @@
 	\section{Frontend}
 		Um das Frontend ordnungsgemäß zu testen, muss zuerst die Homepage getestet werden.
 		In diesem Fall genügt es, den Header zu testen.
-		Dies bedeutet, dass
-			
+		Dies bedeutet, dass sowohl die Textfelder (''Start'', ''Kursübersicht'', ''Meine Präferenzliste'', ''Ergebnis sehen'') des Headers, als auch die Reihenfolge derer überprüft wird.
+		Zusätzlich werden die Texte der Buttons ''Anmelden'' und ''Registrieren'' und die Reihenfolge dieser geprüft.
+		Dies geschieht in dem Testfall \textit{HomepageTest}.\newline
+		
+		Der Testfall \textit{RegisterTest} verifiziert, dass ein Nutzer sich ordnungsgemäß registrieren kann und anschließend auch mit diesen Daten anmelden kann.
+		Dafür klickt der automatisierte Nutzer auf den ''Registrieren''-Button der Homepage und registriert sich.
+		Anschließend ruft der User die Login-Seite auf und meldet sich an.
+		Ein erfolgreicher Login wird durch die Abwesenheit des ''Anmelden''-Buttons sicher gestellt.
+		Zu Ende des Testfalls wird der neu registrierte Nutzer gelöscht.
+		
+		Der darauffolgende Testfall ist \textit{LoginTest}.
+		Dieser testet, dass ein bereits registrierter Benutzer sich anmelden kann.
+		Dafür wird zuerst ein Nutzer in der Datenbank kreiert.
+		Der automatische User öffnet die Login-Seite und gibt die Daten des kreierten Nutzers ein.
+		Der erfolgreiche Login wird durch die Abwesenheit des ''Anmelden''-Buttons sicher gestellt.
+		Zu Ende des Testfalls wird der kreierte Nutzer aus der Datenbank gelöscht.
+					
 	\section{Backend}
 	
 	\section{Algorithmus}
