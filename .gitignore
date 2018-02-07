@@ -27,3 +27,6 @@ Homestead.json
 *.synctex.gz
 *.toc
 /BWolfMockup2/nbproject/private/
+
+# Signatures
+*Unterschrift*
