@@ -1,4 +1,11 @@
-cd ./laradock
+#!/bin/sh
+
+# Start all services
+
+set -e
+
+cd "$(dirname "$0")/laradock"
+
 sudo docker-compose up -d
 sleep 1
 sudo docker-compose exec --user=laradock workspace composer install
