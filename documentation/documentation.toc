@@ -1,4 +1,4 @@
-\babel@toc {ngerman}{}
+\select@language {ngerman}
 \contentsline {chapter}{\numberline {1}Einleitung}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Motivation}{1}{section.1.1}
 \contentsline {section}{\numberline {1.2}Aufgabenstellung}{2}{section.1.2}
@@ -28,9 +28,12 @@
 \contentsline {subsection}{\numberline {5.2.2}Exponentielle Gewichte}{21}{subsection.5.2.2}
 \contentsline {subsection}{\numberline {5.2.3}Festes Minimum}{21}{subsection.5.2.3}
 \contentsline {subsection}{\numberline {5.2.4}Betrachtung der Varianz}{22}{subsection.5.2.4}
-\contentsline {chapter}{\numberline {6}Test des Systems}{23}{chapter.6}
-\contentsline {chapter}{\numberline {7}Zusammenfassung}{24}{chapter.7}
-\contentsline {section}{\numberline {7.1}Stand des Projekts}{24}{section.7.1}
-\contentsline {section}{\numberline {7.2}Offene Probleme}{24}{section.7.2}
-\contentsline {section}{\numberline {7.3}M\IeC {\"o}gliche weitere Arbeiten}{24}{section.7.3}
-\contentsline {chapter}{\numberline {8}Anhang}{25}{chapter.8}
+\contentsline {chapter}{\numberline {6}Test des Systems}{24}{chapter.6}
+\contentsline {section}{\numberline {6.1}Frontend}{24}{section.6.1}
+\contentsline {section}{\numberline {6.2}Backend}{24}{section.6.2}
+\contentsline {section}{\numberline {6.3}Algorithmus}{24}{section.6.3}
+\contentsline {chapter}{\numberline {7}Zusammenfassung}{25}{chapter.7}
+\contentsline {section}{\numberline {7.1}Stand des Projekts}{25}{section.7.1}
+\contentsline {section}{\numberline {7.2}Offene Probleme}{25}{section.7.2}
+\contentsline {section}{\numberline {7.3}M\IeC {\"o}gliche weitere Arbeiten}{25}{section.7.3}
+\contentsline {chapter}{\numberline {8}Anhang}{26}{chapter.8}

@@ -4,36 +4,11 @@
     Zunächst wird im ersten Abschnitt eine geeignete Zielfunktion aufgestellt und kurz erklärt.
     Anschließend werden verschiedene Varianten für die Parameter diskutiert.
     \section{Aufstellen Zielfunktion}
-%            Die Grundlegende Idee der Zielfunktion hat die Form:
-%                $$ \max ~\text{Summe der Prioritäten} - \text{Gewicht} \cdot \text{Varianz} ~~~.$$
-%            Genauer ausformuliert ergibt sich:
-%                $$ \max 
-%                    \sum_{i=1}^{n} \sum_{j=1}^{m} c(i,j)x_{ij} 
-%                    - \frac{\beta}{n} \sum_{i=1}^{n}
-%                        \left[\left(\sum_{j=1}^{m} c(i,j)x_{ij}\right) - \frac{1}{n} \sum_{i=1}^{n} \sum_{j=1}^{m} c(i,j)x_{ij}\right]^2 ~~~,$$
-%            wobei gilt:\\
-%                \begin{tabular}{l c l}
-%                    $n$ & - & Anzahl der Studenten \\
-%                    $m$ & - & Anzahl der Kurse\\
-%                    $ c(i,j) $ & - & Priorität von Student $ i $ für Kurs $ j $\\
-%                    $ \beta $ & - & Gewichtung der Varianz\\
-%                    $t_{\min}(j)$ & - & Minimale Anzahl der Teilnehmer für Kurs $ j $\\
-%                    $t_{\max}(j)$ & - & Maximale Anzahl der Teilnehmer für Kurs $ j $ ~~~.\\
-%                \end{tabular}\\
-%            
-%            Zusätzlich sind drei Nebenbedingungen notwendig, um das Problem angemessen darzustellen.
-%            Zum einen sollen die $ x_{ij} $ nur die Werte 0 oder 1 annehmen können:
-%                $$ x_{ij} \in \{0,1\} ~~~.$$
-%            Des Weiteren soll jeder Student nur einem Kurs zugeteilt werden:
-%                $$ \forall {i \in \{1,..,n\}}: \sum_{j=1}^{m} x_{ij} = 1 ~~~.$$
-%            Zuletzt ist die Teilnehmerzahl für die Kurse begrenzt:
-%                $$ \forall {j \in \{1,..,m\}}: t_{\min}(j) \leq \sum_{i=1}^{n} x_{ij} \leq t_{\max}(j) ~~~.$$
-
-        Ausgangspunkt für die Zielfunktion des Verteilungsalgorithmus ist eine Matrix $ X = (x_{ij})_{i=1,...,n;j=1,...,m} \in \{0,1\}^{n \times m}$, wobei $ n $ die Anzahl der Studenten und $ m $ die Anzahl der Kurse ist.
-        Ein Eintrag in dieser Matrix kodiert, ob ein Student einem Kurs zugeordnet wurde, auf folgende Weise:
+        Ausgangspunkt für die Zielfunktion des Verteilungsalgorithmus ist eine Matrix $ X \in \{0,1\}^{n \times m}$, wobei $ n $ die Anzahl der Studenten und $ m $ die Anzahl der Kurse ist.
+        Ein Eintrag in dieser Matrix $ x_{ij} $ kodiert, ob ein Student einem Kurs zugeordnet wurde, auf folgende Weise:
         wurde ein Student $ i $ dem Kurs $ j $ zugeteilt, dann ist $ x_{ij} = 1 $, wenn nicht, dann gilt $ x_{ij} = 0 $. 
         Diese $ x_{ij} $ sind die Variablen der Zielfunktion.
-        Das bedeutet, es wird nach einer Belegung der Einträge $ x_{ij} $ der Matrix gesucht, so dass in jeder Zeile der Matrix immer genau ein Eintrag auf $ 1 $ gesetzt ist.
+        Das bedeutet, es wird nach einer Belegung der Einträge $ x_{ij} $ der Matrix $ X $ gesucht, so dass in jeder Zeile der Matrix immer genau ein Eintrag auf $ 1 $ gesetzt ist.
         Das ist gleich Bedeutend mit der Aussage, dass jeder Student genau einem Kurs zugeteilt wurde.
         Daraus ergibt sich die Zielfunktion zu
             $$ \max \sum_{i=1}^{n} \sum_{j=1}^{m} c(i,j)x_{ij}  ~~~,$$
@@ -62,14 +37,29 @@
         \subsection{Exponentielle Gewichte}
             Eine zweite Variante ist die Gewichte nicht nach der Präferenzliste, also linear und in gleichen Abständen, zu wählen, sondern exponentiell.
             Dadurch wirkt sich das Zuteilen eines Studenten auf einen Kurs, dem er eine hohe Präferenz gegeben hat, deutlich stärker auf den Score aus, als in der vorherigen Variante.
-            Oder andersherum: das Zuteilen zu einem Kurs mit niedriger Präferenz wird stärker mit einem niedrigen Score bestraft.
+            Oder andersherum: das Zuteilen zu einem Kurs mit niedriger Präferenz wird stärker mit einem niedrigen Score bestraft.\\
+            
+            In Abbildung \ref{fig:weights} sind die beiden verschiedenen Gewichtungen gegenübergestellt.
+            Wie bereits erwähnt, bestraft die exponentielle Gewichtung die Zuteilung zu Kursen mit niedriger Präferenz deutlich stärker als die lineare Gewichtung.
+            
+            \begin{figure}
+                \centering
+                \begin{subfigure}{0.49\textwidth}
+                    \includegraphics[width=1.0\textwidth]{./algorithm/images/lin_weights.png}
+                \end{subfigure}
+                \begin{subfigure}{0.49\textwidth}
+                    \includegraphics[width=1.0\textwidth]{./algorithm/images/expo_weights.png}
+                \end{subfigure}
+                \caption{Gegenüberstellung von linearer und exponentieller Gewichtung. Die horizontale Achse bezeichnet die Präferenzen, die vertikale den Wert des Gewichts}
+                \label{fig:weights}
+            \end{figure}
             
         
         \subsection{Festes Minimum}
             Die Gewichte können bei dieser Erweiterung der Zielfunktion weiterhin frei gewählt werden. 
             So zum Beispiel sind die beiden Ansätze aus dem vorherigen Abschnitt denkbar.
             Allerdings wird hier zusätzlich ein festes Minimum für die kleinste noch zulässige Präferenz angegeben.
-            Das bedeutet, dass kein Student in einen Kurs eingeteilt wird, dem er eine geringere Präferenz als das Minimum gegeben hat.
+            Das bedeutet, dass kein Student einem Kurs zugeteilt wird, dem er eine geringere Präferenz als das Minimum $ \text{minPref} $ gegeben hat.
             Dies wird umgesetzt, indem diejenigen Einträge $ x_{ij} $ der Matrix $ X $ fest auf $ 0 $ gesetzt werden, bei denen ein Student $ i $ einem Kurs $ j $ eine schlechtere Präferenz als das Minimum gegeben hat.
             Das Anwenden dieser Methode hat den Vorteil, dass das Minimum fest gewählt werden kann und somit garantiert ist, dass kein Student schlechter als das Minimum eingeteilt wird.
             Dadurch kann es jedoch dazu kommen, dass einige Studenten in ihrer Präferenz zugunsten des festen Minimums fallen oder auch, dass keine Lösung für das Problem gefunden werden kann.
