@@ -59,16 +59,17 @@
             Die Gewichte können bei dieser Erweiterung der Zielfunktion weiterhin frei gewählt werden. 
             So zum Beispiel sind die beiden Ansätze aus dem vorherigen Abschnitt denkbar.
             Allerdings wird hier zusätzlich ein festes Minimum für die kleinste noch zulässige Präferenz angegeben.
-            Das bedeutet, dass kein Student einem Kurs zugeteilt wird, dem er eine geringere Präferenz als das Minimum $ \text{minPref} $ gegeben hat.
-            Dies wird umgesetzt, indem diejenigen Einträge $ x_{ij} $ der Matrix $ X $ fest auf $ 0 $ gesetzt werden, bei denen ein Student $ i $ einem Kurs $ j $ eine schlechtere Präferenz als das Minimum gegeben hat.
-            Das Anwenden dieser Methode hat den Vorteil, dass das Minimum fest gewählt werden kann und somit garantiert ist, dass kein Student schlechter als das Minimum eingeteilt wird.
-            Dadurch kann es jedoch dazu kommen, dass einige Studenten in ihrer Präferenz zugunsten des festen Minimums fallen oder auch, dass keine Lösung für das Problem gefunden werden kann.
-            
+            Das bedeutet, dass kein Student einem Kurs zugeteilt wird, dem er eine geringere Präferenz als das Minimum gegeben hat.
+            Dies wird umgesetzt, indem die zweite Nebenbedingungen aufgeteilt wird.
             Jeder Student muss genau einem Kurs mit ausreichender Präferenz zugeteilt werden:
-            $$ \forall {i \in \{1,..,n\}}: \sum_{\{j \in \{1, \dots, n\} \mid c(i,j) \geq \text{minPref}\}} x_{ij} = 1 ~~~.$$
+            $$ \forall {i \in \{1,..,n\}}: \sum_{\{j \in \{1, \dots, n\} \mid c(i,j) \geq \text{minPref}\}} x_{ij} = 1 ~~~,$$
+            und jeder Student darf keinem Kurs mit zu kleiner Präferenz zugeteilt werden:
+            $$ \forall {i \in \{1,..,n\}}: \sum_{\{j \in \{1, \dots, n\} \mid c(i,j) < \text{minPref}\}} x_{ij} = 0 ~~~,$$
+            dabei bezeichnet $ \textsf{minPref} $ das entsprechend der Gewichtsfunktion transformierte Minimum.
             
-            Jeder Student darf keinem Kurs mit zu kleiner Präferenz zugeteilt werden:
-            $$ \forall {i \in \{1,..,n\}}: \sum_{\{j \in \{1, \dots, n\} \mid c(i,j) < \text{minPref}\}} x_{ij} = 0 ~~~.$$
+            Das Anwenden dieser Methode hat den Vorteil, dass das Minimum fest gewählt werden kann und somit garantiert ist, dass kein Student schlechter als das Minimum eingeteilt wird.
+            Dadurch kann es jedoch dazu kommen, dass einige Studenten in ihrer Präferenz zugunsten des festen Minimums fallen oder auch, dass bei einem zu hohen Minimum keine Lösung für das Problem gefunden werden kann.
+            
         
         \subsection{Betrachtung der Varianz}
             Eine weitere Anpassung der Zielfunktion könnte die Erweiterung um einen zusätzlichen Term sein.
