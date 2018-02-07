@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.6.1)  7 FEB 2018 17:57
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.6.1)  7 FEB 2018 19:51
 entering extended mode
 **documentation.tex
 (C:\Users\Kasimir\BWolf\documentation\documentation.tex
@@ -31,6 +31,13 @@ File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\fontenc.sty"
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\t1enc.def"
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
+))
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
 Package: amsmath 2013/01/14 v2.14 AMS math features
 \@mathmargin=\skip43
@@ -98,16 +105,6 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\times.sty"
-Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\fontenc.sty"
-Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\t1enc.def"
-File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
-LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
 ))
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\inputenc.sty"
 Package: inputenc 2008/03/30 v1.1d Input encoding file
@@ -571,25 +568,21 @@ Package caption Info: hyperref package is loaded.
 (C:\Users\Kasimir\BWolf\documentation\testing\testing.aux)
 (C:\Users\Kasimir\BWolf\documentation\summary\summary.aux)
 (C:\Users\Kasimir\BWolf\documentation\appendix\appendix.aux))
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Try loading font information for T1+ptm on input line 27.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\t1ptm.fd"
-File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
-)
 (C:\Users\Kasimir\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count117
@@ -605,7 +598,7 @@ File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 \everyMPtoPDFconversion=\toks25
 )
 \AtBeginShipoutBox=\box29
-Package hyperref Info: Link coloring OFF on input line 27.
+Package hyperref Info: Link coloring OFF on input line 26.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -614,9 +607,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count123
 )
-LaTeX Info: Redefining \ref on input line 27.
-LaTeX Info: Redefining \pageref on input line 27.
-LaTeX Info: Redefining \nameref on input line 27.
+LaTeX Info: Redefining \ref on input line 26.
+LaTeX Info: Redefining \pageref on input line 26.
+LaTeX Info: Redefining \nameref on input line 26.
 
 (C:\Users\Kasimir\BWolf\documentation\documentation.out)
 (C:\Users\Kasimir\BWolf\documentation\documentation.out)
@@ -624,38 +617,31 @@ LaTeX Info: Redefining \nameref on input line 27.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 
-<./LogoSoFar.png, id=143, 706.89093pt x 942.52126pt>
+<./LogoSoFar.png, id=131, 706.89093pt x 942.52126pt>
 File: ./LogoSoFar.png Graphic file (type png)
  <use ./LogoSoFar.png>
-Package pdftex.def Info: ./LogoSoFar.png used on input line 32.
+Package pdftex.def Info: ./LogoSoFar.png used on input line 30.
 (pdftex.def)             Requested size: 155.99762pt x 207.98811pt.
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <24.88> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 37.
 
 [1
 
 {C:/Users/Kasimir/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <C:/Users/
 Kasimir/BWolf/documentation/LogoSoFar.png>]
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <17.28> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 45.
-
-Underfull \hbox (badness 10000) in paragraph at lines 46--48
+Underfull \hbox (badness 10000) in paragraph at lines 45--47
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 46--48
+Underfull \hbox (badness 10000) in paragraph at lines 45--47
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 46--48
+Underfull \hbox (badness 10000) in paragraph at lines 45--47
 
  []
 
 [1] (C:\Users\Kasimir\BWolf\documentation\documentation.toc
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 2.
 LaTeX Font Info:    Try loading font information for U+msa on input line 3.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
@@ -681,7 +667,7 @@ l.24
 
 
 
-]) [2]
+]) [2] [3]
 (C:\Users\Kasimir\BWolf\documentation\requirements\requirements.tex
 Kapitel 2.
 
@@ -689,41 +675,38 @@ Underfull \hbox (badness 10000) in paragraph at lines 11--16
 
  []
 
-[3
+[4
 
 
 
-]
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 23.
- [4] [5]
+] [5] [6]
 Underfull \hbox (badness 10000) in paragraph at lines 77--81
 
  []
 
-[6]
+[7]
 Underfull \hbox (badness 10000) in paragraph at lines 105--108
 
  []
 
-
+[8]
 Underfull \hbox (badness 10000) in paragraph at lines 109--110
 
  []
 
-[7]
+
 Underfull \hbox (badness 10000) in paragraph at lines 111--112
 
  []
 
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 115.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 115.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\omsptm.fd"
-File: omsptm.fd 
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 115.
-) [8]
+ [9]) [10]
 (C:\Users\Kasimir\BWolf\documentation\design\design.tex
 Kapitel 3.
 <./design/images/data-model.png, id=242, 1007.765pt x 674.52pt>
@@ -732,23 +715,11 @@ File: ./design/images/data-model.png Graphic file (type png)
 <use ./design/images/data-model.png>
 Package pdftex.def Info: ./design/images/data-model.png used on input line 16.
 (pdftex.def)             Requested size: 390.0pt x 261.03415pt.
- [9
+ [11
 
 
 
-] [10 <C:/Users/Kasimir/BWolf/documentation/design/images/data-model.png>]
-Overfull \hbox (4.63214pt too wide) in paragraph at lines 38--40
-\T1/ptm/m/n/12 zu ge-teilt wur-de. Aus die-sem Grund bein-hal-tet \T1/ptm/m/it/
-12 bwolf-je-na_core_users \T1/ptm/m/n/12 Fremd-schlüs-
- []
-
-
-Overfull \hbox (0.63634pt too wide) in paragraph at lines 41--45
-\T1/ptm/m/n/12 Do-zen-ten und Ad-mi-nis-tra-to-ren ge-meint. In \T1/ptm/m/it/12
- bwolf-je-na_core_courses \T1/ptm/m/n/12 ist ein Fremd-
- []
-
-
+] [12 <C:/Users/Kasimir/BWolf/documentation/design/images/data-model.png>]
 <./design/images/MockUpsFrontend/frontendLogin.png, id=257, 796.47563pt x 597.7
 3312pt>
 File: ./design/images/MockUpsFrontend/frontendLogin.png Graphic file (type png)
@@ -757,14 +728,8 @@ File: ./design/images/MockUpsFrontend/frontendLogin.png Graphic file (type png)
 Package pdftex.def Info: ./design/images/MockUpsFrontend/frontendLogin.png used
  on input line 74.
 (pdftex.def)             Requested size: 234.00238pt x 175.6092pt.
-
-Overfull \hbox (18.02045pt too wide) in paragraph at lines 70--78
-\T1/ptm/m/n/12 Wie in Ka-pi-tel []2[] be-reits aus-ge-führt, sol-len die Stu-de
-n-ten zu-nächst ei-ne Registrierungs-
- []
-
-[11] [12 <C:/Users/Kasimir/BWolf/documentation/design/images/MockUpsFrontend/fr
-ontendLogin.png>]
+ [13] [14 <C:/Users/Kasimir/BWolf/documentation/design/images/MockUpsFrontend/f
+rontendLogin.png>]
 <./design/images/MockUpsFrontend/frontendCourses.png, id=269, 796.47563pt x 597
 .73312pt>
 File: ./design/images/MockUpsFrontend/frontendCourses.png Graphic file (type pn
@@ -775,7 +740,7 @@ ed on input line 97.
 (pdftex.def)             Requested size: 234.00238pt x 175.6092pt.
 
 
-LaTeX Warning: Reference `fig:mockupDetailsFrontend' on page 13 undefined on in
+LaTeX Warning: Reference `fig:mockupDetailsFrontend' on page 15 undefined on in
 put line 106.
 
 
@@ -788,9 +753,9 @@ Package pdftex.def Info: ./design/images/MockUpsFrontend/frontendPreferences.pn
 g used on input line 110.
 (pdftex.def)             Requested size: 234.00238pt x 175.6092pt.
 
-[13 <C:/Users/Kasimir/BWolf/documentation/design/images/MockUpsFrontend/fronten
+[15 <C:/Users/Kasimir/BWolf/documentation/design/images/MockUpsFrontend/fronten
 dCourses.png>]
-<./design/images/MockUpsFrontend/frontendSwap2.png, id=280, 796.47563pt x 597.7
+<./design/images/MockUpsFrontend/frontendSwap2.png, id=281, 796.47563pt x 597.7
 3312pt>
 File: ./design/images/MockUpsFrontend/frontendSwap2.png Graphic file (type png)
 
@@ -798,9 +763,9 @@ File: ./design/images/MockUpsFrontend/frontendSwap2.png Graphic file (type png)
 Package pdftex.def Info: ./design/images/MockUpsFrontend/frontendSwap2.png used
  on input line 131.
 (pdftex.def)             Requested size: 234.00238pt x 175.6092pt.
- [14 <C:/Users/Kasimir/BWolf/documentation/design/images/MockUpsFrontend/fronte
+ [16 <C:/Users/Kasimir/BWolf/documentation/design/images/MockUpsFrontend/fronte
 ndPreferences.png>]
-<./design/images/MockUpsBackend/backendManageCourses.png, id=287, 796.47563pt x
+<./design/images/MockUpsBackend/backendManageCourses.png, id=288, 796.47563pt x
  597.73312pt>
 File: ./design/images/MockUpsBackend/backendManageCourses.png Graphic file (typ
 e png)
@@ -809,7 +774,7 @@ Package pdftex.def Info: ./design/images/MockUpsBackend/backendManageCourses.pn
 g used on input line 153.
 (pdftex.def)             Requested size: 234.00238pt x 175.6092pt.
 
-<./design/images/MockUpsBackend/backendEdit.png, id=289, 796.47563pt x 597.7331
+<./design/images/MockUpsBackend/backendEdit.png, id=290, 796.47563pt x 597.7331
 2pt>
 File: ./design/images/MockUpsBackend/backendEdit.png Graphic file (type png)
  <use ./design/images/MockUpsBackend/backendEdit.png>
@@ -826,7 +791,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 175--179
 
  []
 
-[15 <C:/Users/Kasimir/BWolf/documentation/design/images/MockUpsFrontend/fronten
+[17 <C:/Users/Kasimir/BWolf/documentation/design/images/MockUpsFrontend/fronten
 dSwap2.png>]
 <./design/images/MockUpsBackend/backendDistribution.png, id=298, 796.47563pt x 
 597.73312pt>
@@ -841,28 +806,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 187--191
 
  []
 
-) [16 <C:/Users/Kasimir/BWolf/documentation/design/images/MockUpsBackend/backen
-dManageCourses.png>] [17 <C:/Users/Kasimir/BWolf/documentation/design/images/Mo
+) [18 <C:/Users/Kasimir/BWolf/documentation/design/images/MockUpsBackend/backen
+dManageCourses.png>] [19 <C:/Users/Kasimir/BWolf/documentation/design/images/Mo
 ckUpsBackend/backendEdit.png> <C:/Users/Kasimir/BWolf/documentation/design/imag
 es/MockUpsBackend/backendDistribution.png>]
 (C:\Users\Kasimir\BWolf\documentation\implementation\implementation.tex
 Kapitel 4.
-) [18
+) [20
 
 
 
 ] (C:\Users\Kasimir\BWolf\documentation\algorithm\algorithm.tex
 Kapitel 5.
-[19
+[21
 
 
 
-] [20]
+] [22]
 Underfull \hbox (badness 10000) in paragraph at lines 38--41
 
  []
 
-<./algorithm/images/lin_weights.png, id=328, 701.62125pt x 335.2525pt>
+<./algorithm/images/lin_weights.png, id=329, 701.62125pt x 335.2525pt>
 File: ./algorithm/images/lin_weights.png Graphic file (type png)
 
 <use ./algorithm/images/lin_weights.png>
@@ -870,42 +835,62 @@ Package pdftex.def Info: ./algorithm/images/lin_weights.png used on input line
 48.
 (pdftex.def)             Requested size: 191.10214pt x 91.31229pt.
 
-<./algorithm/images/expo_weights.png, id=329, 701.62125pt x 338.26375pt>
+<./algorithm/images/expo_weights.png, id=330, 701.62125pt x 338.26375pt>
 File: ./algorithm/images/expo_weights.png Graphic file (type png)
 
 <use ./algorithm/images/expo_weights.png>
 Package pdftex.def Info: ./algorithm/images/expo_weights.png used on input line
  51.
 (pdftex.def)             Requested size: 191.10214pt x 92.13245pt.
- [21 <C:/Users/Kasimir/BWolf/documentation/algorithm/images/lin_weights.png (PN
+ [23 <C:/Users/Kasimir/BWolf/documentation/algorithm/images/lin_weights.png (PN
 G copy)> <C:/Users/Kasimir/BWolf/documentation/algorithm/images/expo_weights.pn
 g (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 79--83
+LaTeX Font Info:    Try loading font information for T1+cmss on input line 68.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\t1cmss.fd"
+File: t1cmss.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+Underfull \hbox (badness 10000) in paragraph at lines 80--84
 
  []
 
-[22]) [23] (C:\Users\Kasimir\BWolf\documentation\testing\testing.tex
+[24]) [25] (C:\Users\Kasimir\BWolf\documentation\testing\testing.tex
 Kapitel 6.
-) [24
+
+Underfull \hbox (badness 10000) in paragraph at lines 10--15
+
+ []
+
+[26
 
 
 
-] (C:\Users\Kasimir\BWolf\documentation\summary\summary.tex
+]) [27] (C:\Users\Kasimir\BWolf\documentation\summary\summary.tex
 Kapitel 7.
-) [25
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--13
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 14--18
+
+ []
+
+[28
 
 
 
-] (C:\Users\Kasimir\BWolf\documentation\appendix\appendix.tex
+]) [29] (C:\Users\Kasimir\BWolf\documentation\appendix\appendix.tex
 Kapitel 8.
-) [26
+) [30
 
 
 
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 85.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 85.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 84.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 84.
  (C:\Users\Kasimir\BWolf\documentation\documentation.aux
 (C:\Users\Kasimir\BWolf\documentation\introduction\introduction.aux)
 (C:\Users\Kasimir\BWolf\documentation\requirements\requirements.aux)
@@ -915,38 +900,48 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 85.
 (C:\Users\Kasimir\BWolf\documentation\testing\testing.aux)
 (C:\Users\Kasimir\BWolf\documentation\summary\summary.aux)
 (C:\Users\Kasimir\BWolf\documentation\appendix\appendix.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 85.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 85.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 84.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 84.
 Package rerunfilecheck Info: File `documentation.out' has not changed.
-(rerunfilecheck)             Checksum: A9B438899F6B272A0960F95FA034EEB1;2239.
+(rerunfilecheck)             Checksum: 8006CB4AF5ADF3028777AF86C80D75F5;2034.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 85.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 84.
  ) 
 Here is how much of TeX's memory you used:
- 8577 strings out of 493921
- 127550 string characters out of 3144871
- 213138 words of memory out of 3000000
- 11573 multiletter control sequences out of 15000+200000
- 55781 words of font info for 61 fonts, out of 3000000 for 9000
+ 8557 strings out of 493921
+ 127510 string characters out of 3144871
+ 214011 words of memory out of 3000000
+ 11555 multiletter control sequences out of 15000+200000
+ 21687 words of font info for 50 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  42i,10n,41p,382b,473s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Progra
-m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program 
-Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Fi
-les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files
- (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x
-86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTe
-X 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts
-/type1/urw/times/utmr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/
-times/utmri8a.pfb>
-Output written on documentation.pdf (30 pages, 1931245 bytes).
+ <C:\Users\Kasimir\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi60
+0\ecss1200.pk> <C:\Users\Kasimir\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknap
+pen\ec\dpi600\ecrm0800.pk> <C:\Users\Kasimir\AppData\Local\MiKTeX\2.9\fonts\pk\
+ljfour\jknappen\ec\dpi600\ecti1200.pk> <C:\Users\Kasimir\AppData\Local\MiKTeX\2
+.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk> <C:\Users\Kasimir\AppData\Lo
+cal\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1200.pk> <C:\Users\Kasimi
+r\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1200.pk> <C:\
+Users\Kasimir\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1
+728.pk> <C:\Users\Kasimir\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\
+dpi600\ecrm1440.pk> <C:\Users\Kasimir\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\
+jknappen\ec\dpi600\ecti1440.pk> <C:\Users\Kasimir\AppData\Local\MiKTeX\2.9\font
+s\pk\ljfour\jknappen\ec\dpi600\ecbx2488.pk> <C:\Users\Kasimir\AppData\Local\MiK
+TeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1728.pk> <C:\Users\Kasimir\AppDa
+ta\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc2074.pk><C:/Program 
+Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Fi
+les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program File
+s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files (
+x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x86
+)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on documentation.pdf (34 pages, 2029727 bytes).
 PDF statistics:
- 409 PDF objects out of 1000 (max. 8388607)
- 80 named destinations out of 1000 (max. 500000)
- 336 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 807 PDF objects out of 1000 (max. 8388607)
+ 81 named destinations out of 1000 (max. 500000)
+ 312 words of extra memory for PDF output out of 10000 (max. 10000000)
 

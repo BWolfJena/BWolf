@@ -3,37 +3,34 @@
 \contentsline {section}{\numberline {1.1}Motivation}{1}{section.1.1}
 \contentsline {section}{\numberline {1.2}Aufgabenstellung}{2}{section.1.2}
 \contentsline {section}{\numberline {1.3}Aufbau der Arbeit}{2}{section.1.3}
-\contentsline {chapter}{\numberline {2}Anforderungsanalyse}{3}{chapter.2}
-\contentsline {section}{\numberline {2.1}Anforderungen an das System}{3}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}Ablauf eines Praktikumsmoduls}{4}{subsection.2.1.1}
-\contentsline {subsection}{\numberline {2.1.2}Verschiedene Sichten im \IeC {\"U}berblick}{5}{subsection.2.1.2}
-\contentsline {subsubsection}{Sicht der Administratoren}{5}{section*.3}
-\contentsline {subsubsection}{Sicht der Dozenten}{5}{section*.4}
-\contentsline {subsubsection}{Sicht der Studenten}{6}{section*.5}
-\contentsline {section}{\numberline {2.2}Der Verteilungsalgorithmus}{7}{section.2.2}
-\contentsline {section}{\numberline {2.3}Technische Details}{7}{section.2.3}
-\contentsline {chapter}{\numberline {3}Entwurf}{9}{chapter.3}
-\contentsline {section}{\numberline {3.1}Datenmodell}{9}{section.3.1}
-\contentsline {section}{\numberline {3.2}Design}{11}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Frontend}{12}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Backend}{14}{subsection.3.2.2}
-\contentsline {chapter}{\numberline {4}Umsetzung}{18}{chapter.4}
-\contentsline {section}{\numberline {4.1}Verwendete Software}{18}{section.4.1}
-\contentsline {section}{\numberline {4.2}Frontend}{18}{section.4.2}
-\contentsline {section}{\numberline {4.3}Backend}{18}{section.4.3}
-\contentsline {chapter}{\numberline {5}Verteilungsalgorithmus}{19}{chapter.5}
-\contentsline {section}{\numberline {5.1}Aufstellen Zielfunktion}{19}{section.5.1}
-\contentsline {section}{\numberline {5.2}Erweiterung der Zielfunktion und Wahl der Parameter}{20}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Naheliegende Wahl der Parameter}{20}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Exponentielle Gewichte}{21}{subsection.5.2.2}
-\contentsline {subsection}{\numberline {5.2.3}Festes Minimum}{21}{subsection.5.2.3}
-\contentsline {subsection}{\numberline {5.2.4}Betrachtung der Varianz}{22}{subsection.5.2.4}
-\contentsline {chapter}{\numberline {6}Test des Systems}{24}{chapter.6}
-\contentsline {section}{\numberline {6.1}Frontend}{24}{section.6.1}
-\contentsline {section}{\numberline {6.2}Backend}{24}{section.6.2}
-\contentsline {section}{\numberline {6.3}Algorithmus}{24}{section.6.3}
-\contentsline {chapter}{\numberline {7}Zusammenfassung}{25}{chapter.7}
-\contentsline {section}{\numberline {7.1}Stand des Projekts}{25}{section.7.1}
-\contentsline {section}{\numberline {7.2}Offene Probleme}{25}{section.7.2}
-\contentsline {section}{\numberline {7.3}M\IeC {\"o}gliche weitere Arbeiten}{25}{section.7.3}
-\contentsline {chapter}{\numberline {8}Anhang}{26}{chapter.8}
+\contentsline {chapter}{\numberline {2}Anforderungsanalyse}{4}{chapter.2}
+\contentsline {section}{\numberline {2.1}Anforderungen an das System}{4}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Ablauf eines Praktikumsmoduls}{5}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Verschiedene Sichten im \IeC {\"U}berblick}{6}{subsection.2.1.2}
+\contentsline {subsubsection}{Sicht der Administratoren}{6}{section*.3}
+\contentsline {subsubsection}{Sicht der Dozenten}{6}{section*.4}
+\contentsline {subsubsection}{Sicht der Studenten}{7}{section*.5}
+\contentsline {section}{\numberline {2.2}Der Verteilungsalgorithmus}{8}{section.2.2}
+\contentsline {section}{\numberline {2.3}Technische Details}{8}{section.2.3}
+\contentsline {chapter}{\numberline {3}Entwurf}{11}{chapter.3}
+\contentsline {section}{\numberline {3.1}Datenmodell}{11}{section.3.1}
+\contentsline {section}{\numberline {3.2}Design}{13}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Frontend}{14}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Backend}{16}{subsection.3.2.2}
+\contentsline {chapter}{\numberline {4}Umsetzung}{20}{chapter.4}
+\contentsline {section}{\numberline {4.1}Verwendete Software}{20}{section.4.1}
+\contentsline {section}{\numberline {4.2}Frontend}{20}{section.4.2}
+\contentsline {section}{\numberline {4.3}Backend}{20}{section.4.3}
+\contentsline {chapter}{\numberline {5}Verteilungsalgorithmus}{21}{chapter.5}
+\contentsline {section}{\numberline {5.1}Aufstellen Zielfunktion}{21}{section.5.1}
+\contentsline {section}{\numberline {5.2}Erweiterung der Zielfunktion und Wahl der Parameter}{22}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Naheliegende Wahl der Parameter}{22}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Exponentielle Gewichte}{23}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}Festes Minimum}{23}{subsection.5.2.3}
+\contentsline {subsection}{\numberline {5.2.4}Betrachtung der Varianz}{24}{subsection.5.2.4}
+\contentsline {chapter}{\numberline {6}Test des Systems}{26}{chapter.6}
+\contentsline {section}{\numberline {6.1}Frontend}{26}{section.6.1}
+\contentsline {section}{\numberline {6.2}Backend}{27}{section.6.2}
+\contentsline {section}{\numberline {6.3}Algorithmus}{27}{section.6.3}
+\contentsline {chapter}{\numberline {7}Zusammenfassung}{28}{chapter.7}
+\contentsline {chapter}{\numberline {8}Anhang}{30}{chapter.8}
