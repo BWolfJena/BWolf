@@ -1,0 +1,16 @@
+<p class="lead">
+    <h3>Passwort vergessen?</h3>
+    Kein Problem! Gib deine E-Mail Adresse ein, um es zurückzusetzen.
+</p>
+
+<form
+        data-request="{{ __SELF__ }}::onRestorePassword"
+        data-request-update="'{{ __SELF__ }}::reset': '#partialUserResetForm'"
+        class="ui form">
+    <div class="field">
+        <label for="userRestoreEmail">E-Mail</label>
+        <input name="email" type="email" class="form-control" id="userRestoreEmail" placeholder="max.mustermann@uni-jena.de">
+    </div>
+
+    <button type="submit" class="ui secondary button">Passwort zurücksetzen</button>
+</form>

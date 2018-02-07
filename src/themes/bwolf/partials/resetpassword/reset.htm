@@ -1,0 +1,20 @@
+<p class="lead">
+    Wir haben dir eine E-Mail mit dem Aktivierungscode zugesendet.
+</p>
+
+<form
+        data-request="{{ __SELF__ }}::onResetPassword"
+        data-request-update="'{{ __SELF__ }}::complete': '#partialUserResetForm'"
+        class="ui form">
+    <div class="field">
+        <label for="resetCode">Aktivierungscode</label>
+        <input name="code" type="text" class="form-control" id="resetCode" placeholder="Enter the activation code" value="{{ __SELF__.code }}">
+    </div>
+
+    <div class="field">
+        <label for="resetPassword">Neues Passwort</label>
+        <input name="password" type="password" class="form-control" id="resetPassword" placeholder="Enter a new password">
+    </div>
+
+    <button type="submit" class="ui secondary button">Passwort zuürcksetzen</button>
+</form>
