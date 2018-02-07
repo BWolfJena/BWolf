@@ -23,12 +23,18 @@ function onStart()
         {% endif %}
 
         <div class="right menu">
-            <div class="item">
-                <a href="/anmelden" class="ui button {% if this.page.id == 'anmelden'  %}active{% endif %}">Anmelden</a>
-            </div>
-            <div class="item">
-                <a href="/registrieren" class="ui primary button {% if this.page.id == 'registrieren'  %}active{% endif %}">Registrieren</a>
-            </div>
+            {% if user %}
+                <div class="item">
+                    <a class="ui button" data-request="onLogout">Abmelden</a>
+                </div>
+            {% else %}
+                <div class="item">
+                    <a href="/anmelden" class="ui button {% if this.page.id == 'anmelden'  %}active{% endif %}">Anmelden</a>
+                </div>
+                <div class="item">
+                    <a href="/registrieren" class="ui primary button {% if this.page.id == 'registrieren'  %}active{% endif %}">Registrieren</a>
+                </div>
+            {% endif %}
         </div>
     </div>
 </div>
@@ -40,6 +46,10 @@ function onStart()
             <a href="{{ item.url }}" class="item {% if item.isActive  %}active{% endif %}">{{ item.title }}</a>
         {% endfor %}
     {% endif %}
-    <a href="/anmelden" class="item {% if this.page.id == 'anmelden'  %}active{% endif %}">Anmelden</a>
-    <a href="/registrieren" class="item {% if this.page.id == 'registrieren'  %}active{% endif %}">Registrieren</a>
+    {% if user %}
+        <a class="item" data-request="onLogout">Abmelden</a>
+    {% else %}
+        <a href="/anmelden" class="item {% if this.page.id == 'anmelden'  %}active{% endif %}">Anmelden</a>
+        <a href="/registrieren" class="item {% if this.page.id == 'registrieren'  %}active{% endif %}">Registrieren</a>
+    {% endif %}
 </div>
