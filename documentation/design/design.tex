@@ -7,14 +7,14 @@
 \chapter{Entwurf}
 \label{chapter:design}
     Nachdem im vorangegangenem Kapitel die Anforderungen für das System spezifiziert wurden, soll in diesem Kapitel der Umsetzungsentwurf der verschiedenen Sichten dargestellt werden.
-    Zunächst wird das dem System zugrundeliegende Datenmodell dargestellt.
+    Zunächst wird das dem System zugrundeliegende Datenmodell vorgestellt.
     Darauffolgend wird das Design für die webbasierte Plattform erläutert.     
     
     \section{Datenmodell}
         \begin{figure}
             \centering
             \includegraphics[width=1.0\textwidth]{./design/images/data-model.png}\par\vspace{1cm}
-            \caption{Entwurf des Datenmodells. Farbcode für Spalten der Tabellen: Gelb Primärschlüssel, Rot Fremdschlüssel, Blau gewöhnliche Variable, Weiß nullable Variable}
+            \caption{Entwurf des Datenmodells. Farbcode für Spalten der Tabellen: Gelb Primärschlüssel, Rot Fremdschlüssel, Blau gewöhnliche Variable, Weiß \textsf{nullable-}Variable}
             \label{fig:datamodel}
         \end{figure}
     
@@ -35,7 +35,7 @@
         Die Einträge der Präferenzliste für jeden Studenten und jeden Kurs werden in Tabelle \textit{bwolfjena\_core\_priorities} gespeichert.
         Dementsprechend beinhaltet \textit{bwolfjena\_core\_priorities} Fremdschlüssel von \textit{users} und \textit{bwolfjena\_core\_courses}.
         
-        In der Tabelle \textit{bwolfjena\_core\_users} ist abgelegt, welcher Student welchem Kurs zu geteilt wurde.
+        In der Tabelle \textit{bwolfjena\_core\_users} ist abgelegt, welcher Student welchem Kurs zugeteilt wurde.
         Aus diesem Grund beinhaltet \textit{bwolfjena\_core\_users} Fremdschlüssel auf \textit{bwolfjena\_core\_courses} und \textit{users}. 
         
         Die letzte Tabelle \textit{backend\_users} beinhaltet die Backendbenutzer.
@@ -85,7 +85,7 @@
             Außer der Navigation auf die Kursübersicht sind diese jedoch erst nach einer erfolgreiche Anmeldung funktional.
             Ohne eine Anmeldung wird der Benutzer wieder auf die Login-Oberfläche verwiesen.
             In der Kopfzeile soll auch eine Schaltfläche zum erstmaligen Registrieren im System sein.
-            Die Registrierungsseite gleicht strukturell der Login-Oberfläche aussehen.
+            Die Registrierungsseite gleicht strukturell der Login-Oberfläche.
             Sobald ein Benutzer sich erfolgreich angemeldet hat, soll der Schalter zum Anmelden in der Kopfzeile gegen einen Abmelden-Knopf ausgetauscht werden.
 %            Auch eine Anzeige, ab wann das Ende der Einschreibungs- und Tauschphase erreicht ist.
 			Auf allen weiteren Seiten des Frontends soll die Kopfzeile die gleichen Funktionen und das gleiche Aussehen haben, der Registieren-Knopf entfällt jedoch, sobald die Anmeldung erfolgt ist.
@@ -101,9 +101,8 @@
 			
 			In Abbildung \ref{fig:mockupCoursesFrontend} ist die Seite für die Kursübersicht zu sehen.
             Unter der Kopfzeile folgt eine textuelle Erklärung des Ablaufs des Empiriepraktikums und der für die Studenten relevanten Schritte, um sich erfolgreich für die Kurse einzuschreiben.
-            Die verschiedenen Kurse werden darunter jeweils mit einer kurzen Beschreibung angezeigt.
+            Die verschiedenen Kurse werden darunter jeweils mit einer kurzen Beschreibung und den wichtigsten Informationen angezeigt.
             Durch einen Klick auf ein Kursfeld, sollen sich die detaillierten Informationen zu dem Kurs einsehen lassen.
-            Das Design hierfür ist in Abbildung \ref{fig:mockupDetailsFrontend} zu sehen und bedarf keiner weiteren Erläuterung.
             
             \begin{figure}[t]
             	\centering
@@ -113,9 +112,9 @@
             \end{figure}
             
             Die Seite für die Einschreibung in die Kurse soll wie in Abbildung \ref{fig:mockupPreferencesFrontend} gestaltet sein.
-            Wieder bilden Kopfzeile und Fußzeile den Rahmen der Seite.
+            Wieder bilden Kopf- und Fußzeile den Rahmen der Seite.
             Unter der Kopfzeile befindet sich auch hier eine kurze Erklärung, wie man die Präferenzliste genau erstellt.
-            Das Erstellen soll im Feld \textit{Präferenzliste} über ein ''Drag\&Drop''-System vorgenommen werden und über den Knopf \textit{Absenden} fixiert werden können.
+            Das Erstellen soll im Feld \textit{Präferenzliste} über ein \glqq Drag\&Drop\grqq -System vorgenommen werden und über den Knopf \textit{Absenden} fixiert werden können.
             
             Nachdem die Verteilung auf die Kurse vorgenommen wurde, sollen die Benutzer unter dem Reiter Ergebnisübersicht die Resultate einsehen können.
             Der Entwurf hierfür gleicht dem für die Kursübersicht.
@@ -133,7 +132,7 @@
             	\label{fig:mockupResultsSwap2}
             \end{figure}
             
-            Durch einen Klick auf den Kurs mit dem man Tauschen möchte, öffnet sich die in Abbildung \ref{fig:mockupResultsSwap2} gezeigt Seite.
+            Durch einen Klick auf den Kurs in den gewechselt werden möchte, öffnet sich die in Abbildung \ref{fig:mockupResultsSwap2} gezeigt Seite.
             Hier kann in dem Textfeld \textit{Begründung} eine Begründung für den Tausch angegeben werden.
             Mit der Schaltfläche \textit{Absenden} kann die Tauschanfrage abgeschickt werden, mit \textit{Abbrechen} gelangt der Benutzer wieder auf die vorherige Ansicht der Tauschbörse.
             
@@ -174,7 +173,7 @@
         	
         	Die Verwaltung der Benutzer erfolgt auf die selbe Weise und gleicht sich im Design.
         	Wieder kann mithilfe der linken Seitenleiste umgeschaltet werden, ob Studenten oder Dozenten verwaltet werden sollen.
-        	Die entsprechende Benutzergruppe werden in einer Tabelle angezeigt und können mittels einer Schaltfläche gelöscht werden.
+        	Die entsprechende Benutzergruppe wird in einer Tabelle angezeigt und kann mittels einer Schaltfläche gelöscht werden.
         	Durch einen Klick auf die Tabellenzeile sollen die Informationen der Benutzer analog zum Bearbeiten der Kurse oder Module  geändert werden können.\\
             
             \begin{figure}[t]
@@ -184,7 +183,7 @@
                 \label{fig:mockupDistribution}
             \end{figure}
         	
-        	Für die Steuerung des Verteilungsalgorithmus unter dem Reiter \textit{Verteilung}, muss zunächst aus einer Liste dass entsprechende Praktikum ausgewählt werden.
+        	Für die Steuerung des Verteilungsalgorithmus unter dem Reiter \textit{Verteilung}, muss zunächst aus einer Liste das entsprechende Praktikum ausgewählt werden.
             Danach wird die Verteilung für dieses Modul mit verschiedenen Parametern ermittelt und anschließend werden die Ergebnisse mithilfe von geeigneten Grafiken angezeigt.
             Der Entwurf für diese Seite ist in Abbildung \ref{fig:mockupDistribution} zu sehen.
             Durch einen Klick auf den entsprechende Verteilungsvorschlag, soll dieser als Ergebnis übernommen werden.\\
