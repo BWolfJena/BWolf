@@ -11,6 +11,39 @@ use Pheanstalk\Exception;
 
 class CourseSelection extends ComponentBase
 {
+    public $courseList = [];
+    public $nextModule;
+
+    public function __construct($cmsObject = null, array $properties = [])
+    {
+        parent::__construct($cmsObject, $properties);
+        $currentModule = Module::orderBy('enrollment_start')
+            ->where('enrollment_start', '<=', \Carbon\Carbon::now())
+            ->where('enrollment_end', '>=', \Carbon\Carbon::now())
+            ->first();
+        if (is_null($currentModule)) {
+            $this->nextModule = Module::orderBy('enrollment_start')
+                ->where('enrollment_end', '>=', \Carbon\Carbon::now())
+                ->first();
+            return [];
+        }
+        $courses = $currentModule->courses->shuffle();
+        if(!Auth::check()) {
+            return [];
+        }
+        $user = Auth::getUser();
+        $order = UserCoursePriority::where('user_id', $user->id)->whereIn('course_id',$courses->pluck('id'))->orderBy('priority', 'DESC')->get();
+        if ($order->isEmpty()) {
+            $this->courseList = $courses;
+        } else {
+            $this->courseList =  $order->map(function($coursePriority) use ($courses) {
+                return $courses->first(function($course) use ($coursePriority) {
+                    return $course->id == $coursePriority->course_id;
+                });
+            });
+        }
+    }
+
     public function componentDetails()
     {
         return [
@@ -26,8 +59,24 @@ class CourseSelection extends ComponentBase
 
     public function courses()
     {
-        $currentModule = Module::orderBy('start_date')->where('start_date', '<=', \Carbon\Carbon::now())->first();
-        if(is_null($currentModule)) {
+        return $this->courseList;
+    }
+
+    public function nextModule()
+    {
+        return $this->nextModule;
+    }
+
+    private function fetchCourses()
+    {
+        $currentModule = Module::orderBy('enrollment_start')
+            ->where('enrollment_start', '<=', \Carbon\Carbon::now())
+            ->where('enrollment_end', '>=', \Carbon\Carbon::now())
+            ->first();
+        if (is_null($currentModule)) {
+            $this->nextModule = Module::orderBy('enrollment_start')
+                ->where('enrollment_end', '>=', \Carbon\Carbon::now())
+                ->first();
             return [];
         }
         $courses = $currentModule->courses->shuffle();
@@ -37,15 +86,16 @@ class CourseSelection extends ComponentBase
         $user = Auth::getUser();
         $order = UserCoursePriority::where('user_id', $user->id)->whereIn('course_id',$courses->pluck('id'))->orderBy('priority', 'DESC')->get();
         if ($order->isEmpty()) {
-            return $courses;
+            $this->courseList = $courses;
         } else {
-            return $order->map(function($coursePriority) use ($courses) {
+            $this->courseList =  $order->map(function($coursePriority) use ($courses) {
                 return $courses->first(function($course) use ($coursePriority) {
-                   return $course->id == $coursePriority->course_id;
+                    return $course->id == $coursePriority->course_id;
                 });
             });
         }
     }
+
 
     public function  onRun()
     {
@@ -73,7 +123,7 @@ class CourseSelection extends ComponentBase
                 'priority' => $courseCount - $index,
             ];
         }
-        UserCoursePriority::where('user_id', $user->id)->delete();
+        UserCoursePriority::where('user_id', $user->id)->whereIn('course_id', $this->courses()->pluck('id'))->delete();
         UserCoursePriority::insert($toStore);
         Flash::success('Deine Reihenfolge wurde gespeichert.');
     }

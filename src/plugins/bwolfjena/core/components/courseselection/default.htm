@@ -4,6 +4,7 @@
     }
 </style>
 
+{%  if __SELF__.courses() %}
 <div class="dragndrop container">
     <form class="ui form">
     <div id="sortableCourseList" class="ui list relaxed divided">
@@ -25,3 +26,14 @@
     </button>
     </form>
 </div>
+{% else %}
+    <div class="ui info message">
+    <i class="close icon"></i>
+    <div class="header">
+        Derzeit kann man sich nicht einschreiben.
+    </div>
+    {% if __SELF__.nextModule().enrollment_start  %}
+        Die nächste Einschreibung beginnt am {{  __SELF__.nextModule().enrollment_start }}
+    {% endif %}
+    </div>
+{% endif %}

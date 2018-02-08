@@ -21,7 +21,10 @@ class CourseList extends ComponentBase
 
     public function courses()
     {
-        $currentModule = Module::orderBy('start_date')->where('start_date', '<=', \Carbon\Carbon::now())->first();
+        $currentModule = Module::orderBy('start_date')
+                ->where('start_date', '<=', \Carbon\Carbon::now())
+                ->where('end_date', '>=', \Carbon\Carbon::now())
+                ->first();
         if(is_null($currentModule)) {
             return [];
         }
