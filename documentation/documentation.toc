@@ -21,25 +21,26 @@
 \contentsline {section}{\numberline {4.1}Verwendete Software}{20}{section.4.1}
 \contentsline {section}{\numberline {4.2}Frontend}{20}{section.4.2}
 \contentsline {section}{\numberline {4.3}Backend}{20}{section.4.3}
-\contentsline {chapter}{\numberline {5}Verteilungsalgorithmus}{24}{chapter.5}
-\contentsline {section}{\numberline {5.1}Aufstellen Zielfunktion}{24}{section.5.1}
-\contentsline {section}{\numberline {5.2}Erweiterung der Zielfunktion und Wahl der Parameter}{25}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Naheliegende Wahl der Parameter}{25}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Exponentielle Gewichte}{26}{subsection.5.2.2}
-\contentsline {subsection}{\numberline {5.2.3}Festes Minimum}{26}{subsection.5.2.3}
-\contentsline {subsection}{\numberline {5.2.4}Betrachtung der Varianz}{27}{subsection.5.2.4}
-\contentsline {chapter}{\numberline {6}Test des Systems}{29}{chapter.6}
-\contentsline {section}{\numberline {6.1}Frontend}{29}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Homepage}{29}{subsection.6.1.1}
-\contentsline {subsection}{\numberline {6.1.2}Registrierung}{30}{subsection.6.1.2}
-\contentsline {subsection}{\numberline {6.1.3}Login}{30}{subsection.6.1.3}
-\contentsline {subsection}{\numberline {6.1.4}Kurs\IeC {\"u}bersicht}{30}{subsection.6.1.4}
-\contentsline {subsection}{\numberline {6.1.5}Meine Pr\IeC {\"a}ferenzliste}{31}{subsection.6.1.5}
-\contentsline {subsection}{\numberline {6.1.6}Ergebnis sehen}{31}{subsection.6.1.6}
-\contentsline {section}{\numberline {6.2}Backend}{31}{section.6.2}
-\contentsline {section}{\numberline {6.3}Algorithmus}{31}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Gleichverteilung}{32}{subsection.6.3.1}
-\contentsline {subsection}{\numberline {6.3.2}Normalverteilung}{33}{subsection.6.3.2}
-\contentsline {section}{\numberline {6.4}E-Mail Benachrichtigung}{33}{section.6.4}
+\contentsline {chapter}{\numberline {5}Verteilungsalgorithmus}{23}{chapter.5}
+\contentsline {section}{\numberline {5.1}Aufstellen Zielfunktion}{23}{section.5.1}
+\contentsline {section}{\numberline {5.2}Erweiterung der Zielfunktion und Wahl der Parameter}{24}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Naheliegende Wahl der Parameter}{24}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Exponentielle Gewichte}{25}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}Festes Minimum}{25}{subsection.5.2.3}
+\contentsline {subsection}{\numberline {5.2.4}Betrachtung der Varianz}{26}{subsection.5.2.4}
+\contentsline {chapter}{\numberline {6}Test des Systems}{28}{chapter.6}
+\contentsline {section}{\numberline {6.1}Frontend}{28}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Homepage}{28}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}Registrierung}{29}{subsection.6.1.2}
+\contentsline {subsection}{\numberline {6.1.3}Login}{29}{subsection.6.1.3}
+\contentsline {subsection}{\numberline {6.1.4}Kurs\IeC {\"u}bersicht}{29}{subsection.6.1.4}
+\contentsline {subsection}{\numberline {6.1.5}Meine Pr\IeC {\"a}ferenzliste}{30}{subsection.6.1.5}
+\contentsline {subsection}{\numberline {6.1.6}Ergebnis sehen}{30}{subsection.6.1.6}
+\contentsline {section}{\numberline {6.2}Backend}{30}{section.6.2}
+\contentsline {section}{\numberline {6.3}Algorithmus}{30}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Gleichverteilung}{31}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}Normalverteilung}{32}{subsection.6.3.2}
+\contentsline {subsection}{\numberline {6.3.3}Realdaten}{34}{subsection.6.3.3}
+\contentsline {section}{\numberline {6.4}E-Mail Benachrichtigung}{34}{section.6.4}
 \contentsline {chapter}{\numberline {7}Zusammenfassung}{35}{chapter.7}
 \contentsline {chapter}{\numberline {8}Anhang}{37}{chapter.8}
