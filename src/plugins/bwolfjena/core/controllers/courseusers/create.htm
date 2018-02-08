@@ -19,21 +19,21 @@
                     type="submit"
                     data-request="onSave"
                     data-hotkey="ctrl+s, cmd+s"
-                    data-load-indicator="Creating CourseUser..."
+                    data-load-indicator="Erstelle Benutzer-Kurs Zuordnung..."
                     class="btn btn-primary">
-                    Create
+                    Erstellen
                 </button>
                 <button
                     type="button"
                     data-request="onSave"
                     data-request-data="close:1"
                     data-hotkey="ctrl+enter, cmd+enter"
-                    data-load-indicator="Creating CourseUser..."
+                    data-load-indicator="Erstelle Benutzer-Kurs Zuordnung..."
                     class="btn btn-default">
-                    Create and Close
+                    Erstellen und Schließen
                 </button>
                 <span class="btn-text">
-                    or <a href="<?= Backend::url('bwolfjena/core/courseusers') ?>">Cancel</a>
+                    or <a href="<?= Backend::url('bwolfjena/core/courseusers') ?>">Abbrechen</a>
                 </span>
             </div>
         </div>
@@ -43,6 +43,6 @@
 <?php else: ?>
 
     <p class="flash-message static error"><?= e($this->fatalError) ?></p>
-    <p><a href="<?= Backend::url('bwolfjena/core/courseusers') ?>" class="btn btn-default">Return to course users list</a></p>
+    <p><a href="<?= Backend::url('bwolfjena/core/courseusers') ?>" class="btn btn-default">Gehe zurück zur Liste der Benutzer-Kurs Zuordnungen</a></p>
 
 <?php endif ?>

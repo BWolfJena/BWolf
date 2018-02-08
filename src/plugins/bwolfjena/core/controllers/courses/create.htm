@@ -1,6 +1,6 @@
 <?php Block::put('breadcrumb') ?>
     <ul>
-        <li><a href="<?= Backend::url('bwolfjena/core/courses') ?>">Courses</a></li>
+        <li><a href="<?= Backend::url('bwolfjena/core/courses') ?>">Kurse</a></li>
         <li><?= e($this->pageTitle) ?></li>
     </ul>
 <?php Block::endPut() ?>
@@ -19,21 +19,21 @@
                     type="submit"
                     data-request="onSave"
                     data-hotkey="ctrl+s, cmd+s"
-                    data-load-indicator="Creating Course..."
+                    data-load-indicator="Erstelle Kurs..."
                     class="btn btn-primary">
-                    Create
+                    Erstellen
                 </button>
                 <button
                     type="button"
                     data-request="onSave"
                     data-request-data="close:1"
                     data-hotkey="ctrl+enter, cmd+enter"
-                    data-load-indicator="Creating Course..."
+                    data-load-indicator="Erstelle Kurs..."
                     class="btn btn-default">
-                    Create and Close
+                    Erstellen und Schließen
                 </button>
                 <span class="btn-text">
-                    or <a href="<?= Backend::url('bwolfjena/core/courses') ?>">Cancel</a>
+                    or <a href="<?= Backend::url('bwolfjena/core/courses') ?>">Abbrechen</a>
                 </span>
             </div>
         </div>
@@ -43,6 +43,6 @@
 <?php else: ?>
 
     <p class="flash-message static error"><?= e($this->fatalError) ?></p>
-    <p><a href="<?= Backend::url('bwolfjena/core/courses') ?>" class="btn btn-default">Return to courses list</a></p>
+    <p><a href="<?= Backend::url('bwolfjena/core/courses') ?>" class="btn btn-default">Zur Kursliste zurückkehren</a></p>
 
 <?php endif ?>

@@ -2,7 +2,7 @@
     <a
         href="<?= Backend::url('bwolfjena/core/chairs/create') ?>"
         class="btn btn-primary oc-icon-plus">
-        New Chair
+        Neuer Lehrstuhl
     </a>
 
     <button
@@ -10,12 +10,12 @@
         disabled="disabled"
         onclick="$(this).data('request-data', { checked: $('.control-list').listWidget('getChecked') })"
         data-request="onDelete"
-        data-request-confirm="Are you sure you want to delete the selected Chairs?"
+        data-request-confirm="Sind Sie sicher, dass Sie alle ausgewählten Lehrstühle löschen möchten?"
         data-trigger-action="enable"
         data-trigger=".control-list input[type=checkbox]"
         data-trigger-condition="checked"
         data-request-success="$(this).prop('disabled', 'disabled')"
         data-stripe-load-indicator>
-        Delete selected
+        Ausgewählte löschen
     </button>
 </div>

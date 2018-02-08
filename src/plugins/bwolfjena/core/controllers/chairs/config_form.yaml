@@ -3,7 +3,7 @@
 # ===================================
 
 # Record name
-name: Chair
+name: Lehrstuhl
 
 # Model Form Field configuration
 form: $/bwolfjena/core/models/chair/fields.yaml
@@ -16,13 +16,13 @@ defaultRedirect: bwolfjena/core/chairs
 
 # Create page
 create:
-    title: Create Chair
+    title: Lehrstuhl erstellen
     redirect: bwolfjena/core/chairs/update/:id
     redirectClose: bwolfjena/core/chairs
 
 # Update page
 update:
-    title: Edit Chair
+    title: Lehrstuhl bearbeiten
     redirect: bwolfjena/core/chairs
     redirectClose: bwolfjena/core/chairs
 

@@ -9,7 +9,7 @@ list: $/bwolfjena/core/models/module/columns.yaml
 modelClass: BWolfJena\Core\Models\Module
 
 # List Title
-title: Manage Modules
+title: Module verwalten
 
 # Link URL for each record
 recordUrl: bwolfjena/core/modules/update/:id

@@ -9,7 +9,7 @@ list: $/bwolfjena/core/models/course/columns.yaml
 modelClass: BWolfJena\Core\Models\Course
 
 # List Title
-title: Manage Courses
+title: Kurse verwalten
 
 # Link URL for each record
 recordUrl: bwolfjena/core/courses/update/:id

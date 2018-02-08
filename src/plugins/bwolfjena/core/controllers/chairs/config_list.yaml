@@ -9,7 +9,7 @@ list: $/bwolfjena/core/models/chair/columns.yaml
 modelClass: BWolfJena\Core\Models\Chair
 
 # List Title
-title: Manage Chairs
+title: Lehrstühle Verwalten
 
 # Link URL for each record
 recordUrl: bwolfjena/core/chairs/update/:id

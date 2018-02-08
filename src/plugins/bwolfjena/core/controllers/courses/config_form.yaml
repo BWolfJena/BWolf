@@ -3,7 +3,7 @@
 # ===================================
 
 # Record name
-name: Course
+name: Kurs
 
 # Model Form Field configuration
 form: $/bwolfjena/core/models/course/fields.yaml
@@ -16,13 +16,13 @@ defaultRedirect: bwolfjena/core/courses
 
 # Create page
 create:
-    title: Create Course
+    title: Kurs erstellen
     redirect: bwolfjena/core/courses/update/:id
     redirectClose: bwolfjena/core/courses
 
 # Update page
 update:
-    title: Edit Course
+    title: Kurs bearbeiten
     redirect: bwolfjena/core/courses
     redirectClose: bwolfjena/core/courses
 
