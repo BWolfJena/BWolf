@@ -11,11 +11,11 @@ fields:
         type: richeditor
         
     start_date:
-        label: Startet am 
+        label: Kurse Sichtbar ab
         type: datepicker
         
     end_date:
-        label: Endet am
+        label: Kurse sichtbar bis
         type: datepicker
         
     enrollment_start:

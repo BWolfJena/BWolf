@@ -29,8 +29,17 @@ class Module extends Model
         'description' => 'required',
         'start_date' => 'required|date',
         'end_date' => 'required|date',
-        'enrollment_start' => 'required|date',
-        'enrollment_end' => 'required|date',
+        'enrollment_start' => 'required|date|after:start_date|before:end_date',
+        'enrollment_end' => 'required|date|after:start_date|after:enrollment_start|before:end_date',
+    ];
+
+    public $attributeNames = [
+        'name' => 'Name',
+        'start_date' => 'Kurse sichtbar ab',
+        'end_date' => 'Kurse sichtbar bis',
+        'description' => 'Beschreibung',
+        'enrollment_start' => 'Einschreibungsstart',
+        'enrollment_end' => 'Einschreibungsende',
     ];
 
     /**

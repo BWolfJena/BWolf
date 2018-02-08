@@ -13,6 +13,8 @@ columns:
         label: Dozent
         relation: lecturer
         valueFrom: full_name
+    further_lecturers:
+        label: Weitere Dozenten
     time:
         label: Zeit
     room:

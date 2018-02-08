@@ -12,10 +12,10 @@ columns:
         searchable: true
         
     start_date:
-        label: Startet am 
+        label: Sichtbar ab
         
     end_date:
-        label: Endet am
+        label: Sichtbar bis
         
     enrollment_start:
         label: Einschreibungsstart

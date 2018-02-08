@@ -10,3 +10,6 @@
 1.0.4:
     - "Add table to store the course user relationship"
     - create_courses_users_table.php
+1.0.5:
+    - "Add additional field for several lecturers"
+    - add_further_lectureres_to_courses.php

@@ -17,6 +17,10 @@ fields:
         label: Dozent
         type: relation
         nameFrom: full_name
+        span: left
+    further_lecturers:
+        label: Weitere Dozenten
+        span: right
     time:
         label: Zeit
         span: left
