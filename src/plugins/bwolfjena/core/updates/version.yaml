@@ -13,3 +13,6 @@
 1.0.5:
     - "Add additional field for several lecturers"
     - add_further_lectureres_to_courses.php
+1.0.6:
+    - "Add distribution related columns to module"
+    - add_distribution_columns_to_module.php
