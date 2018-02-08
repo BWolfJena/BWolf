@@ -30,7 +30,16 @@
 \contentsline {subsection}{\numberline {5.2.4}Betrachtung der Varianz}{27}{subsection.5.2.4}
 \contentsline {chapter}{\numberline {6}Test des Systems}{29}{chapter.6}
 \contentsline {section}{\numberline {6.1}Frontend}{29}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Homepage}{29}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}Registrierung}{30}{subsection.6.1.2}
+\contentsline {subsection}{\numberline {6.1.3}Login}{30}{subsection.6.1.3}
+\contentsline {subsection}{\numberline {6.1.4}Kurs\IeC {\"u}bersicht}{30}{subsection.6.1.4}
+\contentsline {subsection}{\numberline {6.1.5}Meine Pr\IeC {\"a}ferenzliste}{31}{subsection.6.1.5}
+\contentsline {subsection}{\numberline {6.1.6}Ergebnis sehen}{31}{subsection.6.1.6}
 \contentsline {section}{\numberline {6.2}Backend}{31}{section.6.2}
 \contentsline {section}{\numberline {6.3}Algorithmus}{31}{section.6.3}
-\contentsline {chapter}{\numberline {7}Zusammenfassung}{32}{chapter.7}
-\contentsline {chapter}{\numberline {8}Anhang}{34}{chapter.8}
+\contentsline {subsection}{\numberline {6.3.1}Gleichverteilung}{32}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}Normalverteilung}{33}{subsection.6.3.2}
+\contentsline {section}{\numberline {6.4}E-Mail Benachrichtigung}{33}{section.6.4}
+\contentsline {chapter}{\numberline {7}Zusammenfassung}{35}{chapter.7}
+\contentsline {chapter}{\numberline {8}Anhang}{37}{chapter.8}
