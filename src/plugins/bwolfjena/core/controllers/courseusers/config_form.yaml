@@ -3,7 +3,7 @@
 # ===================================
 
 # Record name
-name: Benutzer Kurszuordnung
+name: Benutzer-Kurs Zuordnung
 
 # Model Form Field configuration
 form: $/bwolfjena/core/models/courseuser/fields.yaml
@@ -16,13 +16,13 @@ defaultRedirect: bwolfjena/core/courseusers
 
 # Create page
 create:
-    title: Erstelle Benutzer Kurszuordnung
+    title: Erstelle Benutzer-Kurs Zuordnung
     redirect: bwolfjena/core/courseusers/update/:id
     redirectClose: bwolfjena/core/courseusers
 
 # Update page
 update:
-    title: Bearbeite Benutzer Kurszuordnung
+    title: Bearbeite Benutzer-Kurs Zuordnung
     redirect: bwolfjena/core/courseusers
     redirectClose: bwolfjena/core/courseusers
 

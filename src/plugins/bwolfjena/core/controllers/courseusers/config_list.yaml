@@ -9,7 +9,7 @@ list: $/bwolfjena/core/models/courseuser/columns.yaml
 modelClass: BwolfJena\Core\Models\CourseUser
 
 # List Title
-title: Benutzer Kurszuordnungen
+title: Benutzer-Kurs Zuordnungen
 
 # Link URL for each record
 recordUrl: bwolfjena/core/courseusers/update/:id
