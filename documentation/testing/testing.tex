@@ -75,6 +75,7 @@
 				\label{fig:test_equal_distribution}
 			\end{figure}
 			Zum einen generiert dies eine gleichverteilte Präferenzenmatrix, die in Abbildung \ref{fig:test_equal_distribution} zu sehen ist.
+			
 			\begin{figure}
 				\centering
 				\begin{subfigure}{0.49\textwidth}
@@ -105,7 +106,8 @@
 				\caption{Normalverteilte Präferenzen mit 130 Studenten auf 15 Kursen mit maximal 10 Teilnehmern pro Kurs. Die Dunkelheit stellt die Höhe der Präferenz dar}
 				\label{fig:test_norm_distribution}
 			\end{figure}
-			Weiterhin generiert das Skript normalverteilte Präferenzen.
+			Weiterhin generiert das Skript eine normalverteilte Präferenzenmatrix, wie in Abbildung \ref{fig:test_norm_distribution} zu sehen ist.
+			
 			\begin{figure}
 				\centering
 				\begin{subfigure}{0.3\textwidth}
@@ -120,6 +122,34 @@
 				\caption{Gegenüberstellung der Präferenzenhistogramm für lineare Gewichtung, lineare Gewichtung mit Minimum und exponentielle Gewichtung}
 				\label{fig:test_norm_distribution_histogram}
 			\end{figure}
+		
+					Die Verteilung ist in dem Präferenzenhistogramm in Abbildung \ref{fig:test_equal_distribution_histogram} dargestellt.
+			Wie man sieht, bekommen in jeder der Verteilungen mehr als die Hälfte der Studenten ihre Erstwahl.
+			Um die 20 Studenten bekommen allerdings nur den Kurs mit einer Präferenz kleiner 11.\newline
+			
+			Gut zu sehen ist, dass die Variante ''Lineare Gewichte ohne Minimum'' sich von ''Lineare Gewichte mit Minimum'' unterscheidet.
+			Durch die erster Variante ist die minimale Präferenz 6, doch das Erzwingen eines festen Minimums verbessert sich diese auf 7.
+			Nach den Anforderungen ist dies auch wünschenswert.
+			Zuletzt ist in der Variante ''Exponentielle Gewichte ohne Minimum'' zu sehen, dass weniger Studenten ihre Erstwahl erhalten, dafür aber mehr Studenten die Präferenz 10 oder höher bekommen.\newline
+			
+		\subsection{Realdaten}
+		
+			Letztlich stellte uns der Lehrstuhl, der das Empiriepraktikum leitet, die Daten aus dem Wintersemester 2017/2018 zur Verfügung, um den neuen Algorithmus mit dem alten zu vergleichen.\newline
+			
+			\begin{figure}
+				\centering
+				\begin{tabular}{l|l|l}
+					& Alter Algorithmus & Neuer Algorithmus \\
+					\hline
+					Mittelwert & 14.2 & 14.4 \\
+					Varianz & 1,8 & 0,75 \\
+					Minimale Präferenz & 7 & 12 \\
+				\end{tabular}
+				\caption{Vergleich des alten Algorithmus mit dem neuen Algorithmus}
+				\label{tab:old_versus_new_algorithm}
+			\end{figure}
+		
+			Wie in Abbildung \ref{tab:old_versus_new_algorithm} zu sehen ist, verbessert sich der Mittelwert, die Varianz und minimale Präferenz.
 		
 	\section{E-Mail Benachrichtigung}
 		Zuletzt wurde die E-Mail-Benachrichtigung getestet.
