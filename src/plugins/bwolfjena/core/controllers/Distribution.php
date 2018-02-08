@@ -109,8 +109,8 @@ class Distribution extends Controller
 
 
         // Force minimum
-        $min = $response->min;
         while (!isset($response->error)) {
+          $min = $response->min;
             $min++;
             $response = $this->solveAndAppendResult('Lineare Gewichte mit Minimum ' . $min, [
                 'lowest' => $min,

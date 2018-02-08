@@ -52,6 +52,7 @@
     Wenn der Nutzer darauf klickt, öffnet sich ein Popup indem der Nutzer Spalten ein- oder abschalten kann.
     Darüber hinaus kann die maximale Anzahl an Zeileneinträgen pro Seite angegeben werden.
     
+    
     \subsection{Module}
     
     \includegraphics[scale=0.3]{backend/img/module_1.png}
@@ -122,16 +123,6 @@
   \section{Verteilung}
   \label{section:distribution}
   
-  \includegraphics[scale=0.3]{backend/img/distribution_1.png}
-  
-  \begin{enumerate}
-   \item Um eine Verteilung berechnen zu lassen, wechselt der Nutzer in der oberen Hauptnavigation zu dem Punkt \"\textbf{Verteilung}\".
-   \item Indem der Nutzer auf eine der vorhandenen Module klickt, kann er mögliche Verteilungen der Studenten auf die Kurse generieren lassen.
-  \end{enumerate}
-  
-  \begin{enumerate}
-   \item 
-  \end{enumerate}
-
+  \includegraphics[scale=0.3]{backend/img/verteilung.png}
     
     
