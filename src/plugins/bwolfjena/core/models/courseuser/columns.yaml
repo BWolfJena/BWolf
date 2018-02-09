@@ -11,9 +11,11 @@ columns:
       relation: user
       valueFrom: email
       searchable: true
+      sortable: false
 
     course:
       label: Kurs
       relation: course
       valueFrom: name
       searchable: true
+      sortable: false

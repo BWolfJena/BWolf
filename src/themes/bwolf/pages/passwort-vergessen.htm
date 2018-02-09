@@ -1,0 +1,27 @@
+title = "Passwort vergessen"
+url = "/passwort-vergessen/:code?"
+layout = "default"
+is_hidden = 0
+
+[resetPassword]
+paramCode = "code"
+==
+<div class="ui two column centered grid stackable">
+    <div class="column">
+        <div id="flash-messages-container">
+            {% partial 'flash-messages' %}
+        </div>
+        {% if not user %}            
+            <div id="partialUserResetForm">
+                {% if resetPassword.code == null %}
+                    {% partial resetPassword ~ '::restore' %}
+                {% else %}
+                    {% partial resetPassword ~ '::reset' %}
+                {% endif %}
+            </div>
+        {% else %}
+        {% endif %}
+        
+        
+    </div>
+</div>

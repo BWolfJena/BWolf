@@ -13,6 +13,21 @@ list:
           label: Name
           searchable: true
 
+      distributed_at:
+          label: Verteilt am
+
+      distributor:
+          label: Verteilt von
+          relation: distributor
+          valueFrom: full_name
+          sortable: false
+
+      gotodistribution:
+          label: Verteilung anzeigen
+          type: partial
+          path: ~/plugins/bwolfjena/core/controllers/distribution/_show_distribution_button.htm
+          clickable: false
+          sortable: false
 # Model Class name
 modelClass: BwolfJena\Core\Models\Module
 

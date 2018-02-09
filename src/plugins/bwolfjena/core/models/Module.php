@@ -51,7 +51,12 @@ class Module extends Model
             'BWolfJena\Core\Models\Course'
         ]
     ];
-    public $belongsTo = [];
+    public $belongsTo = [
+        'distributor' => [
+            'Backend\Models\User',
+            'key' => 'backend_users_id',
+        ]
+    ];
     public $belongsToMany = [];
     public $morphTo = [];
     public $morphOne = [];

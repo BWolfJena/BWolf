@@ -20,7 +20,7 @@
 \contentsline {chapter}{\numberline {4}Umsetzung}{20}{chapter.4}
 \contentsline {section}{\numberline {4.1}Verwendete Software}{20}{section.4.1}
 \contentsline {section}{\numberline {4.2}Frontend}{20}{section.4.2}
-\contentsline {section}{\numberline {4.3}Backend}{20}{section.4.3}
+\contentsline {section}{\numberline {4.3}Backend}{22}{section.4.3}
 \contentsline {chapter}{\numberline {5}Verteilungsalgorithmus}{24}{chapter.5}
 \contentsline {section}{\numberline {5.1}Aufstellen Zielfunktion}{24}{section.5.1}
 \contentsline {section}{\numberline {5.2}Erweiterung der Zielfunktion und Wahl der Parameter}{25}{section.5.2}
@@ -40,6 +40,7 @@
 \contentsline {section}{\numberline {6.3}Algorithmus}{31}{section.6.3}
 \contentsline {subsection}{\numberline {6.3.1}Gleichverteilung}{32}{subsection.6.3.1}
 \contentsline {subsection}{\numberline {6.3.2}Normalverteilung}{33}{subsection.6.3.2}
-\contentsline {section}{\numberline {6.4}E-Mail Benachrichtigung}{33}{section.6.4}
-\contentsline {chapter}{\numberline {7}Zusammenfassung}{35}{chapter.7}
-\contentsline {chapter}{\numberline {8}Anhang}{37}{chapter.8}
+\contentsline {subsection}{\numberline {6.3.3}Realdaten}{35}{subsection.6.3.3}
+\contentsline {section}{\numberline {6.4}E-Mail Benachrichtigung}{35}{section.6.4}
+\contentsline {chapter}{\numberline {7}Zusammenfassung}{36}{chapter.7}
+\contentsline {chapter}{\numberline {8}Anhang}{38}{chapter.8}

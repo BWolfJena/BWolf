@@ -160,7 +160,16 @@ class Distribution extends Controller
                 ]);
             }
         }
+        $module = Module::find($id);
+        $module->distributed_at = \Carbon\Carbon::now();
+        $module->distributor = $this->user;
+        $module->save();
         session()->put('distribution_module_id', $this->module->id);
         Flash::success('Die Verteilung wurde erfolgreich gespeichert.');
+    }
+
+    public function onShowDistribution()
+    {
+        session()->put('distribution_module_id', (int)input('id'));
     }
 }
