@@ -1,12 +1,16 @@
 \chapter{Umsetzung}
 \label{chapter:implementation}
+    
+    \todo{Frontend und Backend ist nur ein einfacher Vergleich zwischen Mockup und wie es tatsächlich aussieht.
+          Da sollten evtl. noch Details zur Implementierung rein, evtl. Probleme, usw.}
+
     In diesem Kapitel wird die Umsetzung des System erläutert.
     Zunächst wird die zur Implementierung verwendete Software näher erläutert.
     Anschließend werden Front- und Backend kurz vorgestellt und mit dem Entwurf aus Kapitel \ref{chapter:design} verglichen.
     
     \section{Verwendete Software}
         Die in Kapitel \ref{chapter:requirements} vorgestellte Software wurde verwendet.
-    
+        \todo{Text von irgendjemanden der Ahnung hat}
     \section{Frontend}
         Die Entwürfe für das Frontend wurden ohne große Änderungen umgesetzt.
         
@@ -99,7 +103,10 @@
         Darunter fällt das \textit{Dashboard}, in dem zum Start des Backends einige wichtige Informationen angezeigt werden.
         Unter dem Reiter \textit{Seiten} können weiter Seiten für das Frontend erstellt und die vorhanden Seiten bearbeitet werden.
         Im Entwurf wurde an diese wichtige Funktion des Backends nicht gedacht und so wurde dieser von \textit{October CMS} bereitgestellte \todo{Dienst} übernommen.
-        Der Reiter \textit{Einstellungen} erlaubt das verwalten der automatischen E-Mail-Benachrichtigungen
+        Der Reiter \textit{Einstellungen} ist ebenfalls von \textit{October CMS} bereitgestellt und erlaubt das Andern und Verwalten verschiedenste Optionen.
+        Für dieses Projekt relevant sind vor allem die Einstellungen bezüglich der automatisch versendeten E-Mails, sowie das Verwalten der Backendbenutzer.
+        Anders als im Entwurf vorgesehen, werden nicht alle Benutzer über den Reiter \textit{Benutzer} verwaltet, sondern nur die Frontendnutzer.
+        Diese Änderung ist durch \textit{October CMS} bedingt.
         
         \begin{figure}
             \centering
@@ -113,6 +120,9 @@
             \label{fig:comparisonEdit}
         \end{figure}
     
+        Das Erstellen und bearbeiten von Kursen, Lehrstühlen, Benutzern, usw. ist, wie in Abbildung \ref{fig:comparisonEdit} zu sehen, wie im Entwurf umgesetzt.
+        Verschiedene Eingabefelder mit \textit{Richtext}-Bearbeitung und Auswahlfelder werden wie vorgesehen zur Verfügung gestellt.
+    
         \begin{figure}
             \centering
             \begin{subfigure}{0.49\textwidth}
@@ -124,3 +134,8 @@
             \caption{Gegenüberstellung von Entwurf der Anzeige der Verteilungsvorschläge (links) und Umsetzung (rechts)}
             \label{fig:comparisonDistribution}
         \end{figure}
+    
+        Auch der Entwurf der Verteilungsansicht wurde umgesetzt.
+        In Abbildung \ref{fig:comparisonDistribution} sind wieder Mockup und Resultat gegenübergestellt.
+        Die genaue Umsetzung des Verteilungsalgorithmus wird im nächsten Kapitel näher erläutert.
+        

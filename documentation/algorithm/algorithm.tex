@@ -3,6 +3,8 @@
     Im folgenden Kapitel wird der Algorithmus zum Verteilen der Studenten anhand der Präferenzlisten auf die Kurse vorgestellt.
     Zunächst wird im ersten Abschnitt eine geeignete Zielfunktion aufgestellt und kurz erklärt.
     Anschließend werden verschiedene Varianten für die Parameter diskutiert.
+    Darauffolgend wird auf die Einbindung in das Backend eingegangen.
+    
     \section{Aufstellen Zielfunktion}
         Ausgangspunkt für die Zielfunktion des Verteilungsalgorithmus ist eine Matrix $ X \in \{0,1\}^{n \times m}$, wobei $ n $ die Anzahl der Studenten und $ m $ die Anzahl der Kurse ist.
         Ein Eintrag in dieser Matrix $ x_{ij} $ kodiert, ob ein Student einem Kurs zugeordnet wurde, auf folgende Weise:
@@ -86,5 +88,8 @@
             Zum einen erhöht das den Aufwand, um eine Lösung zu finden, enorm.
             Zum anderen kann mit bekannten Algorithmen zum Lösen solch quadratischer Probleme das Finden einer optimalen Lösung nicht garantiert werden.
             Aus diesem Grund wurde bei der Umsetzung des Verteilungsalgorithmus die zuvor gezeigte lineare Zielfunktion verwendet.
+            
+    \section{Implementierung und Einbindung ins System}
+    \todo{erwähnen, dass es nicht auf dem Uni-Server läuft und wir die Daten zu Heroku schicken usw.}
             
         
