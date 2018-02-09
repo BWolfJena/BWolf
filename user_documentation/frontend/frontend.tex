@@ -1,15 +1,2 @@
-\chapter{Verteilungsalgorithmus}
+\chapter{Frontend}
 \label{chapter:algorithm}
-    Im folgenden Kapitel wird der Algorithmus zum Verteilen der Studenten anhand der Präferenzlisten auf die Kurse vorgestellt.
-    Zunächst wird im ersten Abschnitt eine geeignete Zielfunktion aufgestellt und kurz erklärt.
-    Anschließend werden verschiedene Varianten für die Parameter diskutiert.
-        
-    \section{Erweiterung der Zielfunktion und Wahl der Parameter}
-        Die Parameter der Zielfunktion können frei gewählt werden.
-        In diesem Abschnitt sollen verschiedene Varianten dargestellt werden, wie die Gewichte gewählt bzw. wie die Zielfunktion weiter angepasst und erweitert werden kann.
-        
-        \subsection{Naheliegende Wahl der Parameter}
-            Die nahe liegende Wahl der Gewichte ist, die Präferenzliste der einzelnen Studenten für die Kurse zu verwenden.
-            Da versucht wird, die $ x_{ij} $ so zu wählen, dass die Summe maximal wird, wird so eine Zuordnung eines Studenten zu einem Kurs, für den er eine höhere Präferenz angegeben hat, gegenüber einem mit einer niedrigen Präferenz bevorzugt.
-            Der sogenannte \textit{Score} der Funktion, also das Ergebnis der Summe, wird somit höher, je mehr Studenten in von ihnen gewünschte Kurse verteilt werden.
-        
