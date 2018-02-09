@@ -1,132 +1,138 @@
 \chapter{Anforderungsanalyse}
 \label{chapter:requirements}    
 
-    In diesem Kapitel werden die Anforderungen an die zu schaffende Plattform dargestellt.
-    Zunächst wird im Abschnitt \ref{sec:systemrequirements} behandelt, wie ein Praktikumsmodul abläuft und welche Erfordernisse sich daraus für die einzelnen Teilnehmergruppen ergeben.
-    Darauf folgt eine Beschreibung der Aufgaben des Verteilungsalgorithmus.
-    Zuletzt werden die technischen Anforderungen an das Projekt beschrieben.
-    
-    \section{Anforderungen an das System}
-    \label{sec:systemrequirements}
-        Gemäß der allgemeinen Aufgabenstellung aus Abschnitt \ref{sec:task} existieren verschiedene Sichtweisen auf die Anforderungen des Systems.
-        Zum einen die Sicht der Verantwortlichen für Praktikum und Kurse, zum anderen die der Studenten.
-        Erstere teilt sich wiederum auf in den Blickwinkel der Dozenten der einzelnen Kurse und der übergeordneten Verantwortlichen für das Empiriepraktikum, im Weiteren Administratoren genannt.
-        Im Folgenden werden zunächst die Anforderungen für Studenten, Dozenten und Administratoren anhand des chronologischen Ablaufs eines Praktikumsmoduls dargestellt.
-        Anschließend wird nochmal für die jeweiligen Sichten eine kurze Übersicht gegeben, sowie weitere detailliertere Anforderungen genannt.\\
-        
-        Die Anforderungen sind durch ein Gespräch mit den Verantwortlichen für das Empiriepraktikum entstanden. 
-        Nicht alle Anforderungen sind zwingend für die Funktion des Systems.
-        Einige sind lediglich optionale Funktionalitäten.
-        Es ist zu beachten, dass aus zeitlichen Gründen nicht alle Anforderungen im Rahmen des Projektes umgesetzt werden können.
-        Sie werden der Vollständigkeit halber dennoch aufgeführt.
-        
-        \subsection{Ablauf eines Praktikumsmoduls}
-            Der Ablauf beginnt, indem die Administratoren, nachdem sie sich in einer Login-Oberfläche angemeldet haben, ein neues Praktikumsmodul erstellen.
-            Zu diesem Praktikumsmodul gehören neben generellen Informationen wie Name und Semester auch die besonderen Angaben, ab wann Studenten ihre Präferenzliste erstellen können und zu welchem Zeitpunkt die automatische Verteilung vorgenommen werden soll.
-            Im Anschluss können die Dozenten, nachdem auch sie sich in einer entsprechenden Oberfläche angemeldet haben, ihre Kurse zu dem aktuellen Praktikumsmodul hinzufügen.
-            Dabei sollen Kurse Angaben über Titel, Dozent, Teilnehmerzahl, Ort, Zeit, Beschreibung des Kurses und eine Literaturliste besitzen.
-            Zusätzlich soll ein Kurs Informationen über den Lehrstuhl, sowie die Finanzierung erhalten, die jedoch nicht für Studenten einsehbar sein soll.
-            Nachdem alle Dozenten ihre Kurse eingetragen haben, sollen die Administratoren die aktuelle Kursübersicht online stellen können, sodass jeder die Kurse einsehen kann.
-            Besteht Interesse, dass Empiriepraktikum in diesem Semester zu absolvieren, so sollen sich die Studierenden registrieren können.
-            Nach der Registrierung können die Studenten ihre Präferenzliste erstellen und speichern.
-            Dabei soll die soll Präferenzliste auch jederzeit vom Studierenden noch verändert werden können.
-            Nach jeder gespeicherten Änderung soll der Student eine Email-Benachrichtigung mit seiner aktuellen Präferenzliste erhalten.
-            Nach Ablauf der zuvor von den Administratoren festgelegten Frist sollen die Studenten automatisch anhand ihrer aktuellen Version der Präferenzliste auf die Kurse verteilt werden.
-            Diese Verteilung sollte möglichst gut sein, d.h. in Fall dieses Projekts eine möglichst gleichmäßige Verteilung der Studenten mit wenigen Ausreißern nach Unten.
-            Nach dieser automatischen Verteilung soll eine Nachbearbeitungsphase folgen, in der die Administratoren den Algorithmus bei Bedarf mit vielleicht anderen Parametern neu starten können.
-            Es soll jedoch auch die Möglichkeit geben, das Ergebnis der Verteilung manuell zu ändern.
-            Nachdem das Ergebnis der Verteilung feststeht, sollen alle beteiligten Studenten, Dozenten und Administratoren über das Ergebnis der Verteilung mittels einer Email-Benachrichtigung informiert werden.
-            Ab diesem Moment sollen die Teilnehmer jedes Kurses für jeden angemeldeten Benutzer sichtbar sein.
-            Anschließend an diese Nachbearbeitungsphase, könnte sich optional eine Tauschphase anschließen, in der die Studenten selbstständig über eine geeignete Oberfläche ihre Kurse tauschen können.
-                     
-        \subsection{Verschiedene Sichten im Überblick}
-        \label{Sichten}
-            \subsubsection{Sicht der Administratoren}
-                Administratoren haben die Möglichkeit ein neues Praktikum zu erstellen.
-                Dabei müssen sie Angaben über Name, Semester, Frist für die Anmeldung und Beginn der automatischen Verteilung festlegen.
-                Sie sollen aktiv die Kursübersicht für das aktuelle Praktikum veröffentlichen können.
-                Des Weiteren können Administratoren den Verteilungsalgorithmus in der Nachbearbeitungsphase erneut mit anderen Parametern starten und die Verteilungsergebnisse auch manuell verändern.
-                Zusätzlich sollen Administratoren die angemeldeten Dozenten verwalten können, um z.B. Dozenten, die keine Kurse mehr anbieten zu entfernen.
-                Auch sollen die Administratoren Kurse als \glqq frei bleiben\grqq~ markieren können, sowie die maximale und minimale Teilnehmerzahl für alle Kurse fließend einstellen können, falls nötig.
-                Die Administratoren sollen für Praktika auch die Möglichkeit erhalten Filterfunktionen anzuwenden und sich so z.B. die Kurse nach Lehrstühlen sortiert anzeigen zu lassen.
-            
-            \subsubsection{Sicht der Dozenten}
-                Ein Dozent hat soll die Möglichkeit haben, Kurse für das aktuelle Praktikum zu erstellen und sich eventuell seine Kurse für ältere Praktika nochmals anzusehen, um sie als Vorlage für neue Kurse zu nutzen. 
-                Für einen Kurs müssen sie folgendes angeben: Name, Titel, Dozenten, Zeit und Raum, Teilnehmerzahl (hierbei können die Dozenten nur zwischen 5 oder 10 wählen), eine Kurzbeschreibung des Kurses, eine ausführliche Beschreibung und optional eine Literaturliste.
-                Diese Angaben sind auch für Studenten einsehbar.
-                Nicht für Studenten einsehbar sind die folgenden Angaben über Lehrstuhl, Lehrauftrag und die Information, ob der Dozent das erste Mal ein Empiriepraktikum leitet.
-                
-                Der Inhalt von längeren Angaben wie der Beschreibung des Praktikums, soll in einer Textumgebung möglich sein, in der geeignete Textformatierung möglich ist.
-                Außerdem sollen auch Bilder in die Beschreibung eingearbeitet werden können.
-                Des Weiteren sollen Dozenten nur ihre eigenen Kurse editieren können.
-                Nachdem die Studenten verteilt worden sind, sollen die Dozenten eine E-Mail mit den Studenten, die in ihrem Kurs sind, erhalten.
-                
-%                \todo{Im Verlaufe des Semesters können Dozenten ihren Kurs in zwei Kurse aufteilen.}
-            
-                
-            \subsubsection{Sicht der Studenten}
-                Die Studenten sollen ohne eine Registrierung die Kursübersicht aufrufen können, sobald die Administratoren die Kursübersicht veröffentlicht haben.
-                Nach der Registrierung sollen die Studenten bis zu einer Frist eine Präferenzliste erstellen und späterhin auch bearbeiten können.
-                Bei jeder angenommenen Änderung der Präferenzliste soll der Student über seine aktuelle Wahl per Email informiert werden.
-                Nachdem die Verteilung vom Algorithmus vorgenommen wurde, sollen die Studenten über ihr Ergebnis informiert werden, sowie die Ergebnisse der gesamten Verteilung einsehen können.
-                Anschließend sollen sie eventuell die Möglichkeit erhalten eigenständig die Kurse mit anderen Studenten zu tauschen, sofern beide zustimmen.
-    
-    
-%    	\todo{Das ganze offen und Modular halten für andere Module als das Empiriepraktikum}\\
-%    	\todo{Dabei auf Hierarchie von Präferenzen achten}\\
-%    	\todo{evtl. die Möglichkeit falls mehr Studenten als Kurse, neue Kurse hinzufügen können}\\
-%    	\todo{evtl. ein Archiv}\\
-%    
-    
-            
-    
-    \section{Der Verteilungsalgorithmus}
-        Der Verteilungsalgorithmus verteilt alle Studenten auf die Kurse.
-        Dabei ist es wichtig, dass die aufaddierte maximale Teilnehmeranzahl der Kurse größer ist als die Anzahl der zu verteilenden Studenten.
-        Sollte dem nicht der Fall sein, so wird der Administrator informiert.
-        Dieser hat dann die Möglichkeit die maximale Teilnehmeranzahl von Kursen zu erhöhen.
-        Die Eingabe des Algorithmus sind die Gewichte der Präferenzen und (optional) die Auswahl eines Optimierungsalgorithmus.
-        
-        Startet der Algorithmus, so versucht er, für jeden Studenten die größte, mögliche Präferenz zu den Kursen zu wählen.
-        Dabei ist insbesondere wichtig, dass die Streuung der gewählten Präferenzen möglichst gering ist.
-        Dies erfolgt beispielsweise durch eine Gewichtung der Präferenzen.\\
-        Weiterhin platziert der Algorithmus in jeden Kurs mindestens drei Studenten, damit der Kurs sinnvoll angeboten werden kann.
-        Es werden aber nie mehr Teilnehmer einem Kurs zugeordnet als die maximale Teilnehmeranzahl des Kurses vorgibt.
-        
-        Hat der Algorithmus schließlich eine passende Zuordnung von Studenten zu Kursen gefunden, so wird der Administrator zuerst benachrichtigt.
-        Dieser kann die Ergebnisse bearbeiten, Parameter des Algorithmus neu einstellen, Kurse aktivieren/deaktivieren und ihn erneut starten.
-        Ist der Administrator zufrieden mit der Verteilung, so bestätigt dieser das Ergebnis.
-        Anschließend wird an die Dozenten eine E-Mail mit ihren Teilnehmern geschickt, und Studenten erhalten eine E-Mail mit ihrem Kurs.
-        %    \item Nach Ende der Einschreibung, startet der Algortihmus automatisch. -> unsicher ob sie es so wollten durch die verschiedenen Einstell-Möglichkeiten. Sie hatten im Gespräch beides gesagt.
-    
-    \section{Technische Details}
-        \todo{Diese Aufzählung am Ende muss unbedingt weg, Johannes hat sich ausdrücklich Fließtext für die Anforderungen gewünscht.}
-        
-        Der Login wird über eine E-Mail/Passwort Authentifizierung realisiert.
-        Dafür werden nur E-Mail Adressen der FSU Jena nutzbar sein. Dies bedeutet, dass E-Mails auf ''@uni-jena.de''enden müssen.
-        Man kann sich zu jeder Zeit ein- und ausloggen.\newline
-        
-        Bei der Wahl der Präferenzen darf keine Präferenz doppelt belegt werden, d.h. jede Präferenz hat einen eindeutigen Kurs. \\ %egal option?
-        
-        Der Verteilungsalgorithmus kann mit verschiedenen Optionen angesteuert werden. Optionen können u.a. die Gewichtung der Varianz, oder welche Kurse belegt werden können, sein. Weiterhin ist der Verteilungsalgorithmus innerhalb von 24 Stunden fertig. \\
-        
-        
-        \begin{itemize}
-            \item Man kann sich zu einem beliebigen Zeitpunkt einloggen und ausloggen.
-            \item Der Verteilungsalgorithmus braucht maximal 24 Stunden.
-            \item Die Website muss auch auf mobilen Endgeräten funktionieren.
-            \item Sollte ein Browser älter als IE11 sein, so wird den Nutzer angezeigt, dass sie ihren Browser updaten sollen.
-            \item Die Website wird auf einer docker-compose Umgebung aufgesetzt.
-            \item Die Website wird mit OctoberCMS mit Laravel 5.5 umgesetzt.
-            \item Der Webserver wird mit Nginx umgesetzt.
-            \item Die Datenbank wird mit MySQL umgesetzt.
-            \item Der Cache-Server wird mit Redis umgesetzt.
-            \item Tests erfolgen für die wesentlichsten Bestandteile, insbesondere für den Algorithmus.
-            \item Kursinformationen sind öffentlich einsehbar.
-            \item Kurse können von nicht-Studenten insbesondere nach folgenden Kriterien gefiltert werden: 
-            \begin{itemize}
-                \item Lehrstuhl
-                \item Finanzierung/Lehrauftrag
-                \item Erstes Mal Empiriepraktikum?
-            \end{itemize}
-        \end{itemize}
+	In diesem Kapitel werden die Anforderungen an die Plattform dargestellt.
+	Zunächst wird in Abschnitt \ref{sec:systemrequirements} behandelt, wie ein Praktikumsmodul abläuft und welche Erfordernisse sich daraus für die einzelnen Teilnehmergruppen ergeben.
+	Darauf folgt eine Beschreibung der Aufgaben des Verteilungsalgorithmus.
+	Zuletzt werden die technischen Anforderungen an das System beschrieben.
+	
+	\section{Anforderungen an das System}
+		\label{sec:systemrequirements}
+		Gemäß der allgemeinen Aufgabenstellung aus Abschnitt \ref{sec:task} existieren verschiedene Sichtweisen auf das Systems.
+		Zum einen die Sicht der Verantwortlichen für Praktikum und Kurse, zum anderen die der Studenten.
+		Erstere teilt sich wiederum in den Blickwinkel der Dozenten der Kurse und der übergeordneten Verantwortlichen für das Empiriepraktikum, im Weiteren Administratoren genannt, auf.
+		Im Folgenden werden zunächst die Anforderungen für Studenten, Dozenten und Administratoren anhand des chronologischen Ablaufs eines Praktikumsmoduls dargestellt.
+		Anschließend wird nochmals für die jeweiligen Sichten eine kurze Übersicht gegeben, sowie weitere detailliertere Anforderungen genannt.\\
+		
+		Die Anforderungen sind durch ein Gespräch mit den Verantwortlichen für das Empiriepraktikum entstanden. 
+		Nicht alle Anforderungen sind zwingend für die Funktion des Systems.
+		Einige sind optionale Funktionalitäten.
+		Es ist zu beachten, dass aus zeitlichen Gründen nicht alle Anforderungen im Rahmen des Projektes umgesetzt werden konnten.
+		Sie werden der Vollständigkeit halber dennoch aufgeführt.
+		
+		\subsection{Ablauf eines Praktikumsmoduls}
+			Ein Praktikum beginnt, indem die Administratoren, nachdem sie sich in einer Oberfläche angemeldet haben, ein neues Praktikumsmodul erstellen.
+			Zu diesem Praktikumsmodul gehören neben generellen Informationen wie Name und Semester auch die besonderen Angaben, ab wann Studenten ihre Präferenzliste erstellen können und zu welchem Zeitpunkt die automatische Verteilung vorgenommen werden soll.
+			Im Anschluss können die Dozenten, nachdem auch sie sich in einer entsprechenden Oberfläche angemeldet haben, ihre Kurse zu dem aktuellen Praktikumsmodul hinzufügen.
+			Dabei sollen Kurse Angaben über Titel, Dozent, Teilnehmerzahl, Ort, Zeit, Beschreibung des Kurses und eine Literaturliste besitzen.
+			Zusätzlich soll ein Kurs Informationen über den Lehrstuhl, sowie die Finanzierung erhalten, die jedoch nicht für Studenten einsehbar sein soll.
+			Nachdem alle Dozenten ihre Kurse eingetragen haben, sollen die Administratoren die aktuelle Kursübersicht online stellen können, sodass jeder die Kurse einsehen kann.
+			Besteht Interesse, das Empiriepraktikum in diesem Semester zu absolvieren, so sollen sich die Studierenden registrieren können.
+			Nach der Registrierung können die Studenten ihre Präferenzliste erstellen und speichern.
+			Dabei soll die Präferenzliste auch jederzeit vom Studierenden noch verändert werden können.
+			Nach jeder Änderung soll die Präferenzliste des Student gespeichert werden.
+			Nach Ablauf der zuvor von den Administratoren festgelegten Frist können die Studenten anhand ihrer aktuellen Version der Präferenzliste auf die Kurse automatisch verteilt werden.
+			Diese Verteilung sollte möglichst gut sein, d.h. in Fall dieses Projekts eine möglichst gleichmäßige Verteilung der Studenten mit vorzugsweise geringer Varianz.
+			Nach dieser Verteilung soll eine Nachbearbeitungsphase folgen, in der die Administratoren das Ergebnis der Verteilung bei Bedarf manuell ändern können.
+			Nachdem das Ergebnis der Verteilung fixiert wurde, sollen alle beteiligten Studenten, Dozenten und Administratoren über das Ergebnis der Verteilung mittels einer E-Mail-Benachrichtigung informiert werden.
+			Ab diesem Moment sollen die Teilnehmer jedes Kurses für jeden angemeldeten Benutzer sichtbar sein.
+			Anschließend an diese Nachbearbeitungsphase, könnte sich optional eine Tauschphase anschließen, in der die Studenten selbstständig über eine geeignete Oberfläche ihre Kurse tauschen können.
+			
+		\subsection{Verschiedene Sichten im Überblick}
+		\label{Sichten}
+		
+			\subsubsection{Sicht der Administratoren}
+				Administratoren haben die Möglichkeit ein neues Praktikum zu erstellen.
+				Dabei müssen sie Angaben über Name, Semester, Frist für die Anmeldung und Beginn der automatischen Verteilung festlegen.
+				Sie sollen aktiv die Kursübersicht für das aktuelle Praktikum veröffentlichen können.
+				Des Weiteren können Administratoren den Verteilungsalgorithmus in der Nachbearbeitungsphase erneut mit anderen Parametern starten und die Verteilungsergebnisse auch manuell verändern.
+				Zusätzlich sollen Administratoren die angemeldeten Dozenten verwalten können, um z.B. Dozenten, die keine Kurse mehr anbieten, zu entfernen.
+				Auch sollen die Administratoren Kurse als \glqq frei bleiben\grqq~ markieren können, sowie die maximale und minimale Teilnehmerzahl für alle Kurse fließend einstellen können, falls nötig.
+				Die Administratoren sollen für Praktika auch die Möglichkeit erhalten, Filterfunktionen anzuwenden und sich so z.B. die Kurse nach Lehrstühlen sortiert anzeigen zu lassen.
+			
+			\subsubsection{Sicht der Dozenten}
+				Ein Dozent soll die Möglichkeit haben, Kurse für das aktuelle Praktikum zu erstellen und sich seine Kurse älterer Praktika nochmals anzusehen, um sie als Vorlage für neue Kurse zu nutzen. 
+				Für einen Kurs müssen sie folgendes angeben: Name, Titel, Dozenten, Zeit und Raum, Teilnehmerzahl, eine Kurzbeschreibung des Kurses, eine ausführliche Beschreibung und optional eine Literaturliste.
+				Diese Angaben sind auch für Studenten einsehbar.
+				Dabei kann die Teilnehmerzahl nur auf fünf oder zehn gesetzt werden.
+				Nicht für Studenten einsehbar sind die Angaben über Lehrstuhl, Lehrauftrag und die Information, ob der Dozent das erste Mal ein Empiriepraktikum leitet.
+				
+				Der Inhalt von längeren Angaben wie der Beschreibung des Praktikums, soll in einer Textumgebung möglich sein, in der geeignete Textformatierung möglich ist.
+				Außerdem sollen auch Bilder in die Beschreibung eingearbeitet werden können.
+				Des Weiteren sollen Dozenten nur ihre eigenen Kurse editieren können.
+				Nachdem die Studenten verteilt worden sind, sollen die Dozenten eine E-Mail mit den Studenten, die in ihrem Kurs sind, erhalten.
+				
+				%                \todo{Im Verlaufe des Semesters können Dozenten ihren Kurs in zwei Kurse aufteilen.}
+		
+		
+			\subsubsection{Sicht der Studenten}
+				Die Studenten sollen ohne Registrierung die Kursübersicht aufrufen können, sobald die Administratoren die Kursübersicht veröffentlicht haben.
+				Nach der Registrierung sollen die Studenten bis zu einer Frist eine Präferenzliste erstellen und späterhin auch bearbeiten können.
+				Bei jeder angenommenen Änderung der Präferenzliste soll der Student über seine aktuelle Wahl per E-Mail informiert werden.
+				Nachdem die Verteilung vom Algorithmus vorgenommen wurde, sollen die Studenten über ihr Ergebnis informiert werden, sowie die Ergebnisse der gesamten Verteilung einsehen können.
+				Anschließend sollen sie eventuell die Möglichkeit erhalten, eigenständig die Kurse mit anderen Studenten zu tauschen, sofern beide zustimmen.
+				
+				
+				%    	\todo{Das ganze offen und Modular halten für andere Module als das Empiriepraktikum}\\
+				%    	\todo{Dabei auf Hierarchie von Präferenzen achten}\\
+				%    	\todo{evtl. die Möglichkeit falls mehr Studenten als Kurse, neue Kurse hinzufügen können}\\
+				%    	\todo{evtl. ein Archiv}\\
+				%    
+	
+	
+	
+	\section{Der Verteilungsalgorithmus}
+		Der Verteilungsalgorithmus verteilt alle Studenten auf die Kurse.
+		Dabei ist es wichtig, dass die aufaddierte maximale Teilnehmeranzahl der Kurse größer ist als die Anzahl der zu verteilenden Studenten.
+		Sollte dem nicht der Fall sein, so wird der Administrator informiert.
+		Dieser hat dann die Möglichkeit die maximale Teilnehmeranzahl von Kursen zu erhöhen.
+		Die Eingabe des Algorithmus sind die Gewichte der Präferenzen und (optional) die Auswahl eines Optimierungsalgorithmus.
+		
+		Startet der Algorithmus, so versucht er, für jeden Studenten die größte, mögliche Präferenz zu den Kursen zu wählen.
+		Dabei ist insbesondere wichtig, dass die Streuung der gewählten Präferenzen möglichst gering ist.
+		Dies erfolgt beispielsweise durch eine Gewichtung der Präferenzen.\\
+		Weiterhin platziert der Algorithmus in jeden Kurs mindestens drei Studenten, damit der Kurs sinnvoll angeboten werden kann.
+		Es werden aber nie mehr Teilnehmer einem Kurs zugeordnet als die maximale Teilnehmeranzahl des Kurses vorgibt.
+		
+		Hat der Algorithmus schließlich eine passende Zuordnung von Studenten zu Kursen gefunden, so wird der Administrator zuerst benachrichtigt.
+		Dieser kann die Ergebnisse bearbeiten, Parameter des Algorithmus neu einstellen, Kurse aktivieren/deaktivieren und ihn erneut starten.
+		Ist der Administrator zufrieden mit der Verteilung, so bestätigt dieser das Ergebnis.
+		Anschließend wird an die Dozenten eine E-Mail mit ihren Teilnehmern geschickt, und Studenten erhalten eine E-Mail mit ihrem Kurs.
+		%    \item Nach Ende der Einschreibung, startet der Algortihmus automatisch. -> unsicher ob sie es so wollten durch die verschiedenen Einstell-Möglichkeiten. Sie hatten im Gespräch beides gesagt.
+		
+	\section{Technische Details}
+		\todo{Diese Aufzählung am Ende muss unbedingt weg, Johannes hat sich ausdrücklich Fließtext für die Anforderungen gewünscht.}
+		
+		Besucher der Website können sowohl auf mobilen Endgeräten, als auch per Desktop die Website besuchen.
+		Diese passt sich dynamisch an die Bildschirmauflösung an.\newline
+		
+		Benutzt ein Besucher jedoch einen Browser, der älter als Internet Explorer 11 ist, so wird ihm mitgeteilt, er solle seinen Browser aktualisieren.
+		
+		Der Login wird über eine E-Mail/Passwort Authentifizierung realisiert.
+		Dafür sind nur E-Mail-Adressen der FSU Jena nutzbar.
+		Dies bedeutet, dass E-Mails auf ''@uni-jena.de''enden müssen.
+		Man kann sich zu jeder Zeit ein- und ausloggen.\newline
+		
+		Bei der Wahl der Präferenzen darf keine Präferenz doppelt belegt werden, d.h. jede Präferenz hat einen eindeutigen Kurs. \newline
+		
+		Der Verteilungsalgorithmus kann mit verschiedenen Optionen angesteuert werden. Optionen können u.a. die Gewichtung der Varianz, oder welche Kurse belegt werden können, sein. Weiterhin ist der Verteilungsalgorithmus innerhalb von 24 Stunden fertig. \newline
+		
+		Das Produkt wird zu Zwecken der Portabilität in einer docker-compose Umgebung aufgesetzt.
+		In dieser Umgebung soll die Website auf OctoberCMS mit Laravel 5.5 basierend aufgebaut werden.
+		Der Webserver selbst nutzt Nginx.
+		Als Datenbank soll MySQL verwendet werden.
+		Ein Cache-Server soll ebenfalls umgesetzt werden.
+		Vorzugsweise wird Redis verwendet.\newline
+		
+		Weiterhin muss das System getestet werden.
+		Hierfür müssen nur die wesentlichsten Bestandteile der Website validiert werden.
+	
+		\begin{itemize}
+			\item Kursinformationen sind öffentlich einsehbar.
+			\item Kurse können von nicht-Studenten insbesondere nach folgenden Kriterien gefiltert werden: 
+			\begin{itemize}
+				\item Lehrstuhl
+				\item Finanzierung/Lehrauftrag
+				\item Erstes Mal Empiriepraktikum?
+			\end{itemize}
+		\end{itemize}
