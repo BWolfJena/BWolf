@@ -5,7 +5,7 @@
     Anschließend werden Front- und Backend kurz vorgestellt und mit dem Entwurf aus Kapitel \ref{chapter:design} verglichen.
     
     \section{Verwendete Software}
-        
+        Die in Kapitel \ref{chapter:requirements} vorgestellte Software wurde verwendet.
     
     \section{Frontend}
         Die Entwürfe für das Frontend wurden ohne große Änderungen umgesetzt.
@@ -45,7 +45,7 @@
         Abbildung \ref{fig:comparisonCourses} zeigt Entwurf und Umsetzung der Kursübersicht.
         Die Struktur des Entwurfs wurde direkt umgesetzt.
         Wie in Kapitel \ref{chapter:requirements} beschrieben, ist es, wie in Abbildung \ref{fig:comparisonCourses} zu sehen ist, möglich auch ohne eine Anmeldung auf die Kursübersicht zuzugreifen.
-        Es ist anzumerken, dass die Fußleiste auch in der Kursübersicht wie in Abbildung \ref{fig:comparisonCourses} den Abschluss der Seite bildet und lediglich durch die Menge an Kursen nicht zu sehen ist.
+        Es ist anzumerken, dass die Fußleiste auch in der Kursübersicht \ref{fig:comparisonCourses} den Abschluss der Seite bildet und lediglich durch die Menge an Kursen nicht zu sehen ist.
         
         \begin{figure}
             \centering
@@ -59,9 +59,26 @@
             \label{fig:comparisonPrefenrences}
         \end{figure}
     
+        Die Oberfläche zum Erstellen der Präferenzliste wurde ebenfalls wie angedacht umgesetzt.
+        Mithilfe von Drag\&Drop könne die verschiedenen Kurse in die gewünschte Reihenfolge gebracht werden.
+        Der Knopf \textit{Absenden} wurde in \textit{Speichern} umbenannt.
+        Dadurch soll mehr Klarheit darüber geschaffen werden, dass die Präferenzliste bis zum Ablauf der Frist jederzeit verändert werden kann.\\
+        
+        Es ist zu erwähnen, dass das gesamte Frontend auch auf mobilen Geräten unterstützt wird.
+        Die Ansichten für Kursübersicht und auch die Wahl der Präferenzliste werden entsprechend der Größe des Bildschirms angepasst, sodass die Benutzerfreundlichkeit erhalten bleibt.\\
+        
+        Die Tauschbörse wurde nicht implementiert.
+        Grund hierfür ist zum einen die zeitliche Beschränkung des Projekts, wodurch einige optionale Funktionalitäten nicht umgesetzt werden konnten.
+        Zum anderen sind bei einem weiteren Gespräch nach dem Erstellen der Anforderungen Zweifel an der Notwendigkeit solch einer Tauschbörse aufgetreten.
+        Eine weitere Funktion, die nicht im Frontend umgesetzt werden konnte, war die in Kapitel \ref{chapter:design} geplante Erweiterbarkeit auf andere Module.
+        So kann ein Benutzer im Frontend nicht mehrere Präferenzlisten parallel verwalten.\\
+        
+        Im Frontend wurde jedoch auch eine zusätzliche Funktionalität implementiert.
+        So wurde ein Archiv umgesetzt, in dem die Kurse vergangener Empiriepraktika einsehbar sind.
     
     \section{Backend}
-    
+        Auch im Backend ist die Struktur der Entwürfe weitestgehend übernommen worden.
+        
         \begin{figure}
             \centering
             \begin{subfigure}{0.49\textwidth}
@@ -73,6 +90,16 @@
             \caption{Gegenüberstellung von Entwurf der Kursverwaltung (links) und Umsetzung (rechts)}
             \label{fig:comparisonManageCourses}
         \end{figure}
+        
+        Abbildung \ref{fig:comparisonManageCourses} zeigt Entwurf und Umsetzung der Kursverwaltung.
+        Die Struktur aus Kopf- und Seitenleiste wurde übernommen.
+        Die Fußzeile wurde jedoch entfernt.
+        Es fällt außerdem auf, dass die Kopfzeile mehr Reiter umfasst, als zunächst geplant.
+        Das zum Erstellen des Backend verwendete Framework \textit{October CMS} stellt einige vordefinierte Seiten zur Verfügung.
+        Darunter fällt das \textit{Dashboard}, in dem zum Start des Backends einige wichtige Informationen angezeigt werden.
+        Unter dem Reiter \textit{Seiten} können weiter Seiten für das Frontend erstellt und die vorhanden Seiten bearbeitet werden.
+        Im Entwurf wurde an diese wichtige Funktion des Backends nicht gedacht und so wurde dieser von \textit{October CMS} bereitgestellte \todo{Dienst} übernommen.
+        Der Reiter \textit{Einstellungen} erlaubt das verwalten der automatischen E-Mail-Benachrichtigungen
         
         \begin{figure}
             \centering
