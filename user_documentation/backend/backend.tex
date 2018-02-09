@@ -6,53 +6,76 @@
   
   Über \textbf{bwolf.de/backend} kann das Backend des BWolf-Systems erreicht werden.
   
-  \includegraphics[scale=0.3]{backend/img/dashboard.pdf}
-%  \caption{\newline Der Begrüßungsbildschirm: Das Dashboard aus Sicht des Super-Admins.\newline
-%	  Normale Administratoren sehen in der oberen Navigation nicht den Punkt Benutzer}
+  \begin{figure}
+  	\centering
+  	\includegraphics[scale=0.5]{backend/img/dashboard.pdf}
+  	\caption{Das Dashboard aus Sicht des Administrators}
+  	\label{fig:dashboard}
+  \end{figure}
   \begin{enumerate}
-   \item Nach der Anmeldung begrüßt das \textbf{Dashboard} den Nutzer. 
+   \item Nach der Anmeldung wird das \textbf{Dashboard} aufgerufen, das in Abbildung \ref{fig:dashboard} zu sehen ist. 
 	  Hier befinden sich drei Widgets:\newline
-	  Bei der Begrüßung befindet sich eine Übersicht über den Systemstatus.\newline
+	  In dem Dashboard befindet sich eine Übersicht über den Systemstatus.\newline
 	  Für die elementare Nutzung des Backends, müssen hier keine weiteren Änderungen vorgenommen werden.\newline
 	  Sollte in dem Systemstatus ein Problem auftauchen, sollte einer der Entwickler (siehe \url{http://bwolf.uni-jena.de/impressum}) 
 	  kontaktiert werden.\newline
-	  Das Widget \textbf{Website} zeigt an in welchem Theme die Webseite erscheint. Hier sollte auch nichts weiter verändert werden.
-	  Ganz zu unterst gibt es noch einen Button \textbf{Widgets verwalten}. 
-	  Dieser spielt hier auch keine weitere Rolle, da alle vorhandenen Widgets bereits in das Dashboard integriert wurden.
+	  Das Widget \textbf{Website} zeigt an, in welchem Theme die Website erscheint. Hier sollte auch nichts weiter verändert werden.
+	  Am Ende der Seite befindet sich der Button \textbf{Widgets verwalten}. 
+	  Dieser ist nicht weiter relevant, da alle vorhandenen Widgets bereits in das Dashboard integriert wurden.
    \item Über die obere Navigationszeile gelangt der Nutzer zu allen wesentlichen Bereichen des Backends.
-	 Zur operativen Benutzung benötigt werden die Bereiche \textbf{Verwalten} und \textbf{Verteilung}
-   \item[] In der oberen Navigationszeile befindet sich ganz rechts die Möglichkeit des Abmeldens.
-   \item[] Das Fadenkreuz daneben ermöglicht es, das Frontend mit den momentan vorgenommenen Einstellungen zu betrachten.
+	 Zur operativen Benutzung werden die Bereiche \textbf{Verwalten} und \textbf{Verteilung} benötigt.
+   \item[] In der oberen Navigationszeile befindet sich rechts die Möglichkeit sich abzumelden.
+   \item[] Das Fadenkreuz links davon ermöglicht es, das Frontend mit den momentan vorgenommenen Einstellungen aufzurufen.
   \end{enumerate}
 
   
   \section{Verwalten}
   \label{section:manage}
   
-    \includegraphics[scale=0.3]{backend/img/verwalten_kurse.pdf}
+    \begin{figure}
+    	\centering
+    	\includegraphics[scale=0.5]{backend/img/verwalten_kurse.pdf}
+    	\caption{Verwalten von Kursen}
+    	\label{fig:manage_courses}
+    \end{figure}
 
-    In diesem Bereich können der Nutzer neue Module, Lehrstühle und Kurse anlegen.
+    In dem in Abbildung \ref{fig:manage_courses} Bereich kann der Nutzer neue Module, Lehrstühle und Kurse anlegen.
     Anhand der linken Navigationsspalte können die entsprechenden drei Bereiche erreicht werden.
 
     In der Übersichtsliste der drei unterschiedlichen Bereiche Module, Lehrstühle und Kurse kann die Reihenfolge der Zeilenelemente durch Betätigen
-    der kleinen Pfeile neben den Spaltennamen umsortiert werden.
-    In der Kopfzeile dieser Übersichtsliste befindet sich ein Hamburger-Menü. 
-    Wenn der Nutzer darauf klickt, öffnet sich ein Popup indem der Nutzer Spalten ein- oder abschalten kann.
+    des Spaltennamen umsortiert werden.
+    In der Kopfzeile dieser Übersichtsliste befindet sich rechts ein Hamburger-Menü. 
+    Klickt der Nutzer darauf, öffnet sich ein Popup, in dem der Nutzer Spalten ein- oder ausschalten kann.
     Darüber hinaus kann die maximale Anzahl an Zeileneinträgen pro Seite angegeben werden.
     
     \subsection{Module}
     
-    \includegraphics[scale=0.3]{backend/img/module_1.pdf}
+    \begin{figure}
+    	\centering
+    	\includegraphics[scale=0.5]{backend/img/module_1.pdf}
+    	\caption{Module verwalten}
+    	\label{fig:manage_module}
+    \end{figure}
 
-    \includegraphics[scale=0.3]{backend/img/module_2.pdf}
+	\begin{figure}
+		\centering
+	    \includegraphics[scale=0.5]{backend/img/module_2.pdf}
+	    \caption{Modul kreieren oben}
+	    \label{fig:create_module}
+	\end{figure}
 
-    \includegraphics[scale=0.3]{backend/img/module_3.pdf}
+	\begin{figure}
+		\centering
+		\includegraphics[scale=0.5]{backend/img/module_3.pdf}
+		\caption{Modul kreieren unten}
+		\label{fig:create_module2}
+	\end{figure}
     
     \begin{enumerate}
     \item Zuerst sollte ein neues Modul angelegt werden. Durch Betätigen des \textbf{+ New Module} - Buttons kann ein neuer Kurs angelegt werden.
     \item Hier müssen alle Pflichtfelder - gekennzeichnet durch einen kleinen roten Punkt neben der Feldbeschreibung - ausgefüllt werden.
     \item Ein möglicher Name für einen Modulnamen wäre beispielsweise \textit{Wintersemester 2017/2018 empirisches Praktikum}. Er beschreibt die Veranstaltung.
-    \item In den Beschreibungstext können mützliche Informationen zu dem Modul angelegt werden.
+    \item In den Beschreibungstext können nützliche Informationen zu dem Modul angelegt werden.
 	  Hier können neben einfachen Text auch Listen, Bilder, Tabellen und Medienelemente eingefügt werden.
     \item In den Datums- und Zeitfeldern wird der Zeitraum des Moduls angegeben, (beispielsweise \textit{16.10.2017, 00:00} bis \textit{31.03.2018, 23:59}) 
 	  wie auch der Einschreibungszeitraum in denen sich Studenten für Kurse des Moduls einschreiben können (beispielsweise \textit{1.10.2017, 00:00} bis \textit{12.10.2017, 23:59}).
@@ -67,13 +90,25 @@
     
     \subsection{Lehrstühle}
     
-    \includegraphics[scale=0.3]{backend/img/chairs_1.pdf}
+    \begin{figure}
+    	\centering
+    	\includegraphics[scale=0.5]{backend/img/chairs_1.pdf}
+    	\caption{Lehrstühle verwalten}
+    	\label{fig:manage_chair}
+    \end{figure}
+
     \begin{enumerate}
       \item Als nächstes sollten neue Lehrstühle hinzugefügt werden. Dies ist möglich über den dritten Punkt der linken vertikalen Navigation.
      \item Über \textbf{+ New Chair} kann ein neuer Lehrstuhl hinzugefügt werden. 
     \end{enumerate}
 
-    \includegraphics[scale=0.3]{backend/img/chairs_2.pdf}
+	\begin{figure}
+		\centering
+		\includegraphics[scale=0.5]{backend/img/chairs_2.pdf}
+		\caption{Lehrstühl kreieren}
+		\label{fig:create_chair}
+	\end{figure}
+
     
     \begin{enumerate}
      \item[3.] Es muss ein Name vergeben werden. Namensgebung beliebig.
@@ -82,13 +117,22 @@
 
     \subsection{Kurse}
     
-    \includegraphics[scale=0.3]{backend/img/verwalten_kurse.pdf}
+    \begin{figure}
+    	\centering
+    	\includegraphics[scale=0.5]{backend/img/verwalten_kurse.pdf}
+    	\caption{Kurse verwalten}
+    	\label{fig:manage_course}
+    \end{figure}
+    
     %\caption{Verwalten in der Ansicht ''Kurs''}
     \begin{enumerate}
      \item Über den ersten Punkt der linken Navigation kommt der Nutzer zur Kursübersicht.
      \item In der Kursübersicht kann der Nutzer über \textbf{+ New Course} einen neuen Kurs anlegen. 
     \end{enumerate}
-    \includegraphics[scale=0.3]{backend/img/create_course_1.pdf}
+	\begin{figure}
+		\centering
+		\includegraphics[scale=0.5]{backend/img/create_course_1.pdf}
+	\end{figure}
     \begin{enumerate}
      \item[3.] Ein Kurs benötigt einen Kursnamen. Dieser Name kann zum Beispiel den Namen des Dozenten und evtl eine Zahl beinhalten. Zum Beispiel: \textit{Kurs Kaufmann 1}
      \item[4.] In dem Kurstitel sollte dann der eigtl Name des Kurses stehen. Beispielsweise \textit{Wie relevant ist die konfigurale Information für die Erkennung von Gesichtern?}
@@ -96,7 +140,10 @@
 	       Hier können rich-text-Elemente wie Tabellen, Bilder und Textbearbeitung dafür genutzt werden.
     \end{enumerate}
 
-    \includegraphics[scale=0.3]{backend/img/create_course_2.pdf}
+	\begin{figure}
+		\centering
+		\includegraphics[scale=0.5]{backend/img/create_course_2.pdf}
+	\end{figure}
     \begin{enumerate}
      \item[6.] Als gesonderten Bereich der Beschreibung gibt es die Literatur. Mithilfe einer Ungeordneten Liste kann hier Literatur eingetragen werden.
      \item[7.] Über Dozent kann dem Kurs ein verantwortlicher Dozent, bzw. Administrator zugewiesen werden.
@@ -115,7 +162,10 @@
   \section{Verteilung}
   \label{section:distribution}
   
-  \includegraphics[scale=0.3]{backend/img/distribution_1.pdf}
+  \begin{figure}
+  	\centering
+  	\includegraphics[scale=0.5]{backend/img/distribution_1.pdf}
+  \end{figure}
   
   \begin{enumerate}
    \item Um eine Verteilung berechnen zu lassen, wechselt der Nutzer in der oberen Hauptnavigation zu dem Punkt ''\textbf{Verteilung}''.
@@ -136,12 +186,18 @@
 	     Erläuterungen zu den Verteilungen und dem Verteilungsalgorithmus an sich, siehe Kapitel~\ref{chapter:algorithm}. 
   \end{enumerate}
 
-  \includegraphics[scale=0.3]{backend/img/distribution_3.pdf}
+  \begin{figure}
+  	\centering
+  	\includegraphics[scale=0.5]{backend/img/distribution_3.pdf}
+  \end{figure}
   \begin{enumerate}
    \item[7. und 8.] Neben linearen Gewichtsverteilungen hat der Nutzer auch die Möglichkeit exponentielle Gewichte zu verwenden
   \end{enumerate}
 
-  \includegraphics[scale=0.3]{backend/img/distribution_4.pdf}
+  \begin{figure}
+  	\centering
+  	\includegraphics[scale=0.5]{backend/img/distribution_4.pdf}
+  \end{figure}
   \begin{enumerate}
    \item Soll einem der Studenten einen anderem Kurs zugewiesen werden, kann dies durch den Button \textbf{+ Neue Benutzer-Kurs Zuordnung} erfolgen.
 	 Dann gelangt der Nutzer auf die Seite mit dem hier drunter aufgeführten Bild (Erstelle Benutzer-Kurs Zuordnung).
@@ -154,8 +210,10 @@
 	 Nur sind dann die entsprechenden Daten bereits in die Eingabefelder eingetragen. (Näheres dazu in dem Bild hier drunter.)
   \end{enumerate}
 
-  
-  \includegraphics[scale=0.3]{backend/img/distribution_5.pdf}
+  \begin{figure}
+  	\centering
+  	\includegraphics[scale=0.5]{backend/img/distribution_5.pdf}
+  \end{figure}
   \begin{enumerate}
    \item Hier kann durch ein Dropdown-Menü ein entsprechender Student ausgewählt werden.
    \item Hier kann auf die selbe Art und Weise ein anderer Kurs ausgewählt werden.
@@ -164,8 +222,10 @@
 
   \section{Benutzer}
   \label{section:users}
-  
-  \includegraphics[scale=0.3]{backend/img/users_1.pdf}
+  \begin{figure}
+  	\centering
+  	\includegraphics[scale=0.5]{backend/img/users_1.pdf}
+  \end{figure}
   \begin{enumerate}
    \item In der Hauptnavigation gelangt der Nutzer durch den Punkt \textbf{Benutzer} in diese Übersicht.
 	 Hier werden die registrierten Studenten aufgelistet.
@@ -177,7 +237,10 @@
   \end{enumerate}
 
   
-  \includegraphics[scale=0.3]{backend/img/neuer_benutzer.pdf}
+  \begin{figure}
+  	\centering
+  	\includegraphics[scale=0.5]{backend/img/neuer_benutzer.pdf}
+  \end{figure}
   \begin{enumerate}
    \item Hier kann ein Vorname eingegeben werden.
    \item Hier der Nachname.
@@ -190,7 +253,10 @@
   \end{enumerate}
 
   
-  \includegraphics[scale=0.3]{backend/img/users_3.pdf}
+  \begin{figure}
+  	\centering
+  	\includegraphics[scale=0.5]{backend/img/users_3.pdf}
+  \end{figure}
   \begin{enumerate}
    \item neue Angaben können hier über den Button \textbf{Update details} übernommen werden
    \item Durch die Klickfläche \textbf{Impersonate user} kann der hier ausgewählte Nutzer entfernt werden.
@@ -202,14 +268,17 @@
   \section{Einstellungen}
   \label{section:settings}
   
-  \includegraphics[scale=0.3]{backend/img/settings_1.pdf}
+  \begin{figure}
+  	\centering
+  	\includegraphics[scale=0.5]{backend/img/settings_1.pdf}
+  \end{figure}
   \begin{enumerate}
    \item Über den Punkt \textbf{Einstellungen} kann der Nutzer in diese Ansicht wechseln.
 	 Die zahlreichen Funktionen, die hier möglich sind, sind in der Regel für den operativen Normalbetrieb nicht anzupassen.
    \item Jedoch gelangt der Nutzer mithilfe des Punktes \textbf{Administratoren} unter \textbf{System} in der linken Vertikalnavigation in die hier aufgezeigte Ansicht.
    \item Dank des Buttons \textbf{+ Neuer Administrator} kann ein neuer angelegt werden. 
 	 Dies geschieht analog zu der Weise, wie auch ein neuer Student in dem Menü Benutzer erstellt wird.
-   \item[4. und 5.] Hier kann eine weitere Art von Nutzern eingestellt werden. Ist eigentlich nicht notwendig.
+   \item[4./5.] Hier kann eine weitere Art von Nutzern konfiguriert werden.
    \item[6.] Hier können die Einstellungen eines Nutzers angepasst werden. 
 	 Die Ansicht dafür ist ähnlich wie die, in der Studenten verändert werden können.
   \end{enumerate}
