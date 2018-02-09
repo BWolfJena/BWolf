@@ -73,7 +73,7 @@
             
 			Zuletzt wurde verifiziert, dass die Rechte der Dozenten und Administratoren den Anforderungen aus \ref{chapter:requirements} genügen.
 			
-		\subsection{Erstellen von Lehrstühlen, Modulen und Kurse}
+		\subsection{Erstellen von Lehrstühlen, Modulen und Kursen}
 			
 			Das Erstellen von Lehrstühlen, Modulen und Kurse erfolgt im Backend unter dem Menüpunkt \textit{Verwalten}.
             
@@ -103,8 +103,12 @@
 				\caption{Gleichverteilte Präferenzen mit 130 Studenten auf 15 Kursen mit maximal 10 Teilnehmern pro Kurs. Die Dunkelheit stellt die Höhe der Präferenz dar}
 				\label{fig:test_equal_distribution}
 			\end{figure}
-			Die gleichverteilte Präferenzenmatrix ist in Abbildung \ref{fig:test_equal_distribution} zu sehen.
-			
+        
+			In Abbildung \ref{fig:test_equal_distribution} sind die gleich verteilten Präferenzen zu sehen.
+			Das heißt, die Wahrscheinlichkeit, dass ein beliebiger Student einen beliebigen Kurs mit beliebiger Präferenz wählt, ist immer gleich.
+			Dennoch ist eine gewisse Streuung in der Ziehung der Präferenzen zu beobachten.        
+			Daher hat jeder Kurs leicht unterschiedlich viele Studenten pro Präferenz.
+   	
 			\begin{figure}
 				\centering
 				\begin{subfigure}{0.49\textwidth}
@@ -117,16 +121,15 @@
 				\label{fig:test_equal_distribution_histogram}
 			\end{figure}
 			
-			Die Verteilung ist in dem Präferenzenhistogramm in Abbildung \ref{fig:test_equal_distribution_histogram} dargestellt.\newline
+			Das Ergebnis des Verteilungsalgorithmus ist in Abbildung \ref{fig:test_equal_distribution_histogram} dargestellt.
+			Es ist zu sehen, dass die meisten Studenten ihrer Erstwahl, das heißt dem Kurs mit Präferenz 15, zugeteilt werden.
+			Nur sehr wenige Studenten werden in  ihre Zweitwahl verteilt.
 			
-			Wie man sieht, bekommen die meisten Studenten ihre Erstwahl, das heißt den Kurs mit Präferenz 15.
-			Nur sehr wenige Studenten bekommen ihre Zweitwahl, das heißt den Kurs mit Präferenz 14.\newline
-			
-			Der Grund hierfür ist, dass die Präferenzen auf die Kurse gleichverteilt werden.
-			Das heißt, die Wahrscheinlichkeit, dass ein beliebiger Student einen beliebigen Kurs mit beliebiger Präferenz wählt, ist immer gleich.
-			Nichtsdestotrotz ist eine gewisse Varianz in der Ziehung der Präferenzen zu beobachten.
-			Daher hat jeder Kurs unterschiedlich viele Studenten pro Präferenz.
-			Daher kann man davon ausgehen, dass es wenige Studenten geben muss, die nur ihre Zweitwahl kriegen können.\newline
+			Der Grund für diese derart gut Verteilung ist, dass die Präferenzen auf die Kurse gleich verteilt werden.
+            Wären die Präferenzlisten exakt gleich verteilt, dann könnte jeder Student dem Kurs mit Präferenz 15 zugeteilt werden.
+            Durch die oben erwähnte leichte Streuung, muss es allerdings Studenten geben, die nicht ihrer Erstwahl zugeordnet werden.
+            
+            Die Variante mit einem festen Minimum wurde nicht getestet, da es nicht möglich ist, ein höheres Minimum zu erreichen.
 		
 		\subsection{Normalverteilung}
 		\label{sec:testing:normaldistribution}
@@ -137,38 +140,44 @@
 				\caption{Normalverteilte Präferenzen mit 130 Studenten auf 15 Kursen mit maximal 10 Teilnehmern pro Kurs. Die Dunkelheit stellt die Höhe der Präferenz dar}
 				\label{fig:test_norm_distribution}
 			\end{figure}
-			Die normalverteilte Präferenzenmatrix ist in Abbildung \ref{fig:test_norm_distribution} zu sehen.
+        
+			Abbildung \ref{fig:test_norm_distribution} zeigt die normal verteilten Präferenzlisten.
+            Es ist zu sehen, dass manche Kurse deutlich häufiger it hohen Präferenzen angegeben wurden.
+            Basierend auf diesen Präferenzlisten, ist davon auszugehen, dass nicht alle Studenten ihrer Erst- oder Zweitwahl zugeordnet werden.
 			
-			\begin{figure}
+			\begin{figure}[ht]
 				\centering
-				\begin{subfigure}{0.3\textwidth}
+				\begin{subfigure}{0.49\textwidth}
 					\includegraphics[width=1.0\textwidth]{./testing/images/NormalDistPreferencesHistLin.jpg}
 				\end{subfigure}
-				\begin{subfigure}{0.30\textwidth}
+				\begin{subfigure}{0.49\textwidth}
 					\includegraphics[width=1.0\textwidth]{./testing/images/NormalDistPreferencesHistLinMin.jpg}
 				\end{subfigure}
-			\begin{subfigure}{0.3\textwidth}
+			\begin{subfigure}{0.49\textwidth}
 				\includegraphics[width=1.0\textwidth]{./testing/images/NormalDistPreferencesHistExpo.jpg}
 			\end{subfigure}
 				\caption{Gegenüberstellung der Präferenzenhistogramm für lineare Gewichtung, lineare Gewichtung mit Minimum und exponentielle Gewichtung}
 				\label{fig:test_norm_distribution_histogram}
 			\end{figure}
 		
-			Die Verteilung ist in dem Präferenzenhistogramm in Abbildung \ref{fig:test_equal_distribution_histogram} dargestellt.\newline
+			Das Ergebnis des Verteilungsalgorithmus ist in  Abbildung \ref{fig:test_equal_distribution_histogram} dargestellt.\newline
 			
-			Wie man sieht, bekommen in jeder der Verteilungen mehr als die Hälfte der Studenten ihre Erstwahl.
-			Um die 20 Studenten bekommen allerdings nur den Kurs mit einer Präferenz kleiner 11.\newline
+			Wie man sieht, kommen immer noch mehr als die Hälfte der Studenten in ihre Erstwahl.
+			Um die 20 Studenten werden allerdings nur einem Kurs mit einer Präferenz kleiner 11 zugeteilt.\newline
 			
 			Gut zu sehen ist, dass die Variante \glqq Lineare Gewichte ohne Minimum\grqq~sich von \glqq Lineare Gewichte mit Minimum\grqq~unterscheidet.
 			Die erste Variante hat die minimale Präferenz 6, doch durch das Erzwingen eines festen Minimums verbessert sich diese auf 7.
 			Nach den Anforderungen ist dies so wünschenswert.
-			Zuletzt ist in der Variante \glqq Exponentielle Gewichte ohne Minimum\grqq~zu sehen, dass weniger Studenten ihre Erstwahl erhalten, dafür aber mehr Studenten die Präferenz 10 oder höher bekommen.\newline
+			Zuletzt ist in der Variante \glqq Exponentielle Gewichte ohne Minimum\grqq~zu sehen, dass weniger Studenten ihre Erstwahl erhalten, dafür aber mehr Studenten die Präferenz 10 oder höher bekommen.
+            Ob dieser Effekt ebenfalls wünschenswert ist, oder aber die Lösung der Variante \glqq Lineare Gewichte mit Minimum\grqq~ vorzuziehen ist, kann hier nicht beantwortet werden. 
 			
 		\subsection{Realdaten}
 		
-			Letztlich stellte uns der Lehrstuhl, der das Empiriepraktikum leitet, die Daten aus dem Wintersemester 2017/2018 zur Verfügung, um den neuen Algorithmus mit dem alten zu vergleichen.\newline
+			Zuletzt wurde der Algorithmus mit realen Daten aus dem Wintersemester 2017/2018 getestet.
+            Dadurch ist ein direkter Vergleich mit dem alten Verteilungsalgorithmus möglich.
+            Der Datensatz umfasst die Präferenzlisten von 92 Studenten, die auf 15 Kurse verteilt werden sollen.
 			
-			\begin{figure}
+			\begin{table}[h]
 				\centering
 				\begin{tabular}{l|l|l}
 					& Alter Algorithmus & Neuer Algorithmus \\
@@ -179,52 +188,27 @@
 				\end{tabular}
 				\caption{Vergleich des alten Algorithmus mit dem neuen Algorithmus}
 				\label{tab:old_versus_new_algorithm}
-			\end{figure}
+			\end{table}
 		
-			Wie in Abbildung \ref{tab:old_versus_new_algorithm} zu sehen ist, verbessert sich der Mittelwert, die Varianz und minimale Präferenz im Gegensatz zur vorigen Variante.\newline
-			
-			Dadurch zeigt sich, dass der neue Algorithmus zu einem besseren Ergebnis führt.
-			In Folge dessen ist der neue Verteilungsalgorithmus besser als der alte Algorithmus und erfüllt somit das Akzeptanzkriterium.
+            In Tabelle \ref{tab:old_versus_new_algorithm} sind die Ergebnisse des alten und des neuen Algorithmus gegenübergestellt.
+            Für diesen Vergleich wurden lineare Gewichte mit einem festen Minimum von 12 verwendet.
+            Es ist zu sehen, dass sich der Mittelwert nur leicht erhöht.
+            Die Varianz hingegen sinkt um $ 1.05 $, sinkt also deutlich.
+            Die minimale Präferenz steigt im Vergleich zur vorigen Variante des Verteilungsalgorithmus um $ 5 $ an.			
+			Daraus lässt sich ableiten, dass der neue Algorithmus zu einem besseren Ergebnis führt.
 			
 		\subsection{Ergebnisse des Algorithmus}
 			
-			Wie in dem Abschnitt \ref{sec:testing:normaldistribution} bereits erklärt, führen die Varianten des Algorithmus teilweise zu unterschiedlichen Ergebnissen.
-			Wie in den Anforderungen beschrieben, soll der Administrator die Wahl haben, welche dieser Verteilungen er nutzen möchte.
-			Daher wurden mehrmals Verteilungen generiert und sicher gestellt, dass die verschiedenen Verteilungen auch tatsächlich so eingetragen werden.
-			Da dies sehr aufwendig ist, wurde nur verifiziert, dass die minimale Präferenz auch so im Backend vorzufinden ist.\newline
+			Wie in Abschnitt \ref{sec:testing:normaldistribution} bereits erläutert, führen die verschiedenen Varianten des Algorithmus zum Teil zu unterschiedlichen Ergebnissen.
+			Nach den Anforderungen aus Kapitel \ref{chapter:requirements}, soll der Administrator die Wahl haben, welches Verteilungsergebnis genutzt werden soll.
+            Um die korrekte Funktionalität dieser Ergebnisauswahl zu testen, wurden mehrmals Verteilungen generiert und im Anschluss sicher gestellt, dass die entsprechenden Verteilungen ins System übernommen wurden.
+            Dies wurde realisiert, indem die minimale Präferenz der eingetragenen Nutzer mit dem theoretischem Ergebnis verglichen wurde.\\
 
-			Gleichzeitig wurde verifiziert, dass ein Bestätigen der Verteilung eine E-Mail-Benachrichtigung erfolgt.
-			Dafür wurde ein Mailserver genutzt, der alle E-Mails erhält.
-			Nach den Anforderungen sollten hierbei drei Typen von Mails verschickt werden.
-			Wer welche Mail erhält, hängt von der Rolle des Nutzers ab.
-			Studenten erhalten eine E-Mail mit Informationen, welchen Kurs sie zugeteilt bekommen haben.
+			Gleichzeitig wurde verifiziert, dass ein Bestätigen der Verteilung die entsprechenden E-Mail-Benachrichtigung nach sich zieht.
+			Dafür wurde ein Mailserver genutzt, der die E-Mails aller Benutzer erhält.
+			Nach den Anforderungen as Kapitel \ref{chapter:requirements} sollten hierbei drei Typen von Mails verschickt werden.
+			Studenten erhalten eine E-Mail mit Informationen, welchen Kurs sie zugeteilt wurden.
 			Dozenten erhalten eine E-Mail mit Informationen, welche Studenten in ihren Kursen sind.
-			Administratoren erhalten eine E-Mail mit Informationen, welche Studenten welchen Kurs bekommen haben.\newline
-			Für die Verifikation wurde jeweils eine E-Mail der Rolle gewählt und die Richtigkeit der Information überprüft.\newline
-			
-			
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+			Administratoren erhalten eine E-Mail mit Informationen, welche Studenten welchen Kurs bekommen haben.
+            
+			Für die Verifikation wurde jeweils eine E-Mail der Rolle gewählt und die Richtigkeit der Informationen überprüft.	
