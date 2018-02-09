@@ -11,39 +11,39 @@
     Darauffolgend wird das Design für die webbasierte Plattform erläutert.     
     
     \section{Datenmodell}
-        \begin{figure}
-            \centering
-            \includegraphics[width=1.0\textwidth]{./design/images/data-model.png}\par\vspace{1cm}
+        \begin{figure}[ht]
+            \makebox[\textwidth]{\includegraphics[width=1.2\textwidth]{./design/images/data-model.png}}
             \caption{Entwurf des Datenmodells. Farbcode für Spalten der Tabellen: Gelb Primärschlüssel, Rot Fremdschlüssel, Blau gewöhnliche Variable, Weiß \textsf{nullable-}Variable}
             \label{fig:datamodel}
         \end{figure}
     
         Der Entwurf für das Datenmodell ist in Abbildung \ref{fig:datamodel} zu sehen.
-        Es besteht aus sieben Tabellen.
-        Die Tabelle \textit{bwolfjena\_core\_modules} beinhaltet die verschiedenen Empiriepraktika.
-        Der Name Module für die Tabelle wurde gewählt, da das System bei Bedarf auch auf andere ausgewählte Module als das Empiriepraktikum erweitert werden kann.
+        Es besteht aus sieben Tabellen. Die von uns modellierten Tabellen entsprechend der Vorgaben von OctoberCMS für Plugins benannt: \textsf{author\_plugin\_table}. In unserem Fall wird dies auf \textsf{bwolfjena\_core\_table} abgebildet. Die beiden Tabellen \textsf{backend\_users} und \textsf{users} werden vom CMS bereitgestellt. 
         
-        In der Tabelle \textit{bwolfjena\_core\_courses} sind die verschiedenen Kurse gespeichert.
-        Ein Kurs gehört immer zu einem bestimmten Modul beziehungsweise einem Empiriepraktikum.
-        Um das abzubilden, ist für jeden Kurs mittels eines Fremdschlüssels das Empiriepraktikum, zu dem er gehört, gespeichert.
+        Die Tabelle \textsf{bwolfjena\_core\_modules} beinhaltet die verschiedenen Empiriepraktika.
+        Der Name Module für die Tabelle wurde gewählt, damit das System bei Bedarf auch auf weitere Module ausgeweitet werden kann.
         
-        Ein Kurs wird immer von einem Lehrstuhl angeboten, die in der Tabelle \textit{bwolfjena\_core\_chairs} abgelegt sind.
-        Auch auf diese Tabelle existiert wieder ein entsprechender Fremdschlüssel in \textit{bwolfjena\_core\_courses}. 
+        In der Tabelle \textsf{bwolfjena\_core\_courses} sind die verschiedenen Kurse gespeichert.
+        Ein Kurs gehört immer zu einem bestimmten Modul beziehungsweise einem Empiriepraktikum (z. Bsp. Emperiepraktikum 17/18).
+	    Daher wird für jeden Kurs mittels eines Fremdschlüssels das Modul, zu dem er gehört, gespeichert.
         
-        Alle angemeldeten Studenten werden in der Tabelle \textit{users} gespeichert.
+        Ein Kurs wird immer von einem Lehrstuhl angeboten, die in der Tabelle \textsf{bwolfjena\_core\_chairs} abgelegt sind.
+        Auch auf diese Tabelle existiert wieder ein entsprechender Fremdschlüssel in \textsf{bwolfjena\_core\_courses}. 
+        
+        Alle angemeldeten Studenten werden in der Tabelle \textsf{users} gespeichert.
         Jeder der Studenten hat eine Präferenzliste.
-        Die Einträge der Präferenzliste für jeden Studenten und jeden Kurs werden in Tabelle \textit{bwolfjena\_core\_priorities} gespeichert.
-        Dementsprechend beinhaltet \textit{bwolfjena\_core\_priorities} Fremdschlüssel von \textit{users} und \textit{bwolfjena\_core\_courses}.
+        Die Einträge der Präferenzliste für jeden Studenten und Kurs werden in \textsf{bwolfjena\_core\_user\_course\_priorities} gespeichert.
+        Dementsprechend beinhaltet sie Fremdschlüssel auf \textsf{users} und \textsf{bwolfjena\_core\_courses}.
         
-        In der Tabelle \textit{bwolfjena\_core\_users} ist abgelegt, welcher Student welchem Kurs zugeteilt wurde.
-        Aus diesem Grund beinhaltet \textit{bwolfjena\_core\_users} Fremdschlüssel auf \textit{bwolfjena\_core\_courses} und \textit{users}. 
+        In der Tabelle \textsf{bwolfjena\_core\_courses\_users} ist abgelegt, welcher Student welchem Kurs zugeteilt wurde.
+        Aus diesem Grund beinhaltet sie Fremdschlüssel auf \textsf{bwolfjena\_core\_courses} und \textsf{users}. 
         
-        Die letzte Tabelle \textit{backend\_users} beinhaltet die Backendbenutzer.
+        Die letzte Tabelle \textsf{backend\_users} beinhaltet die Backendbenutzer.
         Damit sind die Dozenten und Administratoren gemeint.
-        In \textit{bwolfjena\_core\_courses} ist ein Fremdschlüssel für die Backendbenutzer gespeichert, um den Dozenten anzugeben, der den Kurs leitet.
-        Auch die Tabelle \textit{bwolfjena\_core\_chairs} hat einen Fremdschlüssel zu der Tabelle \textit{backend\_users}, um den Lehrstuhlinhaber anzugeben.
+        In \textsf{bwolfjena\_core\_courses} ist ein Fremdschlüssel für die Backendbenutzer gespeichert, um den Dozenten anzugeben, der den Kurs leitet.
+        Auch die Tabelle \textsf{bwolfjena\_core\_chairs} hat einen Fremdschlüssel zu der Tabelle \textsf{backend\_users}, um den Lehrstuhlinhaber anzugeben.
         
-        Neben den beschriebenen Fremdschlüsseln existieren für die Einträge in jeder Tabelle IDs als Primärschlüssel.
+        Neben den beschriebenen Fremdschlüsseln existieren für die Einträge in jeder Tabelle die Spalte \textsf{id} als Primärschlüssel und die Zeitstempel \textsf{created\_at} und \textsf{updated\_at} zur Protokollierung.
         Die weiteren Spalten der Tabellen sind entsprechend den Anforderung aus Kapitel \ref{chapter:requirements} gewählt.
         
         
@@ -51,9 +51,9 @@
     
     \section{Design}
         Für den Desing-Entwurf der Seite wurden Mock-Ups erstellt, die den groben Aufbau der Website mit den entsprechenden Funktionen zeigen. 
-        Im folgenden werden diese Mock-Ups für das sogenannte Frontend, also aus Sicht der Studenten, und für das Backend, die Sicht der Dozenten beziehungsweise der Administratoren, vorgestellt.
+        Im folgenden werden diese Mock-Ups für das  Frontend, also aus Sicht der Studenten, und für das Backend, die Sicht der Dozenten und Administratoren, vorgestellt.
         Dabei gilt der in Tabelle \ref{tab:Farbcode} angegebene Farbcode für die verschiedenen Elemente der Mock-Ups.
-        \begin{table}
+        \begin{table}[h]
             \centering
             \begin{tabular}{l c| l}
                 \cellcolor{red} & & Eingabefeld\\
@@ -71,7 +71,7 @@
             Jedoch sollen die verschiedenen Kurse auch ohne eine Anmeldung einsehbar sein.
             \begin{figure}[t]
             	\centering
-            	\includegraphics[width=0.6\textwidth]{./design/images/MockUpsFrontend/frontendLogin.png}
+            	\includegraphics[width=\textwidth]{./design/images/MockUpsFrontend/frontendLogin.png}
             	\caption{Entwurf für die Login-Oberfläche}
             	\label{fig:mockupLoginFrontend}
             \end{figure}   
@@ -88,13 +88,13 @@
             Die Registrierungsseite gleicht strukturell der Login-Oberfläche.
             Sobald ein Benutzer sich erfolgreich angemeldet hat, soll der Schalter zum Anmelden in der Kopfzeile gegen einen Abmelden-Knopf ausgetauscht werden.
 %            Auch eine Anzeige, ab wann das Ende der Einschreibungs- und Tauschphase erreicht ist.
-			Auf allen weiteren Seiten des Frontends soll die Kopfzeile die gleichen Funktionen und das gleiche Aussehen haben, der Registieren-Knopf entfällt jedoch, sobald die Anmeldung erfolgt ist.
+			Auf allen weiteren Seiten des Frontends soll die Kopfzeile die gleichen Funktionen und das gleiche Aussehen haben. Sobald man sich angemeldet hat, entfällt jedoch der Registieren-Knopf und Anmelden wird durch Abmelden ersetzt.
             Die Fußzeile soll weitere allgemeine Informationen bereitstellen, sofern diese von Nöten sein sollten, aber vor allem als optischer Abschluss der Seite dienen.
-            Auch sie soll auf alle folgenden Seiten übernommen werden.
+            Auch sie wird auf alle folgenden Seiten übernommen.
 			
 			\begin{figure}[t]
 				\centering
-				\includegraphics[width=0.6\textwidth]{./design/images/MockUpsFrontend/frontendCourses.png}
+				\includegraphics[width=\textwidth]{./design/images/MockUpsFrontend/frontendCourses.png}
 				\caption{Entwurf für die Kursübersicht}
 				\label{fig:mockupCoursesFrontend}
 			\end{figure}
@@ -106,7 +106,7 @@
             
             \begin{figure}[t]
             	\centering
-            	\includegraphics[width=0.6\textwidth]{./design/images/MockUpsFrontend/frontendPreferences.png}
+            	\includegraphics[width=\textwidth]{./design/images/MockUpsFrontend/frontendPreferences.png}
             	\caption{Entwurf für die Einschreibungs-Oberfläche}
             	\label{fig:mockupPreferencesFrontend}
             \end{figure}
@@ -127,7 +127,7 @@
             
             \begin{figure}[t]
             	\centering
-            	\includegraphics[width=0.6\textwidth]{./design/images/MockUpsFrontend/frontendSwap2.png}
+            	\includegraphics[width=\textwidth]{./design/images/MockUpsFrontend/frontendSwap2.png}
             	\caption{Entwurf für die Tauschanfrage}
             	\label{fig:mockupResultsSwap2}
             \end{figure}
@@ -149,7 +149,7 @@
         	
         	\begin{figure}[t]
         		\centering
-        		\includegraphics[width=0.6\textwidth]{./design/images/MockUpsBackend/backendManageCourses.png}
+        		\includegraphics[width=\textwidth]{./design/images/MockUpsBackend/backendManageCourses.png}
         		\caption{Entwurf für das Verwalten der Kurse}
         		\label{fig:mockupManageCourses}
         	\end{figure}
@@ -162,7 +162,7 @@
         	
             \begin{figure}[t]
                 \centering
-                \includegraphics[width=0.6\textwidth]{./design/images/MockUpsBackend/backendEdit.png}
+                \includegraphics[width=\textwidth]{./design/images/MockUpsBackend/backendEdit.png}
                 \caption{Entwurf für das editieren eines Kurses}
                 \label{fig:mockupEdit}
             \end{figure}
@@ -178,7 +178,7 @@
             
             \begin{figure}[t]
                 \centering
-                \includegraphics[width=0.6\textwidth]{./design/images/MockUpsBackend/backendDistribution.png}
+                \includegraphics[width=\textwidth]{./design/images/MockUpsBackend/backendDistribution.png}
                 \caption{Entwurf für das Anzeigen der Verteilungsvorschläge}
                 \label{fig:mockupDistribution}
             \end{figure}
@@ -189,7 +189,7 @@
             Durch einen Klick auf den entsprechende Verteilungsvorschlag, soll dieser als Ergebnis übernommen werden.\\
         	
         	Die Ansicht der Dozenten unterscheidet sich lediglich im Funktionsumfang.
-        	So sehen die Dozenten nur den Reiter \textit{Verwalten} in der Kopfzeile und in der linken Seitenleiste nur die Option zum verwalten der Kurse.
+        	So sehen die Dozenten nur den Reiter \textit{Verwalten} in der Kopfzeile und in der linken Seitenleiste nur die Option zum Verwalten der Kurse.
         	Die Tabelle zeigt jetzt nur die Kurse, die der entsprechende Dozent selbst angelegt hat.  
         	
         	
