@@ -11,7 +11,7 @@
         wurde ein Student $ i $ dem Kurs $ j $ zugeteilt, dann ist $ x_{ij} = 1 $, wenn nicht, dann gilt $ x_{ij} = 0 $. 
         Diese $ x_{ij} $ sind die Variablen der Zielfunktion.
         Das bedeutet, es wird nach einer Belegung der Einträge $ x_{ij} $ der Matrix $ X $ gesucht, so dass in jeder Zeile der Matrix immer genau ein Eintrag auf $ 1 $ gesetzt ist.
-        Das ist gleich Bedeutend mit der Aussage, dass jeder Student genau einem Kurs zugeteilt wurde.
+        Das ist gleichbedeutend mit der Aussage, dass jeder Student genau einem Kurs zugeteilt wurde.
         Daraus ergibt sich die Zielfunktion zu
             $$ \max \sum_{i=1}^{n} \sum_{j=1}^{m} c(i,j)x_{ij}  ~~~,$$
         dabei bezeichnet $ c(i,j) $ eine Gewichtsfunktion.
@@ -29,16 +29,16 @@
         
     \section{Erweiterung der Zielfunktion und Wahl der Parameter}
         Die Parameter der Zielfunktion können frei gewählt werden.
-        In diesem Abschnitt sollen verschiedene Varianten dargestellt werden, wie die Gewichte gewählt bzw. wie die Zielfunktion weiter angepasst und erweitert werden kann.
+        In diesem Abschnitt sollen verschiedene Varianten dargestellt werden, wie die Gewichte gewählt werden können bzw. wie die Zielfunktion weiter angepasst und erweitert werden kann.
         
-        \subsection{Naheliegende Wahl der Parameter}
+        \subsection{Lineare Gewichte}
             Die nahe liegende Wahl der Gewichte ist, die Präferenzliste der einzelnen Studenten für die Kurse zu verwenden.
             Da versucht wird, die $ x_{ij} $ so zu wählen, dass die Summe maximal wird, wird so eine Zuordnung eines Studenten zu einem Kurs, für den er eine höhere Präferenz angegeben hat, gegenüber einem mit einer niedrigen Präferenz bevorzugt.
             Der sogenannte \textit{Score} der Funktion, also das Ergebnis der Summe, wird somit höher, je mehr Studenten in von ihnen gewünschte Kurse verteilt werden.
             
         \subsection{Exponentielle Gewichte}
-            Eine zweite Variante ist die Gewichte nicht nach der Präferenzliste, also linear und in gleichen Abständen, zu wählen, sondern exponentiell.
-            Dadurch wirkt sich das Zuteilen eines Studenten auf einen Kurs, dem er eine hohe Präferenz gegeben hat, deutlich stärker auf den Score aus, als in der vorherigen Variante.
+            Eine zweite Variante ist, die Gewichte nicht nach der Präferenzliste, also linear und in gleichen Abständen, zu wählen, sondern exponentiell.
+            Dadurch wirkt sich das Zuteilen eines Studenten auf einen Kurs, dem er eine hohe Präferenz gegeben hat, deutlich stärker auf den \textit{Score} aus, als in der vorherigen Variante.
             Oder andersherum: das Zuteilen zu einem Kurs mit niedriger Präferenz wird stärker mit einem niedrigen Score bestraft.\\
             
             In Abbildung \ref{fig:weights} sind die beiden verschiedenen Gewichtungen gegenübergestellt.
@@ -59,7 +59,7 @@
         
         \subsection{Festes Minimum}
             Die Gewichte können bei dieser Erweiterung der Zielfunktion weiterhin frei gewählt werden. 
-            So zum Beispiel sind die beiden Ansätze aus dem vorherigen Abschnitt denkbar.
+            So sind zum Beispiel die beiden Ansätze aus dem vorherigen Abschnitt denkbar.
             Allerdings wird hier zusätzlich ein festes Minimum für die kleinste noch zulässige Präferenz angegeben.
             Das bedeutet, dass kein Student einem Kurs zugeteilt wird, dem er eine geringere Präferenz als das Minimum gegeben hat.
             Dies wird umgesetzt, indem die zweite Nebenbedingungen aufgeteilt wird.
@@ -80,8 +80,8 @@
                 $$ \max \sum_{i=1}^{n} \sum_{j=1}^{m} c(i,j)x_{ij} 
                                 ~-~ \frac{\beta}{n} \sum_{i=1}^{n}
                                     \left[\left(\sum_{j=1}^{m} c(i,j)x_{ij}\right) - \frac{1}{n} \sum_{i=1}^{n} \sum_{j=1}^{m} c(i,j)x_{ij}\right]^2 ~~~,$$
-            dabei bezeichnet der hintere Term die empirische Varianz, $ \beta $ ist ein weiteres Gewicht, um den Einfluss der Varianz zu steuern.
-            Mithilfe dieser Zielfunktion wird nun nicht nur versucht jeden Studenten in einen für ihn möglichst guten Kurs zuzuteilen, sondern auch die Varianz minimiert.
+            dabei bezeichnet der hintere Term die empirische Varianz. $ \beta $ ist ein weiteres Gewicht, um den Einfluss der Varianz zu steuern.
+            Mithilfe dieser Zielfunktion wird nun nicht nur versucht jeden Studenten in einen für ihn möglichst guten Kurs zuzuteilen, sondern auch die Varianz zu minimieren.
             Damit werden nach Möglichkeit alle Studenten in einen ähnlich von ihnen präferierten Kurs verteilt, oder mit anderen Worten, es werden Ausreißer verhindert.\\
             
             Nachteil bei dieser Variante ist jedoch, dass die Zielfunktion nun nicht mehr linear, sondern quadratisch ist.
