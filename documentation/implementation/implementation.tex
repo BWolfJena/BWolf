@@ -7,16 +7,19 @@
     
     \section{Verwendete Software}
 
-        Für die lokale Entwicklung wurde als Basis Laradock\footnote{\href{http://laradock.io/}{http://laradock.io/}} verwendet und auf die benötigte Software angepasst.
-        Diese modifizierte Laradock Variante wurde als git submodule in das Hauptrepository BWolf eingebunden.
-        Als Webserver kommt lokal nginx\footnote{\href{https://nginx.org/en/}{https://nginx.org/en/}} zum Einsatz, wobei die PHP\footnote{\href{http://php.net/}{http://php.net/}} 7.1 Skripte von php-fpm\footnote{\href{https://php-fpm.org/}{https://php-fpm.org/}} ausgeführt werden.
-        In der Produktionsumgebung wird Apache verwendet, weitere Details sind uns unbekannt.
-        Für die Datenbank kommt in allen Umgebungen MySQL\footnote{\href{https://www.mysql.com/de/}{https://www.mysql.com/de/}} zum Einsatz.
-        Um auch lokal E-Mails verschicken und testen zu können, wird MailDev als SMTP Server verwendet.
-        Für den Verteilungsalgorithmus wird Node.js 8\footnote{\href{https://nodejs.org/en/}{https://nodejs.org/en/}} eingesetzt.
+        Für die lokale Entwicklung wurde als Basis \textit{Laradock}\footnote{\href{http://laradock.io/}{http://laradock.io/}} verwendet und auf die benötigte Software angepasst.
+        Diese modifizierte \textit{Laradock} Variante wurde als \textit{git submodule} in das Hauptrepository \textit{BWolf} eingebunden.
+        Als Webserver kommt lokal \textit{nginx}\footnote{\href{https://nginx.org/en/}{https://nginx.org/en/}} zum Einsatz, wobei die \textit{PHP}\footnote{\href{http://php.net/}{http://php.net/}} \textit{7.1} Skripte von \textit{php-fpm}\footnote{\href{https://php-fpm.org/}{https://php-fpm.org/}} ausgeführt werden.
+        In der Produktionsumgebung wird \textit{Apache} verwendet, weitere Details sind nicht bekannt.
+        Für die Datenbank kommt in allen Umgebungen \textit{MySQL}\footnote{\href{https://www.mysql.com/de/}{https://www.mysql.com/de/}} zum Einsatz.
+        Um auch lokal E-Mails verschicken und testen zu können, wird \textit{MailDev} als \textit{SMTP} Server verwendet.
+        Für den Verteilungsalgorithmus wird \textit{Node.js 8}\footnote{\href{https://nodejs.org/en/}{https://nodejs.org/en/}} eingesetzt.
         
-        Als Entwicklungsframework für PHP wird OctoberCMS\footnote{\href{https://octobercms.com/}{https://octobercms.com/}} (basierend auf Laravel\footnote{\href{https://laravel.com/}{https://laravel.com/}} 5.5.) verwendet. Ein Großteil der Funktionalitäten, wie die Front- und Backendbenutzerverwaltung und die Inhaltsverwaltung werden dabei von OctoberCMS bereitgestellt. Die Verwaltungsansichten werden basierend auf yaml files generiert. Im Frontend kommt Semantic UI\footnote{\href{https://semantic-ui.com/}{https://semantic-ui.com/}} 2.2 zum Einsatz, wodurch die Webseite ohne größere Anpassungen auf Mobilgeräten komfortabel benutzt werden kann. Schließlich
-        dient das Express\footnote{\href{http://expressjs.com/de/}{http://expressjs.com/de/}} Framework als Basis für den Algorithmus Mini-HTTP Server (mehr dazu in 4.4).                
+        Als Entwicklungsframework für \textit{PHP} wird \textit{October CMS}\footnote{\href{https://octobercms.com/}{https://octobercms.com/}} (basierend auf \textit{Laravel}\footnote{\href{https://laravel.com/}{https://laravel.com/}} 5.5.) verwendet. 
+        Ein Großteil der Funktionalitäten, wie die Front- und Backendbenutzerverwaltung und die Inhaltsverwaltung werden dabei von \textit{October CMS} bereitgestellt. 
+        Die Verwaltungsansichten werden basierend auf \textit{yaml} Dateien generiert. 
+        Im Frontend kommt \textit{Semantic UI}\footnote{\href{https://semantic-ui.com/}{https://semantic-ui.com/}} \textit{2.2} zum Einsatz, wodurch die Webseite ohne größere Anpassungen auf Mobilgeräten komfortabel benutzt werden kann. 
+        Schließlich dient das \textit{Express}\footnote{\href{http://expressjs.com/de/}{http://expressjs.com/de/}} \textit{Framework} als Basis für den Algorithmus Mini-HTTP Server (weitere Details in Kapitel \ref{chapter:algorithm}).                
     \section{Frontend}
         Die Entwürfe für das Frontend wurden ohne große Änderungen umgesetzt.
         
@@ -146,8 +149,19 @@
     
         Auch der Entwurf der Verteilungsansicht wurde umgesetzt.
         In Abbildung \ref{fig:comparisonDistribution} sind wieder Mockup und Resultat gegenübergestellt.
-        Die genaue Umsetzung des Verteilungsalgorithmus wird im nächsten Kapitel näher erläutert.
 		\pagebreak
 
-    \section{Alogrithmus}
-	Da lange nicht klar war, ob die für den Algorithmus verwendete Software lp\_solve\footnote{\href{http://lpsolve.sourceforge.net/5.5/index.htm}{http://lpsolve.sourceforge.net/5.5/index.htm}} auf dem Server laufen würde, entschieden wir uns dafür den Algorithmus auf einem externen Server auszuführen. Dazu wurde ein kleiner HTTP-Service in Node.js implementiert, der eine Liste mit Kursteilnehmerbegrenzungen, die Präferenzlisten (nur IDs), sowie die Parameter für den Algorithmus (minPref, weights) entgegennimmt und mit der Lösung des in Kapitel 4 beschriebenen Optimierungsproblems antwortet.	Da es kein Budget für das Projekt gab, wird der Server dauerhaft kostenlos bei Heroku \footnote{\href{https://www.heroku.com/home}{https://www.heroku.com/home}} gehostet. Nach 30 Minuten Inaktivität geht er dabei in den Ruhezustand wodurch die nächste Anfrage ein paar Sekunden langsamer beantwortet wird. Falls Heroku diesen Service einstellen sollte, kann der Algorithmus auch lokal ausgeführt werden. Eine Anleitung wie die lokale Umgebung installiert wird befindet sich in der Anwenderdokumentation. Die Daten müssen dann mit Hilfe eines MySQL Clients vom Server der Universität gedumpt und lokal importiert werden. Zum Exportieren und Importieren von Daten befindet sich ebenfalls ein Abschnitt in der Anwenderdokumentation. 
+    \section{Algorithmus}
+	Da lange unbekannt war, ob die für den Algorithmus verwendete Software \textit{lp\_solve}\footnote{\href{http://lpsolve.sourceforge.net/5.5/index.htm}{http://lpsolve.sourceforge.net/5.5/index.htm}} auf dem Server laufen würde, wird der Algorithmus auf einem externen Server ausgeführt. 
+    Dazu wurde ein HTTP-Service in \textit{Node.js} implementiert, der eine Liste mit Kursteilnehmerbegrenzungen, die Präferenzlisten (nur IDs), sowie die Parameter für den Algorithmus (minPref, weights) entgegennimmt und mit der Lösung des in Kapitel \ref{chapter:algorithm} beschriebenen Optimierungsproblems antwortet.	
+    Da es kein Budget für das Projekt gab, wird der Server dauerhaft kostenlos bei \textit{Heroku} \footnote{\href{https://www.heroku.com/home}{https://www.heroku.com/home}} gehostet. 
+    Nach 30 Minuten Inaktivität geht er dabei in den Ruhezustand wodurch die nächste Anfrage ein paar Sekunden langsamer beantwortet wird. 
+    Falls \textit{Heroku} diesen Service einstellen sollte, kann der Algorithmus auch lokal ausgeführt werden. 
+    Eine Anleitung wie die lokale Umgebung installiert wird befindet sich in der Anwenderdokumentation. 
+    Die Daten müssen dann mit Hilfe eines \textit{MySQL} Clients vom Server der Universität exportiert und lokal importiert werden. 
+    Zum Exportieren und Importieren von Daten befindet sich ebenfalls ein Abschnitt in der Anwenderdokumentation. 
+    
+    
+    
+    
+    
