@@ -1,0 +1,44 @@
+\BOOKMARK [0][-]{chapter.1}{Einleitung}{}% 1
+\BOOKMARK [1][-]{section.1.1}{Motivation}{chapter.1}% 2
+\BOOKMARK [1][-]{section.1.2}{Aufgabenstellung}{chapter.1}% 3
+\BOOKMARK [1][-]{section.1.3}{Aufbau der Arbeit}{chapter.1}% 4
+\BOOKMARK [0][-]{chapter.2}{Anforderungsanalyse}{}% 5
+\BOOKMARK [1][-]{section.2.1}{Anforderungen an das System}{chapter.2}% 6
+\BOOKMARK [2][-]{subsection.2.1.1}{Ablauf eines Praktikumsmoduls}{section.2.1}% 7
+\BOOKMARK [2][-]{subsection.2.1.2}{Verschiedene Sichten im \334berblick}{section.2.1}% 8
+\BOOKMARK [1][-]{section.2.2}{Der Verteilungsalgorithmus}{chapter.2}% 9
+\BOOKMARK [1][-]{section.2.3}{Technische Details}{chapter.2}% 10
+\BOOKMARK [0][-]{chapter.3}{Entwurf}{}% 11
+\BOOKMARK [1][-]{section.3.1}{Datenmodell}{chapter.3}% 12
+\BOOKMARK [1][-]{section.3.2}{Design}{chapter.3}% 13
+\BOOKMARK [2][-]{subsection.3.2.1}{Frontend}{section.3.2}% 14
+\BOOKMARK [2][-]{subsection.3.2.2}{Backend}{section.3.2}% 15
+\BOOKMARK [0][-]{chapter.4}{Umsetzung}{}% 16
+\BOOKMARK [1][-]{section.4.1}{Verwendete Software}{chapter.4}% 17
+\BOOKMARK [1][-]{section.4.2}{Frontend}{chapter.4}% 18
+\BOOKMARK [1][-]{section.4.3}{Backend}{chapter.4}% 19
+\BOOKMARK [0][-]{chapter.5}{Verteilungsalgorithmus}{}% 20
+\BOOKMARK [1][-]{section.5.1}{Aufstellen Zielfunktion}{chapter.5}% 21
+\BOOKMARK [1][-]{section.5.2}{Erweiterung der Zielfunktion und Wahl der Parameter}{chapter.5}% 22
+\BOOKMARK [2][-]{subsection.5.2.1}{Naheliegende Wahl der Parameter}{section.5.2}% 23
+\BOOKMARK [2][-]{subsection.5.2.2}{Exponentielle Gewichte}{section.5.2}% 24
+\BOOKMARK [2][-]{subsection.5.2.3}{Festes Minimum}{section.5.2}% 25
+\BOOKMARK [2][-]{subsection.5.2.4}{Betrachtung der Varianz}{section.5.2}% 26
+\BOOKMARK [1][-]{section.5.3}{Implementierung und Einbindung ins System}{chapter.5}% 27
+\BOOKMARK [0][-]{chapter.6}{Test des Systems}{}% 28
+\BOOKMARK [1][-]{section.6.1}{Frontend}{chapter.6}% 29
+\BOOKMARK [2][-]{subsection.6.1.1}{Homepage}{section.6.1}% 30
+\BOOKMARK [2][-]{subsection.6.1.2}{Registrierung}{section.6.1}% 31
+\BOOKMARK [2][-]{subsection.6.1.3}{Login}{section.6.1}% 32
+\BOOKMARK [2][-]{subsection.6.1.4}{Kurs\374bersicht}{section.6.1}% 33
+\BOOKMARK [2][-]{subsection.6.1.5}{Meine Pr\344ferenzliste}{section.6.1}% 34
+\BOOKMARK [2][-]{subsection.6.1.6}{Ergebnis sehen}{section.6.1}% 35
+\BOOKMARK [1][-]{section.6.2}{Backend}{chapter.6}% 36
+\BOOKMARK [2][-]{subsection.6.2.1}{Anlegen neuer Dozenten und Administratoren}{section.6.2}% 37
+\BOOKMARK [2][-]{subsection.6.2.2}{Erstellen von Lehrst\374hlen, Modulen und Kurse}{section.6.2}% 38
+\BOOKMARK [1][-]{section.6.3}{Algorithmus}{chapter.6}% 39
+\BOOKMARK [2][-]{subsection.6.3.1}{Gleichverteilung}{section.6.3}% 40
+\BOOKMARK [2][-]{subsection.6.3.2}{Normalverteilung}{section.6.3}% 41
+\BOOKMARK [2][-]{subsection.6.3.3}{Realdaten}{section.6.3}% 42
+\BOOKMARK [2][-]{subsection.6.3.4}{Ergebnisse des Algorithmus}{section.6.3}% 43
+\BOOKMARK [0][-]{chapter.7}{Zusammenfassung}{}% 44
