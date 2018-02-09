@@ -85,54 +85,41 @@
 		Der Verteilungsalgorithmus verteilt alle Studenten auf die Kurse.
 		Dabei ist es wichtig, dass die aufaddierte maximale Teilnehmeranzahl der Kurse größer ist als die Anzahl der zu verteilenden Studenten.
 		Sollte dem nicht der Fall sein, so wird der Administrator informiert.
-		Dieser hat dann die Möglichkeit die maximale Teilnehmeranzahl von Kursen zu erhöhen.
-		Die Eingabe des Algorithmus sind die Gewichte der Präferenzen und (optional) die Auswahl eines Optimierungsalgorithmus.
+		Dieser hat nun die Möglichkeit die maximale Teilnehmeranzahl von Kursen zu erhöhen.
+		Die Eingabe des Algorithmus sind die Gewichte der Präferenzen.
 		
 		Startet der Algorithmus, so versucht er, für jeden Studenten die größte, mögliche Präferenz zu den Kursen zu wählen.
 		Dabei ist insbesondere wichtig, dass die Streuung der gewählten Präferenzen möglichst gering ist.
 		Dies erfolgt beispielsweise durch eine Gewichtung der Präferenzen.\\
 		Weiterhin platziert der Algorithmus in jeden Kurs mindestens drei Studenten, damit der Kurs sinnvoll angeboten werden kann.
-		Es werden aber nie mehr Teilnehmer einem Kurs zugeordnet als die maximale Teilnehmeranzahl des Kurses vorgibt.
+		Es werden allerdings nie mehr Teilnehmer einem Kurs zugeordnet als die maximale Teilnehmeranzahl.
 		
-		Hat der Algorithmus schließlich eine passende Zuordnung von Studenten zu Kursen gefunden, so wird der Administrator zuerst benachrichtigt.
-		Dieser kann die Ergebnisse bearbeiten, Parameter des Algorithmus neu einstellen, Kurse aktivieren/deaktivieren und ihn erneut starten.
+		Hat der Algorithmus schließlich eine passende Zuordnung von Studenten zu Kursen gefunden, so kann der Administrator die Ergebnisse bearbeiten, Parameter des Algorithmus neu einstellen, Kurse aktivieren/deaktivieren und ihn erneut starten.
 		Ist der Administrator zufrieden mit der Verteilung, so bestätigt dieser das Ergebnis.
 		Anschließend wird an die Dozenten eine E-Mail mit ihren Teilnehmern geschickt, und Studenten erhalten eine E-Mail mit ihrem Kurs.
-		%    \item Nach Ende der Einschreibung, startet der Algortihmus automatisch. -> unsicher ob sie es so wollten durch die verschiedenen Einstell-Möglichkeiten. Sie hatten im Gespräch beides gesagt.
 		
 	\section{Technische Details}
-		\todo{Diese Aufzählung am Ende muss unbedingt weg, Johannes hat sich ausdrücklich Fließtext für die Anforderungen gewünscht.}
 		
 		Besucher der Website können sowohl auf mobilen Endgeräten, als auch per Desktop die Website besuchen.
 		Diese passt sich dynamisch an die Bildschirmauflösung an.\newline
-		
-		Benutzt ein Besucher jedoch einen Browser, der älter als Internet Explorer 11 ist, so wird ihm mitgeteilt, er solle seinen Browser aktualisieren.
+		Benutzt ein Besucher jedoch einen Browser, der älter als Internet Explorer 11 ist, so wird ihm mitgeteilt, er solle seinen Browser aktualisieren.\newline
 		
 		Der Login wird über eine E-Mail/Passwort Authentifizierung realisiert.
-		Dafür sind nur E-Mail-Adressen der FSU Jena nutzbar.
-		Dies bedeutet, dass E-Mails auf ''@uni-jena.de''enden müssen.
-		Man kann sich zu jeder Zeit ein- und ausloggen.\newline
+		Dafür sind nur E-Mail-Adressen der Friedrich-Schiller-Universität Jena nutzbar.
+		Dies bedeutet, dass E-Mails auf \glqq @uni-jena.de\grqq~enden müssen.
+		Die An- beziehungsweise Abmeldung ist hierbei zu jeder Zeit möglich.\newline
 		
 		Bei der Wahl der Präferenzen darf keine Präferenz doppelt belegt werden, d.h. jede Präferenz hat einen eindeutigen Kurs. \newline
 		
-		Der Verteilungsalgorithmus kann mit verschiedenen Optionen angesteuert werden. Optionen können u.a. die Gewichtung der Varianz, oder welche Kurse belegt werden können, sein. Weiterhin ist der Verteilungsalgorithmus innerhalb von 24 Stunden fertig. \newline
+		Der Verteilungsalgorithmus kann mit verschiedenen Optionen parametrisiert werden. Optionen können unter anderem die Gewichtung der Varianz, oder welche Kurse belegt werden können, sein. Weiterhin muss der Verteilungsalgorithmus innerhalb von 24 Stunden fertig sein. \newline
 		
-		Das Produkt wird zu Zwecken der Portabilität in einer docker-compose Umgebung aufgesetzt.
-		In dieser Umgebung soll die Website auf OctoberCMS mit Laravel 5.5 basierend aufgebaut werden.
-		Der Webserver selbst nutzt Nginx.
-		Als Datenbank soll MySQL verwendet werden.
-		Ein Cache-Server soll ebenfalls umgesetzt werden.
-		Vorzugsweise wird Redis verwendet.\newline
+		Zu Zwecken der Portabilität wird das Produkt in einer docker-compose Umgebung ausgeführt.
+		In dieser Umgebung soll die Website auf OctoberCMS mit Laravel 5.5 aufsetzen.
+		Für den Webserver ist Nginx zu nutzen.
+		Die Datenbank muss auf MySQL basieren.
+		Zuletzt soll ein Cache-Server verwendet werden.
+		Vorzugsweise ist dies Redis.\newline
 		
-		Weiterhin muss das System getestet werden.
-		Hierfür müssen nur die wesentlichsten Bestandteile der Website validiert werden.
-	
-		\begin{itemize}
-			\item Kursinformationen sind öffentlich einsehbar.
-			\item Kurse können von nicht-Studenten insbesondere nach folgenden Kriterien gefiltert werden: 
-			\begin{itemize}
-				\item Lehrstuhl
-				\item Finanzierung/Lehrauftrag
-				\item Erstes Mal Empiriepraktikum?
-			\end{itemize}
-		\end{itemize}
+		Die wesentlichsten Bestandteile der Website müssen über Tests validiert werden.
+		Insbesondere der Verteilungsalgorithmus muss getestet werden.
+		
