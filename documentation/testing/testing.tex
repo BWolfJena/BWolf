@@ -2,97 +2,98 @@
 \label{chapter:testing}
 
 	\todo{Eventuell Anforderungen, die ominös angesprochen werden, direkt referenzieren.}
-	Das Testen des Softwaresystem wurde in drei Aufgabenbereiche unterteilt.
+	Das Testen des Softwaresystems wurde in drei Aufgabenbereiche unterteilt.
 	Zuerst wurde das Frontend durchgängig getestet.
 	Anschließend wurde das Backend überprüft.
-	Letztendlich wurde der Algorithmus und die Auswirkung diesen auf Richtigkeit untersucht.\newline
-	
-	Es gibt außerdem einige Verweise auf Testskripts, welche mit Laravel Dusk ausgeführt werden können.
-	Um diese auf einer lokal laufenden Kopie auszuführen, kann das Skript \glqq runTests.sh\grqq~in einem Terminal genutzt werden.\newline
+	Letztendlich wurden der Algorithmus und seine Auswirkungen auf die Richtigkeit hin untersucht.\newline
 	
 	\section{Frontend}
 		Um das Frontend ordnungsgemäß zu testen, wurden verschiedene Testobjekte betrachtet.
 		Im Folgenden werden diese erläutert.
 		
-		\subsection{Homepage}
-			Zum Testen der Homepage steht das Testskript \textit{HomepageTest} zur Verfügung.
-			Das Testskript überprüft dabei nur den Header der Website, da dies genügt.
-			Dies bedeutet, dass sowohl die Textfelder des Headers, also \glqq Start\grqq, \glqq Kursübersicht\grqq, \glqq Meine Präferenzliste\grqq, und \glqq Ergebnis sehen\grqq, als auch die Reihenfolge derer verifiziert wird.
-			Gleichermaßen werden auch die Buttons im Header, \glqq Anmelden\grqq~und \glqq Registrieren\grqq, überprüft.\newline
+		\subsection{Startseite}
+			Zum Testen der Startseite steht das Testskript \textit{HomepageTest} zur Verfügung.
+			Das Testskript überprüft dabei nur die Kopfzeile der Website.
+            Dieser Test ist für die Startseite ausreichend, da der Inhalt der Seite von den Verantwortlichen des Empiriepraktikums noch zu erstellen ist.
+			Dies bedeutet, dass nur die Textfelder der Kopfzeile, also \textit{Start}, \textit{Kursübersicht}, \textit{Meine Präferenzliste}, und \textit{Ergebnis sehen}, und deren Reihenfolge verifiziert wird.
+			Gleichermaßen werden auch die Schaltflächen in der Kopfzeile, \textit{Anmelden} und \textit{Registrieren}, überprüft.
 		
 		\subsection{Registrierung}
-			Der Testfall \textit{RegisterTest} verifiziert, dass ein Nutzer sich ordnungsgemäß registrieren kann und sich anschließend mit diesen Daten anmelden kann.
-			Dafür ruft der automatisierte Nutzer die Homepage auf und gelangt über den \glqq Registrieren\grqq -Button zum Registrierungsformular.
+			Der Testfall \textit{RegisterTest} verifiziert, dass ein Nutzer sich ordnungsgemäß registrieren und sich anschließend mit diesen Daten anmelden kann.
+			Dafür ruft der automatisierte Nutzer die Startseite auf und gelangt über den \glqq Registrieren\grqq -Button zum Registrierungsformular.
 			Dort gibt er seine Daten ein.
-			Anschließend ruft der User die Login-Seite über den \glqq Anmelden\grqq -Button auf und meldet sich mit den Daten aus der Registrierung an. \newline
+			Anschließend ruft der Benutzer die Login-Seite über den \glqq Anmelden\grqq -Button auf und meldet sich mit den Daten aus der Registrierung an.
+            
 			Ein erfolgreicher Login wird durch die Abwesenheit des \glqq Anmelden\grqq -Buttons sicher gestellt.
-			Am Ende des Tests wird der neu registrierte Nutzer gelöscht.\newline
+			Am Ende des Tests wird der neu registrierte Nutzer gelöscht.
 		
 		\subsection{Login}
-			Der daran anschließende Testfall ist \textit{LoginTest}.
+			Daran schließt der Testfall \textit{LoginTest} an.
 			Dieser verifiziert, dass ein bereits registrierter Nutzer sich anmelden kann.
 			Dafür wird zuerst ein Benutzer in der Datenbank kreiert.
 			Anschließend wird die Login-Seite geöffnet und die Daten des kreierten Nutzers eingegeben.
 			Der erfolgreiche Login wird durch die Abwesenheit des \glqq Anmelden\grqq -Buttons sicher gestellt.
-			Am Ende des Tests wird der kreierte Nutzer aus der Datenbank gelöscht.\newline
+			Am Ende des Tests wird der kreierte Nutzer wiederum aus der Datenbank gelöscht.
 		
 		\subsection{Kursübersicht}
 			Die Kursübersicht wurde manuell getestet.
-			Dafür wurden zuerst Kurse im Backend erstellt.
-			Anschließen wurden sie im Frontend unter dem Menüpunkt \glqq Kursübersicht\grqq~auf Richtigkeit überprüft.
+			Dafür wurden zuerst einige Kurse im Backend erstellt.
+			Anschließend wurden sie im Frontend unter dem Menüpunkt \textit{Kursübersicht} auf Richtigkeit überprüft.
 			Hierbei ist es wichtig, dass in dem Einführungstext der Übersicht das korrekte Jahr steht.
 			Daraufhin wurde die Vorschau der Kurse kontrolliert.
 			Dafür wurde sichergestellt, dass der Kurstitel, die Kurzbeschreibung, Ort, Zeit und ein Ausschnitt der ausführlichen Beschreibung dargestellt ist.
 			Weiterhin musste jede Vorschau einen \glqq Details\grqq -Button beinhalten, der zur kompletten Kursbeschreibung führt.
-			Diese musste und hat den Anforderungen entsprochen.\newline
+			Diese detaillierte Ansicht entsprach den in Kapitel \ref{chapter:requirements} aufgeführten Anforderungen.
 		
 		\subsection{Meine Präferenzliste}
-			Anschließend wurde der Menüpunkt \glqq Meine Präferenzliste\grqq~manuell überprüft.
-			Hier müssen alle Kurse sichtbar sein, die in diesem Semester gewählt werden können.
-			Insbesondere ist es wichtig, dass jeder Kurs einzeln per \textit{Drag and Drop} verschoben werden kann.
-			Nachdem Kurse anders platziert wurden, musste die Liste gespeichert werden.\newline
-			Bei einem erneuten Aufruf des Menüpunktes muss die editierte Liste in der zuletzt verschobenen Reihenfolge angezeigt werden.
-			Dies wurde verifiziert, indem die Cookies und der Cache geleert wurden und anschließend die Seite neu aufgerufen wurde.\newline
+			Anschließend wurde der Menüpunkt \textit{Meine Präferenzliste} manuell überprüft.
+			Hierbei müssen alle Kurse sichtbar sein, die in diesem Semester gewählt werden können.
+			Insbesondere ist es wichtig, dass jeder Kurs einzeln per Drag\&Drop verschoben werden kann.
+			Nachdem Kurse anders platziert wurden, muss die Liste gespeichert werden können.
+            Das bedeutet, dass bei einem erneuten Aufruf des Menüpunktes die editierte Liste in der zuletzt verschobenen Reihenfolge angezeigt werden muss.
+			Dies wurde verifiziert, indem die Cookies und der Cache geleert wurden und anschließend die Seite neu aufgerufen wurde.
 		
 		\subsection{Ergebnis sehen}
-			Der Menüpunkt \glqq Ergebnis sehen\grqq~ wurde manuell überprüft.
-			Es wurde sicher gestellt, dass alle Nutzer, die eine Präferenzliste abgeschickt haben, in der Übersicht auftauchen.\newline
+			Der Menüpunkt \textit{Ergebnis sehen} wurde manuell überprüft.
+			Es wurde sicher gestellt, dass alle Nutzer, die eine Präferenzliste abgeschickt haben, in der Übersicht auftauchen.
 		
 	\section{Backend}
 	
-		Für das Backend war es wichtig. zu verifizieren, dass sowohl Lehrstühle, Module, und Kurse, als auch neue Dozenten und Administratoren erstellt werden können.
+		Für das Backend war es wichtig, zu verifizieren, dass sowohl Lehrstühle, Module, und Kurse, als auch neue Dozenten und Administratoren erstellt werden können.
 			
 		\subsection{Anlegen neuer Dozenten und Administratoren}
 		
-			Das Anlegen neuer Dozenten und Administratoren erfolgt im Backend unter dem Menüpunkt "Einstellungen" und anschließend unter \glqq Administratoren\grqq .
-			Jeder Benutzer des Backends ist Administrator.
-			Die Rechte eines Backend-Users wird über ein Rollen-System verwaltet.\newline
-			Unabhängig des Rollen-Systems wurde verifiziert, dass ein Einloggen im Backend einen bereits registrierten Nutzer benötigt und die Daten zum Anmelden korrekt sein müssen.\newline
-			Für jede Rolle, das heißt Dozent und Administrator, wurde weiterhin getestet, dass sie die konfigurierten Rechte nur besitzen.\newline
-			Zuletzt wurde verifiziert, dass die Rechte der Dozenten und Administratoren den Anforderungen genügen.
+			Das Anlegen neuer Dozenten und Administratoren erfolgt im Backend unter dem Menüpunkt \textit{Einstellungen} und anschließend unter \textit{Administratoren}.
+			Jeder Benutzer des Backends wird intern als Administrator geführt.
+			Die Rechte eines Backendbenutzer werden über ein Rollensystem verwaltet.
+            
+			Unabhängig des Rollensystems wurde verifiziert, dass ein Einloggen im Backend einen bereits registrierten Nutzer und die korrekten Anmeldedaten benötigt.
+            
+			Für jede Rolle, das heißt Dozent und Administrator, wurde weiterhin getestet, dass sie nur die konfigurierten Rechte besitzt.
+            
+			Zuletzt wurde verifiziert, dass die Rechte der Dozenten und Administratoren den Anforderungen aus \ref{chapter:requirements} genügen.
 			
 		\subsection{Erstellen von Lehrstühlen, Modulen und Kurse}
 			
-			Das Erstellen von Lehrstühlen, Modulen und Kurse erfolgt im Backend unter dem Menüpunkt \glqq Verwalten\grqq .\newline
-			Ein Testskript für das Erstellen von Lehrstühlen wurde unter dem Namen \glqq CreateChair\grqq~bereit gestellt.
-			Da das Erstellen von Module und Kurse denselben Prinzipien folgt, wurden hierfür keine weiteren Skripte erstellt.
-			Bei diesen wurde daher manuell statt automatisiert sicher gestellt, dass die nach den Anforderungen benötigten Felder existieren und die Pflichtfelder ausgefüllt werden müssen.\newline
-			Weiterhin wurde verifiziert, dass Änderungen an bereits erstellten Kursen, etc. wirksam sind.
-			Das heißt, ändert ein Dozent seinen Kurs, muss und ist diese Änderung sofort im Frontend sichtbar ist.
+			Das Erstellen von Lehrstühlen, Modulen und Kurse erfolgt im Backend unter dem Menüpunkt \textit{Verwalten}.
+            
+			Ein Testskript für das Erstellen von Lehrstühlen wurde unter dem Namen \textit{CreateChair} bereit gestellt.
+			Da das Erstellen von Modulen und Kursen denselben Prinzipien folgt, wurden hierfür keine weiteren Skripte erstellt.
+			Bei diesen wurde daher manuell sicher gestellt, dass die nach den Anforderungen benötigten Felder existieren und die Pflichtfelder ausgefüllt werden müssen.
+            
+			Weiterhin wurde verifiziert, dass Änderungen an bereits erstellten Kursen, Lehrstühle und Module wirksam sind.
+			Das heißt, ändert ein Dozent seinen Kurs, muss diese Änderung sofort im Frontend sichtbar sein.
 	
-	\section{Algorithmus}
-	
-		Um den Algorithmus zu testen, mussten Daten generiert und in die Datenbank importiert werden.
-		Dafür wurde zuerst ein R-Skript geschrieben, welches eine Präferenzenmatrix aus beliebig vielen Studenten und Kursen generiert.
+	\section{Verteilungsalgorithmus}
+		Um den Algorithmus zu testen, mussten zunächst Daten generiert und in die Datenbank importiert werden.
+		Zu diesem Zweck wurde zuerst ein R-Skript geschrieben, das Präferenzlisten für beliebig viele Studenten und Kurse generiert.
 		Mithilfe eines weiteren Skripts wurde dieses Datenset in die Datenbank des Servers importiert.
-		Anschließend konnte die Verteilung im Backend ausgelöst werden.\newline
+		Anschließend konnte der Verteilungsalgorithmus im Backend gestartet werden.\\
 		
-		Zur Evaluierung des Ergebnisses wurden künstliche Daten durch das R-Skript erzeugt und verwendet.
-		Für die künstlichen Daten wurde einmal eine Gleichverteilung zur Erzeugung der Präferenzenmatrix genutzt, und zusätzlich eine Normalverteilung.
-		Daraus ergaben sich dann zwei Dateien, die in die Datenbank importiert werden konnte.\newline
-		Weiterhin wurden die Präferenzen des Empiriepraktikums aus dem Wintersemester 2017/2018 bereit gestellt.
+		Für das Erzeugen der Präferenzlisten wurden eine Gleichverteilung und eine Normalverteilung genutzt.
+    	
+        Des Weiteren wurden auch reale Präferenzlisten aus dem Wintersemester 2017/2018 bereit gestellt.
 		Dadurch konnte der neue Algorithmus direkt mit dem alten Verteilungsalgorithmus verglichen werden.
-		Dies hatte zusätzlich zur Folge, dass das Erfüllen des Akzeptanzkriterium für den neuen Algorithmus klar definiert werden konnte.
 		
 		\subsection{Gleichverteilung}
 	

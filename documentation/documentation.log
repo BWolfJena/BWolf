@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.6.1)  9 FEB 2018 15:59
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.6.1)  9 FEB 2018 18:35
 entering extended mode
 **documentation.tex
 (C:\Users\Kasimir\BWolf\documentation\documentation.tex
@@ -616,7 +616,7 @@ LaTeX Info: Redefining \nameref on input line 26.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 
-<./LogoSoFar.png, id=183, 706.89093pt x 942.52126pt>
+<./LogoSoFar.png, id=179, 706.89093pt x 942.52126pt>
 File: ./LogoSoFar.png Graphic file (type png)
  <use ./LogoSoFar.png>
 Package pdftex.def Info: ./LogoSoFar.png used on input line 30.
@@ -699,7 +699,7 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 ) [9]
 (C:\Users\Kasimir\BWolf\documentation\design\design.tex
 Kapitel 3.
-<./design/images/data-model.png, id=303, 1007.765pt x 674.52pt>
+<./design/images/data-model.png, id=298, 1007.765pt x 674.52pt>
 File: ./design/images/data-model.png Graphic file (type png)
 
 <use ./design/images/data-model.png>
@@ -714,7 +714,7 @@ File: t1cmss.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 
 
 ] [11 <C:/Users/Kasimir/BWolf/documentation/design/images/data-model.png>]
-<./design/images/MockUpsFrontend/frontendLogin.png, id=319, 796.47563pt x 597.7
+<./design/images/MockUpsFrontend/frontendLogin.png, id=314, 796.47563pt x 597.7
 3312pt>
 File: ./design/images/MockUpsFrontend/frontendLogin.png Graphic file (type png)
 
@@ -724,7 +724,7 @@ Package pdftex.def Info: ./design/images/MockUpsFrontend/frontendLogin.png used
 (pdftex.def)             Requested size: 234.00238pt x 175.6092pt.
  [12] [13 <C:/Users/Kasimir/BWolf/documentation/design/images/MockUpsFrontend/f
 rontendLogin.png>]
-<./design/images/MockUpsFrontend/frontendCourses.png, id=331, 796.47563pt x 597
+<./design/images/MockUpsFrontend/frontendCourses.png, id=326, 796.47563pt x 597
 .73312pt>
 File: ./design/images/MockUpsFrontend/frontendCourses.png Graphic file (type pn
 g)
@@ -733,7 +733,7 @@ Package pdftex.def Info: ./design/images/MockUpsFrontend/frontendCourses.png us
 ed on input line 97.
 (pdftex.def)             Requested size: 234.00238pt x 175.6092pt.
 
-<./design/images/MockUpsFrontend/frontendPreferences.png, id=333, 796.47563pt x
+<./design/images/MockUpsFrontend/frontendPreferences.png, id=328, 796.47563pt x
  597.73312pt>
 File: ./design/images/MockUpsFrontend/frontendPreferences.png Graphic file (typ
 e png)
@@ -744,7 +744,7 @@ g used on input line 109.
 
 [14 <C:/Users/Kasimir/BWolf/documentation/design/images/MockUpsFrontend/fronten
 dCourses.png>]
-<./design/images/MockUpsFrontend/frontendSwap2.png, id=342, 796.47563pt x 597.7
+<./design/images/MockUpsFrontend/frontendSwap2.png, id=337, 796.47563pt x 597.7
 3312pt>
 File: ./design/images/MockUpsFrontend/frontendSwap2.png Graphic file (type png)
 
@@ -754,7 +754,7 @@ Package pdftex.def Info: ./design/images/MockUpsFrontend/frontendSwap2.png used
 (pdftex.def)             Requested size: 234.00238pt x 175.6092pt.
  [15 <C:/Users/Kasimir/BWolf/documentation/design/images/MockUpsFrontend/fronte
 ndPreferences.png>]
-<./design/images/MockUpsBackend/backendManageCourses.png, id=350, 796.47563pt x
+<./design/images/MockUpsBackend/backendManageCourses.png, id=345, 796.47563pt x
  597.73312pt>
 File: ./design/images/MockUpsBackend/backendManageCourses.png Graphic file (typ
 e png)
@@ -763,7 +763,7 @@ Package pdftex.def Info: ./design/images/MockUpsBackend/backendManageCourses.pn
 g used on input line 152.
 (pdftex.def)             Requested size: 234.00238pt x 175.6092pt.
 
-<./design/images/MockUpsBackend/backendEdit.png, id=352, 796.47563pt x 597.7331
+<./design/images/MockUpsBackend/backendEdit.png, id=347, 796.47563pt x 597.7331
 2pt>
 File: ./design/images/MockUpsBackend/backendEdit.png Graphic file (type png)
  <use ./design/images/MockUpsBackend/backendEdit.png>
@@ -782,7 +782,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 174--178
 
 [16 <C:/Users/Kasimir/BWolf/documentation/design/images/MockUpsFrontend/fronten
 dSwap2.png>]
-<./design/images/MockUpsBackend/backendDistribution.png, id=360, 796.47563pt x 
+<./design/images/MockUpsBackend/backendDistribution.png, id=355, 796.47563pt x 
 597.73312pt>
 File: ./design/images/MockUpsBackend/backendDistribution.png Graphic file (type
  png)
@@ -802,7 +802,7 @@ es/MockUpsBackend/backendDistribution.png>]
 (C:\Users\Kasimir\BWolf\documentation\implementation\implementation.tex
 Kapitel 4.
 
-<./implementation/images/MockUpsFrontend/frontendLogin.png, id=373, 796.47563pt
+<./implementation/images/MockUpsFrontend/frontendLogin.png, id=368, 796.47563pt
  x 597.73312pt>
 File: ./implementation/images/MockUpsFrontend/frontendLogin.png Graphic file (t
 ype png)
@@ -812,7 +812,7 @@ Package pdftex.def Info: ./implementation/images/MockUpsFrontend/frontendLogin.
 png used on input line 21.
 (pdftex.def)             Requested size: 155.99762pt x 117.06367pt.
 
-<./implementation/images/login.png, id=374, 1907.125pt x 943.525pt>
+<./implementation/images/login.png, id=369, 1907.125pt x 943.525pt>
 File: ./implementation/images/login.png Graphic file (type png)
 
 <use ./implementation/images/login.png>
@@ -824,7 +824,7 @@ Package pdftex.def Info: ./implementation/images/login.png used on input line 2
 
 
 ]
-<./implementation/images/MockUpsFrontend/frontendCourses.png, id=381, 796.47563
+<./implementation/images/MockUpsFrontend/frontendCourses.png, id=376, 796.47563
 pt x 597.73312pt>
 File: ./implementation/images/MockUpsFrontend/frontendCourses.png Graphic file 
 (type png)
@@ -834,7 +834,7 @@ Package pdftex.def Info: ./implementation/images/MockUpsFrontend/frontendCourse
 s.png used on input line 41.
 (pdftex.def)             Requested size: 155.99762pt x 117.06367pt.
 
-<./implementation/images/courses.png, id=382, 1907.125pt x 943.525pt>
+<./implementation/images/courses.png, id=377, 1907.125pt x 943.525pt>
 File: ./implementation/images/courses.png Graphic file (type png)
 
 <use ./implementation/images/courses.png>
@@ -842,7 +842,7 @@ Package pdftex.def Info: ./implementation/images/courses.png used on input line
  44.
 (pdftex.def)             Requested size: 230.09857pt x 113.83717pt.
 
-<./implementation/images/MockUpsFrontend/frontendPreferences.png, id=387, 796.4
+<./implementation/images/MockUpsFrontend/frontendPreferences.png, id=382, 796.4
 7563pt x 597.73312pt>
 File: ./implementation/images/MockUpsFrontend/frontendPreferences.png Graphic f
 ile (type png)
@@ -852,7 +852,7 @@ Package pdftex.def Info: ./implementation/images/MockUpsFrontend/frontendPrefer
 ences.png used on input line 58.
 (pdftex.def)             Requested size: 155.99762pt x 117.06367pt.
 
-<./implementation/images/preferences.png, id=388, 1907.125pt x 943.525pt>
+<./implementation/images/preferences.png, id=383, 1907.125pt x 943.525pt>
 File: ./implementation/images/preferences.png Graphic file (type png)
 
 <use ./implementation/images/preferences.png>
@@ -885,7 +885,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 75--80
  []
 
 
-<./implementation/images/MockUpsBackend/backendManageCourses.png, id=395, 796.4
+<./implementation/images/MockUpsBackend/backendManageCourses.png, id=390, 796.4
 7563pt x 597.73312pt>
 File: ./implementation/images/MockUpsBackend/backendManageCourses.png Graphic f
 ile (type png)
@@ -895,7 +895,7 @@ Package pdftex.def Info: ./implementation/images/MockUpsBackend/backendManageCo
 urses.png used on input line 90.
 (pdftex.def)             Requested size: 155.99762pt x 117.06367pt.
 
-<./implementation/images/manageCourses.png, id=396, 1907.125pt x 943.525pt>
+<./implementation/images/manageCourses.png, id=391, 1907.125pt x 943.525pt>
 File: ./implementation/images/manageCourses.png Graphic file (type png)
 
 <use ./implementation/images/manageCourses.png>
@@ -905,7 +905,7 @@ t line 93.
  [21 <C:/Users/Kasimir/BWolf/documentation/implementation/images/MockUpsFronten
 d/frontendPreferences.png> <C:/Users/Kasimir/BWolf/documentation/implementation
 /images/preferences.png (PNG copy)>]
-<./implementation/images/MockUpsBackend/backendEdit.png, id=404, 796.47563pt x 
+<./implementation/images/MockUpsBackend/backendEdit.png, id=399, 796.47563pt x 
 597.73312pt>
 File: ./implementation/images/MockUpsBackend/backendEdit.png Graphic file (type
  png)
@@ -914,7 +914,7 @@ Package pdftex.def Info: ./implementation/images/MockUpsBackend/backendEdit.png
  used on input line 115.
 (pdftex.def)             Requested size: 155.99762pt x 117.06367pt.
 
-<./implementation/images/edit.png, id=405, 1907.125pt x 943.525pt>
+<./implementation/images/edit.png, id=400, 1907.125pt x 943.525pt>
 File: ./implementation/images/edit.png Graphic file (type png)
 
 <use ./implementation/images/edit.png>
@@ -922,7 +922,7 @@ Package pdftex.def Info: ./implementation/images/edit.png used on input line 11
 8.
 (pdftex.def)             Requested size: 230.09857pt x 113.83717pt.
 
-<./implementation/images/MockUpsBackend/backendDistribution.png, id=407, 796.47
+<./implementation/images/MockUpsBackend/backendDistribution.png, id=402, 796.47
 563pt x 597.73312pt>
 File: ./implementation/images/MockUpsBackend/backendDistribution.png Graphic fi
 le (type png)
@@ -932,7 +932,7 @@ Package pdftex.def Info: ./implementation/images/MockUpsBackend/backendDistribu
 tion.png used on input line 130.
 (pdftex.def)             Requested size: 155.99762pt x 117.06367pt.
 
-<./implementation/images/distribution.png, id=408, 1907.125pt x 943.525pt>
+<./implementation/images/distribution.png, id=403, 1907.125pt x 943.525pt>
 File: ./implementation/images/distribution.png Graphic file (type png)
 
 <use ./implementation/images/distribution.png>
@@ -958,7 +958,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 40--43
 
  []
 
-<./algorithm/images/lin_weights.png, id=436, 701.62125pt x 335.2525pt>
+<./algorithm/images/lin_weights.png, id=431, 701.62125pt x 335.2525pt>
 File: ./algorithm/images/lin_weights.png Graphic file (type png)
 
 <use ./algorithm/images/lin_weights.png>
@@ -966,7 +966,7 @@ Package pdftex.def Info: ./algorithm/images/lin_weights.png used on input line
 50.
 (pdftex.def)             Requested size: 191.10214pt x 91.31229pt.
 
-<./algorithm/images/expo_weights.png, id=437, 701.62125pt x 338.26375pt>
+<./algorithm/images/expo_weights.png, id=432, 701.62125pt x 338.26375pt>
 File: ./algorithm/images/expo_weights.png Graphic file (type png)
 
 <use ./algorithm/images/expo_weights.png>
@@ -987,168 +987,132 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--9
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 10--12
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 18--22
-
- []
-
 [29
 
 
 
-]
-Underfull \hbox (badness 10000) in paragraph at lines 24--29
+] [30] [31]
+Underfull \hbox (badness 10000) in paragraph at lines 88--92
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 31--37
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 39--47
-
- []
-
-[30]
-Underfull \hbox (badness 10000) in paragraph at lines 49--56
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 58--59
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 66--67
-
- []
-
-[31]
-Underfull \hbox (badness 10000) in paragraph at lines 76--80
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 87--91
-
- []
-
-[32]
-<./testing/images/EqualDistPreferencesDist.jpg, id=469, 1405.25pt x 1405.25pt>
+<./testing/images/EqualDistPreferencesDist.jpg, id=462, 1405.25pt x 1405.25pt>
 File: ./testing/images/EqualDistPreferencesDist.jpg Graphic file (type jpg)
 
 <use ./testing/images/EqualDistPreferencesDist.jpg>
 Package pdftex.def Info: ./testing/images/EqualDistPreferencesDist.jpg used on 
-input line 103.
+input line 102.
 (pdftex.def)             Requested size: 272.99881pt x 273.00414pt.
-
-<./testing/images/EqualDistPreferencesHistLin.jpg, id=471, 1405.25pt x 1405.25p
+ [32]
+<./testing/images/EqualDistPreferencesHistLin.jpg, id=468, 1405.25pt x 1405.25p
 t>
 File: ./testing/images/EqualDistPreferencesHistLin.jpg Graphic file (type jpg)
  <use ./testing/images/EqualDistPreferencesHistLin.jpg>
 Package pdftex.def Info: ./testing/images/EqualDistPreferencesHistLin.jpg used 
-on input line 112.
+on input line 111.
 (pdftex.def)             Requested size: 191.10214pt x 191.09431pt.
 
-<./testing/images/EqualDistPreferencesHistExpo.jpg, id=472, 1405.25pt x 1405.25
+<./testing/images/EqualDistPreferencesHistExpo.jpg, id=469, 1405.25pt x 1405.25
 pt>
 File: ./testing/images/EqualDistPreferencesHistExpo.jpg Graphic file (type jpg)
 
  <use ./testing/images/EqualDistPreferencesHistExpo.jpg>
 Package pdftex.def Info: ./testing/images/EqualDistPreferencesHistExpo.jpg used
- on input line 115.
+ on input line 114.
 (pdftex.def)             Requested size: 191.10214pt x 191.09431pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 121--122
+Underfull \hbox (badness 10000) in paragraph at lines 120--121
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 123--125
+Underfull \hbox (badness 10000) in paragraph at lines 122--124
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 126--131
+Underfull \hbox (badness 10000) in paragraph at lines 125--130
 
  []
 
-
-<./testing/images/NormalDistPreferencesDist.jpg, id=474, 1405.25pt x 1405.25pt>
+[33 <C:/Users/Kasimir/BWolf/documentation/testing/images/EqualDistPreferencesDi
+st.jpg>]
+<./testing/images/NormalDistPreferencesDist.jpg, id=478, 1405.25pt x 1405.25pt>
 File: ./testing/images/NormalDistPreferencesDist.jpg Graphic file (type jpg)
 <use ./testing/images/NormalDistPreferencesDist.jpg>
 Package pdftex.def Info: ./testing/images/NormalDistPreferencesDist.jpg used on
- input line 137.
+ input line 136.
 (pdftex.def)             Requested size: 272.99881pt x 273.00414pt.
- [33] [34 <C:/Users/Kasimir/BWolf/documentation/testing/images/EqualDistPrefere
-ncesDist.jpg> <C:/Users/Kasimir/BWolf/documentation/testing/images/EqualDistPre
-ferencesHistLin.jpg> <C:/Users/Kasimir/BWolf/documentation/testing/images/Equal
-DistPreferencesHistExpo.jpg>]
-<./testing/images/NormalDistPreferencesHistLin.jpg, id=487, 1405.25pt x 1405.25
+
+<./testing/images/NormalDistPreferencesHistLin.jpg, id=480, 1405.25pt x 1405.25
 pt>
 File: ./testing/images/NormalDistPreferencesHistLin.jpg Graphic file (type jpg)
 
  <use ./testing/images/NormalDistPreferencesHistLin.jpg>
 Package pdftex.def Info: ./testing/images/NormalDistPreferencesHistLin.jpg used
- on input line 146.
+ on input line 145.
 (pdftex.def)             Requested size: 117.00119pt x 116.98952pt.
 
-<./testing/images/NormalDistPreferencesHistLinMin.jpg, id=488, 1405.25pt x 1405
+<./testing/images/NormalDistPreferencesHistLinMin.jpg, id=481, 1405.25pt x 1405
 .25pt>
 File: ./testing/images/NormalDistPreferencesHistLinMin.jpg Graphic file (type j
 pg)
  <use ./testing/images/NormalDistPreferencesHistLinMin.jpg>
 Package pdftex.def Info: ./testing/images/NormalDistPreferencesHistLinMin.jpg u
-sed on input line 149.
+sed on input line 148.
 (pdftex.def)             Requested size: 117.00119pt x 116.98952pt.
 
-<./testing/images/NormalDistPreferencesHistExpo.jpg, id=489, 1405.25pt x 1405.2
+<./testing/images/NormalDistPreferencesHistExpo.jpg, id=482, 1405.25pt x 1405.2
 5pt>
 File: ./testing/images/NormalDistPreferencesHistExpo.jpg Graphic file (type jpg
 )
  <use ./testing/images/NormalDistPreferencesHistExpo.jpg>
 Package pdftex.def Info: ./testing/images/NormalDistPreferencesHistExpo.jpg use
-d on input line 152.
+d on input line 151.
 (pdftex.def)             Requested size: 117.00119pt x 116.98952pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 158--159
+Underfull \hbox (badness 10000) in paragraph at lines 157--158
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 160--162
+Underfull \hbox (badness 10000) in paragraph at lines 159--161
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 163--167
+Underfull \hbox (badness 10000) in paragraph at lines 162--166
 
  []
 
-[35 <C:/Users/Kasimir/BWolf/documentation/testing/images/NormalDistPreferencesD
-ist.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 170--171
+[34 <C:/Users/Kasimir/BWolf/documentation/testing/images/EqualDistPreferencesHi
+stLin.jpg> <C:/Users/Kasimir/BWolf/documentation/testing/images/EqualDistPrefer
+encesHistExpo.jpg>] [35 <C:/Users/Kasimir/BWolf/documentation/testing/images/No
+rmalDistPreferencesDist.jpg> <C:/Users/Kasimir/BWolf/documentation/testing/imag
+es/NormalDistPreferencesHistLin.jpg> <C:/Users/Kasimir/BWolf/documentation/test
+ing/images/NormalDistPreferencesHistLinMin.jpg> <C:/Users/Kasimir/BWolf/documen
+tation/testing/images/NormalDistPreferencesHistExpo.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 169--170
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 185--186
+Underfull \hbox (badness 10000) in paragraph at lines 184--185
 
  []
 
-[36 <C:/Users/Kasimir/BWolf/documentation/testing/images/NormalDistPreferencesH
-istLin.jpg> <C:/Users/Kasimir/BWolf/documentation/testing/images/NormalDistPref
-erencesHistLinMin.jpg> <C:/Users/Kasimir/BWolf/documentation/testing/images/Nor
-malDistPreferencesHistExpo.jpg>]) [37]
-(C:\Users\Kasimir\BWolf\documentation\summary\summary.tex
+
+Underfull \hbox (badness 10000) in paragraph at lines 191--195
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 196--204
+
+ []
+
+[36]) [37] (C:\Users\Kasimir\BWolf\documentation\summary\summary.tex
 Kapitel 7.
 
 Underfull \hbox (badness 10000) in paragraph at lines 3--14
@@ -1183,14 +1147,14 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 83.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 83.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 83.
 Package rerunfilecheck Info: File `documentation.out' has not changed.
-(rerunfilecheck)             Checksum: 0BCC2A86580C646B4E034CD7B7BC54B7;3035.
+(rerunfilecheck)             Checksum: 84155CD8D4C3D81991593A4048B95C60;2988.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 83.
  ) 
 Here is how much of TeX's memory you used:
- 8703 strings out of 493921
- 132608 string characters out of 3144871
+ 8696 strings out of 493921
+ 132518 string characters out of 3144871
  215152 words of memory out of 3000000
- 11658 multiletter control sequences out of 15000+200000
+ 11652 multiletter control sequences out of 15000+200000
  21687 words of font info for 50 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  42i,10n,41p,393b,473s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1215,9 +1179,9 @@ x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x86
 )/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/Mi
 KTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKT
 eX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on documentation.pdf (43 pages, 34782025 bytes).
+Output written on documentation.pdf (43 pages, 34781119 bytes).
 PDF statistics:
- 990 PDF objects out of 1000 (max. 8388607)
- 114 named destinations out of 1000 (max. 500000)
- 511 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 983 PDF objects out of 1000 (max. 8388607)
+ 113 named destinations out of 1000 (max. 500000)
+ 503 words of extra memory for PDF output out of 10000 (max. 10000000)
 

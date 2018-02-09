@@ -1,18 +1,3 @@
-\chapter{Verteilungsalgorithmus}
-\label{chapter:algorithm}
-    Im folgenden Kapitel wird der Algorithmus zum Verteilen der Studenten anhand der Präferenzlisten auf die Kurse vorgestellt.
-    Zunächst wird im ersten Abschnitt eine geeignete Zielfunktion aufgestellt und kurz erklärt.
-    Anschließend werden verschiedene Varianten für die Parameter diskutiert.
-        
-    \section{Erweiterung der Zielfunktion und Wahl der Parameter}
-        Die Parameter der Zielfunktion können frei gewählt werden.
-        In diesem Abschnitt sollen verschiedene Varianten dargestellt werden, wie die Gewichte gewählt bzw. wie die Zielfunktion weiter angepasst und erweitert werden kann.
-        
-        \subsection{Naheliegende Wahl der Parameter}
-            Die nahe liegende Wahl der Gewichte ist, die Präferenzliste der einzelnen Studenten für die Kurse zu verwenden.
-            Da versucht wird, die $ x_{ij} $ so zu wählen, dass die Summe maximal wird, wird so eine Zuordnung eines Studenten zu einem Kurs, für den er eine höhere Präferenz angegeben hat, gegenüber einem mit einer niedrigen Präferenz bevorzugt.
-            Der sogenannte \textit{Score} der Funktion, also das Ergebnis der Summe, wird somit höher, je mehr Studenten in von ihnen gewünschte Kurse verteilt werden.
-        
 \chapter{Nutzung des Backends}
 \label{chapter:use}
   
@@ -22,8 +7,8 @@
   Über \textbf{bwolf.de/backend} kann das Backend des BWolf-Systems erreicht werden.
   
   \includegraphics[scale=0.3]{backend/img/dashboard.png}
-  \caption{\newline Der Begrüßungsbildschirm: Das Dashboard aus Sicht des Super-Admins.\newline
-	  Normale Administratoren sehen in der oberen Navigation nicht den Punkt \"Benutzer\"}
+  %\caption{\newline Der Begrüßungsbildschirm: Das Dashboard aus Sicht des Super-Admins.
+%      \newline Normale Administratoren sehen in der oberen Navigation nicht den Punkt ''Benutzer''}
   \begin{enumerate}
    \item Nach der Anmeldung begrüßt das \textbf{Dashboard} den Nutzer. 
 	  Hier befinden sich drei Widgets:\newline
@@ -95,7 +80,7 @@
     \subsection{Kurse}
     
     \includegraphics[scale=0.3]{backend/img/verwalten_kurse.png}
-      \caption{Verwalten in der Ansicht \"Kurs\"}
+    %\caption{Verwalten in der Ansicht ''Kurs''}
 
     \includegraphics[scale=0.3]{backend/img/create_course_1.png}
 
@@ -127,7 +112,7 @@
   \includegraphics[scale=0.3]{backend/img/distribution_1.png}
   
   \begin{enumerate}
-   \item Um eine Verteilung berechnen zu lassen, wechselt der Nutzer in der oberen Hauptnavigation zu dem Punkt \"\textbf{Verteilung}\".
+   \item Um eine Verteilung berechnen zu lassen, wechselt der Nutzer in der oberen Hauptnavigation zu dem Punkt ''\textbf{Verteilung}''.
    \item Indem der Nutzer auf eine der vorhandenen Module klickt, kann er mögliche Verteilungen der Studenten auf die Kurse generieren lassen.
   \end{enumerate}
   
