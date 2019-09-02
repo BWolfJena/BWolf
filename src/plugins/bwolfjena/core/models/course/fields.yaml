@@ -2,11 +2,11 @@
 #  Form Field Definitions
 # ===================================
 
-fields:    
+fields:
     name:
         label: Name
-    title: 
-        label: Titel  
+    title:
+        label: Titel
     description:
         label: Beschreibung
         type: richeditor
@@ -36,17 +36,14 @@ fields:
         label: Lehrstuhl
         type: relation
         nameFrom: name
-        span: right        
+        span: right
     max_participants:
         label: max. Teiln.
-        type: radio
-        options:
-            5: "5"
-            10: "10"
-        span: left 
+        type: number
+        min: 1
+        span: left
     min_participants:
         label: Min. Teiln.
         type: dropdown
         span: right
         dependsOn: max_participants
-       
