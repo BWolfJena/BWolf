@@ -1,12 +1,9 @@
 <?php if($record->distributed_at) { ?>
-<button
-        style="margin-left: 20px"
-        class="btn btn-default btn-sm"
-        data-request="onShowDistribution"
-        data-request-data="id:<?= $record->id ?>"
-        data-request-redirect="<?= Backend::url('bwolfjena/core/courseusers') ?>"
-        data-stripe-load-indicator
+<a
+    style="margin-left: 20px"
+    class="btn btn-default btn-sm"
+    href="<?= Backend::url('bwolfjena/core/courseusers/distribution/'.$record->id) ?>"
 >
     Anzeigen
-</button>
+</a>
 <?php } ?>

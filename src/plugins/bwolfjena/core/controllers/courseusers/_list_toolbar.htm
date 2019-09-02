@@ -1,7 +1,8 @@
 <div data-control="toolbar">
     <a
         href="<?= Backend::url('bwolfjena/core/courseusers/create') ?>"
-        class="btn btn-default oc-icon-plus">
+        class="btn btn-default oc-icon-plus"
+    >
         Neue Benutzer-Kurs Zuordnung
     </a>
 
@@ -15,16 +16,21 @@
         data-trigger=".control-list input[type=checkbox]"
         data-trigger-condition="checked"
         data-request-success="$(this).prop('disabled', 'disabled')"
-        data-stripe-load-indicator>
+        data-stripe-load-indicator
+    >
         Ausgewählte Löschen
     </button>
 
+    <a href="<?= Backend::url('bwolfjena/core/courseusers/export') ?>" class="btn btn-default">
+        Exportieren
+    </a>
+
     <button
-            class="btn btn-primary"
-            data-request="onNotify"
-            data-request-confirm="Möchten Sie wirklich alle Studenten über ihren Kurs benachrichtigen?"
-            data-stripe-load-indicator>
+        class="btn btn-primary"
+        data-request="onNotify"
+        data-request-confirm="Möchten Sie wirklich alle Studenten über ihren Kurs benachrichtigen?"
+        data-stripe-load-indicator
+    >
         Benachrichtigungen versenden
     </button>
-
 </div>
