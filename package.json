@@ -1,0 +1,13 @@
+{
+    "devDependencies": {
+        "@prettier/plugin-php": "^0.10.2",
+        "prettier": "^1.17.0"
+    },
+    "prettier": {
+        "printWidth": 100,
+        "singleQuote": true,
+        "trailingComma": "all",
+        "tabWidth": 4
+    }
+}
+
