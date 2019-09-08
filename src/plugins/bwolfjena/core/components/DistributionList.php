@@ -15,6 +15,15 @@ class DistributionList extends ComponentBase
         ];
     }
 
+    public function module()
+    {
+        $course = $this->yourCourse();
+        if (!$course) {
+            return null;
+        }
+        return $course->module;
+    }
+
     public function defineProperties()
     {
         return [];
@@ -22,7 +31,11 @@ class DistributionList extends ComponentBase
 
     public function courses()
     {
-        return Course::all();
+        $module = $this->module();
+        if (!$module) {
+            return [];
+        }
+        return $module->courses;
     }
 
     public function onRun()
@@ -37,7 +50,9 @@ class DistributionList extends ComponentBase
         $user = Auth::getUser();
         $course = Course::whereHas('users', function ($query) use ($user) {
             $query->where('users.id', $user->id);
-        })->first();
+        })
+            ->orderBy('created_at')
+            ->first();
         return $course;
     }
 }

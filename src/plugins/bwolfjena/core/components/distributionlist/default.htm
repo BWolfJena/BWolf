@@ -1,7 +1,6 @@
 <div class="row">
     {% if __SELF__.yourCourse() %}
-        <h2>Dein Kurs: {{ __SELF__.yourCourse().name }}</h2>
-    {% endif %}
+    <h2>Dein Kurs: {{ __SELF__.yourCourse().name }}</h2>
     <div class="ui two stackable cards">
         {% for course in __SELF__.courses() %}
         <div class="card">
@@ -16,7 +15,7 @@
                     Teilnehmer:
                     <ul>
                         {% for user in course.users %}
-                            <li>{{ user.email }}</li>
+                        <li>{{ user.email }}</li>
                         {% endfor %}
                     </ul>
                 </div>
@@ -24,4 +23,7 @@
         </div>
         {% endfor %}
     </div>
+    {% else %}
+    <h2>Du wurdest noch keinem Kurs zugewiesen.</h2>
+    {% endif %}
 </div>
