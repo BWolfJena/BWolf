@@ -42,6 +42,15 @@ class CourseUsers extends Controller
             $module = Module::findOrFail(session()->get('distribution_module_id'));
             $query->whereIn('course_id', $module->courses->pluck('id'));
         }
+        $query->join('users', 'user_id', '=', 'users.id');
+        $query->join('bwolfjena_core_courses', 'course_id', '=', 'bwolfjena_core_courses.id');
+        $query->select(
+            (new CourseUser())->getTable() . '.*',
+            'users.email as email',
+            'users.name as name',
+            'users.surname as surname',
+            'bwolfjena_core_courses.name as course_name'
+        );
     }
 
     public function onNotify()
@@ -57,6 +66,8 @@ class CourseUsers extends Controller
                     [
                         'kursname' => $relation->course->name,
                         'kurstitel' => $relation->course->title,
+                        'zeit' => $relation->course->time,
+                        'ort' => $relation->course->room,
                     ],
                     function ($message) use ($relation) {
                         $message->to($relation->user->email);

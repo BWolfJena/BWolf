@@ -15,7 +15,7 @@
                     Teilnehmer:
                     <ul>
                         {% for user in course.users %}
-                        <li>{{ user.email }}</li>
+                        <li>{{ user.name }} {{ user.surname}}</li>
                         {% endfor %}
                     </ul>
                 </div>

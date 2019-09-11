@@ -16,10 +16,10 @@ class Plugin extends PluginBase
     public function pluginDetails()
     {
         return [
-            'name'        => 'Core',
+            'name' => 'Core',
             'description' => 'No description provided yet...',
-            'author'      => 'BWolfJena',
-            'icon'        => 'icon-leaf'
+            'author' => 'BWolfJena',
+            'icon' => 'icon-leaf',
         ];
     }
 
@@ -30,7 +30,6 @@ class Plugin extends PluginBase
      */
     public function register()
     {
-
     }
 
     /**
@@ -40,7 +39,10 @@ class Plugin extends PluginBase
      */
     public function boot()
     {
-
+        \RainLab\User\Models\User::extend(function ($model) {
+            $model->rules['name'] = 'required';
+            $model->rules['surname'] = 'required';
+        });
     }
 
     /**
@@ -52,7 +54,7 @@ class Plugin extends PluginBase
     {
         return [
             '\BWolfJena\Core\Components\CourseDetails' => 'courseDetails',
-            '\BWolfJena\Core\Components\ModuleDetails' => 'moduleDetails'
+            '\BWolfJena\Core\Components\ModuleDetails' => 'moduleDetails',
         ];
     }
 
@@ -66,24 +68,24 @@ class Plugin extends PluginBase
         return [
             'bwolfjena.core.own_course_manage' => [
                 'tab' => 'Verwalten',
-                'label' => 'Berechtigung zum Verwalten von selbst erstellten Kursen'
+                'label' => 'Berechtigung zum Verwalten von selbst erstellten Kursen',
             ],
             'bwolfjena.core.full_course_manage' => [
                 'tab' => 'Verwalten',
-                'label' => 'Volle Berechtigung zum Verwalten von Kursen'
+                'label' => 'Volle Berechtigung zum Verwalten von Kursen',
             ],
             'bwolfjena.core.full_module_manage' => [
                 'tab' => 'Verwalten',
-                'label' => 'Volle Berechtigung zum Verwalten von Modulen'
+                'label' => 'Volle Berechtigung zum Verwalten von Modulen',
             ],
             'bwolfjena.core.full_chair_manage' => [
                 'tab' => 'Verwalten',
-                'label' => 'Volle Berechtigung zum Verwalten von Lehrstühlen'
+                'label' => 'Volle Berechtigung zum Verwalten von Lehrstühlen',
             ],
             'bwolfjena.core.full_distribution' => [
                 'tab' => 'Verteilung',
-                'label' => 'Volle Berechtingung zum Verteilen von Studierenden'
-            ]
+                'label' => 'Volle Berechtingung zum Verteilen von Studierenden',
+            ],
         ];
     }
 
@@ -93,7 +95,7 @@ class Plugin extends PluginBase
             '\BWolfJena\Core\Components\CourseList' => 'courseList',
             '\BWolfJena\Core\Components\CourseSelection' => 'courseSelection',
             '\BWolfJena\Core\Components\DistributionList' => 'distributionList',
-            '\BWolfJena\Core\Components\Archive' => 'archive'
+            '\BWolfJena\Core\Components\Archive' => 'archive',
         ];
     }
 
@@ -106,17 +108,20 @@ class Plugin extends PluginBase
     {
         return [
             'core' => [
-                'label'       => 'Verwalten',
-                'url'         => Backend::url('bwolfjena/core/courses'),
-                'icon'        => 'icon-database',
+                'label' => 'Verwalten',
+                'url' => Backend::url('bwolfjena/core/courses'),
+                'icon' => 'icon-database',
                 'permissions' => ['bwolfjena.core.*'],
-                'order'       => 400,
+                'order' => 400,
                 'sideMenu' => [
                     'courses' => [
-                        'label'       => 'Kurse',
-                        'url'         => Backend::url('bwolfjena/core/courses'),
-                        'icon'        => 'icon-book',
-                        'permissions' => ['bwolfjena.core.full_course_manage', 'bwolfjena.core.own_course_manage'],
+                        'label' => 'Kurse',
+                        'url' => Backend::url('bwolfjena/core/courses'),
+                        'icon' => 'icon-book',
+                        'permissions' => [
+                            'bwolfjena.core.full_course_manage',
+                            'bwolfjena.core.own_course_manage',
+                        ],
                     ],
                     'modules' => [
                         'label' => 'Module',
@@ -130,16 +135,15 @@ class Plugin extends PluginBase
                         'icon' => 'icon-sitemap',
                         'permissions' => ['bwolfjena.core.full_chair_manage'],
                     ],
-
-                ]
+                ],
             ],
             'verteilung' => [
                 'label' => 'Verteilung',
                 'url' => Backend::url('bwolfjena/core/distribution'),
                 'icon' => 'icon-bar-chart',
                 'permissions' => ['bwolfjena.core.full_distribution'],
-                'order' => 410  ,
-            ]
+                'order' => 410,
+            ],
         ];
     }
 }

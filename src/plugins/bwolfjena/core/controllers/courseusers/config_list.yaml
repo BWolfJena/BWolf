@@ -31,8 +31,8 @@ showSorting: true
 
 # Default sorting column
 defaultSort:
-    column: created_at
-    direction: desc
+    column: course_name,surname
+    direction: asc
 
 # Display checkboxes next to each record
 showCheckboxes: true

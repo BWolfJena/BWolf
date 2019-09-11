@@ -4,18 +4,24 @@
 
 columns:
     id:
-      label: Id
+        label: Id
 
-    user:
-      label: Benutzer
-      relation: user
-      valueFrom: email
-      searchable: true
-      sortable: false
+    name:
+        label: Vorname
+        searchable: true
+        sortable: true
 
-    course:
-      label: Kurs
-      relation: course
-      valueFrom: name
-      searchable: true
-      sortable: false
+    surname:
+        label: Nachname
+        searchable: true
+        sortable: true
+
+    email:
+        label: Email
+        searchable: true
+        sortable: true
+
+    course_name:
+        label: Kurs
+        searchable: true
+        sortable: true

@@ -10,7 +10,7 @@ forceSecure = 0
 function onRegister()
 {
     try {
-        $_POST['email'] = str_finish($_POST['email'], '@uni-jena.de');
+        Input::merge(['email' => str_finish($_POST['email'], '@uni-jena.de')]);
         return $this->account->onRegister();
     }
     catch (Exception $ex) {
