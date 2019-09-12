@@ -8,20 +8,20 @@ columns:
 
     name:
         label: Vorname
-        searchable: true
+        searchable: false
         sortable: true
 
     surname:
         label: Nachname
-        searchable: true
+        searchable: false
         sortable: true
 
     email:
         label: Email
-        searchable: true
+        searchable: false
         sortable: true
 
     course_name:
         label: Kurs
-        searchable: true
+        searchable: false
         sortable: true

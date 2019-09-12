@@ -1,11 +1,13 @@
 <?php namespace BwolfJena\Core\Controllers;
 
 use Mail;
+use Excel;
 use BackendMenu;
 use Backend\Classes\Controller;
 use Backend\Models\User;
 use BwolfJena\Core\Models\CourseUser;
 use BwolfJena\Core\Models\Module;
+use BwolfJena\Core\Models\DistributionExport;
 
 /**
  * Course Users Back-end Controller
@@ -15,12 +17,13 @@ class CourseUsers extends Controller
     public $implement = [
         'Backend.Behaviors.FormController',
         'Backend.Behaviors.ListController',
-        'Backend.Behaviors.ImportExportController',
+        // Replaced by excel package
+        // 'Backend.Behaviors.ImportExportController',
     ];
 
     public $formConfig = 'config_form.yaml';
     public $listConfig = 'config_list.yaml';
-    public $importExportConfig = 'config_import_export.yaml';
+    // public $importExportConfig = 'config_import_export.yaml';
 
     public function __construct()
     {
@@ -34,6 +37,7 @@ class CourseUsers extends Controller
         session()->put('distribution_module_id', (int) $distributionModuleId);
         // Call the ListController behavior index() method
         $this->asExtension('ListController')->index();
+        $this->vars['distributionModuleId'] = $distributionModuleId;
     }
 
     public function listExtendQuery($query)
@@ -45,12 +49,29 @@ class CourseUsers extends Controller
         $query->join('users', 'user_id', '=', 'users.id');
         $query->join('bwolfjena_core_courses', 'course_id', '=', 'bwolfjena_core_courses.id');
         $query->select(
-            (new CourseUser())->getTable() . '.*',
-            'users.email as email',
+            (new CourseUser())->getTable() . '.id as id',
             'users.name as name',
             'users.surname as surname',
+            'users.email as email',
             'bwolfjena_core_courses.name as course_name'
         );
+    }
+
+    public function excelExport($distributionModuleId, $format)
+    {
+        session()->put('distribution_module_id', (int) $distributionModuleId);
+        $formats = [
+            'xlsx' => \Maatwebsite\Excel\Excel::XLSX,
+            'csv' => \Maatwebsite\Excel\Excel::CSV,
+            'tsv' => \Maatwebsite\Excel\Excel::TSV,
+            'ods' => \Maatwebsite\Excel\Excel::ODS,
+            'xls' => \Maatwebsite\Excel\Excel::XLS,
+        ];
+        if (!array_key_exists($format, $formats)) {
+            return 'Invalid file format';
+        }
+        $export = new DistributionExport($distributionModuleId, $this);
+        return Excel::download($export, 'distribution.' . $format, $formats[$format]);
     }
 
     public function onNotify()

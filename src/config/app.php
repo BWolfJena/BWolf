@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Application Debug Mode
@@ -123,10 +122,9 @@ return [
     |
     */
 
-    'providers' => array_merge(include(base_path('modules/system/providers.php')), [
-
+    'providers' => array_merge(include base_path('modules/system/providers.php'), [
         // 'Illuminate\Html\HtmlServiceProvider', // Example
-
+        Maatwebsite\Excel\ExcelServiceProvider::class,
         'System\ServiceProvider',
     ]),
 
@@ -141,10 +139,8 @@ return [
     |
     */
 
-    'aliases' => array_merge(include(base_path('modules/system/aliases.php')), [
-
+    'aliases' => array_merge(include base_path('modules/system/aliases.php'), [
+        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
         // 'Str' => 'Illuminate\Support\Str', // Example
-
     ]),
-
 ];

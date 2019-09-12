@@ -1,5 +1,10 @@
 export:
     title: Export Distribution
     useList:
-      raw: true
-    fileName: distribution.csv  
+        raw: true
+    fileName: distribution.csv
+defaultFormatOptions:
+    delimiter: '	'
+    enclosure: '"'
+    escape: '\'
+    encoding: 'utf-8'

@@ -21,9 +21,48 @@
         Ausgewählte Löschen
     </button>
 
-    <a href="<?= Backend::url('bwolfjena/core/courseusers/export') ?>" class="btn btn-default">
-        Exportieren
-    </a>
+    <div class="dropdown dropdown-fixed">
+        <button type="button" class="btn btn-default oc-icon-download" data-toggle="dropdown">
+            Export as...
+        </button>
+        <ul class="dropdown-menu" data-dropdown-title="Export as...">
+            <li>
+                <a
+                    href="<?= Backend::url('bwolfjena/core/courseusers/excelExport/'.$distributionModuleId.'/xlsx') ?>"
+                >
+                    xlsx - ab Excel 2007
+                </a>
+            </li>
+            <li>
+                <a
+                    href="<?= Backend::url('bwolfjena/core/courseusers/excelExport/'.$distributionModuleId.'/csv') ?>"
+                >
+                    csv - comma seperated
+                </a>
+            </li>
+            <li>
+                <a
+                    href="<?= Backend::url('bwolfjena/core/courseusers/excelExport/'.$distributionModuleId.'/tsv') ?>"
+                >
+                    tsv - tabulator seperated
+                </a>
+            </li>
+            <li>
+                <a
+                    href="<?= Backend::url('bwolfjena/core/courseusers/excelExport/'.$distributionModuleId.'/xls') ?>"
+                >
+                    xls - vor Excel 2007
+                </a>
+            </li>
+            <li>
+                <a
+                    href="<?= Backend::url('bwolfjena/core/courseusers/excelExport/'.$distributionModuleId.'/ods') ?>"
+                >
+                    ods - Open Office
+                </a>
+            </li>
+        </ul>
+    </div>
 
     <button
         class="btn btn-primary"
