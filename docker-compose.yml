@@ -30,9 +30,9 @@ services:
         ports:
             - 1080:80
             - 25:25
-#    algorithm:
-#        build: ./src/algorithm
-#        volumes:
-#            - ./src/algorithm/src:/usr/src/app/src/
-#        ports:
-#            - 1337:80
+    algorithm:
+        build: ./src/algorithm
+        volumes:
+            - ./src/algorithm/src:/usr/src/app/src/
+        ports:
+            - 1337:80
