@@ -17,9 +17,7 @@ class Distribution extends Controller
     private $preferences;
     private $client;
 
-    public $implement = [
-        'Backend.Behaviors.ListController'
-    ];
+    public $implement = ['Backend.Behaviors.ListController'];
 
     public $listConfig = 'config_list.yaml';
 
@@ -33,14 +31,20 @@ class Distribution extends Controller
     private function prepareData($id)
     {
         $this->module = Module::findOrFail($id);
-        $this->courses = $this->module->courses->keyBy('id')->map(function ($course) {
-            return [
-                'id' => $course->id,
-                'min' => $course->min_participants,
-                'max' => $course->max_participants,
-            ];
-        })->toArray();
-        $this->preferences = UserCoursePriority::whereIn('course_id', $this->module->courses->pluck('id'))
+        $this->courses = $this->module->courses
+            ->keyBy('id')
+            ->map(function ($course) {
+                return [
+                    'id' => $course->id,
+                    'min' => $course->min_participants,
+                    'max' => $course->max_participants,
+                ];
+            })
+            ->toArray();
+        $this->preferences = UserCoursePriority::whereIn(
+            'course_id',
+            $this->module->courses->pluck('id')
+        )
             ->orderBy('priority', 'DESC')
             ->get()
             ->groupBy('user_id')
@@ -48,19 +52,25 @@ class Distribution extends Controller
                 return $grouped->map(function ($course) {
                     return $course->course_id;
                 });
-            })->toArray();
+            })
+            ->toArray();
         $this->client = new \GuzzleHttp\Client();
     }
 
     private function solve($params)
     {
-        return json_decode($this->client->post('https://bwolfalgorithm.herokuapp.com/', [
-            'json' => [
-                'courses' => $this->courses,
-                'elections' => $this->preferences,
-                'params' => $params,
-            ]
-        ])->getBody()->getContents());
+        return json_decode(
+            $this->client
+                ->post('https://bwolfalgorithm.herokuapp.com/', [
+                    'json' => [
+                        'courses' => $this->courses,
+                        'elections' => $this->preferences,
+                        'params' => $params,
+                    ],
+                ])
+                ->getBody()
+                ->getContents()
+        );
     }
 
     private function solveAndAppendResult($title, $params)
@@ -79,19 +89,22 @@ class Distribution extends Controller
             'heading' => $title,
             'histPreferences' => $response->histPreferences,
             'histCourses' => $response->histCourses,
-            'mean' => round($response->mean,4),
+            'mean' => round($response->mean, 4),
             'variance' => round($response->variance, 4),
             'stdev' => round($response->stdev, 4),
-            'params' => collect($params)->map(function ($value, $key) {
-                if (is_array($value)) {
-                    return collect($value)->map(function ($value, $innerKey) use ($key) {
-                        return $key . $innerKey . ':' . $value;
-                    })->implode(',');
-                } else {
-                    return $key . ':' . $value;
-                }
-
-            })->implode(','),
+            'params' => collect($params)
+                ->map(function ($value, $key) {
+                    if (is_array($value)) {
+                        return collect($value)
+                            ->map(function ($value, $innerKey) use ($key) {
+                                return $key . $innerKey . ':' . $value;
+                            })
+                            ->implode(',');
+                    } else {
+                        return $key . ':' . $value;
+                    }
+                })
+                ->implode(','),
         ];
     }
 
@@ -100,17 +113,16 @@ class Distribution extends Controller
         $this->pageTitle = 'Verteilungen';
         $this->prepareData($id);
         $this->vars['results'] = [];
+        $this->vars['moduleId'] = $id;
 
         // Standard params
         $response = $this->solveAndAppendResult('Lineare Gewichte ohne Minimumsbegrenzung', [
             'lowest' => 0,
             'weights' => range(count($this->courses), 1),
         ]);
-
-
+        $min = $response->min;
         // Force minimum
-        while (!isset($response->error)) {
-          $min = $response->min;
+        while (!isset($response->error) and $min < 16) {
             $min++;
             $response = $this->solveAndAppendResult('Lineare Gewichte mit Minimum ' . $min, [
                 'lowest' => $min,
@@ -122,7 +134,9 @@ class Distribution extends Controller
         for ($i = 2; $i <= 4; $i = $i + 2) {
             $this->solveAndAppendResult('Exponentielle Gewichte mit Basis ' . $i, [
                 'lowest' => 0,
-                'weights' => collect(range(1, count($this->courses)))->map(function ($number) use ($i) {
+                'weights' => collect(range(1, count($this->courses)))->map(function ($number) use (
+                    $i
+                ) {
                     return pow($i, count($this->courses)) - pow($i, $number);
                 }),
             ]);
@@ -137,20 +151,26 @@ class Distribution extends Controller
         for ($i = 0; $i < $courseCount; $i++) {
             $weight = input('weights' . $i);
             if (!is_numeric($weight)) {
-                Flash::error('Alle Gewichte müssen numerisch sein, bitte kontaktieren Sie einen Administrator.');
+                Flash::error(
+                    'Alle Gewichte müssen numerisch sein, bitte kontaktieren Sie einen Administrator.'
+                );
             }
             $weights[] = $weight;
         }
-        $lowest = (int)input('lowest');
+        $lowest = (int) input('lowest');
         if ($lowest < 0 || $lowest > $courseCount) {
-            Flash::error('Lowest parameter keine Nummer oder nicht in gültigem Bereich, bitte kontaktieren Sie einen Administrator.');
+            Flash::error(
+                'Lowest parameter keine Nummer oder nicht in gültigem Bereich, bitte kontaktieren Sie einen Administrator.'
+            );
         }
         $response = $this->solve([
             'lowest' => $lowest,
-            'weights' => $weights
+            'weights' => $weights,
         ]);
         if (isset($response->error)) {
-            Flash::error('Verteilung fehlgeschlagen, bitte versuchen Sie es nocheinmal oder kontaktieren Sie einen Administrator.');
+            Flash::error(
+                'Verteilung fehlgeschlagen, bitte versuchen Sie es nocheinmal oder kontaktieren Sie einen Administrator.'
+            );
         } else {
             CourseUser::whereIn('course_id', $this->module->courses->pluck('id'))->delete();
             foreach ($response->students as $userId => $courseId) {
@@ -170,6 +190,6 @@ class Distribution extends Controller
 
     public function onShowDistribution()
     {
-        session()->put('distribution_module_id', (int)input('id'));
+        session()->put('distribution_module_id', (int) input('id'));
     }
 }
