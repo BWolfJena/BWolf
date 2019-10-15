@@ -10,9 +10,9 @@
                 data-request-confirm="Wollen Sie wirklich diese Verteilung verwenden? Gegbenenfalls vorhandene Verteilungen werden überschrieben"
                 data-request="onStoreDistribution"
                 data-request-data="<?= $result['params'] ?>"
-                data-request-redirect="<?= Backend::url('bwolfjena/core/courseusers') ?>"
+                data-request-redirect="<?= Backend::url('bwolfjena/core/courseusers/distribution/'.$moduleId) ?>"
                 data-stripe-load-indicator
-        >
+        >        
             Verwenden
         </button>
     </h3>
