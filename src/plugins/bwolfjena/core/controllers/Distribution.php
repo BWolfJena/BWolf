@@ -92,19 +92,7 @@ class Distribution extends Controller
             'mean' => round($response->mean, 4),
             'variance' => round($response->variance, 4),
             'stdev' => round($response->stdev, 4),
-            'params' => collect($params)
-                ->map(function ($value, $key) {
-                    if (is_array($value)) {
-                        return collect($value)
-                            ->map(function ($value, $innerKey) use ($key) {
-                                return $key . $innerKey . ':' . $value;
-                            })
-                            ->implode(',');
-                    } else {
-                        return $key . ':' . $value;
-                    }
-                })
-                ->implode(','),
+            'students' => $response->students,
         ];
     }
 
@@ -147,39 +135,16 @@ class Distribution extends Controller
     {
         $this->prepareData($id);
         $courseCount = count($this->courses);
-        $weights = [];
-        for ($i = 0; $i < $courseCount; $i++) {
-            $weight = input('weights' . $i);
-            if (!is_numeric($weight)) {
-                Flash::error(
-                    'Alle Gewichte müssen numerisch sein, bitte kontaktieren Sie einen Administrator.'
-                );
-            }
-            $weights[] = $weight;
+        $students = input('students');
+
+        CourseUser::whereIn('course_id', $this->module->courses->pluck('id'))->delete();
+        foreach ($students as $userId => $courseId) {
+            CourseUser::create([
+                'course_id' => $courseId,
+                'user_id' => $userId,
+            ]);
         }
-        $lowest = (int) input('lowest');
-        if ($lowest < 0 || $lowest > $courseCount) {
-            Flash::error(
-                'Lowest parameter keine Nummer oder nicht in gültigem Bereich, bitte kontaktieren Sie einen Administrator.'
-            );
-        }
-        $response = $this->solve([
-            'lowest' => $lowest,
-            'weights' => $weights,
-        ]);
-        if (isset($response->error)) {
-            Flash::error(
-                'Verteilung fehlgeschlagen, bitte versuchen Sie es nocheinmal oder kontaktieren Sie einen Administrator.'
-            );
-        } else {
-            CourseUser::whereIn('course_id', $this->module->courses->pluck('id'))->delete();
-            foreach ($response->students as $userId => $courseId) {
-                CourseUser::create([
-                    'course_id' => $courseId,
-                    'user_id' => $userId,
-                ]);
-            }
-        }
+
         $module = Module::find($id);
         $module->distributed_at = \Carbon\Carbon::now();
         $module->distributor = $this->user;

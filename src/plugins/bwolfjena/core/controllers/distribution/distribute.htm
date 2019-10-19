@@ -4,17 +4,22 @@
 <?php foreach($results as $result) { ?>
     <h3>
         <?= $result['heading']?>
-        <button
-                style="margin-left: 20px"
-                class="btn btn-default"
-                data-request-confirm="Wollen Sie wirklich diese Verteilung verwenden? Gegbenenfalls vorhandene Verteilungen werden überschrieben"
-                data-request="onStoreDistribution"
-                data-request-data="<?= $result['params'] ?>"
-                data-request-redirect="<?= Backend::url('bwolfjena/core/courseusers/distribution/'.$moduleId) ?>"
-                data-stripe-load-indicator
-        >        
-            Verwenden
-        </button>
+        <form
+        data-request="onStoreDistribution"
+        data-request-confirm="Wollen Sie wirklich diese Verteilung verwenden? Gegbenenfalls vorhandene Verteilungen werden überschrieben"
+        data-request-redirect="<?= Backend::url('bwolfjena/core/courseusers/distribution/'.$moduleId) ?>"
+        data-stripe-load-indicator
+        style="display:inline;">
+
+    <!-- Input two values -->
+    <?php foreach($result['students'] as $user => $course) { ?>
+      <input type="hidden" name="students[<?= $user ?>]" value="<?= $course?>">
+    <?php } ?>
+    <!-- Action button -->
+    <button style="margin-left: 20px"
+    class="btn btn-default">Verwenden</button>
+
+</form>
     </h3>
     <div class="layout layout-row" style="height:300px;">
         <div class="layout-cell layout-container">
