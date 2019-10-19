@@ -10,7 +10,7 @@ class DistributionExport implements FromCollection, WithHeadings
 
     public function headings(): array
     {
-        return ['ID', 'Vorname', 'Nachname', 'Email', 'Kurs'];
+        return ['ID', 'Vorname', 'Nachname', 'Email', 'Kurs', 'Präferenz'];
     }
 
     public function __construct($distributionModuleId, $controller)

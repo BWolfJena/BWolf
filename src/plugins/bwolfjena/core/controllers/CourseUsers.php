@@ -44,16 +44,37 @@ class CourseUsers extends Controller
     {
         if (session()->has('distribution_module_id')) {
             $module = Module::findOrFail(session()->get('distribution_module_id'));
-            $query->whereIn('course_id', $module->courses->pluck('id'));
+            $query->whereIn(
+                'bwolfjena_core_courses_users.course_id',
+                $module->courses->pluck('id')
+            );
         }
-        $query->join('users', 'user_id', '=', 'users.id');
-        $query->join('bwolfjena_core_courses', 'course_id', '=', 'bwolfjena_core_courses.id');
+        $query->join('users', 'bwolfjena_core_courses_users.user_id', '=', 'users.id');
+        $query->join(
+            'bwolfjena_core_courses',
+            'bwolfjena_core_courses_users.course_id',
+            '=',
+            'bwolfjena_core_courses.id'
+        );
+        $query->join('bwolfjena_core_user_course_priorities', function ($condition) {
+            $condition->on(
+                'bwolfjena_core_courses_users.course_id',
+                '=',
+                'bwolfjena_core_user_course_priorities.course_id'
+            );
+            $condition->on(
+                'bwolfjena_core_courses_users.user_id',
+                '=',
+                'bwolfjena_core_user_course_priorities.user_id'
+            );
+        });
         $query->select(
             (new CourseUser())->getTable() . '.id as id',
             'users.name as name',
             'users.surname as surname',
             'users.email as email',
-            'bwolfjena_core_courses.name as course_name'
+            'bwolfjena_core_courses.name as course_name',
+            'priority'
         );
     }
 

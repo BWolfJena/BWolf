@@ -25,3 +25,8 @@ columns:
         label: Kurs
         searchable: false
         sortable: true
+
+    priority:
+        label: Präferenz
+        sortable: true
+        searchale: false
