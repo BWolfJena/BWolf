@@ -8,25 +8,29 @@ columns:
 
     name:
         label: Vorname
-        searchable: false
+        select: users.name
+        searchable: true
         sortable: true
 
     surname:
         label: Nachname
-        searchable: false
+        select: users.surname
+        searchable: true
         sortable: true
 
     email:
         label: Email
-        searchable: false
+        select: users.email
+        searchable: true
         sortable: true
 
     course_name:
         label: Kurs
-        searchable: false
+        select: bwolfjena_core_courses.name
+        searchable: true
         sortable: true
 
     priority:
         label: Präferenz
         sortable: true
-        searchale: false
+        searchale: true
