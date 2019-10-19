@@ -44,6 +44,18 @@ class Plugin extends PluginBase
         \RainLab\User\Models\User::extend(function ($model) {
             $model->rules['name'] = 'required';
             $model->rules['surname'] = 'required';
+
+            // Force deletion of related models
+            $model->hasMany['course_users'] = [
+                \BwolfJena\Core\Models\CourseUser::class,
+                'key' => 'user_id',
+                'delete' => true,
+            ];
+            $model->hasMany['user_course_priorities'] = [
+                \BwolfJena\Core\Models\UserCoursePriority::class,
+                'key' => 'user_id',
+                'delete' => true,
+            ];
         });
     }
 
