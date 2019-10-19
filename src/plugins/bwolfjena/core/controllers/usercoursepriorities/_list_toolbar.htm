@@ -1,0 +1,44 @@
+<div data-control="toolbar">
+    <div class="dropdown dropdown-fixed">
+        <button type="button" class="btn btn-default oc-icon-download" data-toggle="dropdown">
+            Export as...
+        </button>
+        <ul class="dropdown-menu" data-dropdown-title="Export as...">
+            <li>
+                <a
+                    href="<?= Backend::url('bwolfjena/core/usercoursepriorities/excelExport/'.$moduleId.'/xlsx') ?>"
+                >
+                    xlsx - ab Excel 2007
+                </a>
+            </li>
+            <li>
+                <a
+                    href="<?= Backend::url('bwolfjena/core/usercoursepriorities/excelExport/'.$moduleId.'/csv') ?>"
+                >
+                    csv - comma seperated
+                </a>
+            </li>
+            <li>
+                <a
+                    href="<?= Backend::url('bwolfjena/core/usercoursepriorities/excelExport/'.$moduleId.'/tsv') ?>"
+                >
+                    tsv - tabulator seperated
+                </a>
+            </li>
+            <li>
+                <a
+                    href="<?= Backend::url('bwolfjena/core/usercoursepriorities/excelExport/'.$moduleId.'/xls') ?>"
+                >
+                    xls - vor Excel 2007
+                </a>
+            </li>
+            <li>
+                <a
+                    href="<?= Backend::url('bwolfjena/core/usercoursepriorities/excelExport/'.$moduleId.'/ods') ?>"
+                >
+                    ods - Open Office
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

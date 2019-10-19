@@ -3,6 +3,32 @@
 # ===================================
 
 columns:
-    id:
-        label: ID
+    name:
+        label: Vorname
+        select: users.name
         searchable: true
+        sortable: true
+
+    surname:
+        label: Nachname
+        select: users.surname
+        searchable: true
+        sortable: true
+
+    email:
+        label: Email
+        select: users.email
+        searchable: true
+        sortable: true
+
+    course_name:
+        label: Kurs
+        select: bwolfjena_core_courses.name
+        searchable: true
+        sortable: true
+
+    priority:
+        label: Präferenz
+        select: priority
+        sortable: true
+        searchale: true

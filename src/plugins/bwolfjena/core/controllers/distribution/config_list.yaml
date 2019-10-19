@@ -4,30 +4,36 @@
 
 # Model List Column configuration
 list:
-  columns:
-      id:
-          label: Id
-          searchable: true
+    columns:
+        id:
+            label: Id
+            searchable: true
 
-      name:
-          label: Name
-          searchable: true
+        name:
+            label: Name
+            searchable: true
 
-      distributed_at:
-          label: Verteilt am
+        distributed_at:
+            label: Verteilt am
 
-      distributor:
-          label: Verteilt von
-          relation: distributor
-          valueFrom: full_name
-          sortable: false
+        distributor:
+            label: Verteilt von
+            relation: distributor
+            valueFrom: full_name
+            sortable: false
 
-      gotodistribution:
-          label: Verteilung anzeigen
-          type: partial
-          path: ~/plugins/bwolfjena/core/controllers/distribution/_show_distribution_button.htm
-          clickable: false
-          sortable: false
+        gotodistribution:
+            label: Verteilung anzeigen
+            type: partial
+            path: ~/plugins/bwolfjena/core/controllers/distribution/_show_distribution_button.htm
+            clickable: false
+            sortable: false
+        gotopriorities:
+            label: Präferenzlisten
+            type: partial
+            path: ~/plugins/bwolfjena/core/controllers/distribution/_show_priorities_button.htm
+            clickable: false
+            sortable: false
 # Model Class name
 modelClass: BwolfJena\Core\Models\Module
 
