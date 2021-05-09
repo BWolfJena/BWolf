@@ -10,7 +10,7 @@
   "author": "BWolfJena",
   "dependencies": {
     "express": "^4.16.2",
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.21",
     "lp_solve": "BWolfJena/node-lp_solve",
     "nodemon": "^1.14.11",
     "stats-lite": "^2.1.0"
