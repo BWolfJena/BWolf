@@ -9,7 +9,7 @@
   },
   "author": "BWolfJena",
   "dependencies": {
-    "express": "^4.16.2",
+    "express": "^4.17.3",
     "lodash": "^4.17.4",
     "lp_solve": "BWolfJena/node-lp_solve",
     "nodemon": "^1.14.11",
